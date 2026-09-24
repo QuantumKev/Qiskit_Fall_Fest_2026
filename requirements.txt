@@ -1,0 +1,7 @@
+# Bell-state lab. Matches the Qiskit 2.x line used in
+# Quantum-Global-Group/qiskit-2x-cert-study-guide (qiskit>=2.3.0).
+qiskit>=2.3.0,<2.4.0
+matplotlib>=3.7.0
+pylatexenc>=2.10
+jupyter>=1.0.0
+notebook>=7.0.0
