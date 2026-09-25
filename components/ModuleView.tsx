@@ -4,30 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Check, Module } from "@/content/modules";
 import { LAST_VERIFIED } from "@/content/modules";
+import { CopyBlock } from "@/components/CopyBlock";
 import { useProgress, type Survey } from "@/components/store";
-
-function CopyBlock({ filename, source }: { filename: string; source: string }) {
-  const [copied, setCopied] = useState(false);
-
-  async function copy() {
-    await navigator.clipboard.writeText(source);
-    setCopied(true);
-  }
-
-  return (
-    <figure className="codeblock">
-      <figcaption>
-        <span>{filename}</span>
-        <button type="button" onClick={copy}>
-          {copied ? "Copied" : "Copy"}
-        </button>
-      </figcaption>
-      <pre>
-        <code>{source}</code>
-      </pre>
-    </figure>
-  );
-}
 
 function CheckCard({ check }: { check: Check }) {
   const [picked, setPicked] = useState<number | null>(null);

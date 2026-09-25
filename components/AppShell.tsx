@@ -21,12 +21,23 @@ function Header() {
           <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
             Journey
           </Link>
+          <Link href="/intro" aria-current={pathname.startsWith("/intro") ? "page" : undefined}>
+            Intro
+          </Link>
+          <Link href="/register" aria-current={pathname === "/register" ? "page" : undefined}>
+            Register
+          </Link>
           <Link href="/glossary" aria-current={pathname === "/glossary" ? "page" : undefined}>
             Glossary
           </Link>
           <Link href="/sources" aria-current={pathname === "/sources" ? "page" : undefined}>
             Sources
           </Link>
+          {mode === "facilitator" ? (
+            <Link href="/organizers" aria-current={pathname === "/organizers" ? "page" : undefined}>
+              Organizers
+            </Link>
+          ) : null}
         </nav>
         <div className="header-tools">
           <p className="progress-pill">

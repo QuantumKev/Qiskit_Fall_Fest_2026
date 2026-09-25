@@ -12,7 +12,9 @@ npm test
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://127.0.0.1:3010 for a workshop session (`npx next dev -H 127.0.0.1 -p 3010`). `npm run dev` still uses port 3000.
+
+The beginner path is `/intro`. Exercise 1 is `/learn/setup` and the registration form is `/register`. Registration responses stay on the server in a gitignored file and require `ORGANIZER_TOKEN` from `.env.example`. Do not commit API keys, CRNs, or notebook outputs that contain them.
 
 The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Do not put an API token, password, or classroom CRN in the notebook or in this site.
 

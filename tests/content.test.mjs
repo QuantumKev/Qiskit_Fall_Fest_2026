@@ -5,6 +5,8 @@ import { readFileSync } from "node:fs";
 const glossary = readFileSync(new URL("../content/glossary.ts", import.meta.url), "utf8");
 const modules = readFileSync(new URL("../content/modules.ts", import.meta.url), "utf8");
 const notebook = readFileSync(new URL("../notebooks/bell_state_lab.ipynb", import.meta.url), "utf8");
+const intro = readFileSync(new URL("../content/intro.ts", import.meta.url), "utf8");
+const exercise = readFileSync(new URL("../content/exercise1.ts", import.meta.url), "utf8");
 
 const required = [
   "Classical bit",
@@ -87,4 +89,23 @@ test("hetionet metrics stay the published ones", () => {
 
 test("verification date is recorded", () => {
   assert.ok(modules.includes('LAST_VERIFIED = "2026-09-23"'));
+});
+
+test("the intro guide keeps the welcome, the progress line, and the Bell sampler", () => {
+  assert.match(intro, /publish a paper in Nature/);
+  assert.match(intro, /Prepare → Learn the Language → Build Visually → Read the Code → Run the Code → Understand the Results → Find Your Next Step/);
+  assert.match(intro, /StatevectorSampler/);
+  assert.match(intro, /measured_circuit = bell_circuit\.copy\(\)/);
+  assert.match(intro, /The entire Home Depot/);
+  assert.match(intro, /not, by itself, a complete proof of entanglement/);
+  assert.doesNotMatch(intro, /execute\(/);
+  assert.doesNotMatch(intro, /\bmusic\b/i);
+  assert.doesNotMatch(intro, /\bsports\b/i);
+});
+
+test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
+  assert.match(exercise, /<YOUR_PRIVATE_API_KEY>/);
+  assert.match(exercise, /<YOUR_CLASSROOM_INSTANCE_CRN>/);
+  assert.doesNotMatch(exercise, /crn:v1/);
+  assert.match(exercise, /service desk/);
 });

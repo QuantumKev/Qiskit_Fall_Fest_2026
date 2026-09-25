@@ -142,10 +142,15 @@ export const MODULES: Module[] = [
   {
     slug: "setup",
     number: "01",
-    title: "Account and technology setup",
-    minutes: 25,
-    summary: "Sign in to IBM Quantum, accept the classroom invitation when it arrives, and open Composer.",
-    outcomes: ["Sign in to the platform.", "Tell a classroom account from a personal login.", "See a circuit canvas before the lab."],
+    title: "Exercise 1: Get connected to IBM Quantum",
+    minutes: 40,
+    summary: "Register, accept the classroom invitation, find the assigned instance, and keep the API key on a trusted computer.",
+    outcomes: [
+      "Submit the private registration form.",
+      "Sign in with the invited email.",
+      "Find the classroom instance without pasting the CRN into chat.",
+      "Save an API key only on a trusted computer, or use the simulator path while the invitation is pending.",
+    ],
     sections: [
       {
         heading: "Check the live screen",

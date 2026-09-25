@@ -2,6 +2,11 @@ import { LAST_VERIFIED } from "@/content/modules";
 
 const SOURCES: { title: string; href?: string; note: string }[] = [
   {
+    title: "Introduction to Qiskit",
+    href: "/intro",
+    note: "Beginner guide added for Fall Fest. Programming analogies on that path use the Home Depot table. Quantum definitions stay technical. Registration responses are not listed here.",
+  },
+  {
     title: "IBM Quantum Platform",
     href: "https://quantum.cloud.ibm.com/",
     note: "Sign-in, Composer, Learning, and documentation links used in Modules 1, 5, and 9. Recheck the morning of the workshop. This site never collects passwords, API tokens, or classroom CRNs.",
