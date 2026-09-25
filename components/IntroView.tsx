@@ -636,7 +636,7 @@ function HetionetBody() {
     <div className="stack">
       <p>
         Hetionet is a biomedical knowledge graph at <a href="https://het.io/">het.io</a>. The hybrid project is{" "}
-        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. This page introduces the pipeline. It does not train the model. Run any new experiment on a simulator first. A StatevectorSampler check uses no QPU time. The 10 minutes are Open Plan QPU time per rolling 28-day window. No classroom-minute quota is stated.
+        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. Before this tour, use the sitting after both Bell labs: <Link href="/learn/assess-build">read chapter 7, then Assess and Build</Link>. This page introduces the pipeline. It does not train the model. Run any new experiment on a simulator first. A StatevectorSampler check uses no QPU time. The 10 minutes are Open Plan QPU time per rolling 28-day window. No classroom-minute quota is stated.
       </p>
       <ol>
         {HETIONET_PIPELINE.map((step) => (

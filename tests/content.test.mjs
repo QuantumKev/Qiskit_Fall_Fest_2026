@@ -103,6 +103,18 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
   assert.doesNotMatch(intro, /\bsports\b/i);
 });
 
+test("the Assess and Build pointer sits between the Bell labs and Hetionet", () => {
+  const pythonNext = modules.indexOf('nextSlug: "assess-build"');
+  const pointer = modules.indexOf('slug: "assess-build"');
+  const hetionet = modules.indexOf('slug: "hetionet"');
+  assert.ok(pythonNext > 0 && pointer > pythonNext && hetionet > pointer);
+  assert.match(modules, /chapter 7 of Quantum Readiness for Leaders/);
+  assert.match(modules, /Then run Assess, then Build/);
+  assert.match(modules, /live link for Assess and Build is still blank/);
+  assert.doesNotMatch(modules, /qgg-quantum-readiness-os/);
+  assert.doesNotMatch(modules, /drive\.google/i);
+});
+
 test("hackathon and machine learning stay inside known rules", () => {
   assert.match(intro, /inaugural state championship/);
   assert.match(intro, /October 1, 2026/);

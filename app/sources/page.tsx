@@ -53,7 +53,11 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
   },
   {
     title: "Quantum Readiness for Leaders",
-    note: "Robert Loredo’s book is cited by title as the leadership theme for Module 8. No chapter text, diagrams, page numbers, or publisher excerpt is stored here.",
+    note: "Cited by title as the leadership theme for the readiness module, and by chapter 7 on the sitting between the Bell labs and the Hetionet tour. No chapter text, diagrams, page numbers, publisher excerpt, or Drive file is stored here.",
+  },
+  {
+    title: "Optimization readiness engine",
+    note: "Assess and Build are described on the sitting between the Bell labs and the Hetionet tour. The live link is still blank. The engine source is not stored here.",
   },
   {
     title: "Qiskit 2.x certification study guide",
