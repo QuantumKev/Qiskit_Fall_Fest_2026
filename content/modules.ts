@@ -211,28 +211,17 @@ export const MODULES: Module[] = [
     number: "02",
     title: "Beginner vocabulary",
     minutes: 20,
-    summary: "Plain definition, technical definition, and one analogy on every card. The analogy does not replace the quantum word.",
+    summary: "Programming structure uses the Home Depot analogy. Quantum words keep a plain sentence and the technical definition.",
     outcomes: ["Look a word up before guessing.", "Separate amplitude from probability.", "Reject the slogan that a qubit tries every answer at once."],
     sections: [
       {
         heading: "How the cards work",
         paragraphs: [
-          "The glossary in the header is the same language the labs use. Search it whenever a term shows up early.",
-          "Each card has a plain sentence, a technical sentence, one analogy from cooking, music, sports, or Home Depot, why the term matters, and a common misconception.",
-          "The recent commit on Quantum-Global-Group/qiskit-2x-cert-study-guide adds plain-English certification cheat-sheet PDFs. Those PDFs were checked for cooking, music, sports, and Home Depot wording and did not contain those four layers. The analogies here are Fall Fest teaching translations. Replace the analogy sentence if Kevin has a preferred version. Leave the technical sentence unless it is wrong.",
-          "Deeper certification practice, after this workshop, is the notebook set in that study guide. It assumes more Qiskit than today.",
+          "The glossary is the source of the technical definitions on the quantum cards. Search it whenever a term shows up early.",
+          "This page uses one analogy, and only for programming structure: package, module, class, object, method, argument, and variable. Those lines are the Home Depot table.",
+          "A quantum card is a plain sentence and the technical definition.",
+          "The study guide at Quantum-Global-Group/qiskit-2x-cert-study-guide adds plain-English certification cheat-sheet PDFs. Deeper certification practice, after this workshop, is the notebook set in that study guide. It assumes more Qiskit than today.",
         ],
-      },
-    ],
-    analogies: [
-      {
-        title: "Superposition, beside the definition",
-        layers: {
-          cooking: "Seasoned sauce before it is plated. The recipe allows more than one serving. You still plate one serving.",
-          music: "A chord on the chart. One recorded sample is one take, not every note as a finished solo.",
-          sports: "A play design before the snap. The scoreboard later shows one result.",
-          homeDepot: "A board marked for two possible cuts. The saw makes one cut.",
-        },
       },
     ],
     checks: [
@@ -253,7 +242,7 @@ export const MODULES: Module[] = [
       notes: ["Say KYOO-bit, HAD-uh-mard, and KIZ-kit once."],
       questions: ["How is an amplitude different from a probability?"],
       expected: ["Probability is the squared magnitude of the amplitude. Phase can change while probabilities stay put."],
-      misconceptions: ["State, statevector, and histogram get mashed together. Separate the recipe, the list of amplitudes, and the tally."],
+      misconceptions: ["State, statevector, and histogram get mashed together. Separate the state, the list of amplitudes, and the tally."],
     },
     nextSlug: "qubi",
     nextLabel: "Watch the Qubi demonstration",

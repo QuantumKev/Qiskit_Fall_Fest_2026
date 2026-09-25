@@ -4,8 +4,70 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Check, Module } from "@/content/modules";
 import { LAST_VERIFIED } from "@/content/modules";
+import { GLOSSARY } from "@/content/glossary";
+import { HOME_DEPOT_TABLE } from "@/content/intro";
 import { CopyBlock } from "@/components/CopyBlock";
 import { useProgress, type Survey } from "@/components/store";
+
+const STRUCTURE_CONCEPTS = [
+  "Package or library",
+  "Module",
+  "Class",
+  "Object or instance",
+  "Method",
+  "Argument",
+  "Variable",
+];
+
+function BeginnerVocabulary() {
+  const rows = STRUCTURE_CONCEPTS.map((concept) => HOME_DEPOT_TABLE.find((row) => row.concept === concept)).filter(
+    (row): row is { concept: string; analogy: string } => Boolean(row),
+  );
+
+  return (
+    <>
+      <section className="prose">
+        <h2>Programming structure</h2>
+        <p>These seven words use the Home Depot analogy. The lines come from the existing table.</p>
+        <div className="table-wrap">
+          <table>
+            <caption>Home Depot analogy for programming structure</caption>
+            <thead>
+              <tr>
+                <th>Programming concept</th>
+                <th>Home Depot analogy</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row) => (
+                <tr key={row.concept}>
+                  <td>{row.concept}</td>
+                  <td>{row.analogy}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section className="prose">
+        <h2>Quantum words</h2>
+        <p>Each card is the plain sentence and the technical definition from the glossary.</p>
+        <div className="card-grid">
+          {GLOSSARY.map((entry) => (
+            <article key={entry.term} className="term-card">
+              <h2>{entry.term}</h2>
+              {entry.pronunciation ? <p className="meta">{entry.pronunciation}</p> : null}
+              <h3>Plain</h3>
+              <p>{entry.plain}</p>
+              <h3>Technical</h3>
+              <p>{entry.technical}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
 
 function CheckCard({ check }: { check: Check }) {
   const [picked, setPicked] = useState<number | null>(null);
@@ -115,6 +177,7 @@ export function ModuleView({ module }: { module: Module }) {
       ))}
 
       {module.slug === "welcome" ? <SurveyForm /> : null}
+      {module.slug === "vocabulary" ? <BeginnerVocabulary /> : null}
 
       {module.analogies?.map((block) => (
         <section key={block.title} className="prose">

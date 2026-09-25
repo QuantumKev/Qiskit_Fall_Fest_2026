@@ -145,6 +145,37 @@ test("hackathon and machine learning stay inside known rules", () => {
   assert.doesNotMatch(intro, /execute\(/);
 });
 
+test("beginner vocabulary uses one analogy system", () => {
+  const start = modules.indexOf('slug: "vocabulary"');
+  const end = modules.indexOf('slug: "qubi"');
+  const vocab = modules.slice(start, end);
+  assert.ok(start > 0 && end > start);
+  assert.match(vocab, /title: "Beginner vocabulary"/);
+  assert.match(vocab, /Home Depot table/);
+  assert.doesNotMatch(vocab, /cooking|music|sports/i);
+  assert.doesNotMatch(vocab, /analogies:/);
+  assert.doesNotMatch(vocab, /board marked for two possible cuts/);
+  const view = readFileSync(new URL("../components/ModuleView.tsx", import.meta.url), "utf8");
+  for (const concept of [
+    "Package or library",
+    "Module",
+    "Class",
+    "Object or instance",
+    "Method",
+    "Argument",
+    "Variable",
+  ]) {
+    assert.ok(view.includes(`"${concept}"`));
+  }
+  assert.match(view, /entry\.plain/);
+  assert.match(view, /entry\.technical/);
+  assert.doesNotMatch(view, /entry\.analogy/);
+  assert.match(glossary, /analogyDomain: "Cooking"/);
+  assert.match(glossary, /analogyDomain: "Music"/);
+  assert.match(glossary, /analogyDomain: "Sports"/);
+  assert.match(glossary, /analogyDomain: "Home Depot"/);
+});
+
 test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
   assert.match(exercise, /<YOUR_PRIVATE_API_KEY>/);
   assert.match(exercise, /<YOUR_OPEN_PLAN_CRN>/);
