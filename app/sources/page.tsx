@@ -17,9 +17,24 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
     note: "How a classroom account differs from a personal login.",
   },
   {
-    title: "IBM quantum machine learning introduction",
-    href: "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning/introduction",
-    note: "Linked only, including the working notebook at the learning raw path checked on 2026-09-25. This repo does not store that course or that notebook.",
+    title: "IBM quantum machine learning course",
+    href: "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning",
+    note: "The 10-hour course named in the FAU handbook for classification, kernels, and feature maps. Linked only. This repo does not store the course.",
+  },
+  {
+    title: "Quantum kernel training",
+    href: "https://quantum.cloud.ibm.com/docs/en/tutorials/quantum-kernel-training",
+    note: "Catalog working notebook for the learning shape. Linked only.",
+  },
+  {
+    title: "Projected quantum kernels",
+    href: "https://quantum.cloud.ibm.com/docs/en/tutorials/projected-quantum-kernels",
+    note: "Catalog working notebook for the learning shape. Linked only.",
+  },
+  {
+    title: "FAU Qiskit Fall Fest 2026 materials",
+    href: "https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026",
+    note: "Private repo, default branch main, last push 2026-09-21, read 2026-09-25. Public program name, the dates that appear, Discord, IBM links, the nine-field canvas, and the Open Plan minute rule are paraphrased on /intro/hackathon and /intro/qml. Placeholder fields stay blank. Notebooks and the book are not copied.",
   },
   {
     title: "Qolour educator course",

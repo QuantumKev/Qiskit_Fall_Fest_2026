@@ -38,7 +38,7 @@ export const INTRO_SECTIONS = [
   { slug: "trace", phase: "run", title: "Watch the program run", minutes: 15 },
   { slug: "practice", phase: "results", title: "Practice", minutes: 20 },
   { slug: "next-step", phase: "next", title: "Where to go next", minutes: 10 },
-  { slug: "hackathon", phase: "next", title: "Grant's hackathon", minutes: 15 },
+  { slug: "hackathon", phase: "next", title: "Fall Fest projects", minutes: 20 },
   { slug: "qml", phase: "next", title: "Quantum machine learning", minutes: 15 },
   { slug: "hetionet", phase: "next", title: "Where this can lead", minutes: 10 },
 ] as const;
@@ -524,37 +524,182 @@ export const PRIMARY_SOURCES: { title: string; href: string }[] = [
   { title: "Qolour statevector exhibit", href: "https://www.qolour.com/educator-course/statevector-exhibit" },
 ];
 
-export const QML_COURSE = "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning/introduction";
+export const QML_COURSE = "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning";
 
-export const QML_NOTEBOOK =
-  "https://quantum.cloud.ibm.com/endpoints-docs-learning/raw/learning/en/courses/quantum-machine-learning/introduction.ipynb";
+export const QML_KERNEL = "https://quantum.cloud.ibm.com/docs/en/tutorials/quantum-kernel-training";
 
-export const PROPOSAL_STEPS = [
-  "Open the project canvas already used in this workshop.",
-  "Write one question a Fall Fest-sized team can study.",
-  "Name the domain and the data you will actually use.",
-  "Name the classical baseline before you describe a quantum piece.",
-  "Say how you will score the result, and what decision that score would support.",
-  "Name the roles the canvas already lists. A team needs someone guarding the question, someone who can run a classical baseline, and someone who will not exaggerate the result.",
-  "Point at the Hetionet README if you want a worked comparison. Leave that model untrained.",
+export const QML_PROJECTED = "https://quantum.cloud.ibm.com/docs/en/tutorials/projected-quantum-kernels";
+
+export const FALL_FEST_LINKS = [
+  { label: "Discord", href: "https://discord.gg/vz6uTbtJzR" },
+  { label: "IBM Quantum registration", href: "https://quantum.cloud.ibm.com/registration" },
+  { label: "Qiskit Slack", href: "https://qisk.it/join-slack" },
+  { label: "IBM announcement", href: "https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026" },
+  { label: "Domain-track note", href: "https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/" },
+  { label: "Plan comparison", href: "https://quantum.cloud.ibm.com/docs/en/guides/plans-overview" },
+  { label: "Open Plan updates", href: "https://www.ibm.com/quantum/blog/open-plan-updates" },
+  { label: "Classroom accounts", href: "https://ibm.biz/classroom-account" },
 ];
 
-export const JOIN_STEPS = [
-  "Read a proposal that already names its question and its open roles.",
-  "Pick one role from the list on the project canvas.",
-  "Tell the proposal’s author which role you are taking, and whether you bring the domain, the Python, the baseline, or the write-up.",
+export const USE_CASE_FIELDS = [
+  "The problem in plain language.",
+  "Who has it.",
+  "How it is solved today.",
+  "What “better” is worth, as a number.",
+  "Which of the three problem shapes, and why.",
+  "The real-instance size versus the weekend size.",
+  "What would have to be true in five years.",
+  "The tiny thing you will actually build.",
+  "Three sentences for the opening slide.",
+];
+
+export const PROJECT_KINDS = [
+  "A real industry problem mapped to a QUBO, a Hamiltonian, or a kernel, and run small.",
+  "A small classical-versus-quantum comparison.",
+  "A tool.",
+  "A sourced analysis of where quantum does not fit.",
+];
+
+export const DAY_ONE_ROLES = [
+  "Domain Lead, for USE-CASE.md.",
+  "Problem Framer, for variables, constraints, and the objective.",
+  "Impact and Feasibility Analyst, for the baseline, the value, and the size gap.",
+  "Pitch Lead, for the five-minute deck and the demo.",
+  "Policy and Risk Analyst, for LIMITATIONS.md.",
+  "Investor-Lens Reviewer, for who would buy it and what hardware progress the timeline needs.",
 ];
 
 export const HACKATHON_GAP_NOTE =
-  "These facts are not in the repo or in Loredo's note. They are left blank on purpose.";
+  "Still blank. The source files leave these as placeholders or unanswered questions.";
 
 export const HACKATHON_GAPS = [
-  "The public name of the event, if “Grant's hackathon” is not the name on the poster.",
-  "The dates.",
-  "The judging criteria.",
-  "Any limit on team size.",
-  "Where a proposal is posted, and how another person asks to join.",
+  "Grant Kurz’s public event name, his campus, and his October weekend dates.",
+  "Registration URL. The files still say {{REGISTRATION_LINK}}.",
+  "Code-of-conduct URL.",
+  "Participant help email. The files still say {{ORGANIZER_EMAIL}}.",
+  "GitHub org and submission repo name. The files still say {{GITHUB_ORG}} and {{REPO_NAME}}.",
+  "Local event name and host org. The handbook still says {{EVENT_NAME}} and {{HOST_ORG}}.",
+  "A chat link other than the Discord invite, if that invite is not the one to use.",
+  "Hackathon-platform URL, participant dashboard, photo Drive, and the speaker schedule.",
+  "How to create or join a project on Grant’s platform. The files ask him and stop there.",
+  "A numeric team-size cap. “Up to [4]” in the sponsorship template is still in brackets.",
+  "Judging weights, a score sheet, and who judges.",
+  "Which local kickoff date applies. October 1 and October 5 both appear. This page does not choose.",
+  "State championship time and room on November 13.",
+  "Whether participants will use the Open Plan or a classroom account. No classroom-minute quota is stated.",
+  "Whether the extra 180 Open Plan minutes are still offered.",
+  "Non-student eligibility.",
+  "Submission deadline. The files still say {{SUBMISSION_DEADLINE}}.",
+  "The folders challenges/, resources/, and submissions/_TEMPLATE/. They are described and are not in the tree.",
 ];
+
+export const PROGRAM_NAME =
+  "FAU-hosted Qiskit Fall Fest 2026, inaugural state championship.";
+
+export const PROGRAM_BANNER =
+  "The README banner reads Qiskit Fall Fest 2026, October 2026, Florida, hosted by Florida Atlantic University. The theme is ten years of quantum on the cloud. Fall Fest is a worldwide student-led series with IBM Quantum.";
+
+export const KICKOFF_LINES =
+  "The README says everything else can wait until kickoff, and that sentence says October 5. The key-dates table on the same page says local kickoff and challenge release are October 1, 2026. The handbook banner is October 5 through November 13, 2026. The pre-event job is to arrive by October 5 with a working environment and a rough problem. This page does not choose between October 1 and October 5.";
+
+export const CHAMPIONSHIP_LINE =
+  "The state championship is November 13 at Florida Atlantic University, Boca Raton campus. Time and room are still TBD. The sponsorship template header says Friday, November 13, 2026, at that campus. Its glance table still says [Championship Venue, City].";
+
+export const WINNER_PACKET =
+  "Local first-place winners (names, emails, deck, and GitHub project link) are due to the hosts no later than October 31.";
+
+export const BEFORE_KICKOFF = [
+  "Register. The link is still {{REGISTRATION_LINK}}.",
+  "Join the chat. The only concrete URL in that slot is the Discord invite.",
+  "Create a free IBM Quantum account. Handbook section 4. Sign up on the IBM Quantum registration page.",
+  "Send a GitHub username so organizers can add you to the org. The org is still {{GITHUB_ORG}}. The repo is still https://github.com/{{GITHUB_ORG}}/{{REPO_NAME}}.",
+];
+
+export const COST_LINE =
+  "Nothing to pay. The Open Plan, Qiskit, and GitHub are free. No laptop is fine if you partner with someone who has one. A weak laptop is fine because the work runs in a browser.";
+
+export const TRACKS = [
+  "Builders write Qiskit. They need Python, not a physics degree. Pre-work is about 3–5 hours.",
+  "Domain people bring an industry problem, do not install Python, and read notebooks. Pre-work is about 2–3 hours.",
+];
+
+export const EVERYONE_LINE =
+  "Everyone, on both tracks: register, join the chat, create an IBM Quantum account, create a GitHub account and join the event repo, read what you are building, and skim the domain track. Thirty minutes means those four account steps only.";
+
+export const ACCOUNT_FACTS = [
+  "quantum-computing.ibm.com and channel=\"ibm_quantum\" are described as dead after July 1, 2025.",
+  "The handbook tells builders to create an Open Plan instance in us-east only, copy an API key once and the instance CRN, and keep the key out of git and out of chat. The domain track can skip the key and the local install.",
+  "The preferred handbook path is the browser: IBM Quantum Learning, starting with “Use a quantum computer today,” Composer for zero code, then Colab with qiskit, qiskit-ibm-runtime, matplotlib, and pylatexenc.",
+  "A local install is the fallback: Python 3.10 or later, a fresh virtual environment, and one unpinned pip install. The handbook says Qiskit 2.5.x supports Python 3.10 through 3.14. This site’s Bell lab pin stays qiskit>=2.3.0,<2.4.0.",
+  "The setup check is a local Bell circuit with StatevectorSampler. It uses no account and no QPU time. Hardware save_account is for a trusted machine only, region us-east, default channel ibm_quantum_platform.",
+];
+
+export const PLAN_BLANK =
+  "Still blank: whether this room will use the Open Plan or a classroom account. The files attach no minute quota to classroom accounts. This workshop’s Exercise 1 still follows a classroom invitation and says you do not create a separate instance on that path.";
+
+export const PROBLEM_SHAPES = [
+  "Optimization: scheduling, routing, and portfolios. Classical solvers are already strong, so name a baseline.",
+  "Simulation: molecules and materials. This is the strongest theoretical fit. Hardware-reachable molecules are chemically small.",
+  "Learning and data: kernels and similarity on scarce, expensive, subtle data such as fraud, anomaly, and risk. This is the most contested shape, and it fits a skeptical project.",
+];
+
+export const VALID_SKEPTICAL =
+  "A write-up that a problem is not quantum-shaped is a valid submission, and the materials call that better than average.";
+
+export const SUBMISSION_STEPS = [
+  "Work on a branch named team-<name>.",
+  "Copy submissions/_TEMPLATE into submissions/team-<name>. That template folder is described and is not in the tree yet.",
+  "Open a pull request to main titled [SUBMISSION] Team <name> — <project title>. Draft the pull request early.",
+  "Include README.md, a notebook or source, USE-CASE.md, requirements.txt if there is code, and slides or a demo video.",
+  "LIMITATIONS.md is strongly encouraged. The materials say judges reward it.",
+  "GitHub Desktop or editing in the browser is accepted for written work. GitHub is required on both tracks. Students are pointed at the GitHub Student Developer Pack.",
+];
+
+export const JOIN_FACTS = [
+  "Registration URL: still {{REGISTRATION_LINK}}.",
+  "Chat: the Discord invite is the only concrete URL. {{CHAT_LINK}} is still unset.",
+  "Create the free IBM Quantum account.",
+  "Send your GitHub username and accept the org invite. The org name is still unset.",
+  "You do not need a team before kickoff. Team formation is at kickoff.",
+  "How to create or join a project on Grant’s platform is an unanswered question in the files.",
+];
+
+export const TEAM_SIZE_LINE =
+  "No participant-facing team-size cap is written. The sponsorship template says “teams of up to [4],” and that number is still in brackets. Each team should have a builder side and a domain side. One person owns hardware submissions.";
+
+export const JUDGING_LINE =
+  "No judging weights, score sheet, or judge names are published. The materials say FAU will publish one rubric for local events and the statewide championship. The dimensions named for that rubric are technical execution (a simulator only, or also a real device), problem framing and relevance, honesty about limitations, and presentation. Pull requests after {{SUBMISSION_DEADLINE}} are not judged.";
+
+export const AWARD_TEMPLATE_LINE =
+  "The sponsorship template lists 1st, 2nd, and 3rd, and says local winners advance. That file is a placeholder kit for campuses. Local events are two-day October weekends dated [Saturday–Sunday, October XX–XX, 2026]. Headcount is still “up to [40–50] students in teams of up to [4].” Beginners are welcome. The bracketed numbers stay blank.";
+
+export const LIGHTNING_TALK_LINE =
+  "The Pitch Lead owns a five-minute deck and demo. The sponsorship template also lists a five-minute sponsor lightning talk. That line is a sponsorship benefit.";
+
+export const HOST_CONTACTS: { name: string; detail: string; href?: string }[] = [
+  { name: "Robert Loredo", detail: "RLoredo2026@fau.edu. He leads this initiative.", href: "https://linkedin.com/in/robertloredo" },
+  { name: "Ayse Torres", detail: "LinkedIn is still blank." },
+  { name: "Kevin Robinson", detail: "LinkedIn is still blank." },
+  { name: "Grant Kurz", detail: "LinkedIn is still blank. The files have no separate public name, date block, proposal form, join URL, team cap, or rubric for an event under his name." },
+];
+
+export const SEPTEMBER_LINE =
+  "A September host kickoff is described as a recorded overview of team setup, IBM Quantum access, and Qiskit, plus a shared calendar of campus hackathons. Still blank: the September date and the recording URL.";
+
+export const CANVAS_NOTE =
+  "Fill the nine-field Use-Case Canvas before arrival, read it aloud at team formation, and copy it to submissions/team-<name>/USE-CASE.md. Challenge statements are described as published at kickoff in challenges/, and that folder is not in the tree. This workshop’s project canvas is a Hetionet sketch for the local lab. It is a different sheet from the nine-field canvas.";
+
+export const OPEN_PLAN_MINUTES =
+  "The Open Plan gives up to 10 minutes of QPU time per rolling 28-day window. Usage is on the dashboard and the Workloads page. Iterate on a simulator, and send a circuit to hardware only after it is final. A StatevectorSampler setup check uses no account and no QPU time. QiskitRuntimeService(channel=\"local\") is described as free, instant, and unlimited. Hardware selection after that is least_busy(operational=True, simulator=False). One person per team owns those hardware jobs. An unattended loop burns the quota.";
+
+export const PROMO_BLANK =
+  "Still blank: whether an extra 180 minutes over 12 months for active Open Plan users are still offered. The handbook says to check the Open Plan updates page.";
+
+export const QML_FIT =
+  "Shape 3 is the learning fit: scarce, expensive data and a subtle signal, including fraud, anomaly, classification, generative modeling, and risk. The catalog’s industry example is hybrid ensemble classification for grid stability.";
+
+export const QML_OUTPUT_BLANK =
+  "Still blank as a lab. The FAU files do not say what quantum machine learning code to implement, or what to do with that output. The general project bar still applies: run small, compare with a classical baseline, state the size gap, and say what the result does not show.";
 
 export const HETIONET_PIPELINE = [
   "Define the problem",
@@ -671,28 +816,28 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
   ],
   hackathon: [
     {
-      question: "What can you complete for Grant's hackathon with the pages already in this workshop?",
+      question: "When do the FAU materials say you need a team?",
       options: [
-        "A proposal on the project canvas, with a classical baseline and named roles",
-        "The judging rubric and the team-size cap",
-        "The event dates",
-        "A trained Hetionet model",
+        "Before you register",
+        "You do not need a team before kickoff. Team formation is at kickoff.",
+        "The sponsorship template’s bracketed number is the published cap",
+        "Only after the state championship",
       ],
-      answer: 0,
-      why: "The canvas, the baseline, and the role list are already in this repo. Dates, judging, and team limits are not.",
+      answer: 1,
+      why: "The handbook says you do not need a team beforehand. This page does not choose between the October 1 and October 5 kickoff lines, and it does not turn the bracketed template number into a cap.",
     },
   ],
   qml: [
     {
-      question: "When does a run spend the 10 free minutes?",
+      question: "Where do the FAU materials put the 10 minutes?",
       options: [
-        "Every StatevectorSampler run spends them",
-        "A simulator run spends them",
-        "A simulator run does not spend them. The minutes are for an IBM Quantum system.",
-        "Printing a histogram spends them",
+        "On classroom accounts, as a quota",
+        "On the Open Plan: up to 10 minutes of QPU time per rolling 28-day window. A StatevectorSampler check uses no QPU time.",
+        "On every simulator run",
+        "As a team-size rule",
       ],
-      answer: 2,
-      why: "Run on a simulator first. Each person has only 10 free minutes, and a simulator run does not spend those minutes.",
+      answer: 1,
+      why: "The handbook attaches that window to the Open Plan. It does not state a classroom-minute quota. The setup check uses StatevectorSampler and no QPU time.",
     },
   ],
   hetionet: [
@@ -752,17 +897,17 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
     notes: ["Read Qolour video titles from the live menu. Do not paste the course."],
   },
   hackathon: {
-    timing: "15 minutes. Fill one canvas row together. Stop at the labeled gaps.",
+    timing: "20 minutes. Read both kickoff lines. Do not pick one.",
     notes: [
       "Robert Loredo leads this initiative. Cite him by name and role. Do not read from the book.",
-      "Do not invent dates, judging criteria, or a team limit.",
+      "Do not fill Grant’s event name, campus, registration URL, GitHub org, team-size cap, or judging weights.",
     ],
   },
   qml: {
-    timing: "15 minutes. Open IBM’s course. Do not paste the notebook into the repo or the chat.",
+    timing: "15 minutes. Open the course the handbook names. Do not paste a notebook into the repo.",
     notes: [
-      "Simulator first. Say out loud that a simulator run does not spend the 10 free minutes.",
-      "Do not launch a hardware job from this page.",
+      "Say the 10 minutes are Open Plan QPU time per rolling 28 days. Do not call them classroom minutes.",
+      "Do not launch a hardware job from this page. One person per team owns hardware jobs after the circuit is final.",
     ],
   },
   hetionet: {

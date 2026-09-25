@@ -14,25 +14,54 @@ import {
   COMPOSER_STEPS,
   ERROR_CLUES,
   EXECUTION_STEPS,
+  ACCOUNT_FACTS,
+  AWARD_TEMPLATE_LINE,
+  BEFORE_KICKOFF,
+  CANVAS_NOTE,
+  CHAMPIONSHIP_LINE,
+  COST_LINE,
+  DAY_ONE_ROLES,
+  EVERYONE_LINE,
+  FALL_FEST_LINKS,
   HACKATHON_GAP_NOTE,
   HACKATHON_GAPS,
   HETIONET_PIPELINE,
   HOME_DEPOT_TABLE,
-  JOIN_STEPS,
+  HOST_CONTACTS,
   HOUSE_EXAMPLE,
   INTRO_CHECKS,
   INTRO_FACILITATOR,
   INTRO_SECTIONS,
   INTRO_TITLE,
+  JOIN_FACTS,
+  JUDGING_LINE,
+  KICKOFF_LINES,
+  LIGHTNING_TALK_LINE,
   NEXT_STOPS,
+  OPEN_PLAN_MINUTES,
   PHASES,
+  PLAN_BLANK,
   PRACTICE,
   PRIMARY_SOURCES,
+  PROBLEM_SHAPES,
+  PROGRAM_BANNER,
+  PROGRAM_NAME,
   PROGRAM_TERMS,
-  PROPOSAL_STEPS,
-  QML_COURSE,
-  QML_NOTEBOOK,
+  PROJECT_KINDS,
+  PROMO_BLANK,
   PROGRESS_LINE,
+  QML_COURSE,
+  QML_FIT,
+  QML_KERNEL,
+  QML_OUTPUT_BLANK,
+  QML_PROJECTED,
+  SEPTEMBER_LINE,
+  SUBMISSION_STEPS,
+  TEAM_SIZE_LINE,
+  TRACKS,
+  USE_CASE_FIELDS,
+  VALID_SKEPTICAL,
+  WINNER_PACKET,
   PUNCTUATION,
   QUANTUM_CARDS,
   TRACE_STEPS,
@@ -453,30 +482,110 @@ function NextBody() {
   );
 }
 
+function FallFestLinkList() {
+  return (
+    <ul>
+      {FALL_FEST_LINKS.map((link) => (
+        <li key={link.href}>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function HackathonBody() {
   return (
     <div className="stack">
-      <p>
-        Robert Loredo, who leads this initiative, asked on 2026-09-25 for onboarding to Grant&apos;s hackathon: how to create a project proposal, and how someone else can join a project.
-      </p>
-      <h2>Create a project proposal</h2>
-      <p>
-        Use the <a href="/downloads/project-canvas.md">project canvas</a>. It is the proposal form this workshop already has. Fill the blank column. Leave the Hetionet model untrained, and do not call a result quantum advantage.
-      </p>
+      <p>{PROGRAM_NAME} Robert Loredo leads this initiative. These notes paraphrase the FAU materials read on 2026-09-25. They do not copy those files.</p>
+      <p>{PROGRAM_BANNER}</p>
+      <h2>Dates</h2>
+      <p>{KICKOFF_LINES}</p>
+      <p>{CHAMPIONSHIP_LINE}</p>
+      <p>{WINNER_PACKET}</p>
+      <h2>Before kickoff</h2>
       <ol>
-        {PROPOSAL_STEPS.map((step) => (
+        {BEFORE_KICKOFF.map((step) => (
           <li key={step}>{step}</li>
         ))}
       </ol>
-      <h2>Join a project</h2>
+      <p>{COST_LINE} The code-of-conduct link is still a local-organizer placeholder. Help is the unset chat link, plus Qiskit Slack and IBM Quantum docs.</p>
+      <h2>Two tracks on one team</h2>
+      <ul>
+        {TRACKS.map((track) => (
+          <li key={track}>{track}</li>
+        ))}
+      </ul>
+      <p>
+        Domain-track note: <a href="https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/">Entangled Solutions Group</a>.
+      </p>
+      <p>{EVERYONE_LINE}</p>
+      <h2>Accounts and the workshop pin</h2>
+      <ul>
+        {ACCOUNT_FACTS.map((fact) => (
+          <li key={fact}>{fact}</li>
+        ))}
+      </ul>
+      <p>{PLAN_BLANK}</p>
+      <h2>What a strong project is</h2>
+      <p>A strong project is one of these four. The materials say it is explicitly not a claim of quantum advantage. Kinds 1 and 4 are mostly non-code.</p>
       <ol>
-        {JOIN_STEPS.map((step) => (
+        {PROJECT_KINDS.map((kind) => (
+          <li key={kind}>{kind}</li>
+        ))}
+      </ol>
+      <h2>Three problem shapes</h2>
+      <ol>
+        {PROBLEM_SHAPES.map((shape) => (
+          <li key={shape}>{shape}</li>
+        ))}
+      </ol>
+      <p>{VALID_SKEPTICAL}</p>
+      <h2>Propose</h2>
+      <p>{CANVAS_NOTE}</p>
+      <ol>
+        {USE_CASE_FIELDS.map((field) => (
+          <li key={field}>{field}</li>
+        ))}
+      </ol>
+      <h2>Submit</h2>
+      <ol>
+        {SUBMISSION_STEPS.map((step) => (
           <li key={step}>{step}</li>
         ))}
       </ol>
-      <p>The workshop registration form records that you are attending. It is not a project roster.</p>
+      <h2>Join</h2>
+      <ul>
+        {JOIN_FACTS.map((fact) => (
+          <li key={fact}>{fact}</li>
+        ))}
+      </ul>
+      <p>The workshop registration form on this site records that you are attending this room. It is a different list from the unset Fall Fest registration link.</p>
+      <h2>Day-one roles</h2>
+      <ul>
+        {DAY_ONE_ROLES.map((role) => (
+          <li key={role}>{role}</li>
+        ))}
+      </ul>
+      <p>{LIGHTNING_TALK_LINE}</p>
+      <h2>Team size and judging</h2>
+      <p>{TEAM_SIZE_LINE}</p>
+      <p>{JUDGING_LINE}</p>
+      <p>{AWARD_TEMPLATE_LINE}</p>
+      <h2>Host contacts</h2>
+      <ul>
+        {HOST_CONTACTS.map((host) => (
+          <li key={host.name}>
+            {host.href ? <a href={host.href}>{host.name}</a> : host.name}. {host.detail}
+          </li>
+        ))}
+      </ul>
+      <p>Participant help email in the handbook is still {"{{ORGANIZER_EMAIL}}"}.</p>
+      <p>{SEPTEMBER_LINE}</p>
+      <h2>Links that are filled in</h2>
+      <FallFestLinkList />
       <aside className="placeholder">
-        <h2>Gap for Kevin</h2>
+        <h2>Still blank</h2>
         <p>{HACKATHON_GAP_NOTE}</p>
         <ul>
           {HACKATHON_GAPS.map((gap) => (
@@ -491,25 +600,33 @@ function HackathonBody() {
 function QmlBody() {
   return (
     <div className="stack">
-      <p>Robert Loredo, who leads this initiative, asked for a machine learning path with four highlights. IBM&apos;s course stays on IBM. This page links to it and does not copy it.</p>
-      <h2>1. Identify a good problem</h2>
-      <p>Start with one narrow question that already has a classical baseline. You can name the data, the metric, and what a disappointing score would still teach. The readiness page in this workshop already asks for that question. Hetionet is one example of the shape, not the assignment.</p>
-      <h2>2. What to implement</h2>
-      <p>Implement the first example in IBM&apos;s course, on a simulator, and keep the classical baseline your proposal named beside it.</p>
+      <p>Robert Loredo leads this initiative. IBM’s course and tutorials stay on IBM. This page links to them and does not copy them.</p>
+      <h2>A fit</h2>
+      <p>{QML_FIT}</p>
+      <p>{VALID_SKEPTICAL}</p>
+      <h2>What to study</h2>
       <ul>
         <li>
-          <a href={QML_COURSE}>Introduction to Quantum Machine Learning</a>
+          <a href={QML_COURSE}>Quantum machine learning</a>, the 10-hour course the handbook names for classification, kernels, and feature maps.
         </li>
         <li>
-          <a href={QML_NOTEBOOK}>Working notebook for that introduction</a>
+          <a href={QML_KERNEL}>Quantum kernel training</a>
+        </li>
+        <li>
+          <a href={QML_PROJECTED}>Projected quantum kernels</a>
         </li>
       </ul>
-      <p>The notebook link was checked on 2026-09-25. The file is not stored in this repo.</p>
-      <h2>3. What to do with the output</h2>
-      <p>Put the simulator result next to the classical baseline. Write what the numbers support. A higher score than a weak guess is not quantum advantage, and a biomedical example is not a clinical result. The Hetionet README is a short model of that kind of write-up. This page does not train that model.</p>
-      <h2>4. Simulator first</h2>
-      <p>Run on a simulator before any IBM Quantum system. Each person has only 10 free minutes. A simulator run does not spend those minutes.</p>
-      <p>The Bell lab&apos;s local StatevectorSampler is the workshop pattern for that simulator run. Open a hardware guide only after the simulator result is in hand.</p>
+      <h2>What to implement, and what to do with the output</h2>
+      <p>{QML_OUTPUT_BLANK}</p>
+      <h2>Simulator first, and the 10 minutes</h2>
+      <p>{OPEN_PLAN_MINUTES}</p>
+      <p>{PROMO_BLANK}</p>
+      <p>{PLAN_BLANK}</p>
+      <p>
+        Classroom accounts, as an organizer option: <a href="https://ibm.biz/classroom-account">ibm.biz/classroom-account</a>. Plan comparison:{" "}
+        <a href="https://quantum.cloud.ibm.com/docs/en/guides/plans-overview">plans overview</a>. Open Plan updates:{" "}
+        <a href="https://www.ibm.com/quantum/blog/open-plan-updates">open-plan-updates</a>.
+      </p>
     </div>
   );
 }
@@ -519,7 +636,7 @@ function HetionetBody() {
     <div className="stack">
       <p>
         Hetionet is a biomedical knowledge graph at <a href="https://het.io/">het.io</a>. The hybrid project is{" "}
-        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. This page introduces the pipeline. It does not train the model. Run any new experiment on a simulator first. A simulator run does not spend the 10 free minutes.
+        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. This page introduces the pipeline. It does not train the model. Run any new experiment on a simulator first. A StatevectorSampler check uses no QPU time. The 10 minutes are Open Plan QPU time per rolling 28-day window. No classroom-minute quota is stated.
       </p>
       <ol>
         {HETIONET_PIPELINE.map((step) => (

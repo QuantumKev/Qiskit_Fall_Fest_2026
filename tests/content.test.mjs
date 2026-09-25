@@ -104,14 +104,24 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
 });
 
 test("hackathon and machine learning stay inside known rules", () => {
-  assert.match(intro, /Grant's hackathon/);
-  assert.match(intro, /left blank on purpose/);
-  assert.match(intro, /10 free minutes/);
-  assert.match(intro, /simulator run does not spend those minutes/);
-  assert.match(intro, /quantum-machine-learning\/introduction/);
-  assert.match(intro, /introduction\.ipynb/);
+  assert.match(intro, /inaugural state championship/);
+  assert.match(intro, /October 1, 2026/);
+  assert.match(intro, /October 5/);
+  assert.match(intro, /This page does not choose/);
+  assert.match(intro, /Still blank/);
+  assert.match(intro, /rolling 28-day/);
+  assert.match(intro, /quantum-kernel-training/);
+  assert.match(intro, /projected-quantum-kernels/);
+  assert.match(intro, /\{\{REGISTRATION_LINK\}\}/);
+  assert.match(intro, /\{\{GITHUB_ORG\}\}/);
+  assert.doesNotMatch(intro, /introduction\.ipynb/);
   assert.doesNotMatch(intro, /judging criteria are/);
+  assert.doesNotMatch(intro, /team limit is \d/);
+  assert.doesNotMatch(intro, /classroom-minute quota is \d/);
   assert.doesNotMatch(modules, /team limit is \d/);
+  assert.doesNotMatch(intro, /\bmusic\b/i);
+  assert.doesNotMatch(intro, /\bsports\b/i);
+  assert.doesNotMatch(intro, /execute\(/);
 });
 
 test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
