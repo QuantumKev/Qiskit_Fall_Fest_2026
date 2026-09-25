@@ -108,6 +108,7 @@ test("the Assess and Build pointer sits between the Bell labs and Hetionet", () 
   const pointer = modules.indexOf('slug: "assess-build"');
   const hetionet = modules.indexOf('slug: "hetionet"');
   assert.ok(pythonNext > 0 && pointer > pythonNext && hetionet > pointer);
+  assert.match(modules, /title: "Next-Step Quantum Decision Guide"/);
   assert.match(modules, /chapter 7 of Quantum Readiness for Leaders/);
   assert.match(modules, /Then run Assess, then Build/);
   assert.match(modules, /live link for Assess and Build is still blank/);

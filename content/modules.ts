@@ -521,12 +521,12 @@ export const MODULES: Module[] = [
       misconceptions: ["Older tutorials call execute(). This lab uses the Qiskit 2.3 StatevectorSampler on purpose."],
     },
     nextSlug: "assess-build",
-    nextLabel: "Read chapter 7, then Assess and Build",
+    nextLabel: "Next-Step Quantum Decision Guide",
   },
   {
     slug: "assess-build",
     number: "06a",
-    title: "Read chapter 7, then Assess and Build",
+    title: "Next-Step Quantum Decision Guide",
     minutes: 15,
     summary: "After both Bell labs and before the Hetionet tour. The live link is still blank.",
     outcomes: [
