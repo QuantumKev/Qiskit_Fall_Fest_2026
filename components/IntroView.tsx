@@ -14,8 +14,11 @@ import {
   COMPOSER_STEPS,
   ERROR_CLUES,
   EXECUTION_STEPS,
+  HACKATHON_GAP_NOTE,
+  HACKATHON_GAPS,
   HETIONET_PIPELINE,
   HOME_DEPOT_TABLE,
+  JOIN_STEPS,
   HOUSE_EXAMPLE,
   INTRO_CHECKS,
   INTRO_FACILITATOR,
@@ -26,6 +29,9 @@ import {
   PRACTICE,
   PRIMARY_SOURCES,
   PROGRAM_TERMS,
+  PROPOSAL_STEPS,
+  QML_COURSE,
+  QML_NOTEBOOK,
   PROGRESS_LINE,
   PUNCTUATION,
   QUANTUM_CARDS,
@@ -447,12 +453,73 @@ function NextBody() {
   );
 }
 
+function HackathonBody() {
+  return (
+    <div className="stack">
+      <p>
+        Robert Loredo, who leads this initiative, asked on 2026-09-25 for onboarding to Grant&apos;s hackathon: how to create a project proposal, and how someone else can join a project.
+      </p>
+      <h2>Create a project proposal</h2>
+      <p>
+        Use the <a href="/downloads/project-canvas.md">project canvas</a>. It is the proposal form this workshop already has. Fill the blank column. Leave the Hetionet model untrained, and do not call a result quantum advantage.
+      </p>
+      <ol>
+        {PROPOSAL_STEPS.map((step) => (
+          <li key={step}>{step}</li>
+        ))}
+      </ol>
+      <h2>Join a project</h2>
+      <ol>
+        {JOIN_STEPS.map((step) => (
+          <li key={step}>{step}</li>
+        ))}
+      </ol>
+      <p>The workshop registration form records that you are attending. It is not a project roster.</p>
+      <aside className="placeholder">
+        <h2>Gap for Kevin</h2>
+        <p>{HACKATHON_GAP_NOTE}</p>
+        <ul>
+          {HACKATHON_GAPS.map((gap) => (
+            <li key={gap}>{gap}</li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  );
+}
+
+function QmlBody() {
+  return (
+    <div className="stack">
+      <p>Robert Loredo, who leads this initiative, asked for a machine learning path with four highlights. IBM&apos;s course stays on IBM. This page links to it and does not copy it.</p>
+      <h2>1. Identify a good problem</h2>
+      <p>Start with one narrow question that already has a classical baseline. You can name the data, the metric, and what a disappointing score would still teach. The readiness page in this workshop already asks for that question. Hetionet is one example of the shape, not the assignment.</p>
+      <h2>2. What to implement</h2>
+      <p>Implement the first example in IBM&apos;s course, on a simulator, and keep the classical baseline your proposal named beside it.</p>
+      <ul>
+        <li>
+          <a href={QML_COURSE}>Introduction to Quantum Machine Learning</a>
+        </li>
+        <li>
+          <a href={QML_NOTEBOOK}>Working notebook for that introduction</a>
+        </li>
+      </ul>
+      <p>The notebook link was checked on 2026-09-25. The file is not stored in this repo.</p>
+      <h2>3. What to do with the output</h2>
+      <p>Put the simulator result next to the classical baseline. Write what the numbers support. A higher score than a weak guess is not quantum advantage, and a biomedical example is not a clinical result. The Hetionet README is a short model of that kind of write-up. This page does not train that model.</p>
+      <h2>4. Simulator first</h2>
+      <p>Run on a simulator before any IBM Quantum system. Each person has only 10 free minutes. A simulator run does not spend those minutes.</p>
+      <p>The Bell lab&apos;s local StatevectorSampler is the workshop pattern for that simulator run. Open a hardware guide only after the simulator result is in hand.</p>
+    </div>
+  );
+}
+
 function HetionetBody() {
   return (
     <div className="stack">
       <p>
         Hetionet is a biomedical knowledge graph at <a href="https://het.io/">het.io</a>. The hybrid project is{" "}
-        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. This page introduces the pipeline. It does not train the model.
+        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. This page introduces the pipeline. It does not train the model. Run any new experiment on a simulator first. A simulator run does not spend the 10 free minutes.
       </p>
       <ol>
         {HETIONET_PIPELINE.map((step) => (
@@ -476,6 +543,8 @@ const BODIES: Record<IntroSlug, () => ReactElement> = {
   trace: TraceBody,
   practice: PracticeBody,
   "next-step": NextBody,
+  hackathon: HackathonBody,
+  qml: QmlBody,
   hetionet: HetionetBody,
 };
 

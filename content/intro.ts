@@ -38,6 +38,8 @@ export const INTRO_SECTIONS = [
   { slug: "trace", phase: "run", title: "Watch the program run", minutes: 15 },
   { slug: "practice", phase: "results", title: "Practice", minutes: 20 },
   { slug: "next-step", phase: "next", title: "Where to go next", minutes: 10 },
+  { slug: "hackathon", phase: "next", title: "Grant's hackathon", minutes: 15 },
+  { slug: "qml", phase: "next", title: "Quantum machine learning", minutes: 15 },
   { slug: "hetionet", phase: "next", title: "Where this can lead", minutes: 10 },
 ] as const;
 
@@ -522,6 +524,38 @@ export const PRIMARY_SOURCES: { title: string; href: string }[] = [
   { title: "Qolour statevector exhibit", href: "https://www.qolour.com/educator-course/statevector-exhibit" },
 ];
 
+export const QML_COURSE = "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning/introduction";
+
+export const QML_NOTEBOOK =
+  "https://quantum.cloud.ibm.com/endpoints-docs-learning/raw/learning/en/courses/quantum-machine-learning/introduction.ipynb";
+
+export const PROPOSAL_STEPS = [
+  "Open the project canvas already used in this workshop.",
+  "Write one question a Fall Fest-sized team can study.",
+  "Name the domain and the data you will actually use.",
+  "Name the classical baseline before you describe a quantum piece.",
+  "Say how you will score the result, and what decision that score would support.",
+  "Name the roles the canvas already lists. A team needs someone guarding the question, someone who can run a classical baseline, and someone who will not exaggerate the result.",
+  "Point at the Hetionet README if you want a worked comparison. Leave that model untrained.",
+];
+
+export const JOIN_STEPS = [
+  "Read a proposal that already names its question and its open roles.",
+  "Pick one role from the list on the project canvas.",
+  "Tell the proposal’s author which role you are taking, and whether you bring the domain, the Python, the baseline, or the write-up.",
+];
+
+export const HACKATHON_GAP_NOTE =
+  "These facts are not in the repo or in Loredo's note. They are left blank on purpose.";
+
+export const HACKATHON_GAPS = [
+  "The public name of the event, if “Grant's hackathon” is not the name on the poster.",
+  "The dates.",
+  "The judging criteria.",
+  "Any limit on team size.",
+  "Where a proposal is posted, and how another person asks to join.",
+];
+
 export const HETIONET_PIPELINE = [
   "Define the problem",
   "Prepare data",
@@ -635,6 +669,32 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
       why: "Class and method questions belong on the API reference. Concepts belong in IBM Quantum Learning.",
     },
   ],
+  hackathon: [
+    {
+      question: "What can you complete for Grant's hackathon with the pages already in this workshop?",
+      options: [
+        "A proposal on the project canvas, with a classical baseline and named roles",
+        "The judging rubric and the team-size cap",
+        "The event dates",
+        "A trained Hetionet model",
+      ],
+      answer: 0,
+      why: "The canvas, the baseline, and the role list are already in this repo. Dates, judging, and team limits are not.",
+    },
+  ],
+  qml: [
+    {
+      question: "When does a run spend the 10 free minutes?",
+      options: [
+        "Every StatevectorSampler run spends them",
+        "A simulator run spends them",
+        "A simulator run does not spend them. The minutes are for an IBM Quantum system.",
+        "Printing a histogram spends them",
+      ],
+      answer: 2,
+      why: "Run on a simulator first. Each person has only 10 free minutes, and a simulator run does not spend those minutes.",
+    },
+  ],
   hetionet: [
     {
       question: "Which reading matches the Hetionet README?",
@@ -690,6 +750,20 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   "next-step": {
     timing: "10 minutes. Each person leaves with one link.",
     notes: ["Read Qolour video titles from the live menu. Do not paste the course."],
+  },
+  hackathon: {
+    timing: "15 minutes. Fill one canvas row together. Stop at the labeled gaps.",
+    notes: [
+      "Robert Loredo leads this initiative. Cite him by name and role. Do not read from the book.",
+      "Do not invent dates, judging criteria, or a team limit.",
+    ],
+  },
+  qml: {
+    timing: "15 minutes. Open IBM’s course. Do not paste the notebook into the repo or the chat.",
+    notes: [
+      "Simulator first. Say out loud that a simulator run does not spend the 10 free minutes.",
+      "Do not launch a hardware job from this page.",
+    ],
   },
   hetionet: {
     timing: "10 minutes. Optional.",

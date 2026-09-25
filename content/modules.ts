@@ -691,6 +691,8 @@ export const MODULES: Module[] = [
           "Workforce leader, business leader, or project manager: use-case selection and team design. Portfolio: a one-page brief using the nine-step pipeline. Not a trained model.",
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
+          "Machine learning: follow /intro/qml. Use IBM’s quantum machine learning introduction and its notebook. Simulator first. Each person has only 10 free minutes, and a simulator run does not spend those minutes.",
+          "Grant's hackathon: write a proposal on the project canvas and name an open role. The joining page is /intro/hackathon. Dates, judging, and team limits are not in this repo.",
         ],
       },
     ],

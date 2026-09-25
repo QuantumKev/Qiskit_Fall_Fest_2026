@@ -103,6 +103,17 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
   assert.doesNotMatch(intro, /\bsports\b/i);
 });
 
+test("hackathon and machine learning stay inside known rules", () => {
+  assert.match(intro, /Grant's hackathon/);
+  assert.match(intro, /left blank on purpose/);
+  assert.match(intro, /10 free minutes/);
+  assert.match(intro, /simulator run does not spend those minutes/);
+  assert.match(intro, /quantum-machine-learning\/introduction/);
+  assert.match(intro, /introduction\.ipynb/);
+  assert.doesNotMatch(intro, /judging criteria are/);
+  assert.doesNotMatch(modules, /team limit is \d/);
+});
+
 test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
   assert.match(exercise, /<YOUR_PRIVATE_API_KEY>/);
   assert.match(exercise, /<YOUR_CLASSROOM_INSTANCE_CRN>/);

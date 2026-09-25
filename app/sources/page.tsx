@@ -17,6 +17,11 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
     note: "How a classroom account differs from a personal login.",
   },
   {
+    title: "IBM quantum machine learning introduction",
+    href: "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning/introduction",
+    note: "Linked only, including the working notebook at the learning raw path checked on 2026-09-25. This repo does not store that course or that notebook.",
+  },
+  {
     title: "Qolour educator course",
     href: "https://www.qolour.com/educator-course",
     note: "Linked only. Kevin’s videos and the statevector exhibit stay on Qolour. This repo does not copy that course.",
