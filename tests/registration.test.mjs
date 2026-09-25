@@ -53,9 +53,9 @@ test("live registration sets the waiting status", () => {
   const parsed = validateRegistration({ ...valid, liveWorkshop: true });
   assert.equal(parsed.ok, true);
   const records = upsertRegistration(parsed.value, []);
-  assert.equal(records[0].status, "Waiting for Classroom Invitation");
-  const updated = updateStatus(records, records[0].id, "Invitation sent");
-  assert.equal(updated[0].status, "Invitation sent");
+  assert.equal(records[0].status, "Simulator first");
+  const updated = updateStatus(records, records[0].id, "Connection verified");
+  assert.equal(updated[0].status, "Connection verified");
 });
 
 test("the store file round-trips outside the repo", () => {

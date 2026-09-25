@@ -187,7 +187,31 @@ pre { white-space: pre-wrap; margin: 12px 0 0; }
 
 .check { display: grid; gap: 8px; margin: 0 0 12px; }
 
-.check label, .survey label, .complete, .filters label { display: grid; gap: 6px; }
+.check label {
+  display: grid;
+  grid-template-columns: auto minmax(0, max-content);
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  width: auto;
+}
+
+.check label input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.2em 0 0;
+}
+
+.survey label, .complete, .filters label { display: grid; gap: 6px; }
+
+.term-card, .card-grid > * { min-width: 0; }
+
+.term-card h2, .card-grid h2 {
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.25;
+  max-width: none;
+  overflow-wrap: anywhere;
+}
 
 .survey { display: grid; gap: 14px; }
 

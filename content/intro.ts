@@ -33,9 +33,8 @@ export const INTRO_SECTIONS = [
   { slug: "language", phase: "language", title: "What are Python and Qiskit?", minutes: 20 },
   { slug: "execution", phase: "language", title: "How Python executes code", minutes: 15 },
   { slug: "vocabulary", phase: "language", title: "Quantum vocabulary", minutes: 20 },
-  { slug: "composer", phase: "visual", title: "Exercise 2: Composer lab", minutes: 35 },
-  { slug: "python", phase: "read", title: "Bell-state Python lab", minutes: 30 },
-  { slug: "trace", phase: "run", title: "Watch the program run", minutes: 15 },
+  { slug: "qubi-demo", phase: "visual", title: "Qubi demo", minutes: 10 },
+  { slug: "bell", phase: "visual", title: "Bell lab", minutes: 60 },
   { slug: "practice", phase: "results", title: "Practice", minutes: 20 },
   { slug: "next-step", phase: "next", title: "Where to go next", minutes: 10 },
   { slug: "hackathon", phase: "next", title: "Fall Fest projects", minutes: 20 },
@@ -228,7 +227,7 @@ export const QUANTUM_CARDS: {
   { term: "Shot", glossaryTerm: "Shot", labWhy: "shots=1024 repeats the ideal measurement 1024 times.", doc: "https://quantum.cloud.ibm.com/docs/en/api/qiskit/primitives", docLabel: "Qiskit primitives" },
   { term: "Counts", glossaryTerm: "Counts", labWhy: "get_counts() returns how many shots landed on each bitstring.", doc: "https://quantum.cloud.ibm.com/docs/en/api/qiskit/primitives", docLabel: "Qiskit primitives" },
   { term: "Histogram", glossaryTerm: "Histogram", labWhy: "Composer draws the counts as bars. In the ideal Bell lab, the tall bars are 00 and 11.", doc: "https://quantum.cloud.ibm.com/docs/en/guides/composer", docLabel: "IBM Quantum Composer" },
-  { term: "Simulator", glossaryTerm: "Simulator", labWhy: "StatevectorSampler is a local ideal simulator. It is the path to use while a classroom invitation is pending.", doc: "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler", docLabel: "StatevectorSampler" },
+  { term: "Simulator", glossaryTerm: "Simulator", labWhy: "StatevectorSampler is a local ideal simulator. The Bell lab starts there. A later hardware job uses Open Plan QPU time.", doc: "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler", docLabel: "StatevectorSampler" },
   { term: "QPU", glossaryTerm: "Quantum processing unit or QPU", labWhy: "A QPU is optional in this workshop. The ideal lab does not submit a hardware job.", doc: "https://quantum.cloud.ibm.com/docs/en/guides/hello-world", docLabel: "First circuit on hardware" },
   { term: "Noise", glossaryTerm: "Noise", labWhy: "Hardware can show a few 01 or 10 counts. The ideal sampler should not.", doc: "https://quantum.cloud.ibm.com/docs/en/guides/hello-world", docLabel: "First circuit on hardware" },
   { term: "Backend", glossaryTerm: "Backend", labWhy: "The sampler is the local backend for this lab. A named IBM backend is a later choice.", doc: "https://quantum.cloud.ibm.com/docs/en/guides/transpile", docLabel: "Transpilation" },
@@ -293,7 +292,7 @@ export const COMPOSER_STEPS: { title: string; action: string; pause: string }[] 
   },
   {
     title: "Run or simulate",
-    action: "Use the ideal simulation option Composer offers today. A hardware run is optional and depends on the classroom plan.",
+    action: "Use the ideal simulation option Composer offers today. A later hardware run uses the Open Plan: 10 minutes of QPU time per 28-day window. This workshop does not promise more minutes.",
     pause: "Will 1024 shots land on exactly 512 and 512?",
   },
   {
@@ -508,7 +507,7 @@ export const NEXT_STOPS: { situation: string; destination: string; href: string 
   { situation: "My code produces an error", destination: "Read the error, verify the installed version, and check the API documentation", href: "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler" },
   { situation: "I want to inspect the open-source code", destination: "Qiskit GitHub", href: "https://github.com/Qiskit/qiskit" },
   { situation: "I want to run on hardware", destination: "IBM’s first-circuit-on-hardware guide", href: "https://quantum.cloud.ibm.com/docs/en/guides/hello-world" },
-  { situation: "I need foundational preparation", destination: "Kevin’s Qolour videos and educator resources. Read the video titles from the live course menu.", href: "https://www.qolour.com/educator-course" },
+  { situation: "I need foundational preparation", destination: "The Qolour educator course. Read the video titles from the live course menu.", href: "https://www.qolour.com/educator-course" },
 ];
 
 export const PRIMARY_SOURCES: { title: string; href: string }[] = [
@@ -538,7 +537,6 @@ export const FALL_FEST_LINKS = [
   { label: "Domain-track note", href: "https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/" },
   { label: "Plan comparison", href: "https://quantum.cloud.ibm.com/docs/en/guides/plans-overview" },
   { label: "Open Plan updates", href: "https://www.ibm.com/quantum/blog/open-plan-updates" },
-  { label: "Classroom accounts", href: "https://ibm.biz/classroom-account" },
 ];
 
 export const USE_CASE_FIELDS = [
@@ -586,7 +584,7 @@ export const HACKATHON_GAPS = [
   "Judging weights, a score sheet, and who judges.",
   "Which local kickoff date applies. October 1 and October 5 both appear. This page does not choose.",
   "State championship time and room on November 13.",
-  "Whether participants will use the Open Plan or a classroom account. No classroom-minute quota is stated.",
+  "Extra QPU minutes. This workshop uses the Open Plan only: 10 minutes per 28-day window, and it does not promise more.",
   "Whether the extra 180 Open Plan minutes are still offered.",
   "Non-student eligibility.",
   "Submission deadline. The files still say {{SUBMISSION_DEADLINE}}.",
@@ -635,7 +633,7 @@ export const ACCOUNT_FACTS = [
 ];
 
 export const PLAN_BLANK =
-  "Still blank: whether this room will use the Open Plan or a classroom account. The files attach no minute quota to classroom accounts. This workshop’s Exercise 1 still follows a classroom invitation and says you do not create a separate instance on that path.";
+  "This workshop uses the IBM Quantum Open Plan only. That plan is 10 minutes of QPU time per 28-day window. The Bell lab starts on a simulator and does not spend that window. This workshop does not promise more minutes.";
 
 export const PROBLEM_SHAPES = [
   "Optimization: scheduling, routing, and portfolios. Classical solvers are already strong, so name a baseline.",
@@ -693,7 +691,7 @@ export const OPEN_PLAN_MINUTES =
   "The Open Plan gives up to 10 minutes of QPU time per rolling 28-day window. Usage is on the dashboard and the Workloads page. Iterate on a simulator, and send a circuit to hardware only after it is final. A StatevectorSampler setup check uses no account and no QPU time. QiskitRuntimeService(channel=\"local\") is described as free, instant, and unlimited. Hardware selection after that is least_busy(operational=True, simulator=False). One person per team owns those hardware jobs. An unattended loop burns the quota.";
 
 export const PROMO_BLANK =
-  "Still blank: whether an extra 180 minutes over 12 months for active Open Plan users are still offered. The handbook says to check the Open Plan updates page.";
+  "This workshop does not promise minutes beyond the Open Plan window of 10 minutes per 28 days.";
 
 export const QML_FIT =
   "Shape 3 is the learning fit: scarce, expensive data and a subtle signal, including fraud, anomaly, classification, generative modeling, and risk. The catalog’s industry example is hybrid ensemble classification for grid stability.";
@@ -744,6 +742,27 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
       ],
       answer: 1,
       why: "Names come from cells you have already run.",
+    },
+  ],
+  "qubi-demo": [
+    {
+      question: "Where is the Qubi demo script?",
+      options: [
+        "Written out on this page",
+        "Not here yet. The exact demo arrives this weekend.",
+        "Copied from the Qolour course into this repo",
+        "A required hackathon submission",
+      ],
+      answer: 1,
+      why: "This page is a placeholder. It links to Qolour and does not copy the course.",
+    },
+  ],
+  bell: [
+    {
+      question: "Which ideal outcomes should dominate?",
+      options: ["01 and 10", "00 and 11", "only 00", "all four equally"],
+      answer: 1,
+      why: "H then CX, with this control and target, puts amplitude on |00⟩ and |11⟩. Build that in Composer or in Python. The local simulator comes before any Open Plan hardware job.",
     },
   ],
   vocabulary: [
@@ -831,13 +850,13 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
     {
       question: "Where do the FAU materials put the 10 minutes?",
       options: [
-        "On classroom accounts, as a quota",
+        "As extra minutes a facilitator can add on the Open Plan",
         "On the Open Plan: up to 10 minutes of QPU time per rolling 28-day window. A StatevectorSampler check uses no QPU time.",
         "On every simulator run",
         "As a team-size rule",
       ],
       answer: 1,
-      why: "The handbook attaches that window to the Open Plan. It does not state a classroom-minute quota. The setup check uses StatevectorSampler and no QPU time.",
+      why: "This workshop uses the Open Plan window of 10 minutes of QPU time per 28 days. A StatevectorSampler check uses no QPU time. No extra minutes are promised.",
     },
   ],
   hetionet: [
@@ -876,17 +895,13 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
     timing: "20 minutes. Use the cards the Bell lab needs.",
     notes: ["Say that a qubit is not simply both 0 and 1.", "Print the sheet if the room wants paper."],
   },
-  composer: {
-    timing: "35 minutes. Pause for each prediction.",
-    notes: ["Check control versus target.", "Ideal simulation is enough. Do not wait out a long hardware queue."],
+  "qubi-demo": {
+    timing: "10 minutes. The script is not in this guide.",
+    notes: ["Kevin opens with the Qubi demo. Andrew or Sohum may be on the call. The exact demo arrives this weekend."],
   },
-  python: {
-    timing: "30 minutes. One line at a time.",
-    notes: ["The tested sampler line is Qiskit 2.3.1.", "Do not introduce a real API token in this notebook."],
-  },
-  trace: {
-    timing: "15 minutes. Step with the arrow keys.",
-    notes: ["Ask what error appears if this step is skipped before you reveal it."],
+  bell: {
+    timing: "One sitting. Composer, then the local sampler, then the line trace.",
+    notes: ["Check control versus target.", "Ideal simulation is enough. Open Plan hardware is later, and it is 10 minutes per 28 days."],
   },
   practice: {
     timing: "20 minutes. Hints stay closed until a pair asks.",
@@ -906,12 +921,12 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   qml: {
     timing: "15 minutes. Open the course the handbook names. Do not paste a notebook into the repo.",
     notes: [
-      "Say the 10 minutes are Open Plan QPU time per rolling 28 days. Do not call them classroom minutes.",
+      "Say the 10 minutes are Open Plan QPU time per rolling 28 days. Do not promise more minutes.",
       "Do not launch a hardware job from this page. One person per team owns hardware jobs after the circuit is final.",
     ],
   },
   hetionet: {
     timing: "10 minutes. Optional.",
-    notes: ["Do not train the model.", "The README figures were rechecked on 2026-09-25 and still match the 2026-09-23 table."],
+    notes: ["Do not train the model.", "The scores are the paper’s Table II. The comparison is not quantum advantage and not a clinical result."],
   },
 };

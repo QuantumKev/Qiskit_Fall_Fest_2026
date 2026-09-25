@@ -9,12 +9,7 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
   {
     title: "IBM Quantum Platform",
     href: "https://quantum.cloud.ibm.com/",
-    note: "Sign-in, Composer, Learning, and documentation links used in Modules 1, 5, and 9. Recheck the morning of the workshop. This site never collects passwords, API tokens, or classroom CRNs.",
-  },
-  {
-    title: "IBM classroom accounts",
-    href: "https://quantum.cloud.ibm.com/docs/en/guides/classroom-accounts",
-    note: "How a classroom account differs from a personal login.",
+    note: "Sign-in, Composer, Learning, and documentation links used in the journey. Recheck the morning of the workshop. This site never collects passwords or API tokens. Participants use the Open Plan: 10 minutes of QPU time per 28-day window.",
   },
   {
     title: "IBM quantum machine learning course",

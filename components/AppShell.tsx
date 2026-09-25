@@ -18,14 +18,14 @@ function Header() {
           Fall Fest 2026
         </Link>
         <nav className="header-nav" aria-label="Primary">
+          <Link href="/register" aria-current={pathname === "/register" ? "page" : undefined}>
+            Register
+          </Link>
           <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
             Journey
           </Link>
           <Link href="/intro" aria-current={pathname.startsWith("/intro") ? "page" : undefined}>
             Intro
-          </Link>
-          <Link href="/register" aria-current={pathname === "/register" ? "page" : undefined}>
-            Register
           </Link>
           <Link href="/glossary" aria-current={pathname === "/glossary" ? "page" : undefined}>
             Glossary

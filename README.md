@@ -16,7 +16,7 @@ Open http://127.0.0.1:3010 for a workshop session (`npx next dev -H 127.0.0.1 -p
 
 The beginner path is `/intro`. Exercise 1 is `/learn/setup` and the registration form is `/register`. Registration responses stay on the server in a gitignored file and require `ORGANIZER_TOKEN` from `.env.example`. Do not commit API keys, CRNs, or notebook outputs that contain them.
 
-The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Do not put an API token, password, or classroom CRN in the notebook or in this site.
+The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Do not put an API token or password in the notebook or in this site. Participants use the IBM Quantum Open Plan: 10 minutes of QPU time per 28-day window. The workshop does not promise more minutes.
 
 ## What is here
 
@@ -37,7 +37,7 @@ Hetionet test PR-AUC, from that project README: stacking (Pauli) 0.7987, random 
 ## Facilitator launch check
 
 - Click every IBM URL the morning of the event.
-- Confirm the classroom invitation email and the account name you will read aloud. Do not put the CRN on a slide.
+- The room uses the Open Plan. Do not put a CRN on a slide. Do not promise more than 10 minutes of QPU time per 28 days.
 - Name the Qolour video titles from the live course menu.
 - Confirm the welcome wording with Kevin before reading it.
 - Keep a side table for sign-in problems so the room can reach Composer.

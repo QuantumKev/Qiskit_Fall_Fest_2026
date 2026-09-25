@@ -23,6 +23,10 @@ export default async function RegisterPage() {
       <p className="lede">
         This form collects the email you will use with IBM Cloud. It does not collect passwords, API keys, CRNs, or payment cards. Responses are visible only to organizers.
       </p>
+      <aside className="placeholder">
+        <h2>Official registration link</h2>
+        <p>Still blank. Grant will send the real registration link and the process. This page does not invent them. The form below is the workshop attendance form.</p>
+      </aside>
       <details className="trouble">
         <summary>Share this form</summary>
         <p>

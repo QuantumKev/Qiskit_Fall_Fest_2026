@@ -243,7 +243,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "IBM Quantum QPUs execute transpiled circuits on superconducting qubits. Results include noise from the device and the environment.",
     analogyDomain: "Home Depot",
     analogy: "The real job site, not the drawing on the counter. Weather, tools, and materials affect the outcome. The drawing is still the plan.",
-    why: "If your classroom account can reach hardware, you compare the ideal histogram with the QPU histogram.",
+    why: "If you later run the same circuit on hardware, you compare the ideal histogram with the QPU histogram. That job uses Open Plan time.",
     misconception: "A QPU replaces the need for classical computers. Real projects use both. The Hetionet example is hybrid on purpose.",
   },
   {
@@ -353,7 +353,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "It is an empirical and problem-specific claim. This workshop does not attempt it, and the Hetionet results are not presented as advantage.",
     analogyDomain: "Sports",
     analogy: "Winning a championship, not winning a scrimmage against a partial roster.",
-    why: "Participants should be able to hear the phrase and not treat a classroom Bell state as an example of it.",
+    why: "Participants should be able to hear the phrase and not treat this Bell lab as an example of it.",
     misconception: "Any circuit that runs on a QPU is quantum advantage. Running is access. Advantage is a comparative claim.",
   },
   {

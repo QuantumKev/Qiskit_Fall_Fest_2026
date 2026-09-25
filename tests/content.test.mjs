@@ -7,6 +7,7 @@ const modules = readFileSync(new URL("../content/modules.ts", import.meta.url), 
 const notebook = readFileSync(new URL("../notebooks/bell_state_lab.ipynb", import.meta.url), "utf8");
 const intro = readFileSync(new URL("../content/intro.ts", import.meta.url), "utf8");
 const exercise = readFileSync(new URL("../content/exercise1.ts", import.meta.url), "utf8");
+const hetionetWalk = readFileSync(new URL("../content/hetionetWalk.ts", import.meta.url), "utf8");
 
 const required = [
   "Classical bit",
@@ -82,9 +83,10 @@ test("bell lab uses the Qiskit 2.3 sampler and no token", () => {
 
 test("hetionet metrics stay the published ones", () => {
   for (const score of ["0.7987", "0.7838", "0.7807", "0.7408", "0.7216"]) {
-    assert.ok(modules.includes(score));
+    assert.ok(hetionetWalk.includes(score));
   }
-  assert.match(modules, /not quantum advantage/i);
+  assert.match(hetionetWalk, /not quantum advantage/i);
+  assert.match(hetionetWalk, /not a clinical result/);
 });
 
 test("verification date is recorded", () => {
@@ -111,9 +113,11 @@ test("the Assess and Build pointer sits between the Bell labs and Hetionet", () 
   assert.match(modules, /title: "Next-Step Quantum Decision Guide"/);
   assert.match(modules, /chapter 7 of Quantum Readiness for Leaders/);
   assert.match(modules, /Then run Assess, then Build/);
-  assert.match(modules, /live link for Assess and Build is still blank/);
-  assert.doesNotMatch(modules, /qgg-quantum-readiness-os/);
+  assert.match(modules, /qgg-quantum-readiness-os\/tree\/cursor\/optimization-readiness-engine-26a9\/modules\/optimization-readiness-engine/);
+  assert.match(modules, /not live yet/);
   assert.doesNotMatch(modules, /drive\.google/i);
+  assert.doesNotMatch(modules, /Quantum For the Qulture/);
+  assert.doesNotMatch(modules, /classroom invitation/i);
 });
 
 test("hackathon and machine learning stay inside known rules", () => {
@@ -130,7 +134,11 @@ test("hackathon and machine learning stay inside known rules", () => {
   assert.doesNotMatch(intro, /introduction\.ipynb/);
   assert.doesNotMatch(intro, /judging criteria are/);
   assert.doesNotMatch(intro, /team limit is \d/);
-  assert.doesNotMatch(intro, /classroom-minute quota is \d/);
+  assert.doesNotMatch(intro, /classroom/i);
+  assert.doesNotMatch(exercise, /Quantum For the Qulture/);
+  assert.match(modules, /0\.7987/);
+  assert.match(modules, /not quantum advantage/i);
+  assert.match(modules, /not a clinical result/);
   assert.doesNotMatch(modules, /team limit is \d/);
   assert.doesNotMatch(intro, /\bmusic\b/i);
   assert.doesNotMatch(intro, /\bsports\b/i);
@@ -139,7 +147,8 @@ test("hackathon and machine learning stay inside known rules", () => {
 
 test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
   assert.match(exercise, /<YOUR_PRIVATE_API_KEY>/);
-  assert.match(exercise, /<YOUR_CLASSROOM_INSTANCE_CRN>/);
+  assert.match(exercise, /<YOUR_OPEN_PLAN_CRN>/);
+  assert.doesNotMatch(exercise, /classroom/i);
   assert.doesNotMatch(exercise, /crn:v1/);
   assert.match(exercise, /service desk/);
 });
