@@ -142,10 +142,15 @@ export const MODULES: Module[] = [
   {
     slug: "setup",
     number: "01",
-    title: "Account and technology setup",
-    minutes: 25,
-    summary: "Sign in to IBM Quantum, accept the classroom invitation when it arrives, and open Composer.",
-    outcomes: ["Sign in to the platform.", "Tell a classroom account from a personal login.", "See a circuit canvas before the lab."],
+    title: "Exercise 1: Get connected to IBM Quantum",
+    minutes: 40,
+    summary: "Register, accept the classroom invitation, find the assigned instance, and keep the API key on a trusted computer.",
+    outcomes: [
+      "Submit the private registration form.",
+      "Sign in with the invited email.",
+      "Find the classroom instance without pasting the CRN into chat.",
+      "Save an API key only on a trusted computer, or use the simulator path while the invitation is pending.",
+    ],
     sections: [
       {
         heading: "Check the live screen",
@@ -515,6 +520,71 @@ export const MODULES: Module[] = [
       expected: ["Qubit 0. Use a 01 example on the board, because 00 and 11 hide the convention."],
       misconceptions: ["Older tutorials call execute(). This lab uses the Qiskit 2.3 StatevectorSampler on purpose."],
     },
+    nextSlug: "assess-build",
+    nextLabel: "Next-Step Quantum Decision Guide",
+  },
+  {
+    slug: "assess-build",
+    number: "06a",
+    title: "Next-Step Quantum Decision Guide",
+    minutes: 15,
+    summary: "After both Bell labs and before the Hetionet tour. The live link is still blank.",
+    outcomes: [
+      "Name the next reading: chapter 7 of Quantum Readiness for Leaders.",
+      "Say what Assess does and what Build returns.",
+      "Leave the live link blank until a participant-facing address exists.",
+    ],
+    sections: [
+      {
+        heading: "After both Bell labs",
+        paragraphs: [
+          "Composer was the first Bell lab. Python rebuilt the same circuit with a local statevector sampler and no API token. This sitting is next. The Hetionet tour comes after it.",
+          "Read chapter 7 of Quantum Readiness for Leaders. Then run Assess, then Build. This page cites the book by title and chapter only. It stores no chapter text, diagrams, page numbers, or Drive file.",
+        ],
+      },
+      {
+        heading: "What Assess is",
+        paragraphs: [
+          "Assess is a browser session about one real problem. The cards ask what kind of problem it is, which methods are worth considering, whether quantum computing belongs in the next step, and what evidence would justify going further. Answers stay in the browser and are not sent anywhere. The recommendation is a named rule over those answers.",
+        ],
+      },
+      {
+        heading: "What Build is",
+        paragraphs: [
+          "Build turns those same answers into working documents you can download as Markdown: an optimization readiness summary, a problem statement, a classical baseline plan, a QUBO readiness assessment, a benchmark plan, a bounded pilot plan, and a next-step roadmap.",
+          "A team that already has a project idea uses Assess, then Build. A team that does not yet have a decision uses Learn or the short Demo.",
+        ],
+      },
+      {
+        heading: "Live link",
+        paragraphs: [
+          "The live link for Assess and Build is still blank. No participant-facing address is available to put on this page.",
+        ],
+      },
+    ],
+    checks: [
+      {
+        question: "What do you do after both Bell labs and before the Hetionet tour?",
+        options: [
+          "Train the Hetionet model",
+          "Read chapter 7 of Quantum Readiness for Leaders, then run Assess and Build",
+          "Open a public engine address printed on this page",
+          "Skip to a hardware job",
+        ],
+        answer: 1,
+        why: "The live link is still blank. The instruction is the chapter, then Assess, then Build.",
+      },
+    ],
+    facilitator: {
+      timing: "15 minutes on this page. The Demo path is about six minutes and is for showing the module, not for assessing a live problem.",
+      notes: [
+        "Cite Quantum Readiness for Leaders by title and chapter 7 only. Leave the chapter text and any Drive file out of the room.",
+        "The live link is still blank. Leave it blank on the slide.",
+      ],
+      questions: ["What problem will you take into Assess?"],
+      expected: ["A decision they can say out loud, or a stop if they do not have one yet. That second group uses Learn or the Demo."],
+      misconceptions: ["A Bell histogram is a reason to book quantum time. Assess asks for evidence before that step."],
+    },
     nextSlug: "hetionet",
     nextLabel: "See a full project example",
   },
@@ -605,7 +675,7 @@ export const MODULES: Module[] = [
         heading: "What is sourced, and what is not",
         paragraphs: [
           "Robert Loredo leads this initiative. His book, Quantum Readiness for Leaders, is a strategic resource for the conversation. This page does not copy its paragraphs, questions, diagrams, tables, or framework layout.",
-          "No chapter or page notes from the book are stored in this repository, so none are invented.",
+          "Chapter 7 is named on the sitting between the Bell labs and the Hetionet tour. This repository stores no chapter text, diagrams, page numbers, or Drive file.",
           "Loredo’s theme, stated at the level of a citation rather than an excerpt: leaders prepare strategy, technology, talent, and risk before they chase a tool. Kevin’s teaching interpretation for this room: a person is ready to continue when they can name a role and a next resource. Quantum Global Group’s original piece is the Hetionet pipeline and the reflection prompts below. IBM supplies the platform, Composer, Learning, and Qiskit documentation.",
         ],
       },
@@ -686,6 +756,8 @@ export const MODULES: Module[] = [
           "Workforce leader, business leader, or project manager: use-case selection and team design. Portfolio: a one-page brief using the nine-step pipeline. Not a trained model.",
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
+          "Machine learning: follow /intro/qml. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. Iterate on a simulator. Open Plan QPU time is up to 10 minutes per rolling 28-day window. No classroom-minute quota is stated.",
+          "Fall Fest projects: follow /intro/hackathon. The public program name is the FAU-hosted Qiskit Fall Fest 2026, inaugural state championship. October 1 and October 5 both appear as kickoff lines. This page does not choose. Grant’s event name, campus, registration URL, and GitHub org stay blank.",
         ],
       },
     ],

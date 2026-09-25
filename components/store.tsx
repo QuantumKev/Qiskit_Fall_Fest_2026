@@ -17,6 +17,7 @@ type Store = {
   setMode: (mode: Mode) => void;
   done: string[];
   toggleDone: (slug: string) => void;
+  markDone: (slug: string) => void;
   survey: Survey;
   saveSurvey: (survey: Survey) => void;
 };
@@ -70,13 +71,22 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     });
   }
 
+  function markDone(slug: string) {
+    setDone((current) => {
+      if (current.includes(slug)) return current;
+      const next = [...current, slug];
+      localStorage.setItem("qff-progress", JSON.stringify(next));
+      return next;
+    });
+  }
+
   function saveSurvey(next: Survey) {
     setSurvey(next);
     localStorage.setItem("qff-survey", JSON.stringify(next));
   }
 
   return (
-    <ProgressContext.Provider value={{ ready, mode, setMode, done, toggleDone, survey, saveSurvey }}>
+    <ProgressContext.Provider value={{ ready, mode, setMode, done, toggleDone, markDone, survey, saveSurvey }}>
       {children}
     </ProgressContext.Provider>
   );

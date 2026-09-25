@@ -1,0 +1,4 @@
+# Optional connection package for Exercise 1 on a trusted computer.
+# Import checked on 2026-09-25 with qiskit 2.3.1. The Bell lab does not import this package.
+# IBM's save-credentials page asks for qiskit-ibm-runtime 0.42 or later.
+qiskit-ibm-runtime==0.50.0

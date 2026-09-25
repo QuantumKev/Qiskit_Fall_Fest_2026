@@ -2,6 +2,11 @@ import { LAST_VERIFIED } from "@/content/modules";
 
 const SOURCES: { title: string; href?: string; note: string }[] = [
   {
+    title: "Introduction to Qiskit",
+    href: "/intro",
+    note: "Beginner guide added for Fall Fest. Programming analogies on that path use the Home Depot table. Quantum definitions stay technical. Registration responses are not listed here.",
+  },
+  {
     title: "IBM Quantum Platform",
     href: "https://quantum.cloud.ibm.com/",
     note: "Sign-in, Composer, Learning, and documentation links used in Modules 1, 5, and 9. Recheck the morning of the workshop. This site never collects passwords, API tokens, or classroom CRNs.",
@@ -10,6 +15,26 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
     title: "IBM classroom accounts",
     href: "https://quantum.cloud.ibm.com/docs/en/guides/classroom-accounts",
     note: "How a classroom account differs from a personal login.",
+  },
+  {
+    title: "IBM quantum machine learning course",
+    href: "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning",
+    note: "The 10-hour course named in the FAU handbook for classification, kernels, and feature maps. Linked only. This repo does not store the course.",
+  },
+  {
+    title: "Quantum kernel training",
+    href: "https://quantum.cloud.ibm.com/docs/en/tutorials/quantum-kernel-training",
+    note: "Catalog working notebook for the learning shape. Linked only.",
+  },
+  {
+    title: "Projected quantum kernels",
+    href: "https://quantum.cloud.ibm.com/docs/en/tutorials/projected-quantum-kernels",
+    note: "Catalog working notebook for the learning shape. Linked only.",
+  },
+  {
+    title: "FAU Qiskit Fall Fest 2026 materials",
+    href: "https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026",
+    note: "Private repo, default branch main, last push 2026-09-21, read 2026-09-25. Public program name, the dates that appear, Discord, IBM links, the nine-field canvas, and the Open Plan minute rule are paraphrased on /intro/hackathon and /intro/qml. Placeholder fields stay blank. Notebooks and the book are not copied.",
   },
   {
     title: "Qolour educator course",
@@ -28,7 +53,11 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
   },
   {
     title: "Quantum Readiness for Leaders",
-    note: "Robert Loredo’s book is cited by title as the leadership theme for Module 8. No chapter text, diagrams, page numbers, or publisher excerpt is stored here.",
+    note: "Cited by title as the leadership theme for the readiness module, and by chapter 7 on the sitting between the Bell labs and the Hetionet tour. No chapter text, diagrams, page numbers, publisher excerpt, or Drive file is stored here.",
+  },
+  {
+    title: "Optimization readiness engine",
+    note: "Assess and Build are described on the sitting between the Bell labs and the Hetionet tour. The live link is still blank. The engine source is not stored here.",
   },
   {
     title: "Qiskit 2.x certification study guide",

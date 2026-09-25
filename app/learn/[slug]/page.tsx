@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { ModuleView } from "@/components/ModuleView";
 import { MODULES, moduleBySlug } from "@/content/modules";
 
@@ -16,5 +17,6 @@ export default async function LearnPage({ params }: { params: Promise<{ slug: st
   const { slug } = await params;
   const current = moduleBySlug(slug);
   if (!current) notFound();
+  if (current.slug === "setup") return <ExerciseConnect />;
   return <ModuleView module={current} />;
 }

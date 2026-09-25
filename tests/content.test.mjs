@@ -5,6 +5,8 @@ import { readFileSync } from "node:fs";
 const glossary = readFileSync(new URL("../content/glossary.ts", import.meta.url), "utf8");
 const modules = readFileSync(new URL("../content/modules.ts", import.meta.url), "utf8");
 const notebook = readFileSync(new URL("../notebooks/bell_state_lab.ipynb", import.meta.url), "utf8");
+const intro = readFileSync(new URL("../content/intro.ts", import.meta.url), "utf8");
+const exercise = readFileSync(new URL("../content/exercise1.ts", import.meta.url), "utf8");
 
 const required = [
   "Classical bit",
@@ -87,4 +89,57 @@ test("hetionet metrics stay the published ones", () => {
 
 test("verification date is recorded", () => {
   assert.ok(modules.includes('LAST_VERIFIED = "2026-09-23"'));
+});
+
+test("the intro guide keeps the welcome, the progress line, and the Bell sampler", () => {
+  assert.match(intro, /publish a paper in Nature/);
+  assert.match(intro, /Prepare → Learn the Language → Build Visually → Read the Code → Run the Code → Understand the Results → Find Your Next Step/);
+  assert.match(intro, /StatevectorSampler/);
+  assert.match(intro, /measured_circuit = bell_circuit\.copy\(\)/);
+  assert.match(intro, /The entire Home Depot/);
+  assert.match(intro, /not, by itself, a complete proof of entanglement/);
+  assert.doesNotMatch(intro, /execute\(/);
+  assert.doesNotMatch(intro, /\bmusic\b/i);
+  assert.doesNotMatch(intro, /\bsports\b/i);
+});
+
+test("the Assess and Build pointer sits between the Bell labs and Hetionet", () => {
+  const pythonNext = modules.indexOf('nextSlug: "assess-build"');
+  const pointer = modules.indexOf('slug: "assess-build"');
+  const hetionet = modules.indexOf('slug: "hetionet"');
+  assert.ok(pythonNext > 0 && pointer > pythonNext && hetionet > pointer);
+  assert.match(modules, /title: "Next-Step Quantum Decision Guide"/);
+  assert.match(modules, /chapter 7 of Quantum Readiness for Leaders/);
+  assert.match(modules, /Then run Assess, then Build/);
+  assert.match(modules, /live link for Assess and Build is still blank/);
+  assert.doesNotMatch(modules, /qgg-quantum-readiness-os/);
+  assert.doesNotMatch(modules, /drive\.google/i);
+});
+
+test("hackathon and machine learning stay inside known rules", () => {
+  assert.match(intro, /inaugural state championship/);
+  assert.match(intro, /October 1, 2026/);
+  assert.match(intro, /October 5/);
+  assert.match(intro, /This page does not choose/);
+  assert.match(intro, /Still blank/);
+  assert.match(intro, /rolling 28-day/);
+  assert.match(intro, /quantum-kernel-training/);
+  assert.match(intro, /projected-quantum-kernels/);
+  assert.match(intro, /\{\{REGISTRATION_LINK\}\}/);
+  assert.match(intro, /\{\{GITHUB_ORG\}\}/);
+  assert.doesNotMatch(intro, /introduction\.ipynb/);
+  assert.doesNotMatch(intro, /judging criteria are/);
+  assert.doesNotMatch(intro, /team limit is \d/);
+  assert.doesNotMatch(intro, /classroom-minute quota is \d/);
+  assert.doesNotMatch(modules, /team limit is \d/);
+  assert.doesNotMatch(intro, /\bmusic\b/i);
+  assert.doesNotMatch(intro, /\bsports\b/i);
+  assert.doesNotMatch(intro, /execute\(/);
+});
+
+test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
+  assert.match(exercise, /<YOUR_PRIVATE_API_KEY>/);
+  assert.match(exercise, /<YOUR_CLASSROOM_INSTANCE_CRN>/);
+  assert.doesNotMatch(exercise, /crn:v1/);
+  assert.match(exercise, /service desk/);
 });

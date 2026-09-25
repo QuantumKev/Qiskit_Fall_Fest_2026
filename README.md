@@ -1,6 +1,6 @@
 # Qiskit Fall Fest 2026
 
-Guided onboarding for the Florida Quantum Readiness Challenge and Qiskit Fall Fest. Ten modules take a beginner from an IBM Quantum sign-in to a two-qubit Bell circuit, a tour of the Hetionet hybrid project, and a next learning step.
+Guided onboarding for the Florida Quantum Readiness Challenge and Qiskit Fall Fest. The journey takes a beginner from an IBM Quantum sign-in through both Bell labs, a pointer to read chapter 7 of Quantum Readiness for Leaders and then run Assess and Build, a tour of the Hetionet hybrid project, and a next learning step. The live link for Assess and Build is still blank.
 
 This is an entry ramp. It does not ask anyone to publish a quantum-advantage result.
 
@@ -12,7 +12,9 @@ npm test
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://127.0.0.1:3010 for a workshop session (`npx next dev -H 127.0.0.1 -p 3010`). `npm run dev` still uses port 3000.
+
+The beginner path is `/intro`. Exercise 1 is `/learn/setup` and the registration form is `/register`. Registration responses stay on the server in a gitignored file and require `ORGANIZER_TOKEN` from `.env.example`. Do not commit API keys, CRNs, or notebook outputs that contain them.
 
 The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Do not put an API token, password, or classroom CRN in the notebook or in this site.
 

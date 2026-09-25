@@ -21,6 +21,15 @@ export function Journey() {
         About {minutes} minutes across {MODULES.length} modules. IBM screens last checked {LAST_VERIFIED}.
       </p>
 
+      <section className="next-card">
+        <p className="kicker">Introduction to Qiskit</p>
+        <h2>Build your first quantum program</h2>
+        <p>A beginner path through the vocabulary, Composer, and one Bell circuit. Exercise 1 is the account connection.</p>
+        <Link className="button" href="/intro">
+          Open the guide
+        </Link>
+      </section>
+
       <section className="next-card" aria-labelledby="next-heading">
         <p className="kicker" id="next-heading">
           What should I do next?
