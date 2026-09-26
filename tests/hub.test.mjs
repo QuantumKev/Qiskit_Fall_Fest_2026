@@ -14,6 +14,13 @@ test("canonical documents use the South Florida facts and drop organizer leftove
   assert.match(joined, /October 1, 2026/);
   assert.match(joined, /October 17–18, 2026/);
   assert.match(joined, /kevin@quantumglobalgroup\.io/);
+  assert.match(joined, /rloredo2026@fau\.edu/);
+  assert.match(joined, /grant@deepstation\.ai/);
+  assert.match(joined, /atorre58@fau\.edu/);
+  assert.match(joined, /are co-leading this event/);
+  assert.match(joined, /https:\/\/entangledsolutionsgroup\.com\/Qiskit-Fall-Fest-2026\//);
+  assert.doesNotMatch(joined, /is the organizer/);
+  assert.doesNotMatch(joined, /sponsorship and team lead/);
   assert.match(joined, /StatevectorSampler/);
   assert.doesNotMatch(joined, /October 5|Oct 5/);
   assert.doesNotMatch(joined, /\{\{/);

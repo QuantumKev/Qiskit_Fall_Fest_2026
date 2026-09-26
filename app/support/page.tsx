@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EVENT } from "@/content/event";
+import { CO_LEADS, EVENT, QISKIT_APPROVED_SITE } from "@/content/event";
 
 export const metadata = { title: `Support · ${EVENT.name}` };
 
@@ -28,7 +28,7 @@ export default function SupportPage() {
       <p className="kicker">Troubleshooting and support</p>
       <h1>When something breaks</h1>
       <p className="lede">
-        The long troubleshooting list is in the handbook. Write to {EVENT.email} or use Discord. Do not send a password, an API key, or a CRN.
+        The long troubleshooting list is in the handbook. Write to any co-lead or use Discord. Do not send a password, an API key, or a CRN.
       </p>
       {STEPS.map((step) => (
         <section key={step.title} className="prose card">
@@ -46,8 +46,18 @@ export default function SupportPage() {
             <span className="external-mark"> (external)</span>
           </a>
         </li>
+        {CO_LEADS.map((lead) => (
+          <li key={lead.email}>
+            <a href={`mailto:${lead.email}`}>
+              {lead.organization ? `${lead.name}, ${lead.organization}, ${lead.email}` : `${lead.name}, ${lead.email}`}
+            </a>
+          </li>
+        ))}
         <li>
-          <a href={`mailto:${EVENT.email}`}>{EVENT.email}</a>
+          <a href={QISKIT_APPROVED_SITE} target="_blank" rel="noopener noreferrer external">
+            Qiskit-approved website
+            <span className="external-mark"> (external)</span>
+          </a>
         </li>
         <li>
           <a href="https://qisk.it/join-slack" target="_blank" rel="noopener noreferrer external">

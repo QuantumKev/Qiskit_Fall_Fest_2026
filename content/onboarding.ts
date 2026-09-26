@@ -1,9 +1,13 @@
 import { CONNECT_SAVE } from "@/content/exercise1";
 import {
+  CO_LEAD_SENTENCE,
+  CO_LEADS,
   EVENT,
+  formatCoLead,
   HETIONET_LINKS,
   HETIONET_REPO,
   IBM,
+  QISKIT_APPROVED_SITE,
   QOLOR_COURSE,
   QOLOR_EXHIBIT,
 } from "@/content/event";
@@ -121,13 +125,14 @@ const start: StepPage = {
       id: "event",
       heading: "The event",
       paragraphs: [
-        `${EVENT.organizer}, ${EVENT.organizerOrg}, is the organizer. ${EVENT.sponsorshipLead} is the sponsorship and team lead. The theme is ${EVENT.theme}.`,
+        `${CO_LEAD_SENTENCE} The theme is ${EVENT.theme}.`,
         `Kickoff and challenge release: ${EVENT.kickoff}. Local events: ${EVENT.localEvents}. First-place local winner deadline: ${EVENT.winnerDeadline}. Statewide announcement: ${EVENT.statewideAnnouncement}.`,
         `Campuses: ${EVENT.campuses.join(", ")}. Capacity is ${EVENT.capacity}.`,
         `${EVENT.venues[0].campus}: ${EVENT.venues[0].place}.`,
         `${EVENT.venues[1].campus}: ${EVENT.venues[1].place}.`,
         `Other campus addresses, rooms, and registration details are ${EVENT.unconfirmedDetails}. Official registration is ${EVENT.registration}. The code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
-        `Write to ${EVENT.email}. The chat is ${EVENT.discord}.`,
+        `Write to any co-lead: ${CO_LEADS.map(formatCoLead).join("; ")}. The chat is ${EVENT.discord}.`,
+        `The Qiskit-approved website is ${QISKIT_APPROVED_SITE}.`,
       ],
     },
     {
@@ -182,6 +187,7 @@ const start: StepPage = {
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/support/", label: "Troubleshooting and support" },
     { href: EVENT.discord, label: "Discord" },
+    { href: QISKIT_APPROVED_SITE, label: "Qiskit-approved website" },
   ],
   check: {
     question: "What does a successful path through this site produce?",
@@ -844,7 +850,7 @@ const resources: StepPage = {
     {
       heading: "Event",
       paragraphs: [
-        `Official registration: ${EVENT.registration}. Discord: ${EVENT.discord}. Email: ${EVENT.email}. Qiskit Slack: ${IBM.slack}. Announcement: ${IBM.announcement}.`,
+        `Official registration: ${EVENT.registration}. Discord: ${EVENT.discord}. Co-leads: ${CO_LEADS.map(formatCoLead).join("; ")}. Qiskit-approved website: ${QISKIT_APPROVED_SITE}. Qiskit Slack: ${IBM.slack}. Announcement: ${IBM.announcement}.`,
       ],
     },
     {
@@ -890,6 +896,7 @@ const resources: StepPage = {
     { href: "/support/", label: "Troubleshooting and support" },
     { href: "/roles/", label: "Domain track" },
     { href: DECISION_GUIDE_URL, label: "Next-Step Quantum Decision Guide" },
+    { href: QISKIT_APPROVED_SITE, label: "Qiskit-approved website" },
   ],
   check: {
     question: "Where is the definition of a sampler?",

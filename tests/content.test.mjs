@@ -6,6 +6,8 @@ const glossary = readFileSync(new URL("../content/glossary.ts", import.meta.url)
 const modules = readFileSync(new URL("../content/modules.ts", import.meta.url), "utf8");
 const notebook = readFileSync(new URL("../notebooks/bell_state_lab.ipynb", import.meta.url), "utf8");
 const intro = readFileSync(new URL("../content/intro.ts", import.meta.url), "utf8");
+const introView = readFileSync(new URL("../components/IntroView.tsx", import.meta.url), "utf8");
+const event = readFileSync(new URL("../content/event.ts", import.meta.url), "utf8");
 const exercise = readFileSync(new URL("../content/exercise1.ts", import.meta.url), "utf8");
 const hetionetWalk = readFileSync(new URL("../content/hetionetWalk.ts", import.meta.url), "utf8");
 
@@ -96,7 +98,15 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
   assert.match(intro, /measured_circuit = bell_circuit\.copy\(\)/);
   assert.match(intro, /not, by itself, a complete proof of entanglement/);
   assert.doesNotMatch(intro, /Home Depot/);
-  assert.match(intro, /Kevin Robinson/);
+  assert.match(event, /are co-leading this event/);
+  assert.match(introView, /CO_LEAD_SENTENCE/);
+  assert.doesNotMatch(intro, /is the organizer/);
+  assert.doesNotMatch(intro, /sponsorship and team lead/);
+  assert.doesNotMatch(intro, /leads this initiative/);
+  assert.doesNotMatch(introView, /is the organizer/);
+  assert.doesNotMatch(introView, /sponsorship and team lead/);
+  assert.doesNotMatch(introView, /leads this initiative/);
+  assert.doesNotMatch(modules, /leads this initiative/);
   assert.doesNotMatch(intro, /execute\(/);
   assert.doesNotMatch(intro, /\bmusic\b/i);
   assert.doesNotMatch(intro, /\bsports\b/i);
@@ -124,7 +134,12 @@ test("hackathon and machine learning stay inside known rules", () => {
   assert.match(intro, /rolling 28-day/);
   assert.match(intro, /quantum-kernel-training/);
   assert.match(intro, /projected-quantum-kernels/);
-  assert.match(intro, /kevin@quantumglobalgroup\.io/);
+  assert.match(event, /kevin@quantumglobalgroup\.io/);
+  assert.match(event, /rloredo2026@fau\.edu/);
+  assert.match(event, /grant@deepstation\.ai/);
+  assert.match(event, /atorre58@fau\.edu/);
+  assert.match(intro, /Qiskit-approved website/);
+  assert.doesNotMatch(intro, /is the organizer/);
   assert.doesNotMatch(intro, /October 5/);
   assert.doesNotMatch(intro, /\{\{/);
   assert.doesNotMatch(intro, /introduction\.ipynb/);

@@ -243,11 +243,11 @@ export function ExerciseConnect() {
             Statuses you can set by hand: Registered, Simulator first, Open Plan visible, Connection verified, Needs assistance.
           </p>
           <p>
-            <Link href="/organizers">Open the organizer list</Link>
+            <Link href="/organizers">Open the co-lead list</Link>
           </p>
         </section>
       ) : (
-        <p className="meta">Switch to Facilitator in the header for the instance appendix and the organizer list.</p>
+        <p className="meta">Switch to Facilitator in the header for the instance appendix and the co-lead list.</p>
       )}
     </article>
   );

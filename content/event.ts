@@ -3,6 +3,31 @@
  * The three Markdown handbooks state the same facts in long form.
  * If a date changes, change it here and in those files together.
  */
+
+export type CoLead = {
+  name: string;
+  email: string;
+  organization?: string;
+};
+
+/** Equal weight, in this order. Kevin is last. */
+export const CO_LEADS: readonly CoLead[] = [
+  { name: "Robert Loredo", email: "rloredo2026@fau.edu", organization: "Florida Atlantic University" },
+  { name: "Grant Kurz", email: "grant@deepstation.ai" },
+  { name: "Ayse Torres", email: "atorre58@fau.edu", organization: "Florida Atlantic University" },
+  { name: "Kevin Robinson", email: "kevin@quantumglobalgroup.io", organization: "Quantum Global Group" },
+];
+
+export const CO_LEAD_SENTENCE =
+  "Robert Loredo, Grant Kurz, Ayse Torres, and Kevin Robinson are co-leading this event.";
+
+export function formatCoLead(lead: CoLead): string {
+  return lead.organization ? `${lead.name}, ${lead.organization}, ${lead.email}` : `${lead.name}, ${lead.email}`;
+}
+
+/** Qiskit-approved website. Not the GitHub Pages participant preview. */
+export const QISKIT_APPROVED_SITE = "https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2026/";
+
 export const EVENT = {
   name: "Qiskit Fall Fest South Florida 2026",
   series: "Qiskit Fall Fest 2026",
@@ -11,11 +36,7 @@ export const EVENT = {
   localEvents: "October 17–18, 2026",
   winnerDeadline: "October 31, 2026",
   statewideAnnouncement: "November 13, 2026",
-  organizer: "Kevin Robinson",
-  organizerOrg: "Quantum Global Group",
-  email: "kevin@quantumglobalgroup.io",
   discord: "https://discord.gg/vz6uTbtJzR",
-  sponsorshipLead: "Robert Loredo",
   capacity: "up to 50 participants per campus",
   campuses: [
     "Miami Dade College",
@@ -44,7 +65,9 @@ export const EVENT = {
   region: "us-east",
   repo: "https://github.com/QuantumKev/Qiskit_Fall_Fest_2026",
   branch: "cursor/participant-hub-refresh",
+  // Participant-site preview. This is not the Qiskit-approved website.
   pagesSite: "https://quantumkev.github.io/Qiskit_Fall_Fest_2026/",
+  approvedSite: QISKIT_APPROVED_SITE,
   qiskitPin: "qiskit>=2.3.0,<2.4.0",
 } as const;
 

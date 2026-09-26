@@ -497,7 +497,7 @@ export const MODULES: Module[] = [
       {
         heading: "What is sourced, and what is not",
         paragraphs: [
-          "Robert Loredo leads this initiative. His book, Quantum Readiness for Leaders, is a strategic resource for the conversation. This page does not copy its paragraphs, questions, diagrams, tables, or framework layout.",
+          "Quantum Readiness for Leaders, by Robert Loredo, is a strategic resource for the conversation. This page does not copy its paragraphs, questions, diagrams, tables, or framework layout.",
           "Chapter 7 is named on the sitting between the Bell labs and the Hetionet tour. This repository stores no chapter text, diagrams, page numbers, or Drive file.",
           "Loredo’s theme, stated at the level of a citation rather than an excerpt: leaders prepare strategy, technology, talent, and risk before they chase a tool. A person is ready to continue when they can name a role and a next resource. Quantum Global Group’s piece for this room is the Hetionet walkthrough and the reflection prompts below. IBM supplies the platform, Composer, Learning, and Qiskit documentation.",
         ],

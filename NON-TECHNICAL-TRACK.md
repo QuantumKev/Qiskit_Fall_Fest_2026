@@ -273,7 +273,7 @@ No. There's a team formation session at kickoff, and reading out your Use-Case C
 No, but it is also that. You'll spend two days with people who will be running quantum programs at serious organizations in five years. That's not nothing.
 
 **"I'm not a student. Can I come?"**
-Whether a campus day is limited to enrolled students is **TBA**. Ask kevin@quantumglobalgroup.io before you travel. Capacity is up to 50 participants per campus.
+Whether a campus day is limited to enrolled students is **TBA**. Ask any co-lead before you travel: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io. Capacity is up to 50 participants per campus.
 
 **"What if my industry has no quantum use case?"**
 Then finding that out rigorously and writing it up is your project, and it is a better project than most. The field needs negative results far more than it needs another optimistic demo.
@@ -283,6 +283,6 @@ Here's IBM's own framing of their introductory course: *you don't need a physics
 
 ---
 
-**Ready?** Go to [`PARTICIPANT_HANDBOOK.md`](PARTICIPANT_HANDBOOK.md) §4, make your own account, and come say hello in <https://discord.gg/vz6uTbtJzR> or by email at kevin@quantumglobalgroup.io.
+**Ready?** Go to [`PARTICIPANT_HANDBOOK.md`](PARTICIPANT_HANDBOOK.md) §4, make your own account, and come say hello in <https://discord.gg/vz6uTbtJzR> or by email to any co-lead: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io.
 
 We'd rather have your industry knowledge and teach you the quantum than the other way around.

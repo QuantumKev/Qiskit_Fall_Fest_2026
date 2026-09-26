@@ -1,3 +1,4 @@
+import { CO_LEAD_SENTENCE, CO_LEADS, QISKIT_APPROVED_SITE } from "@/content/event";
 import type { Check } from "@/content/modules";
 
 export const INTRO_TITLE = "Build Your First Quantum Program: A Beginner’s Guide to Python and Qiskit";
@@ -493,6 +494,7 @@ export const QML_KERNEL = "https://quantum.cloud.ibm.com/docs/en/tutorials/quant
 export const QML_PROJECTED = "https://quantum.cloud.ibm.com/docs/en/tutorials/projected-quantum-kernels";
 
 export const FALL_FEST_LINKS = [
+  { label: "Qiskit-approved website", href: QISKIT_APPROVED_SITE },
   { label: "Discord", href: "https://discord.gg/vz6uTbtJzR" },
   { label: "IBM Quantum registration", href: "https://quantum.cloud.ibm.com/registration" },
   { label: "Qiskit Slack", href: "https://qisk.it/join-slack" },
@@ -626,10 +628,10 @@ export const AWARD_TEMPLATE_LINE =
 export const LIGHTNING_TALK_LINE =
   "The Pitch Lead owns a five-minute deck and demo. The sponsorship template also lists a five-minute sponsor lightning talk. That line is a sponsorship benefit.";
 
-export const HOST_CONTACTS: { name: string; detail: string; href?: string }[] = [
-  { name: "Kevin Robinson", detail: "Organizer, Quantum Global Group. kevin@quantumglobalgroup.io." },
-  { name: "Robert Loredo", detail: "Sponsorship and team lead.", href: "https://linkedin.com/in/robertloredo" },
-];
+export const HOST_CONTACTS: { name: string; detail: string }[] = CO_LEADS.map((lead) => ({
+  name: lead.name,
+  detail: lead.organization ? `${lead.organization}. ${lead.email}.` : `${lead.email}.`,
+}));
 
 export const SEPTEMBER_LINE =
   "A recorded host overview is not confirmed. The date and the recording URL are TBA.";
@@ -864,7 +866,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   hackathon: {
     timing: "20 minutes. Kickoff is October 1, 2026.",
     notes: [
-      "Robert Loredo is the sponsorship and team lead. Do not read from the book.",
+      `${CO_LEAD_SENTENCE} Do not read from the book.`,
       "Registration, the rubric, and unconfirmed rooms stay Coming soon or TBA.",
     ],
   },

@@ -33,7 +33,7 @@ Qiskit Fall Fest is a worldwide, student-led series of quantum computing events 
 
 The **2026 theme is "a decade of quantum on the cloud"**: it marks ten years since IBM put the world's first open-access quantum computer on the internet. Ten years ago, running a circuit on real quantum hardware meant knowing someone in a lab. Today you do it from a browser tab, for free, in about four minutes. That shift is the entire reason this event can exist, and it's a useful thing to keep in mind when you're deciding how ambitious to be.
 
-**Qiskit Fall Fest South Florida 2026** is the local series inside that lineup. Kevin Robinson of Quantum Global Group is the organizer. Robert Loredo is the sponsorship and team lead. The event is not a single-campus class.
+**Qiskit Fall Fest South Florida 2026** is the local series inside that lineup. Robert Loredo, Grant Kurz, Ayse Torres, and Kevin Robinson are co-leading this event. The event is not a single-campus class.
 
 Campuses: Miami Dade College, Nova Southeastern University, Florida Atlantic University, Embry-Riddle Aeronautical University, Florida Tech, and Florida Gulf Coast University. Capacity is up to 50 participants per campus.
 
@@ -45,6 +45,8 @@ Confirmed rooms:
 Addresses, rooms, and campus details that are not in that list are **TBA**. Do not invent them.
 
 Official IBM announcement: <https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026>
+
+Qiskit-approved website: <https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2026/>
 
 ---
 
@@ -440,30 +442,34 @@ Normal at peak times — it's a shared fair-share queue. Use `service.least_busy
 **Code from a tutorial you found online just doesn't work.**
 Check its date. Anything using `channel="ibm_quantum"`, `IBMQ.load_account()`, `execute()`, or `qiskit.Aer` predates the current API. See the warning in §4.1.
 
-**Still stuck:** <https://discord.gg/vz6uTbtJzR> or kevin@quantumglobalgroup.io. Post the actual error text, not "it doesn't work." Do not paste an API key, a CRN, or a password.
+**Still stuck:** <https://discord.gg/vz6uTbtJzR> or any co-lead: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io. Post the actual error text, not "it doesn't work." Do not paste an API key, a CRN, or a password.
 
 ---
 
 ## 10. Support and community
 
 - **Event chat:** <https://discord.gg/vz6uTbtJzR>
-- **Organizer:** Kevin Robinson, Quantum Global Group, kevin@quantumglobalgroup.io
-- **Sponsorship and team lead:** Robert Loredo
+- **Co-leads:** Robert Loredo, Grant Kurz, Ayse Torres, and Kevin Robinson are co-leading this event.
+  - Robert Loredo, Florida Atlantic University, rloredo2026@fau.edu
+  - Grant Kurz, grant@deepstation.ai
+  - Ayse Torres, Florida Atlantic University, atorre58@fau.edu
+  - Kevin Robinson, Quantum Global Group, kevin@quantumglobalgroup.io
+- **Qiskit-approved website:** <https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2026/>
 - **Qiskit Slack:** <https://qisk.it/join-slack>, the global Qiskit community
 - **Qiskit YouTube:** <https://www.youtube.com/qiskit>
 - **Documentation:** <https://quantum.cloud.ibm.com/docs>
 - **Quantum Computing Stack Exchange:** tag `qiskit`
 
-**Code of conduct:** Coming soon. Until it is published, write to kevin@quantumglobalgroup.io.
+**Code of conduct:** Coming soon. Until it is published, write to any co-lead: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io.
 
 ---
 
 ## 11. Accessibility, hardware, and cost
 
-- **No laptop?** Loaner laptops are not confirmed. Email kevin@quantumglobalgroup.io before you travel. Do not assume a machine will be waiting.
+- **No laptop?** Loaner laptops are not confirmed. Email any co-lead before you travel: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io. Do not assume a machine will be waiting.
 - **Weak laptop?** Everything in §5.1 runs in a browser. A Chromebook is sufficient.
 - **Nothing here costs money.** Qiskit is open source (Apache 2.0). The IBM Quantum Open Plan is free. GitHub is free. If someone asks you to pay for something to participate, that's not part of this event.
-- **Accessibility needs:** contact kevin@quantumglobalgroup.io in advance.
+- **Accessibility needs:** contact any co-lead in advance: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io.
 
 ---
 

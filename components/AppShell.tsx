@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { EVENT } from "@/content/event";
+import { CO_LEADS, EVENT, QISKIT_APPROVED_SITE } from "@/content/event";
 import { JOURNEY } from "@/content/onboarding";
 import { ProgressProvider, useProgress } from "@/components/store";
 
@@ -45,7 +45,7 @@ function Header() {
           </Link>
           {mode === "facilitator" ? (
             <Link href="/organizers/" aria-current={pathname.startsWith("/organizers") ? "page" : undefined}>
-              Organizers
+              Co-leads
             </Link>
           ) : null}
         </nav>
@@ -82,7 +82,15 @@ function Footer() {
           Discord
           <span className="external-mark"> (external)</span>
         </a>
-        <a href={`mailto:${EVENT.email}`}>{EVENT.email}</a>
+        <a href={QISKIT_APPROVED_SITE} target="_blank" rel="noopener noreferrer external">
+          Qiskit-approved website
+          <span className="external-mark"> (external)</span>
+        </a>
+        {CO_LEADS.map((lead) => (
+          <a key={lead.email} href={`mailto:${lead.email}`}>
+            {lead.name}, {lead.email}
+          </a>
+        ))}
         <Link href="/support/">Support</Link>
       </nav>
     </footer>

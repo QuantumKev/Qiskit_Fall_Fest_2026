@@ -19,7 +19,7 @@ Start at `/`. The participant handbook is `/handbook/`. Registration is `/regist
 
 The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Participants use the IBM Quantum Open Plan: 10 minutes of QPU time per 28-day window, in `us-east`. The workshop does not promise more minutes.
 
-`npm run pages` writes a static export to `out/` with base path `/Qiskit_Fall_Fest_2026/`. GitHub Actions workflow `.github/workflows/pages.yml` builds that export. The project URL is https://quantumkev.github.io/Qiskit_Fall_Fest_2026/ after Pages is enabled. This repository does not treat that URL as live until a signed-out request succeeds.
+`npm run pages` writes a static export to `out/` with base path `/Qiskit_Fall_Fest_2026/`. GitHub Actions workflow `.github/workflows/pages.yml` builds that export. The participant-site preview is https://quantumkev.github.io/Qiskit_Fall_Fest_2026/ after Pages is enabled. This repository does not treat that URL as live until a signed-out request succeeds. The Qiskit-approved website is https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2026/.
 
 ## What is here
 

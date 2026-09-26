@@ -5,6 +5,7 @@ import { useEffect, useState, type ReactElement } from "react";
 import { CopyBlock } from "@/components/CopyBlock";
 import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { useProgress } from "@/components/store";
+import { CO_LEAD_SENTENCE, QISKIT_APPROVED_SITE } from "@/content/event";
 import { GLOSSARY } from "@/content/glossary";
 import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
 import {
@@ -507,7 +508,7 @@ function FallFestLinkList() {
 function HackathonBody() {
   return (
     <div className="stack">
-      <p>{PROGRAM_NAME} Kevin Robinson is the organizer. Robert Loredo is the sponsorship and team lead.</p>
+      <p>{PROGRAM_NAME} {CO_LEAD_SENTENCE}</p>
       <p>{PROGRAM_BANNER}</p>
       <h2>Dates</h2>
       <p>{KICKOFF_LINES}</p>
@@ -586,11 +587,13 @@ function HackathonBody() {
       <ul>
         {HOST_CONTACTS.map((host) => (
           <li key={host.name}>
-            {host.href ? <a href={host.href}>{host.name}</a> : host.name}. {host.detail}
+            {host.name}. {host.detail}
           </li>
         ))}
       </ul>
-      <p>Participant help email is kevin@quantumglobalgroup.io.</p>
+      <p>
+        The Qiskit-approved website is <a href={QISKIT_APPROVED_SITE}>{QISKIT_APPROVED_SITE}</a>. Write to any co-lead listed above.
+      </p>
       <p>{SEPTEMBER_LINE}</p>
       <h2>Links that are filled in</h2>
       <FallFestLinkList />
@@ -610,7 +613,7 @@ function HackathonBody() {
 function QmlBody() {
   return (
     <div className="stack">
-      <p>Robert Loredo leads this initiative. IBM’s course and tutorials stay on IBM. This page links to them and does not copy them.</p>
+      <p>Quantum Readiness for Leaders is by Robert Loredo. IBM’s course and tutorials stay on IBM. This page links to them and does not copy them.</p>
       <h2>A fit</h2>
       <p>{QML_FIT}</p>
       <p>{VALID_SKEPTICAL}</p>
