@@ -7,8 +7,8 @@ const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 const plex = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-plex" });
 
 export const metadata: Metadata = {
-  title: "Qiskit Fall Fest 2026",
-  description: "Guided Qiskit onboarding for the Florida Quantum Readiness Challenge and Qiskit Fall Fest.",
+  title: "Qiskit Fall Fest South Florida 2026",
+  description: "Participant guide for Qiskit Fall Fest South Florida 2026. One Bell state, a classical baseline, and an honest project frame.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -1,6 +1,6 @@
-# Qiskit Fall Fest 2026
+# Qiskit Fall Fest South Florida 2026
 
-One participant path for Qiskit Fall Fest 2026: account, one Bell state, the challenge, a classical baseline, a prototype charter, and the Hetionet case. The live host for Assess and Build is still not up.
+One participant path: the event, an IBM Quantum account, vocabulary, one Bell state in Composer and again in Python, the Qiskit workflow, a role, a classical baseline, benchmarking, the Hetionet example, a team, and a GitHub submission.
 
 This is an entry ramp. It does not ask anyone to publish a quantum-advantage result.
 
@@ -9,34 +9,29 @@ This is an entry ramp. It does not ask anyone to publish a quantum-advantage res
 ```bash
 npm install
 npm test
+npm run lint
 npm run dev
 ```
 
-Open http://127.0.0.1:3010 for a workshop session (`npx next dev -H 127.0.0.1 -p 3010`). `npm run dev` still uses port 3000.
+Open http://127.0.0.1:3000. A workshop session can use `npx next dev -H 127.0.0.1 -p 3010`.
 
-The beginner path is `/intro`. Exercise 1 is `/learn/setup` and the registration form is `/register`. Registration responses stay on the server in a gitignored file and require `ORGANIZER_TOKEN` from `.env.example`. Do not commit API keys, CRNs, or notebook outputs that contain them.
+Start at `/`. The participant handbook is `/handbook/`. Registration is `/register/`. Responses stay on the server in a gitignored file and require `ORGANIZER_TOKEN` from `.env.example`. The static GitHub Pages build does not include that API. Do not commit API keys, CRNs, or notebook outputs that contain them.
 
-The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Do not put an API token or password in the notebook or in this site. Participants use the IBM Quantum Open Plan: 10 minutes of QPU time per 28-day window. The workshop does not promise more minutes.
+The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt` in its own virtual environment (`qiskit>=2.3.0,<2.4.0`). The lab uses a local statevector sampler. Participants use the IBM Quantum Open Plan: 10 minutes of QPU time per 28-day window, in `us-east`. The workshop does not promise more minutes.
+
+`npm run pages` writes a static export to `out/` with base path `/Qiskit_Fall_Fest_2026/`. GitHub Actions workflow `.github/workflows/pages.yml` builds that export. The project URL is https://quantumkev.github.io/Qiskit_Fall_Fest_2026/ after Pages is enabled. This repository does not treat that URL as live until a signed-out request succeeds.
 
 ## What is here
 
-- Journey with time estimates, completion checkboxes, and “What should I do next?”
-- Participant and Facilitator modes. Facilitator notes stay hidden until that mode is on. Progress is stored in this browser (`qff-progress`, `qff-mode`, `qff-survey`).
-- Searchable glossary. Cards keep the plain sentence and the technical definition.
-- Knowledge checks, account troubleshooting, and a source manifest.
-- Downloads: `public/downloads/bell-lab.md`, `project-canvas.md`.
+- Twelve-step journey with a progress count stored in this browser (`qff-progress`, `qff-mode`, `qff-survey`).
+- `PARTICIPANT_HANDBOOK.md`, `NON-TECHNICAL-TRACK.md`, and `NOTEBOOK-CATALOG.md` rendered in full.
+- Submission template in `submissions/_TEMPLATE/`.
+- Searchable glossary. Knowledge checks. Copyable Bell code.
+
+Dates and contacts live in `content/event.ts`.
 
 ## Sources
 
-IBM screens and the Hetionet README were checked on 2026-09-23. Recheck the IBM links the morning of the workshop. Qolour is linked, not copied. Robert Loredo’s *Quantum Readiness for Leaders* is cited by title. No book text or page numbers are included.
+IBM plans, cloud setup, and the hello-world guide were checked on 2026-09-26. Qolour is linked, not copied. Robert Loredo’s *Quantum Readiness for Leaders*, chapter 7, is cited by title. The book is not copied.
 
-The certification study guide at [Quantum-Global-Group/qiskit-2x-cert-study-guide](https://github.com/Quantum-Global-Group/qiskit-2x-cert-study-guide) is later practice. Its 2026-09-20 cheat-sheet commit is plain-English exam material.
-
-Hetionet test PR-AUC, from that project README: stacking (Pauli) 0.7987, random forest 0.7838, extra trees 0.7807, stacking (ZZ) 0.7408, QSVC 0.7216. The published target above 0.70 was met. A tuned classical forest is close. Do not describe this as quantum advantage.
-
-## Facilitator launch check
-
-- Click every IBM URL the morning of the event.
-- The room uses the Open Plan. Do not put a CRN on a slide. Do not promise more than 10 minutes of QPU time per 28 days.
-- The Qubi lesson from Qolour is not in this guide yet.
-- Keep a side table for sign-in problems so the room can reach Composer.
+Hetionet primary test PR-AUC: hybrid stacking 0.7987, Random Forest 0.7838, Extra Trees 0.7807. A later 0.8581 figure kept a cached quantum kernel while classical pieces were tuned with Optuna. Do not describe this as quantum advantage.

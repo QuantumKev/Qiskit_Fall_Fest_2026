@@ -96,7 +96,7 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
   assert.match(intro, /measured_circuit = bell_circuit\.copy\(\)/);
   assert.match(intro, /not, by itself, a complete proof of entanglement/);
   assert.doesNotMatch(intro, /Home Depot/);
-  assert.doesNotMatch(intro, /Kevin/);
+  assert.match(intro, /Kevin Robinson/);
   assert.doesNotMatch(intro, /execute\(/);
   assert.doesNotMatch(intro, /\bmusic\b/i);
   assert.doesNotMatch(intro, /\bsports\b/i);
@@ -118,16 +118,15 @@ test("the Assess and Build pointer sits between the Bell labs and Hetionet", () 
 });
 
 test("hackathon and machine learning stay inside known rules", () => {
-  assert.match(intro, /inaugural state championship/);
+  assert.match(intro, /Qiskit Fall Fest South Florida 2026/);
   assert.match(intro, /October 1, 2026/);
-  assert.match(intro, /October 5/);
-  assert.match(intro, /This page does not choose/);
-  assert.match(intro, /Still blank/);
+  assert.match(intro, /October 17/);
   assert.match(intro, /rolling 28-day/);
   assert.match(intro, /quantum-kernel-training/);
   assert.match(intro, /projected-quantum-kernels/);
-  assert.match(intro, /\{\{REGISTRATION_LINK\}\}/);
-  assert.match(intro, /\{\{GITHUB_ORG\}\}/);
+  assert.match(intro, /kevin@quantumglobalgroup\.io/);
+  assert.doesNotMatch(intro, /October 5/);
+  assert.doesNotMatch(intro, /\{\{/);
   assert.doesNotMatch(intro, /introduction\.ipynb/);
   assert.doesNotMatch(intro, /judging criteria are/);
   assert.doesNotMatch(intro, /team limit is \d/);
@@ -137,6 +136,7 @@ test("hackathon and machine learning stay inside known rules", () => {
   assert.match(modules, /not quantum advantage/i);
   assert.match(modules, /not a clinical result/);
   assert.doesNotMatch(modules, /team limit is \d/);
+  assert.doesNotMatch(modules, /October 5/);
   assert.doesNotMatch(intro, /\bmusic\b/i);
   assert.doesNotMatch(intro, /\bsports\b/i);
   assert.doesNotMatch(intro, /execute\(/);

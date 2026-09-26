@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { withBase } from "@/lib/base-path";
 
 const EMPTY = {
   fullName: "",
@@ -26,7 +27,7 @@ export function RegisterForm() {
   const [ok, setOk] = useState(false);
 
   useEffect(() => {
-    fetch("/api/register/health")
+    fetch(withBase("/api/register/health"))
       .then((response) => response.json())
       .then((body) => setConfigured(Boolean(body.configured)))
       .catch(() => setConfigured(false));
@@ -40,7 +41,7 @@ export function RegisterForm() {
     event.preventDefault();
     setMessage("");
     setOk(false);
-    const response = await fetch("/api/register", {
+    const response = await fetch(withBase("/api/register"), {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

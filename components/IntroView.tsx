@@ -507,7 +507,7 @@ function FallFestLinkList() {
 function HackathonBody() {
   return (
     <div className="stack">
-      <p>{PROGRAM_NAME} Robert Loredo leads this initiative. These notes paraphrase the FAU materials read on 2026-09-25. They do not copy those files.</p>
+      <p>{PROGRAM_NAME} Kevin Robinson is the organizer. Robert Loredo is the sponsorship and team lead.</p>
       <p>{PROGRAM_BANNER}</p>
       <h2>Dates</h2>
       <p>{KICKOFF_LINES}</p>
@@ -590,7 +590,7 @@ function HackathonBody() {
           </li>
         ))}
       </ul>
-      <p>Participant help email in the handbook is still {"{{ORGANIZER_EMAIL}}"}.</p>
+      <p>Participant help email is kevin@quantumglobalgroup.io.</p>
       <p>{SEPTEMBER_LINE}</p>
       <h2>Links that are filled in</h2>
       <FallFestLinkList />

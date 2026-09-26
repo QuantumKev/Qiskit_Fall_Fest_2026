@@ -1,7 +1,7 @@
-import { IntroHome } from "@/components/IntroView";
+import { ClientRedirect } from "@/components/ClientRedirect";
 
-export const metadata = { title: "Introduction to Qiskit · Qiskit Fall Fest" };
+export const metadata = { title: "Start · Qiskit Fall Fest" };
 
 export default function IntroPage() {
-  return <IntroHome />;
+  return <ClientRedirect href="/" />;
 }

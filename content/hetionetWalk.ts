@@ -50,7 +50,7 @@ export const HETIONET_WALKTHROUGH: { heading: string; paragraphs: string[] }[] =
     heading: "7. The published scores",
     paragraphs: [
       "Primary test PR-AUC, from the paper’s Table II: Pauli ensemble 0.7987, optimized random forest 0.7838, optimized extra trees 0.7807, ZZ ensemble 0.7408, ZZ QSVC 0.7216, Pauli QSVC 0.6343. ROC-AUC is listed for the Pauli ensemble at 0.7456, the forest at 0.7319, extra trees at 0.7301, and the Pauli QSVC at 0.6313.",
-      "The Pauli ensemble is 0.0149 above the best classical score in that table. An extended 256-dimension RotatE run is reported at ensemble PR-AUC 0.8581. A hardware check on IBM Quantum Heron is reported near 0.634, in line with the Pauli simulator QSVC. Read those as the paper’s comparison. They are not quantum advantage.",
+      "The Pauli ensemble is 0.0149 above the best classical score in that table. A later ensemble figure of 0.8581 appears in the evidence notes. For that run the quantum kernel was cached while the classical pieces were tuned with Optuna. It is not a fresh quantum result and it is not quantum advantage. A hardware check on IBM Quantum Heron is reported near 0.634, in line with the Pauli simulator QSVC. Read those as the project’s comparison. They are not quantum advantage and not a clinical result.",
     ],
   },
   {

@@ -580,7 +580,7 @@ export const MODULES: Module[] = [
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
           "Machine learning is the next part of this journey, at /intro/qml. It is not a separate required hackathon challenge. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. That source is still being reread. Iterate on a simulator. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.",
-          "Fall Fest projects: follow /intro/hackathon. The public program name is the FAU-hosted Qiskit Fall Fest 2026, inaugural state championship. October 1 and October 5 both appear as kickoff lines. This page does not choose. Grant’s event name, campus, registration URL, and GitHub org stay blank.",
+          "Fall Fest projects use the participant handbook. The public name is Qiskit Fall Fest South Florida 2026. Kickoff and challenge release are October 1, 2026. Official registration is Coming soon.",
         ],
       },
     ],

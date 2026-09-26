@@ -531,49 +531,39 @@ export const DAY_ONE_ROLES = [
 ];
 
 export const HACKATHON_GAP_NOTE =
-  "Still blank. The source files leave these as placeholders or unanswered questions.";
+  "Unconfirmed registration, rubric, code of conduct, and campus details stay Coming soon or TBA.";
 
 export const HACKATHON_GAPS = [
-  "Grant Kurz’s public event name, his campus, and his October weekend dates.",
-  "Registration URL. The files still say {{REGISTRATION_LINK}}.",
-  "Code-of-conduct URL.",
-  "Participant help email. The files still say {{ORGANIZER_EMAIL}}.",
-  "GitHub org and submission repo name. The files still say {{GITHUB_ORG}} and {{REPO_NAME}}.",
-  "Local event name and host org. The handbook still says {{EVENT_NAME}} and {{HOST_ORG}}.",
-  "A chat link other than the Discord invite, if that invite is not the one to use.",
-  "Hackathon-platform URL, participant dashboard, photo Drive, and the speaker schedule.",
-  "How to create or join a project on Grant’s platform. The files ask him and stop there.",
-  "A numeric team-size cap. “Up to [4]” in the sponsorship template is still in brackets.",
-  "Judging weights, a score sheet, and who judges.",
-  "Which local kickoff date applies. October 1 and October 5 both appear. This page does not choose.",
-  "State championship time and room on November 13.",
-  "Extra QPU minutes. This workshop uses the Open Plan only: 10 minutes per 28-day window, and it does not promise more.",
-  "Whether the extra 180 Open Plan minutes are still offered.",
-  "Non-student eligibility.",
-  "Submission deadline. The files still say {{SUBMISSION_DEADLINE}}.",
-  "The folders challenges/, resources/, and submissions/_TEMPLATE/. They are described and are not in the tree.",
+  "Official registration link. Coming soon.",
+  "Code of conduct. Coming soon.",
+  "Shared rubric weights. Coming soon.",
+  "A separate GitHub organization, if organizers publish one. TBA.",
+  "Rooms and addresses that are not the two confirmed venues. TBA.",
+  "Statewide announcement venue and time on November 13, 2026. TBA.",
+  "Whether every campus day is limited to enrolled students. TBA.",
+  "Kevin Robinson video titles. They will be listed when confirmed.",
 ];
 
 export const PROGRAM_NAME =
-  "FAU-hosted Qiskit Fall Fest 2026, inaugural state championship.";
+  "Qiskit Fall Fest South Florida 2026.";
 
 export const PROGRAM_BANNER =
-  "The README banner reads Qiskit Fall Fest 2026, October 2026, Florida, hosted by Florida Atlantic University. The theme is ten years of quantum on the cloud. Fall Fest is a worldwide student-led series with IBM Quantum.";
+  "Qiskit Fall Fest South Florida 2026. The theme is ten years of quantum on the cloud. Fall Fest is a worldwide student-led series with IBM Quantum.";
 
 export const KICKOFF_LINES =
-  "The README says everything else can wait until kickoff, and that sentence says October 5. The key-dates table on the same page says local kickoff and challenge release are October 1, 2026. The handbook banner is October 5 through November 13, 2026. The pre-event job is to arrive by October 5 with a working environment and a rough problem. This page does not choose between October 1 and October 5.";
+  "Kickoff and challenge release are October 1, 2026. Local events are October 17–18, 2026. The first-place local winner deadline is October 31, 2026. The statewide announcement is November 13, 2026.";
 
 export const CHAMPIONSHIP_LINE =
-  "The state championship is November 13 at Florida Atlantic University, Boca Raton campus. Time and room are still TBD. The sponsorship template header says Friday, November 13, 2026, at that campus. Its glance table still says [Championship Venue, City].";
+  "The statewide announcement is November 13, 2026. The venue and time are TBA.";
 
 export const WINNER_PACKET =
   "Local first-place winners (names, emails, deck, and GitHub project link) are due to the hosts no later than October 31.";
 
 export const BEFORE_KICKOFF = [
-  "Register. The link is still {{REGISTRATION_LINK}}.",
+  "Register. The link is still Coming soon.",
   "Join the chat. The only concrete URL in that slot is the Discord invite.",
   "Create a free IBM Quantum account. Handbook section 4. Sign up on the IBM Quantum registration page.",
-  "Send a GitHub username so organizers can add you to the org. The org is still {{GITHUB_ORG}}. The repo is still https://github.com/{{GITHUB_ORG}}/{{REPO_NAME}}.",
+  "The participant repository is https://github.com/QuantumKev/Qiskit_Fall_Fest_2026. A separate event organization is TBA.",
 ];
 
 export const COST_LINE =
@@ -609,7 +599,7 @@ export const VALID_SKEPTICAL =
 
 export const SUBMISSION_STEPS = [
   "Work on a branch named team-<name>.",
-  "Copy submissions/_TEMPLATE into submissions/team-<name>. That template folder is described and is not in the tree yet.",
+  "Copy submissions/_TEMPLATE into submissions/team-<name>.",
   "Open a pull request to main titled [SUBMISSION] Team <name> — <project title>. Draft the pull request early.",
   "Include README.md, a notebook or source, USE-CASE.md, requirements.txt if there is code, and slides or a demo video.",
   "LIMITATIONS.md is strongly encouraged. The materials say judges reward it.",
@@ -617,40 +607,38 @@ export const SUBMISSION_STEPS = [
 ];
 
 export const JOIN_FACTS = [
-  "Registration URL: still {{REGISTRATION_LINK}}.",
-  "Chat: the Discord invite is the only concrete URL. {{CHAT_LINK}} is still unset.",
-  "Create the free IBM Quantum account.",
-  "Send your GitHub username and accept the org invite. The org name is still unset.",
+  "Registration URL: still Coming soon.",
+  "Chat: https://discord.gg/vz6uTbtJzR.",
+  "Create your own IBM Quantum account.",
+  "A separate GitHub organization is TBA. Submissions use the template in this repository until organizers publish a different one.",
   "You do not need a team before kickoff. Team formation is at kickoff.",
-  "How to create or join a project on Grant’s platform is an unanswered question in the files.",
 ];
 
 export const TEAM_SIZE_LINE =
   "No participant-facing team-size cap is written. The sponsorship template says “teams of up to [4],” and that number is still in brackets. Each team should have a builder side and a domain side. One person owns hardware submissions.";
 
 export const JUDGING_LINE =
-  "No judging weights, score sheet, or judge names are published. The materials say FAU will publish one rubric for local events and the statewide championship. The dimensions named for that rubric are technical execution (a simulator only, or also a real device), problem framing and relevance, honesty about limitations, and presentation. Pull requests after {{SUBMISSION_DEADLINE}} are not judged.";
+  "The shared rubric is Coming soon. The dimensions named for review are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. Pull requests after October 31, 2026 are not judged.";
 
 export const AWARD_TEMPLATE_LINE =
-  "The sponsorship template lists 1st, 2nd, and 3rd, and says local winners advance. That file is a placeholder kit for campuses. Local events are two-day October weekends dated [Saturday–Sunday, October XX–XX, 2026]. Headcount is still “up to [40–50] students in teams of up to [4].” Beginners are welcome. The bracketed numbers stay blank.";
+  "Local events are October 17–18, 2026. Capacity is up to 50 participants per campus. A team-size cap inside that room is TBA. Beginners are welcome.";
 
 export const LIGHTNING_TALK_LINE =
   "The Pitch Lead owns a five-minute deck and demo. The sponsorship template also lists a five-minute sponsor lightning talk. That line is a sponsorship benefit.";
 
 export const HOST_CONTACTS: { name: string; detail: string; href?: string }[] = [
-  { name: "Robert Loredo", detail: "RLoredo2026@fau.edu. He leads this initiative.", href: "https://linkedin.com/in/robertloredo" },
-  { name: "Ayse Torres", detail: "LinkedIn is still blank." },
-  { name: "Grant Kurz", detail: "LinkedIn is still blank. The files have no separate public name, date block, proposal form, join URL, team cap, or rubric for an event under his name." },
+  { name: "Kevin Robinson", detail: "Organizer, Quantum Global Group. kevin@quantumglobalgroup.io." },
+  { name: "Robert Loredo", detail: "Sponsorship and team lead.", href: "https://linkedin.com/in/robertloredo" },
 ];
 
 export const SEPTEMBER_LINE =
-  "A September host kickoff is described as a recorded overview of team setup, IBM Quantum access, and Qiskit, plus a shared calendar of campus hackathons. Still blank: the September date and the recording URL.";
+  "A recorded host overview is not confirmed. The date and the recording URL are TBA.";
 
 export const CANVAS_NOTE =
-  "Fill the nine-field Use-Case Canvas before arrival, read it aloud at team formation, and copy it to submissions/team-<name>/USE-CASE.md. Challenge statements are described as published at kickoff in challenges/, and that folder is not in the tree. This workshop’s project canvas is a Hetionet sketch for the local lab. It is a different sheet from the nine-field canvas.";
+  "Fill the nine-field Use-Case Canvas before arrival, read it aloud at team formation, and copy it to submissions/team-<name>/USE-CASE.md. Challenge statements are Coming soon in challenges/. This workshop’s project canvas is a Hetionet sketch for the local lab. It is a different sheet from the nine-field canvas.";
 
 export const OPEN_PLAN_MINUTES =
-  "The Open Plan gives up to 10 minutes of QPU time per rolling 28-day window. Usage is on the dashboard and the Workloads page. Iterate on a simulator, and send a circuit to hardware only after it is final. A StatevectorSampler setup check uses no account and no QPU time. QiskitRuntimeService(channel=\"local\") is described as free, instant, and unlimited. Hardware selection after that is least_busy(operational=True, simulator=False). One person per team owns those hardware jobs. An unattended loop burns the quota.";
+  "The Open Plan gives up to 10 minutes of QPU time per rolling 28-day window. Usage is on the dashboard and the Workloads page. Iterate on a local StatevectorSampler, and send a circuit to hardware only after it is final. One person per team owns those hardware jobs. An unattended loop burns the quota.";
 
 export const PROMO_BLANK =
   "This workshop does not promise minutes beyond the Open Plan window of 10 minutes per 28 days.";
@@ -659,7 +647,7 @@ export const QML_FIT =
   "Shape 3 is the learning fit: scarce, expensive data and a subtle signal, including fraud, anomaly, classification, generative modeling, and risk. The catalog’s industry example is hybrid ensemble classification for grid stability.";
 
 export const QML_OUTPUT_BLANK =
-  "Still blank as a lab. The FAU files do not say what quantum machine learning code to implement, or what to do with that output. The general project bar still applies: run small, compare with a classical baseline, state the size gap, and say what the result does not show.";
+  "No specific quantum machine learning implementation is assigned. The project bar still applies: run small, compare with a classical baseline, state the size gap, and say what the result does not show.";
 
 export const HETIONET_PIPELINE = [
   "Define the problem",
@@ -797,7 +785,7 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
   ],
   hackathon: [
     {
-      question: "When do the FAU materials say you need a team?",
+      question: "When do you need a team?",
       options: [
         "Before you register",
         "You do not need a team before kickoff. Team formation is at kickoff.",
@@ -805,12 +793,12 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
         "Only after the state championship",
       ],
       answer: 1,
-      why: "The handbook says you do not need a team beforehand. This page does not choose between the October 1 and October 5 kickoff lines, and it does not turn the bracketed template number into a cap.",
+      why: "The handbook says you do not need a team beforehand. Kickoff is October 1, 2026. A team-size cap inside the campus capacity is TBA.",
     },
   ],
   qml: [
     {
-      question: "Where do the FAU materials put the 10 minutes?",
+      question: "Where do the 10 minutes apply?",
       options: [
         "As extra minutes a facilitator can add on the Open Plan",
         "On the Open Plan: up to 10 minutes of QPU time per rolling 28-day window. A StatevectorSampler check uses no QPU time.",
@@ -874,10 +862,10 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
     notes: ["The Qolour lesson is not here yet. Link only the educator course. Do not paste the course."],
   },
   hackathon: {
-    timing: "20 minutes. Read both kickoff lines. Do not pick one.",
+    timing: "20 minutes. Kickoff is October 1, 2026.",
     notes: [
-      "Robert Loredo leads this initiative. Cite him by name and role. Do not read from the book.",
-      "Do not fill Grant’s event name, campus, registration URL, GitHub org, team-size cap, or judging weights.",
+      "Robert Loredo is the sponsorship and team lead. Do not read from the book.",
+      "Registration, the rubric, and unconfirmed rooms stay Coming soon or TBA.",
     ],
   },
   qml: {

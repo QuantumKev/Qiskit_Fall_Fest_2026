@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useSyncExternalStore } from "react";
 
 export type Mode = "participant" | "facilitator";
 
@@ -24,72 +24,96 @@ type Store = {
 
 const emptySurvey: Survey = { python: "", qiskit: "", ibm: "", math: "" };
 
+type Snapshot = { mode: Mode; done: string[]; survey: Survey };
+
+const serverSnapshot: Snapshot = { mode: "participant", done: [], survey: emptySurvey };
+let snapshot: Snapshot = serverSnapshot;
+let loaded = false;
+const listeners = new Set<() => void>();
+
+function emit() {
+  listeners.forEach((listener) => listener());
+}
+
+function readSnapshot(): Snapshot {
+  const storedMode = localStorage.getItem("qff-mode");
+  const mode: Mode = storedMode === "facilitator" ? "facilitator" : "participant";
+  let done: string[] = [];
+  try {
+    const parsed = JSON.parse(localStorage.getItem("qff-progress") || "[]");
+    if (Array.isArray(parsed)) done = parsed.filter((item) => typeof item === "string");
+  } catch {
+    done = [];
+  }
+  let survey = emptySurvey;
+  try {
+    const parsed = JSON.parse(localStorage.getItem("qff-survey") || "null");
+    if (parsed && typeof parsed === "object") survey = { ...emptySurvey, ...parsed };
+  } catch {
+    survey = emptySurvey;
+  }
+  return { mode, done, survey };
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function getSnapshot() {
+  if (!loaded) {
+    loaded = true;
+    snapshot = readSnapshot();
+  }
+  return snapshot;
+}
+
 const ProgressContext = createContext<Store | null>(null);
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
-  const [ready, setReady] = useState(false);
-  const [mode, setModeState] = useState<Mode>("participant");
-  const [done, setDone] = useState<string[]>([]);
-  const [survey, setSurvey] = useState<Survey>(emptySurvey);
+  const current = useSyncExternalStore(subscribe, getSnapshot, () => serverSnapshot);
 
-  useEffect(() => {
-    const storedMode = localStorage.getItem("qff-mode");
-    if (storedMode === "participant" || storedMode === "facilitator") {
-      setModeState(storedMode);
-    }
-    try {
-      const parsed = JSON.parse(localStorage.getItem("qff-progress") || "[]");
-      if (Array.isArray(parsed)) {
-        setDone(parsed.filter((item) => typeof item === "string"));
-      }
-    } catch {
-      setDone([]);
-    }
-    try {
-      const parsed = JSON.parse(localStorage.getItem("qff-survey") || "null");
-      if (parsed && typeof parsed === "object") {
-        setSurvey({ ...emptySurvey, ...parsed });
-      }
-    } catch {
-      setSurvey(emptySurvey);
-    }
-    setReady(true);
+  const setMode = useCallback((mode: Mode) => {
+    snapshot = { ...getSnapshot(), mode };
+    localStorage.setItem("qff-mode", mode);
+    emit();
   }, []);
 
-  function setMode(next: Mode) {
-    setModeState(next);
-    localStorage.setItem("qff-mode", next);
-  }
+  const toggleDone = useCallback((slug: string) => {
+    const currentDone = getSnapshot().done;
+    const done = currentDone.includes(slug) ? currentDone.filter((item) => item !== slug) : [...currentDone, slug];
+    snapshot = { ...getSnapshot(), done };
+    localStorage.setItem("qff-progress", JSON.stringify(done));
+    emit();
+  }, []);
 
-  function toggleDone(slug: string) {
-    setDone((current) => {
-      const next = current.includes(slug)
-        ? current.filter((item) => item !== slug)
-        : [...current, slug];
-      localStorage.setItem("qff-progress", JSON.stringify(next));
-      return next;
-    });
-  }
+  const markDone = useCallback((slug: string) => {
+    const currentDone = getSnapshot().done;
+    if (currentDone.includes(slug)) return;
+    const done = [...currentDone, slug];
+    snapshot = { ...getSnapshot(), done };
+    localStorage.setItem("qff-progress", JSON.stringify(done));
+    emit();
+  }, []);
 
-  function markDone(slug: string) {
-    setDone((current) => {
-      if (current.includes(slug)) return current;
-      const next = [...current, slug];
-      localStorage.setItem("qff-progress", JSON.stringify(next));
-      return next;
-    });
-  }
+  const saveSurvey = useCallback((survey: Survey) => {
+    snapshot = { ...getSnapshot(), survey };
+    localStorage.setItem("qff-survey", JSON.stringify(survey));
+    emit();
+  }, []);
 
-  function saveSurvey(next: Survey) {
-    setSurvey(next);
-    localStorage.setItem("qff-survey", JSON.stringify(next));
-  }
+  const value: Store = {
+    ready: true,
+    mode: current.mode,
+    setMode,
+    done: current.done,
+    toggleDone,
+    markDone,
+    survey: current.survey,
+    saveSurvey,
+  };
 
-  return (
-    <ProgressContext.Provider value={{ ready, mode, setMode, done, toggleDone, markDone, survey, saveSurvey }}>
-      {children}
-    </ProgressContext.Provider>
-  );
+  return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }
 
 export function useProgress() {

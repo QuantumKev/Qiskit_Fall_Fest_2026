@@ -1,24 +1,84 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
+import { BellFigure, ExpectedHistogram } from "@/components/BellFigure";
 import { CopyBlock } from "@/components/CopyBlock";
 import { useProgress } from "@/components/store";
-import { JOURNEY, type Check, type StepPage } from "@/content/onboarding";
+import { GLOSSARY } from "@/content/glossary";
+import { AREA_LINKS, JOURNEY, type Check, type StepPage } from "@/content/onboarding";
+import { slugify } from "@/lib/slug";
+
+function ExternalAnchor({ href, children }: { href: string; children: ReactNode }) {
+  const external = /^https?:\/\//.test(href);
+  if (!external) {
+    return <Link href={href}>{children}</Link>;
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer external">
+      {children}
+      <span className="external-mark"> (external)</span>
+    </a>
+  );
+}
+
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(https?:\/\/[^\s)]+)/g);
+  return parts.map((part, index) =>
+    part.startsWith("http") ? (
+      <ExternalAnchor key={`${part}-${index}`} href={part}>
+        {part}
+      </ExternalAnchor>
+    ) : (
+      <span key={`${part}-${index}`}>{part}</span>
+    ),
+  );
+}
+
+function DataTable({ caption, headers, rows }: { caption: string; headers: string[]; rows: string[][] }) {
+  return (
+    <div className="table-wrap">
+      <table>
+        <caption>{caption}</caption>
+        <thead>
+          <tr>
+            {headers.map((header) => (
+              <th key={header} scope="col">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.join("|")}>
+              {row.map((cell, index) => (
+                <td key={`${row[0]}-${index}`}>
+                  <RichText text={cell} />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 function CheckCard({ check }: { check: Check }) {
   const [picked, setPicked] = useState<number | null>(null);
   const correct = picked === check.answer;
+  const group = slugify(check.question);
 
   return (
     <fieldset className="check">
       <legend>{check.question}</legend>
       <div className="check-options">
         {check.options.map((option, index) => (
-          <label key={option}>
+          <label key={option} className="check-option">
             <input
               type="radio"
-              name={check.question}
+              name={group}
               checked={picked === index}
               onChange={() => setPicked(index)}
             />
@@ -33,14 +93,16 @@ function CheckCard({ check }: { check: Check }) {
   );
 }
 
-export function OnboardingView({ page }: { page: StepPage }) {
+export function OnboardingView({ page, children }: { page: StepPage; children?: ReactNode }) {
   const { done, toggleDone } = useProgress();
   const complete = done.includes(page.slug);
+  const journeyIndex = JOURNEY.findIndex((item) => item.slug === page.slug);
+  const onJourney = journeyIndex >= 0;
 
   return (
     <article className="stack guide">
       <p className="kicker">
-        Step {page.number} of {JOURNEY.length} · {page.minutes} min
+        {onJourney ? `Step ${page.number} of ${JOURNEY.length} · ${page.minutes} min` : `Reference · ${page.minutes} min`}
       </p>
       <h1>{page.title}</h1>
       <p className="lede">{page.purpose}</p>
@@ -58,111 +120,146 @@ export function OnboardingView({ page }: { page: StepPage }) {
         </nav>
       ) : null}
 
-      {page.sections.map((section) => (
-        <section key={section.heading} className="prose">
-          <h2>{section.heading}</h2>
-          {section.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-          {section.steps ? (
-            <ol>
-              {section.steps.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-          ) : null}
-          {section.troubles?.map((trouble) => (
-            <details key={trouble.title} className="trouble">
-              <summary>{trouble.title}</summary>
-              <p>{trouble.body}</p>
-            </details>
-          ))}
+      {page.sections.map((section) => {
+        const id = section.id || slugify(section.heading);
+        return (
+          <section key={id} id={id} className="prose card">
+            <h2>{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p key={paragraph}>
+                <RichText text={paragraph} />
+              </p>
+            ))}
+            {section.steps ? (
+              <ol>
+                {section.steps.map((step) => (
+                  <li key={step}>
+                    <RichText text={step} />
+                  </li>
+                ))}
+              </ol>
+            ) : null}
+            {section.table ? <DataTable {...section.table} /> : null}
+            {section.troubles?.map((trouble) => (
+              <details key={trouble.title} className="trouble">
+                <summary>{trouble.title}</summary>
+                <p>{trouble.body}</p>
+              </details>
+            ))}
+          </section>
+        );
+      })}
+
+      {page.glossaryTerms ? (
+        <section className="prose card" aria-label="Vocabulary">
+          <div className="card-grid">
+            {page.glossaryTerms.map((term) => {
+              const entry = GLOSSARY.find((item) => item.term === term);
+              if (!entry) return null;
+              return (
+                <article key={term} className="term-card">
+                  <h2>{entry.term}</h2>
+                  <p>{entry.plain}</p>
+                  <p>{entry.technical}</p>
+                </article>
+              );
+            })}
+          </div>
         </section>
-      ))}
+      ) : null}
+
+      {page.showCircuit ? <BellFigure /> : null}
+      {page.showHistogram ? <ExpectedHistogram /> : null}
 
       {page.table ? (
-        <section className="prose">
+        <section className="prose card">
           <h2>{page.table.caption}</h2>
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  {page.table.headers.map((header) => (
-                    <th key={header}>{header}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {page.table.rows.map((row) => (
-                  <tr key={row[0]}>
-                    {row.map((cell) => (
-                      <td key={cell}>{cell}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <DataTable {...page.table} />
         </section>
       ) : null}
 
       {page.code ? <CopyBlock filename={page.code.filename} source={page.code.source} /> : null}
 
+      {page.stages?.map((stage) => (
+        <section key={stage.name} id={slugify(stage.name)} className="prose card stage-card">
+          <h2>{stage.name}</h2>
+          <p>{stage.definition}</p>
+          <CopyBlock filename={stage.name} source={stage.code} />
+          <dl className="stage-facts">
+            <div>
+              <dt>Input</dt>
+              <dd>{stage.input}</dd>
+            </div>
+            <div>
+              <dt>Output</dt>
+              <dd>{stage.output}</dd>
+            </div>
+            <div>
+              <dt>Vocabulary</dt>
+              <dd>{stage.vocabulary}</dd>
+            </div>
+            <div>
+              <dt>Why it matters</dt>
+              <dd>{stage.why}</dd>
+            </div>
+            <div>
+              <dt>A beginner mistake</dt>
+              <dd>{stage.mistake}</dd>
+            </div>
+          </dl>
+        </section>
+      ))}
+
       {page.structureAnalogy ? (
-        <section className="prose">
+        <section className="prose card">
           <h2>Software structure</h2>
           <p>The technical definition is in the first column. One Home Depot line sits beside it. This analogy stops at these programming words.</p>
-          <div className="table-wrap">
-            <table>
-              <caption>Software structure</caption>
-              <thead>
-                <tr>
-                  <th>Word</th>
-                  <th>Technical definition</th>
-                  <th>Home Depot</th>
-                </tr>
-              </thead>
-              <tbody>
-                {page.structureAnalogy.map((row) => (
-                  <tr key={row.concept}>
-                    <td>{row.concept}</td>
-                    <td>{row.technical}</td>
-                    <td>{row.analogy}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <DataTable
+            caption="Software structure"
+            headers={["Word", "Technical definition", "Home Depot"]}
+            rows={page.structureAnalogy.map((row) => [row.concept, row.technical, row.analogy])}
+          />
         </section>
       ) : null}
 
+      {children}
+
       {page.links ? (
-        <ul>
+        <ul className="link-list">
           {page.links.map((link) => (
             <li key={link.href}>
-              <a href={link.href}>{link.label}</a>
+              <ExternalAnchor href={link.href}>{link.label}</ExternalAnchor>
             </li>
           ))}
         </ul>
       ) : null}
 
       {page.slug === "start" ? (
-        <ol className="module-list">
-          {JOURNEY.map((item) => (
-            <li key={item.slug}>
-              <Link href={item.href}>
-                <span className="module-index">{item.number}</span>
-                <span>
-                  <strong>{item.title}</strong>
-                  <span className="meta">{item.minutes} min</span>
-                </span>
-                <span className={done.includes(item.slug) ? "status done" : "status"}>
-                  {done.includes(item.slug) ? "Done" : "Open"}
-                </span>
+        <>
+          <ol className="module-list">
+            {JOURNEY.map((item) => (
+              <li key={item.slug}>
+                <Link href={item.href}>
+                  <span className="module-index">{item.number}</span>
+                  <span>
+                    <strong>{item.title}</strong>
+                    <span className="meta">{item.minutes} min</span>
+                  </span>
+                  <span className={done.includes(item.slug) ? "status done" : "status"}>
+                    {done.includes(item.slug) ? "Done" : "Open"}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+          <nav className="area-grid" aria-label="Areas">
+            {AREA_LINKS.map((area) => (
+              <Link key={area.href} href={area.href}>
+                {area.label}
               </Link>
-            </li>
-          ))}
-        </ol>
+            ))}
+          </nav>
+        </>
       ) : null}
 
       <CheckCard check={page.check} />
