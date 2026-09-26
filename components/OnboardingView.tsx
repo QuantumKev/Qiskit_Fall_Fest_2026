@@ -44,6 +44,19 @@ export function OnboardingView({ page }: { page: StepPage }) {
       </p>
       <h1>{page.title}</h1>
       <p className="lede">{page.purpose}</p>
+      {page.slug === "start" ? (
+        <nav className="phase-rail" aria-label="Sections">
+          <ol>
+            {JOURNEY.map((item) => (
+              <li key={item.slug}>
+                <Link href={item.href} aria-current={item.slug === page.slug ? "page" : undefined}>
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      ) : null}
 
       {page.sections.map((section) => (
         <section key={section.heading} className="prose">

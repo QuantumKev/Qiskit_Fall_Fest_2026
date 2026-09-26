@@ -290,7 +290,7 @@ select, input[type="search"], .filters input {
   gap: 8px;
 }
 
-.phase-rail span, .section-jumps a, .trace-steps button, .line-list button, .trace-controls button {
+.phase-rail span, .phase-rail a, .section-jumps a, .trace-steps button, .line-list button, .trace-controls button {
   border: 1px solid var(--line);
   background: transparent;
   color: var(--bone);
@@ -300,7 +300,7 @@ select, input[type="search"], .filters input {
   font-size: 12px;
 }
 
-.phase-rail [aria-current="step"], .section-jumps a[aria-current="page"], .line-list button[aria-pressed="true"] {
+.phase-rail [aria-current="step"], .phase-rail a[aria-current="page"], .section-jumps a[aria-current="page"], .line-list button[aria-pressed="true"] {
   background: var(--cobalt);
   border-color: var(--cobalt);
   color: white;

@@ -53,6 +53,14 @@ test("the participant journey is ten pages", () => {
   assert.doesNotMatch(register, /Grant will send/);
 });
 
+test("the start page strip is the ten section names", () => {
+  assert.match(view, /aria-label="Sections"/);
+  assert.match(view, /item\.title/);
+  assert.doesNotMatch(view, /Learn the Language/);
+  assert.doesNotMatch(view, /Find Your Next Step/);
+  assert.doesNotMatch(view, /Build Visually/);
+});
+
 test("Home Depot is one software-structure table", () => {
   assert.match(onboarding, /A department or toolbox/);
   assert.match(view, /This analogy stops at these programming words/);
