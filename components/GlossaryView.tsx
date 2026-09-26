@@ -1,34 +1,25 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { GLOSSARY, type AnalogyDomain } from "@/content/glossary";
-
-const DOMAINS: Array<AnalogyDomain | "All"> = ["All", "Cooking", "Music", "Sports", "Home Depot"];
+import { GLOSSARY } from "@/content/glossary";
 
 export function GlossaryView() {
   const [query, setQuery] = useState("");
-  const [domain, setDomain] = useState<AnalogyDomain | "All">("All");
 
   const matches = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return GLOSSARY.filter((entry) => {
-      const domainOk = domain === "All" || entry.analogyDomain === domain;
-      if (!domainOk) return false;
       if (!needle) return true;
-      const haystack = [entry.term, entry.plain, entry.technical, entry.analogy, entry.why, entry.misconception]
-        .join(" ")
-        .toLowerCase();
+      const haystack = [entry.term, entry.plain, entry.technical, entry.why, entry.misconception].join(" ").toLowerCase();
       return haystack.includes(needle);
     });
-  }, [query, domain]);
+  }, [query]);
 
   return (
     <div className="stack">
       <p className="kicker">Glossary</p>
       <h1>Words the labs actually use.</h1>
-      <p className="lede">
-        Each card keeps the technical definition. The analogy is a translation beside it, from cooking, music, sports, or Home Depot.
-      </p>
+      <p className="lede">Each card keeps the plain sentence and the technical definition.</p>
       <div className="filters">
         <label>
           Search
@@ -38,13 +29,6 @@ export function GlossaryView() {
             placeholder="entanglement, shot, PR-AUC"
           />
         </label>
-        <div className="mode-switch" role="group" aria-label="Analogy domain">
-          {DOMAINS.map((item) => (
-            <button key={item} type="button" aria-pressed={domain === item} onClick={() => setDomain(item)}>
-              {item}
-            </button>
-          ))}
-        </div>
       </div>
       <p className="meta">
         {matches.length} of {GLOSSARY.length}
@@ -58,11 +42,9 @@ export function GlossaryView() {
             <p>{entry.plain}</p>
             <h3>Technical</h3>
             <p>{entry.technical}</p>
-            <h3>{entry.analogyDomain}</h3>
-            <p>{entry.analogy}</p>
             <h3>Why it matters</h3>
             <p>{entry.why}</p>
-            <h3>Watch for this</h3>
+            <h3>Common misconception</h3>
             <p>{entry.misconception}</p>
           </article>
         ))}

@@ -60,8 +60,8 @@ export function RegisterForm() {
     }
     setOk(true);
     setMessage(
-      body.status === "Waiting for Classroom Invitation"
-        ? "Saved. Your status is Waiting for Classroom Invitation. Use the simulator until the invitation arrives."
+      body.status === "Simulator first"
+        ? "Saved. Your status is Simulator first. The Bell lab uses the local simulator. Open Plan QPU time is 10 minutes per 28-day window."
         : "Saved. The organizers can see this response. They cannot see an API key, because this form never asked for one.",
     );
   }

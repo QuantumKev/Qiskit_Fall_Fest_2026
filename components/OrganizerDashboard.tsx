@@ -60,7 +60,7 @@ export function OrganizerDashboard() {
   function copyEmails() {
     const emails = Array.from(new Set(rows.map((row) => row.email))).join("\n");
     void navigator.clipboard.writeText(emails);
-    setMessage("Email addresses copied, one per line, for the IBM Classroom invitation.");
+    setMessage("Email addresses copied, one per line.");
   }
 
   function copyAttendance() {

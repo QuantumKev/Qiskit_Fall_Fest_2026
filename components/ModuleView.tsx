@@ -116,31 +116,6 @@ export function ModuleView({ module }: { module: Module }) {
 
       {module.slug === "welcome" ? <SurveyForm /> : null}
 
-      {module.analogies?.map((block) => (
-        <section key={block.title} className="prose">
-          <h2>{block.title}</h2>
-          <p className="meta">Teaching translation. It sits beside the definition and does not replace the quantum word.</p>
-          <dl className="analogy-grid">
-            <div>
-              <dt>Cooking</dt>
-              <dd>{block.layers.cooking}</dd>
-            </div>
-            <div>
-              <dt>Music</dt>
-              <dd>{block.layers.music}</dd>
-            </div>
-            <div>
-              <dt>Sports</dt>
-              <dd>{block.layers.sports}</dd>
-            </div>
-            <div>
-              <dt>Home Depot</dt>
-              <dd>{block.layers.homeDepot}</dd>
-            </div>
-          </dl>
-        </section>
-      ))}
-
       {module.code?.map((block) => (
         <CopyBlock key={block.filename} filename={block.filename} source={block.source} />
       ))}

@@ -25,6 +25,6 @@ counts = result[0].data["meas"].get_counts()
 print(counts)
 ```
 
-`bell_circuit = QuantumCircuit(2)` uses the class `QuantumCircuit`, the variable `bell_circuit`, a new object, the argument `2`, and assignment. In the Home Depot table, that is a two-room blueprint labeled `bell_circuit`.
+`bell_circuit = QuantumCircuit(2)` uses the class `QuantumCircuit`, the variable `bell_circuit`, a new object, the argument `2`, and assignment.
 
 Composer order: Starting state, Hadamard, CNOT, measurement, counts.

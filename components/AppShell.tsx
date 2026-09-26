@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MODULES } from "@/content/modules";
+import { JOURNEY } from "@/content/onboarding";
 import { ProgressProvider, useProgress } from "@/components/store";
 
 function Header() {
   const pathname = usePathname();
   const { mode, setMode, done } = useProgress();
-  const complete = MODULES.filter((item) => done.includes(item.slug)).length;
+  const complete = JOURNEY.filter((item) => done.includes(item.slug)).length;
 
   return (
     <header className="site-header">
@@ -18,20 +18,17 @@ function Header() {
           Fall Fest 2026
         </Link>
         <nav className="header-nav" aria-label="Primary">
-          <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
-            Journey
-          </Link>
-          <Link href="/intro" aria-current={pathname.startsWith("/intro") ? "page" : undefined}>
-            Intro
-          </Link>
           <Link href="/register" aria-current={pathname === "/register" ? "page" : undefined}>
             Register
+          </Link>
+          <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
+            Start
           </Link>
           <Link href="/glossary" aria-current={pathname === "/glossary" ? "page" : undefined}>
             Glossary
           </Link>
-          <Link href="/sources" aria-current={pathname === "/sources" ? "page" : undefined}>
-            Sources
+          <Link href="/resources" aria-current={pathname === "/resources" ? "page" : undefined}>
+            Resources
           </Link>
           {mode === "facilitator" ? (
             <Link href="/organizers" aria-current={pathname === "/organizers" ? "page" : undefined}>
@@ -41,7 +38,7 @@ function Header() {
         </nav>
         <div className="header-tools">
           <p className="progress-pill">
-            {complete}/{MODULES.length} done
+            {complete}/{JOURNEY.length} done
           </p>
           <div className="mode-switch" role="group" aria-label="Workshop mode">
             <button

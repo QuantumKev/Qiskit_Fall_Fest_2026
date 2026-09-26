@@ -28,7 +28,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "A qubit’s pure state is a normalized vector in a two-dimensional complex vector space, spanned by the basis states |0⟩ and |1⟩.",
     analogyDomain: "Music",
     analogy: "A note that has not been recorded yet. You can shape its loudness and its timing. When you record it, the recording is one definite sample.",
-    why: "Every circuit in Composer and Qiskit is a recipe for changing qubit states and then measuring them.",
+    why: "Every circuit in Composer and Qiskit changes qubit states and then measures them.",
     misconception: "A qubit is a tiny classical bit that spins until you look. The useful description is a statevector, not a spinning coin.",
   },
   {
@@ -170,7 +170,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "A circuit specifies unitary operations on quantum registers and, when measurements are present, maps results into classical bits.",
     analogyDomain: "Cooking",
     analogy: "A recipe card read from left to right: prep, combine, then plate. The wires are the ingredients that stay in the bowls. The boxes are the steps.",
-    why: "Composer and Qiskit are two ways to write the same recipe.",
+    why: "Composer and Qiskit are two ways to write the same circuit.",
     misconception: "A circuit is the quantum computer. The circuit is the program. A simulator or QPU is where you run it.",
   },
   {
@@ -179,7 +179,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "In Qiskit, QuantumCircuit(2) creates a quantum register of two qubits, indexed 0 and 1.",
     analogyDomain: "Home Depot",
     analogy: "The pair of labeled bins you set on the workbench before you start. Bin 0 and bin 1 stay distinct.",
-    why: "Indexing starts at 0. qubit 0 is the first bin, not “qubit number 1” in everyday counting.",
+    why: "Indexing starts at 0. Qubit 0 is the first qubit, not “qubit number 1” in everyday counting.",
     misconception: "Register size is the number of shots. Shots are repeats. The register is how many qubits the circuit has.",
   },
   {
@@ -188,7 +188,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "measure_all() adds a classical bit for each qubit and measures into it. The default name in the sampler result is meas.",
     analogyDomain: "Cooking",
     analogy: "The ticket the kitchen prints when a dish leaves the pass. The ticket is classical. The bowl before plating was the quantum state.",
-    why: "Counts are tallies of those tickets.",
+    why: "Counts are tallies of those measurement results.",
     misconception: "Classical bits in the circuit are qubits. They are the ordinary record of results.",
   },
   {
@@ -233,7 +233,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "A statevector simulator stores the 2ⁿ amplitudes and samples them. It is not a quantum processing unit.",
     analogyDomain: "Cooking",
     analogy: "A practice kitchen that follows the recipe with perfect measurements and no burnt pans. Useful for learning. It is not dinner service on a busy Saturday.",
-    why: "We run the ideal simulation first so you know what the recipe intends.",
+    why: "We run the ideal simulation first so you know what the circuit is prepared to do.",
     misconception: "A simulator result is a quantum-advantage result. It is a classical calculation of the model.",
   },
   {
@@ -243,7 +243,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "IBM Quantum QPUs execute transpiled circuits on superconducting qubits. Results include noise from the device and the environment.",
     analogyDomain: "Home Depot",
     analogy: "The real job site, not the drawing on the counter. Weather, tools, and materials affect the outcome. The drawing is still the plan.",
-    why: "If your classroom account can reach hardware, you compare the ideal histogram with the QPU histogram.",
+    why: "If you later run the same circuit on hardware, you compare the ideal histogram with the QPU histogram. That job uses Open Plan time.",
     misconception: "A QPU replaces the need for classical computers. Real projects use both. The Hetionet example is hybrid on purpose.",
   },
   {
@@ -353,7 +353,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "It is an empirical and problem-specific claim. This workshop does not attempt it, and the Hetionet results are not presented as advantage.",
     analogyDomain: "Sports",
     analogy: "Winning a championship, not winning a scrimmage against a partial roster.",
-    why: "Participants should be able to hear the phrase and not treat a classroom Bell state as an example of it.",
+    why: "Participants should be able to hear the phrase and not treat this Bell lab as an example of it.",
     misconception: "Any circuit that runs on a QPU is quantum advantage. Running is access. Advantage is a comparative claim.",
   },
   {

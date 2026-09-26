@@ -24,7 +24,7 @@ export function Journey() {
       <section className="next-card">
         <p className="kicker">Introduction to Qiskit</p>
         <h2>Build your first quantum program</h2>
-        <p>A beginner path through the vocabulary, Composer, and one Bell circuit. Exercise 1 is the account connection.</p>
+        <p>A beginner path through the language, Composer, and one Bell circuit. Exercise 1 is the account connection.</p>
         <Link className="button" href="/intro">
           Open the guide
         </Link>

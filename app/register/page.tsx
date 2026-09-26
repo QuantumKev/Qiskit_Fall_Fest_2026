@@ -23,6 +23,10 @@ export default async function RegisterPage() {
       <p className="lede">
         This form collects the email you will use with IBM Cloud. It does not collect passwords, API keys, CRNs, or payment cards. Responses are visible only to organizers.
       </p>
+      <aside className="placeholder">
+        <h2>Official registration link</h2>
+        <p>TBA. This form records workshop attendance. It is not the IBM Quantum account, and it does not collect passwords, API keys, or CRNs.</p>
+      </aside>
       <details className="trouble">
         <summary>Share this form</summary>
         <p>

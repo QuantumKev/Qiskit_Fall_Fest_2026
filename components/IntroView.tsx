@@ -6,8 +6,8 @@ import { CopyBlock } from "@/components/CopyBlock";
 import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { useProgress } from "@/components/store";
 import { GLOSSARY } from "@/content/glossary";
+import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
 import {
-  ANALOGY_END,
   BELL_LINES,
   BELL_SOURCE,
   COMPOSER_FLOW,
@@ -25,8 +25,6 @@ import {
   FALL_FEST_LINKS,
   HACKATHON_GAP_NOTE,
   HACKATHON_GAPS,
-  HETIONET_PIPELINE,
-  HOME_DEPOT_TABLE,
   HOST_CONTACTS,
   HOUSE_EXAMPLE,
   INTRO_CHECKS,
@@ -48,7 +46,6 @@ import {
   PROGRAM_NAME,
   PROGRAM_TERMS,
   PROJECT_KINDS,
-  PROMO_BLANK,
   PROGRESS_LINE,
   QML_COURSE,
   QML_FIT,
@@ -134,33 +131,13 @@ function LanguageBody() {
   const [query, setQuery] = useState("");
   const needle = query.trim().toLowerCase();
   const terms = PROGRAM_TERMS.filter((term) =>
-    [term.keyword, term.technical, term.homeDepot || "", term.bellLab].join(" ").toLowerCase().includes(needle),
+    [term.keyword, term.technical, term.bellLab].join(" ").toLowerCase().includes(needle),
   );
   return (
     <div className="stack">
       <p>Python is the programming language. It supplies the grammar: names, assignment, calls, and order.</p>
       <p>Qiskit is an open-source SDK used to create and work with quantum circuits, operators, primitives, and related tools.</p>
       <p>IBM Quantum Platform provides learning resources, Composer, and access to quantum-computing services.</p>
-      <div className="table-wrap sheet">
-        <table>
-          <caption>Home Depot analogy for software structure</caption>
-          <thead>
-            <tr>
-              <th>Programming concept</th>
-              <th>Home Depot analogy</th>
-            </tr>
-          </thead>
-          <tbody>
-            {HOME_DEPOT_TABLE.map((row) => (
-              <tr key={row.concept}>
-                <td>{row.concept}</td>
-                <td>{row.analogy}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className="meta">{ANALOGY_END}</p>
       <label>
         Search the language cards
         <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="class, method, shots" />
@@ -171,8 +148,6 @@ function LanguageBody() {
             <h2>{term.keyword}</h2>
             <h3>Technical</h3>
             <p>{term.technical}</p>
-            <h3>Home Depot</h3>
-            <p>{term.homeDepot ?? "The analogy table has no row for this word. The analogy stops."}</p>
             <h3>Tiny Python</h3>
             <pre>
               <code>{term.pythonExample}</code>
@@ -255,7 +230,7 @@ function ComposerBody() {
   if (!unlocked) {
     return (
       <div className="stack">
-        <p>Exercise 1 comes first. Finish the connection checkpoint, or mark the simulator path if the classroom invitation is still pending.</p>
+        <p>Exercise 1 comes first. Finish the connection checkpoint, or mark the simulator path and keep going.</p>
         <Link className="button" href="/intro/prepare">
           Return to Exercise 1
         </Link>
@@ -294,7 +269,7 @@ function PythonBody() {
   if (!unlocked) {
     return (
       <div className="stack">
-        <p>The Python lab opens after Exercise 1, including the simulator-only path while an invitation is pending.</p>
+        <p>The Python lab opens after Exercise 1. The simulator path is the one this workshop starts with.</p>
         <Link className="button" href="/intro/prepare">
           Return to Exercise 1
         </Link>
@@ -423,6 +398,41 @@ function TraceBody() {
   );
 }
 
+function QubiDemoBody() {
+  return (
+    <div className="stack">
+      <aside className="placeholder">
+        <h2>Placeholder</h2>
+        <p>The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.</p>
+      </aside>
+      <p>
+        <a href="https://www.qolour.com/educator-course">Qolour educator course</a>
+      </p>
+      <p>The course stays on Qolour. This page does not copy it.</p>
+    </div>
+  );
+}
+
+function BellBody() {
+  return (
+    <div className="stack">
+      <p>
+        One lab. Build the Bell pair in Composer, then run the same circuit on a local simulator. A real quantum computer is later. That run uses the Open Plan: 10 minutes of QPU time per 28-day window. This workshop does not promise more minutes.
+      </p>
+      <p>
+        Canvas: <a href="https://quantum.cloud.ibm.com/composer">IBM Quantum Composer</a>. Guide:{" "}
+        <a href="https://quantum.cloud.ibm.com/docs/en/guides/composer">Composer documentation</a>.
+      </p>
+      <h2>Build it in Composer</h2>
+      <ComposerBody />
+      <h2>Run it in Python</h2>
+      <PythonBody />
+      <h2>Follow the program line by line</h2>
+      <TraceBody />
+    </div>
+  );
+}
+
 function PracticeBody() {
   return (
     <div className="stack">
@@ -477,7 +487,7 @@ function NextBody() {
           </li>
         ))}
       </ul>
-      <p>The Qolour course stays on Qolour. This guide links to it and does not copy it. Read video titles from the live menu.</p>
+      <p>The Qolour lesson is not here yet. This guide links to the educator course and does not copy it.</p>
     </div>
   );
 }
@@ -619,13 +629,11 @@ function QmlBody() {
       <h2>What to implement, and what to do with the output</h2>
       <p>{QML_OUTPUT_BLANK}</p>
       <h2>Simulator first, and the 10 minutes</h2>
+      <p>Quantum machine learning is the next part of this journey. It is not a separate required hackathon challenge. The source is still being reread. The links below stay. This page does not grow a new curriculum.</p>
       <p>{OPEN_PLAN_MINUTES}</p>
-      <p>{PROMO_BLANK}</p>
       <p>{PLAN_BLANK}</p>
       <p>
-        Classroom accounts, as an organizer option: <a href="https://ibm.biz/classroom-account">ibm.biz/classroom-account</a>. Plan comparison:{" "}
-        <a href="https://quantum.cloud.ibm.com/docs/en/guides/plans-overview">plans overview</a>. Open Plan updates:{" "}
-        <a href="https://www.ibm.com/quantum/blog/open-plan-updates">open-plan-updates</a>.
+        Plan comparison: <a href="https://quantum.cloud.ibm.com/docs/en/guides/plans-overview">plans overview</a>.
       </p>
     </div>
   );
@@ -635,16 +643,16 @@ function HetionetBody() {
   return (
     <div className="stack">
       <p>
-        Hetionet is a biomedical knowledge graph at <a href="https://het.io/">het.io</a>. The hybrid project is{" "}
-        <a href="https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc">hybrid-qml-kg-poc</a>. Before this tour, use the sitting after both Bell labs: <Link href="/learn/assess-build">read chapter 7, then Assess and Build</Link>. This page introduces the pipeline. It does not train the model. Run any new experiment on a simulator first. A StatevectorSampler check uses no QPU time. The 10 minutes are Open Plan QPU time per rolling 28-day window. No classroom-minute quota is stated.
+        Before this tour, use the sitting after both Bell labs: <Link href="/learn/assess-build">Next-Step Quantum Decision Guide</Link>. Read chapter 7 of Quantum Readiness for Leaders, then run Assess, then Build. This page does not train the model. A StatevectorSampler check uses no QPU time. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.
       </p>
-      <ol>
-        {HETIONET_PIPELINE.map((step) => (
-          <li key={step}>{step}</li>
-        ))}
-      </ol>
-      <p>README figures rechecked on 2026-09-25. Test PR-AUC: stacking Pauli 0.7987, RandomForest-Optimized 0.7838, ExtraTrees-Optimized 0.7807, stacking ZZ 0.7408, QSVC-Optimized 0.7216. The target above 0.70 was met. A tuned classical forest is close.</p>
-      <p>That comparison is not quantum advantage, and it is not a clinical result.</p>
+      {HETIONET_WALKTHROUGH.map((section) => (
+        <section key={section.heading}>
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </section>
+      ))}
     </div>
   );
 }
@@ -655,9 +663,8 @@ const BODIES: Record<IntroSlug, () => ReactElement> = {
   language: LanguageBody,
   execution: ExecutionBody,
   vocabulary: VocabularyBody,
-  composer: ComposerBody,
-  python: PythonBody,
-  trace: TraceBody,
+  "qubi-demo": QubiDemoBody,
+  bell: BellBody,
   practice: PracticeBody,
   "next-step": NextBody,
   hackathon: HackathonBody,

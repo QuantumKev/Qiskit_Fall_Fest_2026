@@ -4,17 +4,12 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
   {
     title: "Introduction to Qiskit",
     href: "/intro",
-    note: "Beginner guide added for Fall Fest. Programming analogies on that path use the Home Depot table. Quantum definitions stay technical. Registration responses are not listed here.",
+    note: "Beginner guide added for Fall Fest. Quantum definitions stay technical. Registration responses are not listed here.",
   },
   {
     title: "IBM Quantum Platform",
     href: "https://quantum.cloud.ibm.com/",
-    note: "Sign-in, Composer, Learning, and documentation links used in Modules 1, 5, and 9. Recheck the morning of the workshop. This site never collects passwords, API tokens, or classroom CRNs.",
-  },
-  {
-    title: "IBM classroom accounts",
-    href: "https://quantum.cloud.ibm.com/docs/en/guides/classroom-accounts",
-    note: "How a classroom account differs from a personal login.",
+    note: "Sign-in, Composer, Learning, and documentation links used in the journey. Recheck the morning of the workshop. This site never collects passwords or API tokens. Participants use the Open Plan: 10 minutes of QPU time per 28-day window.",
   },
   {
     title: "IBM quantum machine learning course",
@@ -39,7 +34,7 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
   {
     title: "Qolour educator course",
     href: "https://www.qolour.com/educator-course",
-    note: "Linked only. Kevin’s videos and the statevector exhibit stay on Qolour. This repo does not copy that course.",
+    note: "Linked only. The Qubi lesson is not in this repo. This repo does not copy that course.",
   },
   {
     title: "Hetionet hybrid project",
@@ -62,7 +57,7 @@ const SOURCES: { title: string; href?: string; note: string }[] = [
   {
     title: "Qiskit 2.x certification study guide",
     href: "https://github.com/Quantum-Global-Group/qiskit-2x-cert-study-guide",
-    note: "Later practice, not this workshop’s homework. Commit d0fe756 adds plain-English cheat-sheet PDFs. Those files were searched for cooking, music, sports, and Home Depot analogies and did not contain them. Analogies in this guide are original Fall Fest teaching translations.",
+    note: "Later practice, not this workshop’s homework. Commit d0fe756 adds plain-English cheat-sheet PDFs.",
   },
 ];
 
@@ -83,8 +78,7 @@ export default function SourcesPage() {
         ))}
       </ul>
       <p>
-        Offline sheets: <a href="/downloads/vocabulary.md">vocabulary</a>,{" "}
-        <a href="/downloads/bell-lab.md">Bell lab</a>,{" "}
+        Offline sheets: <a href="/downloads/bell-lab.md">Bell lab</a>,{" "}
         <a href="/downloads/project-canvas.md">project canvas</a>.
       </p>
     </div>
