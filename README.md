@@ -1,6 +1,6 @@
 # Qiskit Fall Fest 2026
 
-Guided onboarding for the Florida Quantum Readiness Challenge and Qiskit Fall Fest. The journey takes a beginner from an IBM Quantum sign-in through both Bell labs, a pointer to read chapter 7 of Quantum Readiness for Leaders and then run Assess and Build, a tour of the Hetionet hybrid project, and a next learning step. The live link for Assess and Build is still blank.
+One participant path for Qiskit Fall Fest 2026: account, one Bell state, the challenge, a classical baseline, a prototype charter, and the Hetionet case. The live host for Assess and Build is still not up.
 
 This is an entry ramp. It does not ask anyone to publish a quantum-advantage result.
 

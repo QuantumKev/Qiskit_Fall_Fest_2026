@@ -25,7 +25,7 @@ export default async function RegisterPage() {
       </p>
       <aside className="placeholder">
         <h2>Official registration link</h2>
-        <p>Still blank. Grant will send the real registration link and the process. This page does not invent them. The form below is the workshop attendance form.</p>
+        <p>TBA. This form records workshop attendance. It is not the IBM Quantum account, and it does not collect passwords, API keys, or CRNs.</p>
       </aside>
       <details className="trouble">
         <summary>Share this form</summary>
