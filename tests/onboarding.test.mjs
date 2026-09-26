@@ -48,7 +48,10 @@ test("the participant journey is twelve pages fed by one event record", () => {
   assert.match(onboarding, /not quantum advantage/);
   assert.match(onboarding, /not a clinical result/);
   assert.match(onboarding, /chapter 7 of Quantum Readiness for Leaders/i);
-  assert.match(onboarding, /Tool deployment pending/);
+  assert.match(onboarding, /label: "Next-Step Quantum Decision Guide"/);
+  assert.match(onboarding, /https:\/\/www\.quantumglobalgroup\.io\/qiskit-fall-fest\/decision-guide\/#\/assess/);
+  assert.doesNotMatch(onboarding, /Tool deployment pending/);
+  assert.doesNotMatch(onboarding, /not deployed/);
   assert.match(event, /www\.qolour\.com\/educator-course/);
   assert.match(event, /statevector-exhibit/);
   assert.match(onboarding, /QOLOR_COURSE/);

@@ -16,6 +16,8 @@ import {
 
 export const LAST_CHECKED = "2026-09-26";
 
+const DECISION_GUIDE_URL = "https://www.quantumglobalgroup.io/qiskit-fall-fest/decision-guide/#/assess";
+
 export type Check = {
   question: string;
   options: string[];
@@ -575,7 +577,7 @@ const problem: StepPage = {
       heading: "Baseline first",
       paragraphs: [
         "Name the ordinary method you already have. Decide the metric, the instance size, and what “better” means before you book a QPU.",
-        "An optimization-shaped problem is the only shape the readiness tool is meant to assess. That tool is not deployed for participants. Hetionet is a classification example. Do not send it through an optimization engine.",
+        "An optimization-shaped problem is the only shape the Next-Step Quantum Decision Guide is meant to assess. Hetionet is a classification example. Do not send it through an optimization engine.",
       ],
     },
   ],
@@ -624,10 +626,9 @@ const benchmarking: StepPage = {
       ],
     },
     {
-      heading: "Readiness tool",
+      heading: "Next-Step Quantum Decision Guide",
       paragraphs: [
-        "Tool deployment pending. There is no public assessment URL that opens while signed out, so this page does not invent one and does not link a private repository.",
-        "When a public tool exists, use it for optimization-shaped problems only. Do not use it on the Hetionet example.",
+        "Open this after both Bell labs and before the Hetionet example. Use it for optimization-shaped problems only. Hetionet is not an optimization result, not quantum advantage, and not a clinical result.",
       ],
     },
     {
@@ -646,6 +647,7 @@ const benchmarking: StepPage = {
       ],
     },
   ],
+  links: [{ href: DECISION_GUIDE_URL, label: "Next-Step Quantum Decision Guide" }],
   check: {
     question: "When do you write the success criteria?",
     options: ["After the hardware histogram looks good", "Before any quantum run", "Only if a private tool is copied into this repo", "After the statewide announcement"],
@@ -871,7 +873,7 @@ const resources: StepPage = {
       heading: "Case study and readiness",
       paragraphs: [
         `Hetionet repository: ${HETIONET_REPO}. The signed-out demo is ${HETIONET_LINKS.demo}.`,
-        "Tool deployment pending. No public assessment URL is linked, because none was open while signed out. The readiness tool is for optimization-shaped problems only, and it is not the Hetionet path.",
+        "The Next-Step Quantum Decision Guide is the step after both Bell labs and before Hetionet. Use it for optimization-shaped problems only. Hetionet is not an optimization result, not quantum advantage, and not a clinical result.",
       ],
     },
     {
@@ -887,6 +889,7 @@ const resources: StepPage = {
     { href: "/glossary/", label: "Glossary" },
     { href: "/support/", label: "Troubleshooting and support" },
     { href: "/roles/", label: "Domain track" },
+    { href: DECISION_GUIDE_URL, label: "Next-Step Quantum Decision Guide" },
   ],
   check: {
     question: "Where is the definition of a sampler?",
