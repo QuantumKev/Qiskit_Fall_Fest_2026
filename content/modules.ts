@@ -203,149 +203,52 @@ export const MODULES: Module[] = [
       expected: ["Yes. If not, they stay in setup and skip ahead only as observers."],
       misconceptions: ["An IBM login is not extra QPU time. The Open Plan window stays 10 minutes per 28 days."],
     },
-    nextSlug: "vocabulary",
-    nextLabel: "Learn the vocabulary",
-  },
-  {
-    slug: "vocabulary",
-    number: "02",
-    title: "Beginner vocabulary",
-    minutes: 20,
-    summary: "Programming structure uses the Home Depot analogy. Quantum words keep a plain sentence and the technical definition.",
-    outcomes: ["Look a word up before guessing.", "Separate amplitude from probability.", "Reject the slogan that a qubit tries every answer at once."],
-    sections: [
-      {
-        heading: "How the cards work",
-        paragraphs: [
-          "The glossary is the source of the technical definitions on the quantum cards. Search it whenever a term shows up early.",
-          "This page uses one analogy, and only for programming structure: package, module, class, object, method, argument, and variable. Those lines are the Home Depot table.",
-          "A quantum card is a plain sentence and the technical definition.",
-          "The study guide at Quantum-Global-Group/qiskit-2x-cert-study-guide adds plain-English certification cheat-sheet PDFs. Deeper certification practice, after this workshop, is the notebook set in that study guide. It assumes more Qiskit than today.",
-        ],
-      },
-    ],
-    checks: [
-      {
-        question: "Which description of superposition should you keep?",
-        options: [
-          "The qubit tries every answer at the same time.",
-          "The state combines basis states with amplitudes, and a measurement returns one outcome.",
-          "The qubit stores a classical bit twice.",
-          "The histogram lives inside the qubit.",
-        ],
-        answer: 1,
-        why: "Superposition is a combination of basis states. It is not a claim that the device tries every answer.",
-      },
-    ],
-    facilitator: {
-      timing: "20 minutes. Search three terms. Do not read every card.",
-      notes: ["Say KYOO-bit, HAD-uh-mard, and KIZ-kit once."],
-      questions: ["How is an amplitude different from a probability?"],
-      expected: ["Probability is the squared magnitude of the amplitude. Phase can change while probabilities stay put."],
-      misconceptions: ["State, statevector, and histogram get mashed together. Separate the state, the list of amplitudes, and the tally."],
-    },
     nextSlug: "qubi",
-    nextLabel: "Watch the Qubi demonstration",
+    nextLabel: "Qubi demo from Qolour",
   },
   {
     slug: "qubi",
-    number: "03",
-    title: "From a classical bit to a Qubi",
-    minutes: 25,
-    summary: "A physical Qubi first, then the symbols that will show up in Composer.",
-    outcomes: ["Contrast a bit with a qubit state.", "Read |0⟩ and |1⟩.", "Match a physical action to a gate symbol."],
-    sections: [
-      {
-        heading: "The live demo is the next sitting",
-        paragraphs: [
-          "A classical bit, after you look, is 0 or 1. A qubit is described by a state before that look. One measurement returns one outcome.",
-          "The Qubi demonstration itself is the next module. This page does not contain that script.",
-        ],
-      },
-    ],
-    analogies: [
-      {
-        title: "Measurement, beside the definition",
-        layers: {
-          cooking: "Plating ends the unplated sauce. You get one plate.",
-          music: "Pressing record samples the room. It does not print the chord chart.",
-          sports: "The whistle ends the play. The diagram was not the final score.",
-          homeDepot: "The saw finishes one cut. The pencil marks were the plan.",
-        },
-      },
-    ],
-    checks: [
-      {
-        question: "If the probability of 0 is one half, one measurement gives you…",
-        options: ["Both 0 and 1", "Either 0 or 1", "The amplitude printed on the device", "A guaranteed 0"],
-        answer: 1,
-        why: "One shot is one basis outcome. A probability describes many shots.",
-      },
-    ],
-    facilitator: {
-      timing: "25 minutes, at least half with the Qubi in hand.",
-      notes: ["Do not say the qubit is simply both values at once.", "Point to the future Composer symbol after each action."],
-      questions: [
-        "What do you predict if we measure now?",
-        "Did that action change the probability, the phase, or both?",
-        "Why do we need multiple shots?",
-        "What information is gone after measurement?",
-      ],
-      expected: [
-        "Name a probability unless the state is a basis state.",
-        "H on |0⟩ changes probabilities. Some gates mainly change phase.",
-        "Shots estimate a fraction. One shot cannot.",
-        "A computational-basis measurement does not reveal every amplitude.",
-      ],
-      misconceptions: ["The Qubi’s lamp or readout is a sample, not the statevector."],
-    },
-    nextSlug: "qolour",
-    nextLabel: "Prepare with the statevector exhibit",
-  },
-  {
-    slug: "qolour",
-    number: "04",
-    title: "Qubi demo",
+    number: "02",
+    title: "Qubi demo from Qolour",
     minutes: 15,
-    summary: "Placeholder. Kevin opens with a Qubi demo using Qolour. Andrew or Sohum may be on the call. The exact demo arrives this weekend.",
-    outcomes: ["Open the Qolour links.", "Wait for the weekend demo.", "Leave the script unwritten until it arrives."],
+    summary: "The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
+    outcomes: ["See that the lesson is not on this page yet."],
     sections: [
       {
         heading: "Placeholder",
         paragraphs: [
-          "Kevin opens this sitting with a Qubi demo that uses Qolour. Andrew or Sohum may be on the call. The exact demo arrives this weekend. This page does not invent the script.",
+          "The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
           "Educator course: https://www.qolour.com/educator-course",
-          "Statevector exhibit: https://www.qolour.com/educator-course/statevector-exhibit",
           "The course stays on Qolour. This page does not copy it.",
         ],
       },
     ],
     checks: [
       {
-        question: "Why is the Qolour lesson not pasted here?",
+        question: "Where is the Qubi lesson?",
         options: [
-          "It is optional decoration",
-          "The course stays on Qolour so this site does not copy protected material",
-          "Qolour replaces IBM Quantum",
-          "Statevectors are only metaphors",
+          "Written out on this page",
+          "Not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
+          "Copied from the Qolour course into this site",
+          "A required hackathon submission",
         ],
         answer: 1,
-        why: "We link, name the objective, and add original questions.",
+        why: "This page is a placeholder. It links to the Qolour educator course and does not copy the course.",
       },
     ],
     facilitator: {
-      timing: "20 minutes live, or prework plus an 8 minute compare.",
-      notes: ["The demo script is not in this guide. It arrives this weekend. Link Qolour. Do not paste the course."],
-      questions: ["What did you change, and what did the probabilities do?"],
-      expected: ["They can point to an amplitude and to its squared magnitude as different numbers."],
-      misconceptions: ["The exhibit is a teaching view of a state, not a QPU run."],
+      timing: "Short. The lesson is not in this guide.",
+      notes: ["Andrew, co-founder of Qolour, will send a quick lesson later. Link only the educator course. Do not paste the course."],
+      questions: ["Is the lesson on this page?"],
+      expected: ["No. It is not here yet."],
+      misconceptions: ["The educator course link is not a copy of the course."],
     },
     nextSlug: "composer",
     nextLabel: "Build the circuit in Composer",
   },
   {
     slug: "composer",
-    number: "05",
+    number: "03",
     title: "Create your first entangled pair",
     minutes: 35,
     summary: "A two-qubit Bell circuit in Composer. Predict, then run an ideal simulation. A real quantum computer is later, on the Open Plan.",
@@ -388,17 +291,6 @@ export const MODULES: Module[] = [
         ],
       },
     ],
-    analogies: [
-      {
-        title: "The pair, beside the equation",
-        layers: {
-          cooking: "Two plates that leave together either both finished or both unfinished, because one shared step tied them.",
-          music: "Two players who only land on the downbeat together after the same cue.",
-          sports: "Two teammates whose recorded results match: both successes or both misses.",
-          homeDepot: "Two fixtures on one controlled circuit that read both on or both off.",
-        },
-      },
-    ],
     checks: [
       {
         question: "Which ideal outcomes should dominate?",
@@ -419,7 +311,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "python",
-    number: "06",
+    number: "04",
     title: "Rebuild the Bell state with Python and Qiskit",
     minutes: 40,
     summary: "The same circuit in small cells. Qiskit 2.3. Inspect the statevector before you measure.",
@@ -452,17 +344,6 @@ export const MODULES: Module[] = [
           "Common mistake: sampling the unmeasured circuit, running cells out of order, or swapping the CX qubits.",
           "Recovery: restart the kernel, run from the top, and reinstall the pinned requirements in a clean environment if import fails.",
         ],
-      },
-    ],
-    analogies: [
-      {
-        title: "The program, in four translations",
-        layers: {
-          cooking: "Import opens the pantry. QuantumCircuit(2) sets out two bowls. H and CX are steps. The statevector tastes the mixture before service. measure_all plates it. Shots are how many plates you serve to see the pattern.",
-          music: "Import loads the library. The circuit is the score. The statevector is the chart. Measurement is pressing record. Shots are takes.",
-          sports: "Import brings the rulebook. The circuit is the play. The statevector is the design. One measurement is one snap. Shots are practice reps.",
-          homeDepot: "Import unlocks the tool chest. The circuit is the cut list. The statevector is the plan on the counter. Measurement is the finished cut. Shots are repeated cuts.",
-        },
       },
     ],
     code: [
@@ -500,7 +381,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "assess-build",
-    number: "06a",
+    number: "05",
     title: "Next-Step Quantum Decision Guide",
     minutes: 15,
     summary: "After both Bell labs and before the Hetionet tour. The live link is still blank.",
@@ -567,7 +448,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "hetionet",
-    number: "07",
+    number: "06",
     title: "Hetionet as a complete project example",
     minutes: 25,
     summary: "A section-by-section walkthrough of the Quantum Global Group biomedical paper. You will not train the model today.",
@@ -607,7 +488,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "readiness",
-    number: "08",
+    number: "07",
     title: "Quantum readiness",
     minutes: 20,
     summary: "Readiness is a reason, a team, a learning plan, and an honest test. It is not knowing everything.",
@@ -668,7 +549,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "pathway",
-    number: "09",
+    number: "08",
     title: "Learning pathway and ecosystem map",
     minutes: 15,
     summary: "Leave with a role, one official IBM link, one practice task, and something you could show.",
@@ -698,7 +579,7 @@ export const MODULES: Module[] = [
           "Workforce leader, business leader, or project manager: use-case selection and team design. Portfolio: a one-page brief using the nine-step pipeline. Not a trained model.",
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
-          "Machine learning is the next part of this journey, at /intro/qml. It is not a separate required hackathon challenge. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. Kevin is still rereading that source. Iterate on a simulator. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.",
+          "Machine learning is the next part of this journey, at /intro/qml. It is not a separate required hackathon challenge. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. That source is still being reread. Iterate on a simulator. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.",
           "Fall Fest projects: follow /intro/hackathon. The public program name is the FAU-hosted Qiskit Fall Fest 2026, inaugural state championship. October 1 and October 5 both appear as kickoff lines. This page does not choose. Grant’s event name, campus, registration URL, and GitHub org stay blank.",
         ],
       },

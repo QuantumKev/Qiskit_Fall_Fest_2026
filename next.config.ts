@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
       { source: "/intro/composer", destination: "/intro/bell", permanent: false },
       { source: "/intro/python", destination: "/intro/bell", permanent: false },
       { source: "/intro/trace", destination: "/intro/bell", permanent: false },
+      { source: "/learn/vocabulary", destination: "/", permanent: false },
+      { source: "/learn/qolour", destination: "/learn/qubi", permanent: false },
     ];
   },
   allowedDevOrigins: ["127.0.0.1"],

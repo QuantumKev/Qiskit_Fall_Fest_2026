@@ -1,18 +1,6 @@
-# Beginner vocabulary
+# Quantum words
 
-Programming structure uses the Home Depot analogy. Quantum words keep a plain sentence and the technical definition. The technical sentences on the live page come from the glossary.
-
-## Programming structure
-
-| Programming concept | Home Depot analogy |
-| --- | --- |
-| Package or library | A department or toolbox |
-| Module | A specific aisle |
-| Class | The design or type of tool |
-| Object or instance | The actual tool selected |
-| Method | An action the tool can perform |
-| Argument | A setting, measurement, or instruction |
-| Variable | A labeled container holding something |
+Plain sentence and technical definition. The live glossary is the same list.
 
 ## Classical bit
 

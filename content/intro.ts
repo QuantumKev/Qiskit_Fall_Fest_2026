@@ -8,9 +8,6 @@ export const WELCOME_MESSAGE =
 export const PROGRESS_LINE =
   "Prepare → Learn the Language → Build Visually → Read the Code → Run the Code → Understand the Results → Find Your Next Step";
 
-export const ANALOGY_END =
-  "The analogy ends here. It only organizes software words. Superposition and entanglement are quantum states, not rooms, tools, or construction steps.";
-
 export const QISKIT_TESTED = "2.3.1";
 export const RUNTIME_TESTED = "0.50.0";
 export const DOCS_CHECKED = "2026-09-25";
@@ -33,7 +30,7 @@ export const INTRO_SECTIONS = [
   { slug: "language", phase: "language", title: "What are Python and Qiskit?", minutes: 20 },
   { slug: "execution", phase: "language", title: "How Python executes code", minutes: 15 },
   { slug: "vocabulary", phase: "language", title: "Quantum vocabulary", minutes: 20 },
-  { slug: "qubi-demo", phase: "visual", title: "Qubi demo", minutes: 10 },
+  { slug: "qubi-demo", phase: "visual", title: "Qubi demo from Qolour", minutes: 10 },
   { slug: "bell", phase: "visual", title: "Bell lab", minutes: 60 },
   { slug: "practice", phase: "results", title: "Practice", minutes: 20 },
   { slug: "next-step", phase: "next", title: "Where to go next", minutes: 10 },
@@ -51,7 +48,6 @@ export function introSection(slug: string) {
 export type ProgramTerm = {
   keyword: string;
   technical: string;
-  homeDepot: string | null;
   pythonExample: string;
   bellLab: string;
 };
@@ -60,125 +56,93 @@ export const PROGRAM_TERMS: ProgramTerm[] = [
   {
     keyword: "SDK",
     technical: "A software development kit is a bundled set of libraries and tools for building one kind of program.",
-    homeDepot: "The Qiskit ecosystem row in the table is the entire Home Depot. SDK is the name for that kit. The table has no separate SDK row.",
     pythonExample: "import qiskit",
     bellLab: "Installing Qiskit gives you the SDK. The import lines are how this lab picks tools out of it.",
   },
   {
     keyword: "Package",
     technical: "A package is a folder of Python modules that you install and import as one library.",
-    homeDepot: "A department or toolbox.",
     pythonExample: "import qiskit",
     bellLab: "qiskit is the package. StatevectorSampler lives in that package.",
   },
   {
     keyword: "Library",
     technical: "A library is a package written so other programs can call it.",
-    homeDepot: "A department or toolbox.",
     pythonExample: "import qiskit",
     bellLab: "Qiskit is the library this lab calls. Python is the language that calls it.",
   },
   {
     keyword: "Module",
     technical: "A module is one Python file of related names inside a package.",
-    homeDepot: "A specific aisle.",
     pythonExample: "from qiskit.primitives import StatevectorSampler",
-    bellLab: "qiskit.primitives is the aisle that holds StatevectorSampler.",
+    bellLab: "qiskit.primitives is the module that holds StatevectorSampler.",
   },
   {
     keyword: "Import",
     technical: "An import statement loads a name from a module so later lines can use it.",
-    homeDepot: null,
     pythonExample: "from qiskit import QuantumCircuit",
     bellLab: "The first lines import QuantumCircuit and StatevectorSampler. Later lines use those names.",
   },
   {
     keyword: "Class",
     technical: "A class is the definition of a kind of object, including the data it holds and the methods it offers.",
-    homeDepot: "The design or type of tool.",
     pythonExample: "QuantumCircuit",
     bellLab: "QuantumCircuit is the class. StatevectorSampler is another class.",
   },
   {
     keyword: "Object",
     technical: "An object, or instance, is one value created from a class.",
-    homeDepot: "The actual tool selected.",
     pythonExample: "bell_circuit = QuantumCircuit(2)",
     bellLab: "bell_circuit is the object. sampler is a second object, created later.",
   },
   {
     keyword: "Method",
     technical: "A method is a function that belongs to an object and runs when you call it with a period.",
-    homeDepot: "An action the tool can perform.",
     pythonExample: "bell_circuit.h(0)",
     bellLab: "h, cx, copy, measure_all, run, result, and get_counts are methods in this lab.",
   },
   {
     keyword: "Function",
     technical: "A function is a named block of code you call. A method is a function attached to an object.",
-    homeDepot: null,
     pythonExample: "print(house_color)",
     bellLab: "print is a function. It writes a value out. It does not change the qubits.",
   },
   {
     keyword: "Variable",
     technical: "A variable is a name bound to a value by assignment.",
-    homeDepot: "A labeled container holding something.",
     pythonExample: 'house_color = "blue"',
     bellLab: "bell_circuit, measured_circuit, sampler, job, result, and counts are variables.",
   },
   {
     keyword: "Argument",
     technical: "An argument is a value you pass into a function or method call.",
-    homeDepot: "A setting, measurement, or instruction.",
     pythonExample: "QuantumCircuit(2)",
     bellLab: "2 tells QuantumCircuit how many qubits. 0 and 1 tell cx which qubits. shots=1024 tells the sampler how many samples.",
   },
   {
     keyword: "Parameter",
     technical: "A parameter is the name in a definition that receives an argument when the function runs.",
-    homeDepot: null,
     pythonExample: "def label(name):\n    return name",
     bellLab: "In sampler.run([measured_circuit], shots=1024), shots is the parameter name and 1024 is the argument.",
   },
   {
     keyword: "Return value",
     technical: "A return value is the object or data a function hands back to the caller.",
-    homeDepot: null,
     pythonExample: "counts = result[0].data[\"meas\"].get_counts()",
     bellLab: "get_counts returns a dictionary. job.result() returns the result object stored in result.",
   },
   {
     keyword: "Job",
     technical: "A job is the handle for work you have submitted and can ask for later.",
-    homeDepot: null,
     pythonExample: "job = sampler.run([measured_circuit], shots=1024)",
-    bellLab: "job is that handle. The backend row in the analogy table is the job site, which is a different word.",
+    bellLab: "job is that handle.",
   },
   {
     keyword: "Result",
     technical: "A result is the finished output you retrieve from a job.",
-    homeDepot: null,
     pythonExample: "result = job.result()",
     bellLab: "result holds the sampler output. The counts are read from result[0].",
   },
-];
-
-export const HOME_DEPOT_TABLE: { concept: string; analogy: string }[] = [
-  { concept: "Qiskit ecosystem", analogy: "The entire Home Depot" },
-  { concept: "Package or library", analogy: "A department or toolbox" },
-  { concept: "Module", analogy: "A specific aisle" },
-  { concept: "Class", analogy: "The design or type of tool" },
-  { concept: "Object or instance", analogy: "The actual tool selected" },
-  { concept: "Method", analogy: "An action the tool can perform" },
-  { concept: "Argument", analogy: "A setting, measurement, or instruction" },
-  { concept: "Variable", analogy: "A labeled container holding something" },
-  { concept: "Circuit", analogy: "The construction blueprint" },
-  { concept: "Backend", analogy: "The job site where the work runs" },
-  { concept: "Transpilation", analogy: "Adapting the blueprint to local building codes and available equipment" },
-  { concept: "Sampler", analogy: "The inspection team collecting outcomes" },
-  { concept: "Shots", analogy: "The number of repeated inspections" },
-  { concept: "Counts", analogy: "The final inspection report" },
 ];
 
 export const HOUSE_EXAMPLE = `house_color = "blue"\nprint(house_color)`;
@@ -507,7 +471,7 @@ export const NEXT_STOPS: { situation: string; destination: string; href: string 
   { situation: "My code produces an error", destination: "Read the error, verify the installed version, and check the API documentation", href: "https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSampler" },
   { situation: "I want to inspect the open-source code", destination: "Qiskit GitHub", href: "https://github.com/Qiskit/qiskit" },
   { situation: "I want to run on hardware", destination: "IBM’s first-circuit-on-hardware guide", href: "https://quantum.cloud.ibm.com/docs/en/guides/hello-world" },
-  { situation: "I need foundational preparation", destination: "The Qolour educator course. Read the video titles from the live course menu.", href: "https://www.qolour.com/educator-course" },
+  { situation: "I need foundational preparation", destination: "The Qolour educator course.", href: "https://www.qolour.com/educator-course" },
 ];
 
 export const PRIMARY_SOURCES: { title: string; href: string }[] = [
@@ -520,7 +484,6 @@ export const PRIMARY_SOURCES: { title: string; href: string }[] = [
   { title: "Qiskit source", href: "https://github.com/Qiskit/qiskit" },
   { title: "Qiskit documentation source", href: "https://github.com/Qiskit/documentation" },
   { title: "Qolour educator course", href: "https://www.qolour.com/educator-course" },
-  { title: "Qolour statevector exhibit", href: "https://www.qolour.com/educator-course/statevector-exhibit" },
 ];
 
 export const QML_COURSE = "https://quantum.cloud.ibm.com/learning/en/courses/quantum-machine-learning";
@@ -677,7 +640,6 @@ export const LIGHTNING_TALK_LINE =
 export const HOST_CONTACTS: { name: string; detail: string; href?: string }[] = [
   { name: "Robert Loredo", detail: "RLoredo2026@fau.edu. He leads this initiative.", href: "https://linkedin.com/in/robertloredo" },
   { name: "Ayse Torres", detail: "LinkedIn is still blank." },
-  { name: "Kevin Robinson", detail: "LinkedIn is still blank." },
   { name: "Grant Kurz", detail: "LinkedIn is still blank. The files have no separate public name, date block, proposal form, join URL, team cap, or rubric for an event under his name." },
 ];
 
@@ -749,12 +711,12 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
       question: "Where is the Qubi demo script?",
       options: [
         "Written out on this page",
-        "Not here yet. The exact demo arrives this weekend.",
+        "Not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
         "Copied from the Qolour course into this repo",
         "A required hackathon submission",
       ],
       answer: 1,
-      why: "This page is a placeholder. It links to Qolour and does not copy the course.",
+      why: "This page is a placeholder. It links to the Qolour educator course and does not copy the course.",
     },
   ],
   bell: [
@@ -885,7 +847,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   },
   language: {
     timing: "20 minutes. Search three terms. Do not read every card.",
-    notes: ["Keep the Home Depot table on software structure.", "When the card says the analogy stops, stop."],
+    notes: ["Stay with the technical definition on each card."],
   },
   execution: {
     timing: "15 minutes. Run the two-line house example, then map it onto the ten Bell steps.",
@@ -897,7 +859,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   },
   "qubi-demo": {
     timing: "10 minutes. The script is not in this guide.",
-    notes: ["Kevin opens with the Qubi demo. Andrew or Sohum may be on the call. The exact demo arrives this weekend."],
+    notes: ["The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later. Link only the educator course. Do not paste the course."],
   },
   bell: {
     timing: "One sitting. Composer, then the local sampler, then the line trace.",
@@ -909,7 +871,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   },
   "next-step": {
     timing: "10 minutes. Each person leaves with one link.",
-    notes: ["Read Qolour video titles from the live menu. Do not paste the course."],
+    notes: ["The Qolour lesson is not here yet. Link only the educator course. Do not paste the course."],
   },
   hackathon: {
     timing: "20 minutes. Read both kickoff lines. Do not pick one.",

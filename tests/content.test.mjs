@@ -56,21 +56,17 @@ for (const term of required) {
   });
 }
 
-test("ten modules are present", () => {
-  for (const slug of [
-    "welcome",
-    "setup",
-    "vocabulary",
-    "qubi",
-    "qolour",
-    "composer",
-    "python",
-    "hetionet",
-    "readiness",
-    "pathway",
-  ]) {
+test("journey modules stay and beginner vocabulary is gone", () => {
+  for (const slug of ["welcome", "setup", "qubi", "composer", "python", "hetionet", "readiness", "pathway"]) {
     assert.ok(modules.includes(`slug: "${slug}"`));
   }
+  assert.doesNotMatch(modules, /slug: "vocabulary"/);
+  assert.doesNotMatch(modules, /slug: "qolour"/);
+  assert.doesNotMatch(modules, /nextSlug: "vocabulary"/);
+  assert.doesNotMatch(modules, /nextSlug: "qolour"/);
+  assert.match(modules, /title: "Qubi demo from Qolour"/);
+  assert.doesNotMatch(modules, /Beginner vocabulary/);
+  assert.doesNotMatch(modules, /Kevin/);
 });
 
 test("bell lab uses the Qiskit 2.3 sampler and no token", () => {
@@ -98,8 +94,9 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
   assert.match(intro, /Prepare → Learn the Language → Build Visually → Read the Code → Run the Code → Understand the Results → Find Your Next Step/);
   assert.match(intro, /StatevectorSampler/);
   assert.match(intro, /measured_circuit = bell_circuit\.copy\(\)/);
-  assert.match(intro, /The entire Home Depot/);
   assert.match(intro, /not, by itself, a complete proof of entanglement/);
+  assert.doesNotMatch(intro, /Home Depot/);
+  assert.doesNotMatch(intro, /Kevin/);
   assert.doesNotMatch(intro, /execute\(/);
   assert.doesNotMatch(intro, /\bmusic\b/i);
   assert.doesNotMatch(intro, /\bsports\b/i);
@@ -145,35 +142,19 @@ test("hackathon and machine learning stay inside known rules", () => {
   assert.doesNotMatch(intro, /execute\(/);
 });
 
-test("beginner vocabulary uses one analogy system", () => {
-  const start = modules.indexOf('slug: "vocabulary"');
-  const end = modules.indexOf('slug: "qubi"');
-  const vocab = modules.slice(start, end);
-  assert.ok(start > 0 && end > start);
-  assert.match(vocab, /title: "Beginner vocabulary"/);
-  assert.match(vocab, /Home Depot table/);
-  assert.doesNotMatch(vocab, /cooking|music|sports/i);
-  assert.doesNotMatch(vocab, /analogies:/);
-  assert.doesNotMatch(vocab, /board marked for two possible cuts/);
-  const view = readFileSync(new URL("../components/ModuleView.tsx", import.meta.url), "utf8");
-  for (const concept of [
-    "Package or library",
-    "Module",
-    "Class",
-    "Object or instance",
-    "Method",
-    "Argument",
-    "Variable",
-  ]) {
-    assert.ok(view.includes(`"${concept}"`));
+test("participant pages do not show teaching translations", () => {
+  const files = ["../components/ModuleView.tsx", "../components/IntroView.tsx", "../components/GlossaryView.tsx", "../components/ExerciseConnect.tsx", "../app/sources/page.tsx"].map(
+    (name) => readFileSync(new URL(name, import.meta.url), "utf8"),
+  );
+  for (const source of files) {
+    assert.doesNotMatch(source, /Home Depot|Cooking|Music|Sports/);
+    assert.doesNotMatch(source, /entry\.analogy/);
   }
-  assert.match(view, /entry\.plain/);
-  assert.match(view, /entry\.technical/);
-  assert.doesNotMatch(view, /entry\.analogy/);
-  assert.match(glossary, /analogyDomain: "Cooking"/);
-  assert.match(glossary, /analogyDomain: "Music"/);
-  assert.match(glossary, /analogyDomain: "Sports"/);
-  assert.match(glossary, /analogyDomain: "Home Depot"/);
+  assert.match(glossary, /technical:/);
+  assert.doesNotMatch(modules, /analogies:/);
+  assert.doesNotMatch(modules, /statevector-exhibit/);
+  assert.match(modules, /www\.qolour\.com\/educator-course/);
+  assert.match(modules, /Andrew, co-founder of Qolour/);
 });
 
 test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {
@@ -181,5 +162,7 @@ test("exercise 1 keeps placeholders and points at the untrusted-computer path", 
   assert.match(exercise, /<YOUR_OPEN_PLAN_CRN>/);
   assert.doesNotMatch(exercise, /classroom/i);
   assert.doesNotMatch(exercise, /crn:v1/);
-  assert.match(exercise, /service desk/);
+  assert.match(exercise, /talks to IBM Quantum Compute/);
+  assert.doesNotMatch(exercise, /service desk/);
+  assert.doesNotMatch(exercise, /Home Depot/);
 });

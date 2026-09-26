@@ -4,14 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { CopyBlock } from "@/components/CopyBlock";
 import { useProgress } from "@/components/store";
-import {
-  CONNECT_CHECK,
-  CONNECT_LOAD,
-  CONNECT_SAVE,
-  CREDENTIAL_ANALOGY,
-  RESOURCE_ANALOGY,
-  SAVE_WORDS,
-} from "@/content/exercise1";
+import { CONNECT_CHECK, CONNECT_LOAD, CONNECT_SAVE, SAVE_WORDS } from "@/content/exercise1";
 import { DOCS_CHECKED } from "@/content/intro";
 
 const CHECKS = [
@@ -133,26 +126,6 @@ export function ExerciseConnect() {
         </ol>
         <Placeholder caption="Account switcher and the Instances list." />
         <p>An instance is the workspace for hardware jobs. A CRN is the unique address of that instance. A region is the geographic setting shown in the header. The simulator path does not use either.</p>
-        <div className="table-wrap">
-          <table>
-            <caption>Resource organization only. This table is not a model of a qubit.</caption>
-            <thead>
-              <tr>
-                <th>Idea</th>
-                <th>Home Depot analogy</th>
-              </tr>
-            </thead>
-            <tbody>
-              {RESOURCE_ANALOGY.map((row) => (
-                <tr key={row.concept}>
-                  <td>{row.concept}</td>
-                  <td>{row.analogy}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="meta">The analogy ends here. It describes where a project lives. It does not describe superposition or entanglement.</p>
       </section>
 
       {mode === "facilitator" ? (
@@ -213,10 +186,6 @@ export function ExerciseConnect() {
             </tbody>
           </table>
         </div>
-        <aside className="depot">
-          <p className="kicker">Home Depot analogy</p>
-          <p>{CREDENTIAL_ANALOGY}</p>
-        </aside>
       </section>
 
       <section className="prose">

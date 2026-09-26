@@ -26,7 +26,7 @@ except Exception as error:
 export const SAVE_WORDS: { word: string; meaning: string }[] = [
   { word: "from", meaning: "Names the module that holds the class." },
   { word: "import", meaning: "Loads QiskitRuntimeService into this notebook." },
-  { word: "QiskitRuntimeService", meaning: "The class that talks to IBM Quantum Compute. For this credential step, the analogy is a service desk." },
+  { word: "QiskitRuntimeService", meaning: "The class that talks to IBM Quantum Compute." },
   { word: "save_account", meaning: "A method that writes credentials into a file on this computer, $HOME/.qiskit/qiskit-ibm.json." },
   { word: "token", meaning: "The API key. It is a private credential. It is not your password." },
   { word: "instance", meaning: "The Open Plan instance CRN. Keep the CRN off the form, out of chat, and out of git." },
@@ -35,14 +35,3 @@ export const SAVE_WORDS: { word: string; meaning: string }[] = [
   { word: "overwrite", meaning: "True replaces credentials already saved under this setup. IBM’s save-credentials page uses this when you update a saved account." },
   { word: "True", meaning: "The Python value for yes. Both set_as_default and overwrite receive it here." },
 ];
-
-export const RESOURCE_ANALOGY: { concept: string; analogy: string }[] = [
-  { concept: "Platform", analogy: "The store" },
-  { concept: "Open Plan", analogy: "The free project account on the board" },
-  { concept: "Instance", analogy: "Assigned project workspace" },
-  { concept: "CRN", analogy: "Unique address" },
-  { concept: "QPU access", analogy: "Equipment available for the project" },
-];
-
-export const CREDENTIAL_ANALOGY =
-  "QiskitRuntimeService is the service desk. save_account() registers project access on this computer. token is the private credential. instance is the assigned workspace. name is the local label. The analogy ends here. It does not reduce the security importance of the API key.";

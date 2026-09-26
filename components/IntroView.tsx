@@ -8,7 +8,6 @@ import { useProgress } from "@/components/store";
 import { GLOSSARY } from "@/content/glossary";
 import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
 import {
-  ANALOGY_END,
   BELL_LINES,
   BELL_SOURCE,
   COMPOSER_FLOW,
@@ -26,7 +25,6 @@ import {
   FALL_FEST_LINKS,
   HACKATHON_GAP_NOTE,
   HACKATHON_GAPS,
-  HOME_DEPOT_TABLE,
   HOST_CONTACTS,
   HOUSE_EXAMPLE,
   INTRO_CHECKS,
@@ -133,33 +131,13 @@ function LanguageBody() {
   const [query, setQuery] = useState("");
   const needle = query.trim().toLowerCase();
   const terms = PROGRAM_TERMS.filter((term) =>
-    [term.keyword, term.technical, term.homeDepot || "", term.bellLab].join(" ").toLowerCase().includes(needle),
+    [term.keyword, term.technical, term.bellLab].join(" ").toLowerCase().includes(needle),
   );
   return (
     <div className="stack">
       <p>Python is the programming language. It supplies the grammar: names, assignment, calls, and order.</p>
       <p>Qiskit is an open-source SDK used to create and work with quantum circuits, operators, primitives, and related tools.</p>
       <p>IBM Quantum Platform provides learning resources, Composer, and access to quantum-computing services.</p>
-      <div className="table-wrap sheet">
-        <table>
-          <caption>Home Depot analogy for software structure</caption>
-          <thead>
-            <tr>
-              <th>Programming concept</th>
-              <th>Home Depot analogy</th>
-            </tr>
-          </thead>
-          <tbody>
-            {HOME_DEPOT_TABLE.map((row) => (
-              <tr key={row.concept}>
-                <td>{row.concept}</td>
-                <td>{row.analogy}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className="meta">{ANALOGY_END}</p>
       <label>
         Search the language cards
         <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="class, method, shots" />
@@ -170,8 +148,6 @@ function LanguageBody() {
             <h2>{term.keyword}</h2>
             <h3>Technical</h3>
             <p>{term.technical}</p>
-            <h3>Home Depot</h3>
-            <p>{term.homeDepot ?? "The analogy table has no row for this word. The analogy stops."}</p>
             <h3>Tiny Python</h3>
             <pre>
               <code>{term.pythonExample}</code>
@@ -427,19 +403,12 @@ function QubiDemoBody() {
     <div className="stack">
       <aside className="placeholder">
         <h2>Placeholder</h2>
-        <p>
-          Kevin opens this sitting with a Qubi demo that uses Qolour. Andrew or Sohum may be on the call. The exact demo arrives this weekend. This page does not invent the script.
-        </p>
+        <p>The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.</p>
       </aside>
-      <ul>
-        <li>
-          <a href="https://www.qolour.com/educator-course">Qolour educator course</a>
-        </li>
-        <li>
-          <a href="https://www.qolour.com/educator-course/statevector-exhibit">Statevector exhibit</a>
-        </li>
-      </ul>
-      <p>The course stays on Qolour. This page does not copy it. Composer is the next part of the Bell lab.</p>
+      <p>
+        <a href="https://www.qolour.com/educator-course">Qolour educator course</a>
+      </p>
+      <p>The course stays on Qolour. This page does not copy it.</p>
     </div>
   );
 }
@@ -458,7 +427,7 @@ function BellBody() {
       <ComposerBody />
       <h2>Run it in Python</h2>
       <PythonBody />
-      <h2>Watch the program run</h2>
+      <h2>Follow the program line by line</h2>
       <TraceBody />
     </div>
   );
@@ -518,7 +487,7 @@ function NextBody() {
           </li>
         ))}
       </ul>
-      <p>The Qolour course stays on Qolour. This guide links to it and does not copy it. Read video titles from the live menu.</p>
+      <p>The Qolour lesson is not here yet. This guide links to the educator course and does not copy it.</p>
     </div>
   );
 }
@@ -660,7 +629,7 @@ function QmlBody() {
       <h2>What to implement, and what to do with the output</h2>
       <p>{QML_OUTPUT_BLANK}</p>
       <h2>Simulator first, and the 10 minutes</h2>
-      <p>Quantum machine learning is the next part of this journey. It is not a separate required hackathon challenge. Kevin is still rereading the source. The links below stay. This page does not grow a new curriculum.</p>
+      <p>Quantum machine learning is the next part of this journey. It is not a separate required hackathon challenge. The source is still being reread. The links below stay. This page does not grow a new curriculum.</p>
       <p>{OPEN_PLAN_MINUTES}</p>
       <p>{PLAN_BLANK}</p>
       <p>
