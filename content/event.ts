@@ -48,9 +48,6 @@ export const EVENT = {
   qiskitPin: "qiskit>=2.3.0,<2.4.0",
 } as const;
 
-export const HANDBOOK_BLOB = `${EVENT.repo}/blob/${EVENT.branch}/PARTICIPANT_HANDBOOK.md`;
-export const HANDBOOK_RAW = `https://raw.githubusercontent.com/QuantumKev/Qiskit_Fall_Fest_2026/${EVENT.branch}/PARTICIPANT_HANDBOOK.md`;
-
 export const HETIONET_REPO = "https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc";
 export const HETIONET_LINKS = {
   readme: HETIONET_REPO,

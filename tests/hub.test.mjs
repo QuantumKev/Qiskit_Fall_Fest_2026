@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const files = ["PARTICIPANT_HANDBOOK.md", "NON-TECHNICAL-TRACK.md", "NOTEBOOK-CATALOG.md"].map((name) =>
   readFileSync(new URL(`../${name}`, import.meta.url), "utf8"),
@@ -20,6 +22,32 @@ test("canonical documents use the South Florida facts and drop organizer leftove
   assert.doesNotMatch(joined, /gmail/i);
   assert.doesNotMatch(joined, /FAU Qiskit Fall Fest/);
   assert.doesNotMatch(joined, /has loaners/);
+});
+
+function sourceFiles(dir) {
+  const entries = readdirSync(dir, { withFileTypes: true });
+  return entries.flatMap((entry) => {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) return sourceFiles(full);
+    if (/\.(tsx?|mjs|jsx?)$/.test(entry.name)) return [full];
+    return [];
+  });
+}
+
+test("visitor pages do not link to private handbook files on GitHub", () => {
+  const root = fileURLToPath(new URL("..", import.meta.url));
+  const sources = ["app", "components", "content", "lib"].flatMap((dir) =>
+    sourceFiles(path.join(root, dir)),
+  );
+  const joined = sources.map((file) => readFileSync(file, "utf8")).join("\n");
+  assert.doesNotMatch(joined, /raw\.githubusercontent\.com/);
+  assert.doesNotMatch(joined, /\/blob\/[^"'`\s]*PARTICIPANT_HANDBOOK\.md/);
+  assert.doesNotMatch(joined, /\/blob\/[^"'`\s]*NON-TECHNICAL-TRACK\.md/);
+  assert.doesNotMatch(joined, /\/blob\/[^"'`\s]*NOTEBOOK-CATALOG\.md/);
+  assert.doesNotMatch(joined, /Handbook Markdown on GitHub|View the Markdown on GitHub|Raw Markdown/);
+  assert.match(joined, /\/handbook\//);
+  assert.match(joined, /\/roles\//);
+  assert.match(joined, /\/catalog\//);
 });
 
 test("the submission template and pages workflow exist", () => {

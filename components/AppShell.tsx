@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { EVENT, HANDBOOK_BLOB } from "@/content/event";
+import { EVENT } from "@/content/event";
 import { JOURNEY } from "@/content/onboarding";
 import { ProgressProvider, useProgress } from "@/components/store";
 
@@ -76,10 +76,8 @@ function Footer() {
       <p>{EVENT.name}</p>
       <nav aria-label="Footer">
         <Link href="/handbook/">Participant handbook</Link>
-        <a href={HANDBOOK_BLOB} target="_blank" rel="noopener noreferrer external">
-          Handbook Markdown on GitHub
-          <span className="external-mark"> (external)</span>
-        </a>
+        <Link href="/roles/">Domain track</Link>
+        <Link href="/catalog/">Notebook catalog</Link>
         <a href={EVENT.discord} target="_blank" rel="noopener noreferrer external">
           Discord
           <span className="external-mark"> (external)</span>

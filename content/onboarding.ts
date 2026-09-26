@@ -1,7 +1,6 @@
 import { CONNECT_SAVE } from "@/content/exercise1";
 import {
   EVENT,
-  HANDBOOK_BLOB,
   HETIONET_LINKS,
   HETIONET_REPO,
   IBM,
@@ -177,7 +176,6 @@ const start: StepPage = {
   ],
   links: [
     { href: "/handbook/", label: "Participant handbook" },
-    { href: HANDBOOK_BLOB, label: "Handbook Markdown on GitHub" },
     { href: "/roles/", label: "Domain track" },
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/support/", label: "Troubleshooting and support" },
@@ -815,7 +813,6 @@ const submit: StepPage = {
   ],
   links: [
     { href: "/handbook/#64-how-to-submit", label: "Handbook: how to submit" },
-    { href: HANDBOOK_BLOB, label: "Handbook Markdown on GitHub" },
     { href: `${EVENT.repo}/tree/${EVENT.branch}/submissions/_TEMPLATE`, label: "Submission template" },
     { href: HETIONET_REPO, label: "Hetionet repository" },
   ],
@@ -889,7 +886,7 @@ const resources: StepPage = {
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/glossary/", label: "Glossary" },
     { href: "/support/", label: "Troubleshooting and support" },
-    { href: HANDBOOK_BLOB, label: "Handbook Markdown on GitHub" },
+    { href: "/roles/", label: "Domain track" },
   ],
   check: {
     question: "Where is the definition of a sampler?",
