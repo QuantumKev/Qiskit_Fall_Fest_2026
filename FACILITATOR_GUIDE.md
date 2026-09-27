@@ -93,13 +93,13 @@ Open Workshop 2 from the pathways page, not from a second account lecture. Carry
 
 ## Local lead directory
 
-Statewide co-leads, equal weight: Kevin Robinson, Robert Loredo, Grant Kurz, and Ayse Torres.
+Robert Loredo designed the program and is the lead. Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads.
 
-Local cards, with only confirmed public contacts:
+Local cards, with confirmed contacts:
 
 - Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams>
-- Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. Contact and registration: details coming soon. Questions: kevin@quantumglobalgroup.io.
-- Florida Atlantic University: Ayse Torres and Kateryna Tsekhmayster. Venue: details coming soon. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
+- Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. grant@deepstation.ai. Registration: details coming soon.
+- Florida Atlantic University: Ayse Torres and Kateryna Tsekhmayster. Venue: details coming soon. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
 - Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Venue and registration: details coming soon.
 - Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
 - Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i>. Venue: details coming soon.
@@ -132,7 +132,7 @@ Earlier drafts hid these notes behind a Co-Host control on the participant pages
 
 - Read the welcome once. Point at the twelve-step rail. Do not read from a book, and do not paste a Qolour lesson into the slides.
 - Registration, the rubric, the code of conduct, and unconfirmed rooms stay “Coming soon” or “Details coming soon.”
-- The four statewide names are co-leads. Do not introduce one person as the sole host.
+- Robert Loredo is the lead. Introduce him that way. Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads.
 - The attendance form on this site does not collect passwords, API keys, or CRNs. The static GitHub Pages build does not include the response API.
 - Status labels you may use in the room, out loud: Registered, Simulator first, Open Plan visible, Connection verified, Needs assistance.
 - Recheck IBM’s instance guide the morning of the workshop. Do not ask the room to open a paid plan.

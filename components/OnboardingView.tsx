@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useState, type ReactNode } from "react";
 import { BellFigure, ExpectedHistogram } from "@/components/BellFigure";
@@ -10,6 +9,7 @@ import { useProgress } from "@/components/store";
 import { EVENT } from "@/content/event";
 import { GLOSSARY } from "@/content/glossary";
 import { AREA_LINKS, JOURNEY, type Check, type StepPage } from "@/content/onboarding";
+import { withBase } from "@/lib/base-path";
 import { slugify } from "@/lib/slug";
 
 function ExternalAnchor({ href, children }: { href: string; children: ReactNode }) {
@@ -116,15 +116,18 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
         <>
           <p className="brand-line">{EVENT.seriesLine}</p>
           <ul className="sticker-row">
+            {/* next/image drops the GitHub Pages base path on these unoptimized SVGs, so the live phone view shows broken images. */}
+            {/* eslint-disable @next/next/no-img-element */}
             <li>
-              <Image className="sticker sticker-qiskit" src="/brand/stickers/qiskit-white.svg" width={204} height={81} alt="Qiskit" unoptimized />
+              <img className="sticker sticker-qiskit" src={withBase("/brand/stickers/qiskit-white.svg")} width={204} height={81} alt="Qiskit" />
             </li>
             <li>
-              <Image className="sticker sticker-theme" src="/brand/stickers/theme-magenta.svg" width={463} height={81} alt="a decade of quantum on the cloud" unoptimized />
+              <img className="sticker sticker-theme" src={withBase("/brand/stickers/theme-magenta.svg")} width={463} height={81} alt="a decade of quantum on the cloud" />
             </li>
             <li>
-              <Image className="sticker sticker-cloud" src="/brand/stickers/cloud.svg" width={447} height={142} alt="Cloud sticker" unoptimized />
+              <img className="sticker sticker-cloud" src={withBase("/brand/stickers/cloud.svg")} width={447} height={142} alt="Cloud sticker" />
             </li>
+            {/* eslint-enable @next/next/no-img-element */}
           </ul>
         </>
       ) : null}
