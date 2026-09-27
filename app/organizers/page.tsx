@@ -1,14 +1,18 @@
+import Link from "next/link";
 import { OrganizerDashboard } from "@/components/OrganizerDashboard";
+import { CO_LEAD_SENTENCE } from "@/content/event";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Organizers · Qiskit Fall Fest" };
+export const metadata = pageMeta("Registration responses", "/organizers/");
 
 export default function OrganizersPage() {
   return (
     <div className="stack guide">
-      <p className="kicker">Organizers only</p>
+      <p className="kicker">For Facilitators and Local Hosts</p>
       <h1>Registration responses</h1>
-      <p className="lede">
-        Statuses come from the form and from updates you type here. The list has no API keys and no CRNs. Set ORGANIZER_TOKEN on the server before responses can be stored.
+      <p className="lede">{CO_LEAD_SENTENCE}</p>
+      <p>
+        Teaching notes, the run of show, and the host directory are in the <Link href="/facilitator/">facilitator guide</Link>. This page is public. It stores no passwords, API keys, or CRNs.
       </p>
       <OrganizerDashboard />
     </div>

@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "node --test tests/content.test.mjs tests/registration.test.mjs"
+    "lint": "eslint .",
+    "test": "node --test tests/content.test.mjs tests/onboarding.test.mjs tests/registration.test.mjs tests/hub.test.mjs",
+    "pages": "bash scripts/export-pages.sh"
   },
   "dependencies": {
+    "marked": "^18.0.14",
     "next": "16.1.1",
     "qrcode": "^1.5.4",
     "react": "19.2.3",

@@ -76,7 +76,7 @@ function SurveyForm() {
 }
 
 export function ModuleView({ module }: { module: Module }) {
-  const { mode, done, toggleDone } = useProgress();
+  const { done, toggleDone } = useProgress();
   const complete = done.includes(module.slug);
 
   return (
@@ -115,31 +115,6 @@ export function ModuleView({ module }: { module: Module }) {
       ))}
 
       {module.slug === "welcome" ? <SurveyForm /> : null}
-
-      {module.analogies?.map((block) => (
-        <section key={block.title} className="prose">
-          <h2>{block.title}</h2>
-          <p className="meta">Teaching translation. It sits beside the definition and does not replace the quantum word.</p>
-          <dl className="analogy-grid">
-            <div>
-              <dt>Cooking</dt>
-              <dd>{block.layers.cooking}</dd>
-            </div>
-            <div>
-              <dt>Music</dt>
-              <dd>{block.layers.music}</dd>
-            </div>
-            <div>
-              <dt>Sports</dt>
-              <dd>{block.layers.sports}</dd>
-            </div>
-            <div>
-              <dt>Home Depot</dt>
-              <dd>{block.layers.homeDepot}</dd>
-            </div>
-          </dl>
-        </section>
-      ))}
 
       {module.code?.map((block) => (
         <CopyBlock key={block.filename} filename={block.filename} source={block.source} />
@@ -184,38 +159,9 @@ export function ModuleView({ module }: { module: Module }) {
         ))}
       </section>
 
-      {mode === "facilitator" ? (
-        <section className="facilitator prose">
-          <h2>Facilitator notes</h2>
-          <p>{module.facilitator.timing}</p>
-          <h3>Run of show</h3>
-          <ul>
-            {module.facilitator.notes.map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
-          <h3>Questions to ask</h3>
-          <ul>
-            {module.facilitator.questions.map((question) => (
-              <li key={question}>{question}</li>
-            ))}
-          </ul>
-          <h3>Answers you want to hear</h3>
-          <ul>
-            {module.facilitator.expected.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <h3>Misconceptions to catch</h3>
-          <ul>
-            {module.facilitator.misconceptions.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-      ) : (
-        <p className="meta">Switch to Facilitator in the header to see timing and discussion notes.</p>
-      )}
+      <p className="meta">
+        <Link href="/facilitator/">Teaching notes are in the facilitator guide.</Link>
+      </p>
 
       <label className="complete">
         <input type="checkbox" checked={complete} onChange={() => toggleDone(module.slug)} />

@@ -1,3 +1,5 @@
+import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
+
 export type Check = {
   question: string;
   options: string[];
@@ -79,7 +81,7 @@ export const MODULES: Module[] = [
     number: "00",
     title: "Welcome and expectations",
     minutes: 15,
-    summary: "An entry ramp into the quantum ecosystem. Not a race to publish a quantum-advantage result.",
+    summary: "An entry ramp into the quantum ecosystem. You are not expected to prove that quantum computing is better than classical computing.",
     outcomes: [
       "Say what this workshop is for and what it is not for.",
       "See the path from accounts to a first circuit to a next step.",
@@ -89,10 +91,10 @@ export const MODULES: Module[] = [
       {
         heading: "Welcome",
         paragraphs: [
-          "Welcome. I am Kevin Robinson, with Quantum Global Group. This onboarding is for the Florida Quantum Readiness Challenge and Qiskit Fall Fest.",
+          "Welcome. Many people will teach this onboarding for the Florida Quantum Readiness Challenge and Qiskit Fall Fest.",
           "You are not expected to become a quantum physicist today, or to prove that a quantum computer beats every classical computer. You are expected to learn how to enter the ecosystem: the words, the account, a first circuit, and a realistic next step.",
           "Quantum computers do not replace classical computers. The serious projects you will hear about use both.",
-          "Confirm this welcome wording with Kevin before the live session. It was drafted for the workshop, not copied from a recording.",
+          "The welcome was drafted for the workshop, not copied from a recording.",
         ],
       },
       {
@@ -103,7 +105,7 @@ export const MODULES: Module[] = [
           "Describe how a bit differs from a qubit.",
           "Use statevector, amplitude, gate, circuit, measurement, superposition, and entanglement at an introductory level.",
           "Sign in to the IBM Quantum Platform.",
-          "Join the classroom account when Kevin sends the invitation.",
+          "Use the IBM Quantum Open Plan. The Bell lab starts on a simulator.",
           "Build a circuit in IBM Quantum Composer.",
           "Recreate that circuit with basic Python and Qiskit.",
           "Run it on a simulator and read the result.",
@@ -120,13 +122,13 @@ export const MODULES: Module[] = [
       {
         question: "What is a successful outcome of this workshop?",
         options: [
-          "A Nature paper on quantum advantage",
+          "A paper claiming quantum computing is better than classical computing",
           "A clear entry into the tools, vocabulary, and next step",
           "Replacing your organization’s classical computers",
           "A complete proof of entanglement from one histogram",
         ],
         answer: 1,
-        why: "The workshop is an entry ramp. Advantage claims and full entanglement proofs are later, harder work.",
+        why: "The workshop is an entry ramp. A histogram is not a finished comparison, and a full entanglement proof is later, harder work.",
       },
     ],
     facilitator: {
@@ -144,19 +146,19 @@ export const MODULES: Module[] = [
     number: "01",
     title: "Exercise 1: Get connected to IBM Quantum",
     minutes: 40,
-    summary: "Register, accept the classroom invitation, find the assigned instance, and keep the API key on a trusted computer.",
+    summary: "Register, sign in to IBM Quantum on the Open Plan, and keep the Bell lab on a simulator.",
     outcomes: [
       "Submit the private registration form.",
-      "Sign in with the invited email.",
-      "Find the classroom instance without pasting the CRN into chat.",
-      "Save an API key only on a trusted computer, or use the simulator path while the invitation is pending.",
+      "Sign in to IBM Quantum.",
+      "Name the Open Plan limit: 10 minutes of QPU time per 28-day window.",
+      "Run the Bell lab on a simulator before any hardware job.",
     ],
     sections: [
       {
         heading: "Check the live screen",
         paragraphs: [
           `Steps checked against IBM’s public docs on ${LAST_VERIFIED}. Labels change. If the screen disagrees with this list, follow the official page. Re-check every link the morning of the workshop.`,
-          "This site never asks for a password, API token, account ID, or classroom CRN. Do not paste those into chat or GitHub.",
+          "This site never asks for a password, API token, or account ID. Do not paste those into chat or GitHub.",
         ],
       },
       {
@@ -167,22 +169,22 @@ export const MODULES: Module[] = [
           "Select Sign in. Official page: https://quantum.cloud.ibm.com/signin",
           "Create an IBM Cloud account if you do not have one. IBM may offer an IBMid or another provider. Use an email you can open today.",
           "Verify the email and finish profile or region prompts. Guide: https://quantum.cloud.ibm.com/docs/guides/cloud-setup",
-          "Wait for Kevin to grant access to his IBM Quantum Classroom Account. He sends the invitation. Do not invent an account id.",
-          "Accept the invitation and confirm the account name and region the facilitator reads aloud.",
+          "Use your own IBM Quantum Open Plan. QPU time on that plan is 10 minutes per 28-day window. This workshop does not promise more minutes.",
+          "The Bell lab uses a local simulator and does not spend that window.",
           "Open Composer: https://quantum.cloud.ibm.com/composer",
-          "Confirm you see qubit wires before Module 5. Guide: https://quantum.cloud.ibm.com/docs/guides/composer",
+          "Confirm you see qubit wires before the Bell lab. Guide: https://quantum.cloud.ibm.com/docs/guides/composer",
           "Find Learning, documentation, workloads or compute, and Composer in the platform menus.",
-          "Classroom behavior is documented at https://quantum.cloud.ibm.com/docs/en/guides/classroom-accounts",
+          "Plan comparison: https://quantum.cloud.ibm.com/docs/en/guides/plans-overview",
         ],
         troubles: [
           { title: "Confirmation email not received", body: "Check spam. Wait, then resend once. Do not create a second account yet." },
           { title: "Existing IBMid not recognized", body: "Try the email on the IBM account, not a forwarding alias. Use IBM’s password reset rather than a new signup." },
-          { title: "Classroom invitation not visible", body: "Sign in with the invited email. Ask for a resend. Check the account switcher, not only the inbox." },
+          { title: "Signed in on the wrong plan", body: "Use the Open Plan. The Bell lab still runs on the local simulator if the plan is not visible yet." },
           { title: "Wrong account or region", body: "Sign out and back in with the invited identity. Read the account name in the header before you build." },
           { title: "Composer does not load", body: "Refresh once. Try current Chrome, Edge, or Firefox. Confirm you are signed in, not on a marketing page." },
           { title: "Browser or popup blocked", body: "Allow pages for quantum.cloud.ibm.com. A phone hotspot is a fair backup on locked networks." },
           { title: "Joined with a different email", body: "Tell the facilitator the address you used. They can invite that address. Do not share a password." },
-          { title: "Cannot access hardware", body: "The ideal simulation lab does not need a QPU. Hardware depends on the classroom plan and the queue." },
+          { title: "Cannot access hardware", body: "The Bell lab does not need a QPU. A later hardware job uses the Open Plan window of 10 minutes per 28 days." },
         ],
       },
     ],
@@ -199,181 +201,57 @@ export const MODULES: Module[] = [
       notes: ["Read the account name aloud. Do not show a CRN.", "Click the IBM URLs the morning of the event."],
       questions: ["Can you see circuit wires, even with no gates yet?"],
       expected: ["Yes. If not, they stay in setup and skip ahead only as observers."],
-      misconceptions: ["The classroom account does not replace an IBM login. It is access on the identity they already used."],
-    },
-    nextSlug: "vocabulary",
-    nextLabel: "Learn the vocabulary",
-  },
-  {
-    slug: "vocabulary",
-    number: "02",
-    title: "Beginner vocabulary",
-    minutes: 20,
-    summary: "Plain definition, technical definition, and one analogy on every card. The analogy does not replace the quantum word.",
-    outcomes: ["Look a word up before guessing.", "Separate amplitude from probability.", "Reject the slogan that a qubit tries every answer at once."],
-    sections: [
-      {
-        heading: "How the cards work",
-        paragraphs: [
-          "The glossary in the header is the same language the labs use. Search it whenever a term shows up early.",
-          "Each card has a plain sentence, a technical sentence, one analogy from cooking, music, sports, or Home Depot, why the term matters, and a common misconception.",
-          "The recent commit on Quantum-Global-Group/qiskit-2x-cert-study-guide adds plain-English certification cheat-sheet PDFs. Those PDFs were checked for cooking, music, sports, and Home Depot wording and did not contain those four layers. The analogies here are Fall Fest teaching translations. Replace the analogy sentence if Kevin has a preferred version. Leave the technical sentence unless it is wrong.",
-          "Deeper certification practice, after this workshop, is the notebook set in that study guide. It assumes more Qiskit than today.",
-        ],
-      },
-    ],
-    analogies: [
-      {
-        title: "Superposition, beside the definition",
-        layers: {
-          cooking: "Seasoned sauce before it is plated. The recipe allows more than one serving. You still plate one serving.",
-          music: "A chord on the chart. One recorded sample is one take, not every note as a finished solo.",
-          sports: "A play design before the snap. The scoreboard later shows one result.",
-          homeDepot: "A board marked for two possible cuts. The saw makes one cut.",
-        },
-      },
-    ],
-    checks: [
-      {
-        question: "Which description of superposition should you keep?",
-        options: [
-          "The qubit tries every answer at the same time.",
-          "The state combines basis states with amplitudes, and a measurement returns one outcome.",
-          "The qubit stores a classical bit twice.",
-          "The histogram lives inside the qubit.",
-        ],
-        answer: 1,
-        why: "Superposition is a combination of basis states. It is not a claim that the device tries every answer.",
-      },
-    ],
-    facilitator: {
-      timing: "20 minutes. Search three terms. Do not read every card.",
-      notes: ["Say KYOO-bit, HAD-uh-mard, and KIZ-kit once."],
-      questions: ["How is an amplitude different from a probability?"],
-      expected: ["Probability is the squared magnitude of the amplitude. Phase can change while probabilities stay put."],
-      misconceptions: ["State, statevector, and histogram get mashed together. Separate the recipe, the list of amplitudes, and the tally."],
+      misconceptions: ["An IBM login is not extra QPU time. The Open Plan window stays 10 minutes per 28 days."],
     },
     nextSlug: "qubi",
-    nextLabel: "Watch the Qubi demonstration",
+    nextLabel: "Qubi demo from Qolour",
   },
   {
     slug: "qubi",
-    number: "03",
-    title: "From a classical bit to a Qubi",
-    minutes: 25,
-    summary: "A physical Qubi first, then the symbols that will show up in Composer.",
-    outcomes: ["Contrast a bit with a qubit state.", "Read |0⟩ and |1⟩.", "Match a physical action to a gate symbol."],
+    number: "02",
+    title: "Qubi demo from Qolour",
+    minutes: 15,
+    summary: "The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
+    outcomes: ["See that the lesson is not on this page yet."],
     sections: [
       {
-        heading: "What Kevin demonstrates",
+        heading: "Placeholder",
         paragraphs: [
-          "A classical bit, after you look, is 0 or 1. A qubit is described by a state before that look. The labels |0⟩ and |1⟩ are basis states. The bar and angle bracket are Dirac notation. They mark a state, not an absolute value.",
-          "A single-qubit state can be written α|0⟩ + β|1⟩. Alpha and beta are amplitudes, and they can be complex. The chance of measuring 0 is the squared magnitude of alpha. The chance of measuring 1 is the squared magnitude of beta. Those chances add to 1.",
-          "Phase is the part of an amplitude that changes how states combine. Two states can share the same probabilities and still be different because of phase. You will not compute that by hand today.",
-          "One measurement returns one outcome. Repeated shots estimate the probabilities. A single look does not display the list of amplitudes.",
-          "When the Qubi is flipped between definite settings, connect that to an X gate. When it is prepared in an equal superposition, connect that to H. When someone reads a result, that is measurement, not a gate.",
-        ],
-      },
-    ],
-    analogies: [
-      {
-        title: "Measurement, beside the definition",
-        layers: {
-          cooking: "Plating ends the unplated sauce. You get one plate.",
-          music: "Pressing record samples the room. It does not print the chord chart.",
-          sports: "The whistle ends the play. The diagram was not the final score.",
-          homeDepot: "The saw finishes one cut. The pencil marks were the plan.",
-        },
-      },
-    ],
-    checks: [
-      {
-        question: "If the probability of 0 is one half, one measurement gives you…",
-        options: ["Both 0 and 1", "Either 0 or 1", "The amplitude printed on the device", "A guaranteed 0"],
-        answer: 1,
-        why: "One shot is one basis outcome. A probability describes many shots.",
-      },
-    ],
-    facilitator: {
-      timing: "25 minutes, at least half with the Qubi in hand.",
-      notes: ["Do not say the qubit is simply both values at once.", "Point to the future Composer symbol after each action."],
-      questions: [
-        "What do you predict if we measure now?",
-        "Did that action change the probability, the phase, or both?",
-        "Why do we need multiple shots?",
-        "What information is gone after measurement?",
-      ],
-      expected: [
-        "Name a probability unless the state is a basis state.",
-        "H on |0⟩ changes probabilities. Some gates mainly change phase.",
-        "Shots estimate a fraction. One shot cannot.",
-        "A computational-basis measurement does not reveal every amplitude.",
-      ],
-      misconceptions: ["The Qubi’s lamp or readout is a sample, not the statevector."],
-    },
-    nextSlug: "qolour",
-    nextLabel: "Prepare with the statevector exhibit",
-  },
-  {
-    slug: "qolour",
-    number: "04",
-    title: "Qolour statevector preparation",
-    minutes: 20,
-    summary: "Watch Kevin’s videos inside Qolour’s course, then use the statevector exhibit. This page does not copy that course.",
-    outcomes: ["Open the official exhibit.", "Record amplitudes, probabilities, and a prediction.", "Bring one question."],
-    sections: [
-      {
-        heading: "Open these, do not paste them",
-        paragraphs: [
+          "The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
           "Educator course: https://www.qolour.com/educator-course",
-          "Statevector exhibit: https://www.qolour.com/educator-course/statevector-exhibit",
-          "Kevin’s videos live in that course. If the playlist order changes, follow the titles the facilitator names that morning.",
-        ],
-        steps: [
-          "Watch the statevector videos assigned in the educator course.",
-          "Open the statevector exhibit.",
-          "Change one control and watch the state move.",
-          "Write the amplitudes, the probabilities, the gate you used, and the outcome you predict.",
-          "Review state, statevector, amplitude, probability, phase, and measurement in the glossary.",
-          "Bring one question that names what you changed and what surprised you.",
-        ],
-      },
-      {
-        heading: "Reflection written for this workshop",
-        paragraphs: [
-          "Which number changed the bar heights? Which change could alter the state while the bars looked almost the same at first glance? That second kind of change is a hint about phase.",
+          "The course stays on Qolour. This page does not copy it.",
         ],
       },
     ],
     checks: [
       {
-        question: "Why is the Qolour lesson not pasted here?",
+        question: "Where is the Qubi lesson?",
         options: [
-          "It is optional decoration",
-          "The course stays on Qolour so this site does not copy protected material",
-          "Qolour replaces IBM Quantum",
-          "Statevectors are only metaphors",
+          "Written out on this page",
+          "Not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
+          "Copied from the Qolour course into this site",
+          "A required hackathon submission",
         ],
         answer: 1,
-        why: "We link, name the objective, and add original questions.",
+        why: "This page is a placeholder. It links to the Qolour educator course and does not copy the course.",
       },
     ],
     facilitator: {
-      timing: "20 minutes live, or prework plus an 8 minute compare.",
-      notes: ["Write the exact video titles the day before. Do not assume the course menu is frozen."],
-      questions: ["What did you change, and what did the probabilities do?"],
-      expected: ["They can point to an amplitude and to its squared magnitude as different numbers."],
-      misconceptions: ["The exhibit is a teaching view of a state, not a QPU run."],
+      timing: "Short. The lesson is not in this guide.",
+      notes: ["Andrew, co-founder of Qolour, will send a quick lesson later. Link only the educator course. Do not paste the course."],
+      questions: ["Is the lesson on this page?"],
+      expected: ["No. It is not here yet."],
+      misconceptions: ["The educator course link is not a copy of the course."],
     },
     nextSlug: "composer",
     nextLabel: "Build the circuit in Composer",
   },
   {
     slug: "composer",
-    number: "05",
+    number: "03",
     title: "Create your first entangled pair",
     minutes: 35,
-    summary: "A two-qubit Bell circuit in Composer. Predict, then run an ideal simulation. Hardware only if the classroom can reach it.",
+    summary: "A two-qubit Bell circuit in Composer. Predict, then run an ideal simulation. A real quantum computer is later, on the Open Plan.",
     outcomes: ["Place H, CX, and measurements correctly.", "Explain the ideal 00 and 11 pattern.", "Say why that histogram is not a full proof of entanglement."],
     sections: [
       {
@@ -396,7 +274,7 @@ export const MODULES: Module[] = [
           "Open the histogram.",
           "Ideal results should be mostly 00 and 11, in similar amounts after many shots.",
           "01 and 10 should be missing or tiny in the ideal run.",
-          "If the classroom can use an IBM QPU, run the same circuit there.",
+          "A later run on a real quantum computer uses the Open Plan. Start with the ideal simulator. That plan is 10 minutes of QPU time per 28-day window. This workshop does not promise more minutes.",
           "Compare the histograms.",
           "A few 01 or 10 counts on hardware are noise, not an immediate reason to redraw.",
         ],
@@ -411,17 +289,6 @@ export const MODULES: Module[] = [
           "Dividing by √2 keeps the state normalized. Each amplitude has magnitude 1/√2, so each of those two results has probability 1/2.",
           "Counts that pile up on 00 and 11 are consistent with this preparation. One computational-basis histogram is not, by itself, a complete experimental proof of entanglement.",
         ],
-      },
-    ],
-    analogies: [
-      {
-        title: "The pair, beside the equation",
-        layers: {
-          cooking: "Two plates that leave together either both finished or both unfinished, because one shared step tied them.",
-          music: "Two players who only land on the downbeat together after the same cue.",
-          sports: "Two teammates whose recorded results match: both successes or both misses.",
-          homeDepot: "Two fixtures on one controlled circuit that read both on or both off.",
-        },
       },
     ],
     checks: [
@@ -444,7 +311,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "python",
-    number: "06",
+    number: "04",
     title: "Rebuild the Bell state with Python and Qiskit",
     minutes: 40,
     summary: "The same circuit in small cells. Qiskit 2.3. Inspect the statevector before you measure.",
@@ -477,17 +344,6 @@ export const MODULES: Module[] = [
           "Common mistake: sampling the unmeasured circuit, running cells out of order, or swapping the CX qubits.",
           "Recovery: restart the kernel, run from the top, and reinstall the pinned requirements in a clean environment if import fails.",
         ],
-      },
-    ],
-    analogies: [
-      {
-        title: "The program, in four translations",
-        layers: {
-          cooking: "Import opens the pantry. QuantumCircuit(2) sets out two bowls. H and CX are steps. The statevector tastes the mixture before service. measure_all plates it. Shots are how many plates you serve to see the pattern.",
-          music: "Import loads the library. The circuit is the score. The statevector is the chart. Measurement is pressing record. Shots are takes.",
-          sports: "Import brings the rulebook. The circuit is the play. The statevector is the design. One measurement is one snap. Shots are practice reps.",
-          homeDepot: "Import unlocks the tool chest. The circuit is the cut list. The statevector is the plan on the counter. Measurement is the finished cut. Shots are repeated cuts.",
-        },
       },
     ],
     code: [
@@ -525,7 +381,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "assess-build",
-    number: "06a",
+    number: "05",
     title: "Next-Step Quantum Decision Guide",
     minutes: 15,
     summary: "After both Bell labs and before the Hetionet tour. The live link is still blank.",
@@ -558,7 +414,9 @@ export const MODULES: Module[] = [
       {
         heading: "Live link",
         paragraphs: [
-          "The live link for Assess and Build is still blank. No participant-facing address is available to put on this page.",
+          "Read chapter 7 of Quantum Readiness for Leaders. Then run Assess, then Build.",
+          "Walkthrough of the decision tool, the module already in the readiness repo: https://github.com/Quantum-Global-Group/qgg-quantum-readiness-os/tree/cursor/optimization-readiness-engine-26a9/modules/optimization-readiness-engine",
+          "No participant-facing address and no Wiser demo address were found. The public host on the FAU site or the Quantum Global Group site is not live yet. This page does not invent one.",
         ],
       },
     ],
@@ -590,48 +448,13 @@ export const MODULES: Module[] = [
   },
   {
     slug: "hetionet",
-    number: "07",
+    number: "06",
     title: "Hetionet as a complete project example",
     minutes: 25,
-    summary: "A tour of a real hybrid drug–disease project. You will not train the model today.",
-    outcomes: ["Retell the pipeline.", "Use only the metrics published in that README.", "Name a role you could fill."],
+    summary: "A section-by-section walkthrough of the Quantum Global Group biomedical paper. You will not train the model today.",
+    outcomes: ["Retell the pipeline in the paper’s order.", "Use the scores the paper prints.", "Say the comparison is not quantum advantage and not a clinical result."],
     sections: [
-      {
-        heading: "Where the numbers come from",
-        paragraphs: [
-          "Repository: https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc",
-          "Hetionet is the biomedical knowledge graph at https://het.io/. The figures below are from that project README as read on 2026-09-23. If the README changes, trust the README.",
-          "Do not install the full training stack during this workshop. The project documents a dashboard demo mode for later. This page is the walkthrough.",
-        ],
-      },
-      {
-        heading: "The story",
-        paragraphs: [
-          "Question: can a model help rank possible Compound-treats-Disease links?",
-          "Domain: drugs, diseases, genes, and recorded biological relationships.",
-          "Data: Hetionet as a knowledge graph. The reported experiment uses the CtD relation.",
-          "Classical preparation: known treatments as positive examples and other pairs as negatives, including hard negatives in the best reported run.",
-          "Embeddings: RotatE on the full graph, 128 dimensions, 200 epochs, in that best run.",
-          "Features: pair embeddings are combined. The README describes concatenation, difference, and a Hadamard product, then a reduction before the quantum model.",
-          "Classical baselines: logistic regression, random forest, and extra trees, with GridSearchCV in the optimized run.",
-          "Quantum experiment: a Pauli feature map, 16 qubits, 2 repetitions, and QSVC with C = 0.1. A ZZ feature map was also reported.",
-          "Hybrid: a stacking ensemble combines the quantum and classical models.",
-          "Evaluation metric: PR-AUC. Published test scores in the README: stacking with Pauli 0.7987, optimized random forest 0.7838, optimized extra trees 0.7807, stacking with ZZ 0.7408, optimized QSVC 0.7216. The README says a target above 0.70 was met.",
-          "Read the table as a comparison. The best listed result is the hybrid stack. A tuned classical forest is close. Standalone QSVC and the ZZ stack do not beat that forest. That is not quantum advantage, and it is not a clinical result.",
-          "What the project still teaches when a quantum piece does not win outright: pick a narrow question, keep a serious baseline, write down the method, and decide whether the extra complexity earned its place.",
-        ],
-        steps: [
-          "Question",
-          "Knowledge graph",
-          "Embeddings",
-          "Classical baseline",
-          "Quantum experiment",
-          "Hybrid comparison",
-          "Evaluation",
-          "Decision",
-          "Next experiment",
-        ],
-      },
+      ...HETIONET_WALKTHROUGH,
       {
         heading: "Roles",
         paragraphs: [
@@ -655,7 +478,7 @@ export const MODULES: Module[] = [
     ],
     facilitator: {
       timing: "25 minutes. Draw the pipeline. Show five numbers. Do not launch training.",
-      notes: ["Re-read the README table if the date is no longer 2026-09-23."],
+      notes: ["The scores are the paper’s Table II. Do not train the model."],
       questions: ["What would a result that loses to the random forest still be good for?"],
       expected: ["It would still document a method and force a decision about complexity."],
       misconceptions: ["Beating chance, or beating a weak model, is a different claim from beating the optimized forests in this table."],
@@ -665,7 +488,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "readiness",
-    number: "08",
+    number: "07",
     title: "Quantum readiness",
     minutes: 20,
     summary: "Readiness is a reason, a team, a learning plan, and an honest test. It is not knowing everything.",
@@ -674,9 +497,9 @@ export const MODULES: Module[] = [
       {
         heading: "What is sourced, and what is not",
         paragraphs: [
-          "Robert Loredo leads this initiative. His book, Quantum Readiness for Leaders, is a strategic resource for the conversation. This page does not copy its paragraphs, questions, diagrams, tables, or framework layout.",
+          "Quantum Readiness for Leaders, by Robert Loredo, is a strategic resource for the conversation. This page does not copy its paragraphs, questions, diagrams, tables, or framework layout.",
           "Chapter 7 is named on the sitting between the Bell labs and the Hetionet tour. This repository stores no chapter text, diagrams, page numbers, or Drive file.",
-          "Loredo’s theme, stated at the level of a citation rather than an excerpt: leaders prepare strategy, technology, talent, and risk before they chase a tool. Kevin’s teaching interpretation for this room: a person is ready to continue when they can name a role and a next resource. Quantum Global Group’s original piece is the Hetionet pipeline and the reflection prompts below. IBM supplies the platform, Composer, Learning, and Qiskit documentation.",
+          "Loredo’s theme, stated at the level of a citation rather than an excerpt: leaders prepare strategy, technology, talent, and risk before they chase a tool. A person is ready to continue when they can name a role and a next resource. Quantum Global Group’s piece for this room is the Hetionet walkthrough and the reflection prompts below. IBM supplies the platform, Composer, Learning, and Qiskit documentation.",
         ],
       },
       {
@@ -718,7 +541,7 @@ export const MODULES: Module[] = [
       timing: "20 minutes. Ten to frame, ten to write, then two volunteers.",
       notes: ["Keep the book closed unless you are using a licensed excerpt that is not in this repo."],
       questions: ["What claim are you not ready to make?"],
-      expected: ["They will not call a classroom Bell state advantage, a medical result, or a proof of entanglement."],
+      expected: ["They will not call the Bell lab quantum advantage, a medical result, or a proof of entanglement."],
       misconceptions: ["Creating an account feels like finishing. It is the start of Module 1, already done."],
     },
     nextSlug: "pathway",
@@ -726,7 +549,7 @@ export const MODULES: Module[] = [
   },
   {
     slug: "pathway",
-    number: "09",
+    number: "08",
     title: "Learning pathway and ecosystem map",
     minutes: 15,
     summary: "Leave with a role, one official IBM link, one practice task, and something you could show.",
@@ -756,8 +579,8 @@ export const MODULES: Module[] = [
           "Workforce leader, business leader, or project manager: use-case selection and team design. Portfolio: a one-page brief using the nine-step pipeline. Not a trained model.",
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
-          "Machine learning: follow /intro/qml. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. Iterate on a simulator. Open Plan QPU time is up to 10 minutes per rolling 28-day window. No classroom-minute quota is stated.",
-          "Fall Fest projects: follow /intro/hackathon. The public program name is the FAU-hosted Qiskit Fall Fest 2026, inaugural state championship. October 1 and October 5 both appear as kickoff lines. This page does not choose. Grant’s event name, campus, registration URL, and GitHub org stay blank.",
+          "Machine learning is the next part of this journey, at /intro/qml. It is not a separate required hackathon challenge. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. That source is still being reread. Iterate on a simulator. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.",
+          "Fall Fest projects use the participant handbook. The public name is Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. Kickoff and challenge release are October 1, 2026. Official registration is Coming soon.",
         ],
       },
     ],

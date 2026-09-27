@@ -1,0 +1,8 @@
+export function basePath() {
+  return process.env.NEXT_PUBLIC_BASE_PATH || "";
+}
+
+export function withBase(path: string) {
+  if (!path.startsWith("/")) return path;
+  return `${basePath()}${path}`;
+}

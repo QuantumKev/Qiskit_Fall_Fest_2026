@@ -1,5 +1,6 @@
-import { Journey } from "@/components/Journey";
+import { OnboardingView } from "@/components/OnboardingView";
+import { START } from "@/content/onboarding";
 
 export default function HomePage() {
-  return <Journey />;
+  return <OnboardingView page={START} />;
 }

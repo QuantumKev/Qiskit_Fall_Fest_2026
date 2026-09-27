@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+import { withBase } from "@/lib/base-path";
 
 type Row = {
   id: string;
@@ -16,20 +17,40 @@ type Row = {
 };
 
 const TOKEN_KEY = "qff-organizer-token";
+const tokenListeners = new Set<() => void>();
+let tokenSnapshot = "";
+let tokenLoaded = false;
+
+function readOrganizerToken() {
+  if (!tokenLoaded) {
+    tokenLoaded = true;
+    tokenSnapshot = sessionStorage.getItem(TOKEN_KEY) || "";
+  }
+  return tokenSnapshot;
+}
+
+function setOrganizerToken(next: string) {
+  tokenSnapshot = next;
+  tokenLoaded = true;
+  sessionStorage.setItem(TOKEN_KEY, next);
+  tokenListeners.forEach((listener) => listener());
+}
 
 export function OrganizerDashboard() {
-  const [token, setToken] = useState("");
+  const token = useSyncExternalStore(
+    (listener) => {
+      tokenListeners.add(listener);
+      return () => tokenListeners.delete(listener);
+    },
+    readOrganizerToken,
+    () => "",
+  );
   const [rows, setRows] = useState<Row[]>([]);
   const [statuses, setStatuses] = useState<string[]>([]);
   const [message, setMessage] = useState("Enter the organizer token. It stays in this browser tab.");
 
-  useEffect(() => {
-    const saved = sessionStorage.getItem(TOKEN_KEY);
-    if (saved) setToken(saved);
-  }, []);
-
   async function load(nextToken = token) {
-    const response = await fetch("/api/register", {
+    const response = await fetch(withBase("/api/register"), {
       headers: { authorization: `Bearer ${nextToken}` },
     });
     const body = await response.json().catch(() => ({}));
@@ -38,14 +59,14 @@ export function OrganizerDashboard() {
       setRows([]);
       return;
     }
-    sessionStorage.setItem(TOKEN_KEY, nextToken);
+    setOrganizerToken(nextToken);
     setRows(body.registrations || []);
     setStatuses(body.statuses || []);
     setMessage(`${(body.registrations || []).length} responses. API keys are not stored.`);
   }
 
   async function setStatus(id: string, status: string) {
-    const response = await fetch("/api/register", {
+    const response = await fetch(withBase("/api/register"), {
       method: "PATCH",
       headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
       body: JSON.stringify({ id, status }),
@@ -60,7 +81,7 @@ export function OrganizerDashboard() {
   function copyEmails() {
     const emails = Array.from(new Set(rows.map((row) => row.email))).join("\n");
     void navigator.clipboard.writeText(emails);
-    setMessage("Email addresses copied, one per line, for the IBM Classroom invitation.");
+    setMessage("Email addresses copied, one per line.");
   }
 
   function copyAttendance() {
@@ -85,7 +106,7 @@ export function OrganizerDashboard() {
       >
         <label>
           Organizer token
-          <input type="password" value={token} onChange={(event) => setToken(event.target.value)} autoComplete="current-password" />
+          <input type="password" value={token} onChange={(event) => setOrganizerToken(event.target.value)} autoComplete="current-password" />
         </label>
         <button className="button" type="submit">
           Open the private list

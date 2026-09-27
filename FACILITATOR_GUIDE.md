@@ -1,0 +1,138 @@
+**Florida Qiskit Fallfest Hackathon.** For facilitators and local hosts. This page is public. It has no passwords, API keys, private phone numbers, or private meeting links.
+
+Part of Qiskit Fall Fest 2026. Theme: A decade of quantum on the cloud. The 2026 theme recognizes ten years since IBM placed its first quantum processor on the cloud. Announcement: <https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026>
+
+---
+
+## Outcomes
+
+By the end of Workshop 1, a participant can sign in on their own account or follow the projected demonstration, build one Bell state in Composer and again in Python, and name the Qiskit workflow in plain language.
+
+By the end of Workshop 2, a team can name a problem, a classical baseline, a limitation, and the pull-request path. Coding is optional for the Domain/Industry Expert.
+
+You are not expected to prove that quantum computing is better than classical computing. Do not promise that a quantum result will outperform the classical one. Do not say that IBM sponsors local prizes.
+
+## Run of show
+
+Times are a guide for a two-hour Workshop 1 and a 75 to 90 minute Workshop 2. Shift a block rather than skipping the Bell state or the baseline.
+
+### Workshop 1, about two hours
+
+| Time | Block | Where to point |
+|---|---|---|
+| 0:00 | Welcome and the theme | Home page |
+| 0:10 | Own IBM account, Open Plan, API key, and CRN | Account page |
+| 0:25 | Words the Bell lab needs. Link Qolour. Do not paste the course. | Vocabulary page |
+| 0:40 | Bell state in Composer | Composer lab |
+| 0:55 | The same Bell state in Python | Python lab |
+| 1:20 | Map, transpile, execute, and interpret | Workflow page |
+| 1:45 | Simulator versus hardware, API safety, jobs, shots, and noise | Account and workflow pages |
+| 1:55 | Resource map | Handbook and resource list |
+
+### Workshop 2, about 75 to 90 minutes
+
+| Block | Point people to |
+|---|---|
+| Two pathways and shared responsibilities | Pathways page and this handbook’s domain guide |
+| Problem and classical baseline | Project frame |
+| Benchmarking sequence and the decision guide | Benchmarking page |
+| Hetionet as a finished example, not the minimum bar | Hetionet page |
+| Deliverables and the pull request | Submission page |
+
+Kevin Robinson’s video titles will be listed when they are confirmed. Do not invent titles.
+
+## Room and tech checklist
+
+- Projector or a shared screen that can show Composer without showing anyone’s API key or CRN.
+- Current Chrome, Edge, or Firefox. Test Composer once before people arrive.
+- Power and guest Wi-Fi, or a plan for phone hotspots. Details that are not confirmed stay “Details coming soon.”
+- The Bell lab runs on the local simulator first. A hardware job is optional and spends Open Plan time.
+- Do not create a shared login. Each person uses their own IBM Quantum account.
+- Loaner laptops are not confirmed. Do not promise a machine.
+- Name tents, printed handouts, and extra rooms are not confirmed.
+
+## Account-support procedure
+
+A workshop facilitator is the instructor, co-host, or designated university lead helping participants during the session.
+
+If someone cannot sign in after trying the account troubleshooting steps, they can keep following the projected demonstration while the account issue is being resolved. Do not tell them to create a second account until they know which email they already used.
+
+Contact order: local university lead, then the workshop instructor or designated co-host, then Kevin Robinson at kevin@quantumglobalgroup.io for unresolved program questions. Do not send basic account troubleshooting to IBM unless official IBM account support is required.
+
+Open Plan is up to 10 minutes of QPU execution time per rolling 28-day window. Say that sentence. Do not shorten the window, and do not promise extra minutes. The limit page is <https://quantum.cloud.ibm.com/docs/en/guides/max-execution-time>.
+
+Never ask a participant to paste an API key, a CRN, or a password into chat, a form, a slide, or a photograph. On a projected or lab computer, do not call `save_account()`.
+
+## Composer and Bell teaching notes
+
+One Bell state, twice. In Composer: H on qubit 0, CX with control 0 and target 1, then measure. In Python, the same gates, then `StatevectorSampler` and 1024 shots. The ideal simulator piles on 00 and 11. Hardware can show 01 and 10. Qubit 0 is the rightmost bit.
+
+If the histogram is flat, check the H target and the CX direction. Ideal simulation is enough for the workshop. Open Plan hardware is later.
+
+Restart a kernel on purpose if the room hits a `NameError`, so people see that the notebook and the virtual environment must match.
+
+## Common questions
+
+**Do I have to code?** No, if you are the Domain/Industry Expert. Yes, if you are the Builder/Developer Expert and the team is running a circuit. Both roles share the problem, the comparison, and the write-up.
+
+**Will the quantum result win?** Do not promise that. The comparison can also show that the classical method is the better fit.
+
+**Is Hetionet the assignment?** No. It is one finished example. Do not train that model in the room.
+
+**Where is registration?** Use the link on the university card when one is listed. Otherwise say details are coming soon.
+
+## Knowledge-check guidance
+
+The checks on the participant pages are practice. Ask people to choose an answer and read the explanation the page shows after they choose. Do not keep a separate answer key, and do not read correct options aloud from a private sheet. A wrong choice is a chance to restate the idea in plain language.
+
+## Handoff between Workshop 1 and Workshop 2
+
+Close Workshop 1 when the room has seen one Bell state and can point at map, transpile, execute, and interpret. People who are still stuck on sign-in leave with the simulator demonstration and a named local lead.
+
+Open Workshop 2 from the pathways page, not from a second account lecture. Carry forward the same Bell circuit as the example of a result that still needs a classical comparison. Collect no secrets between the two sessions.
+
+## Local lead directory
+
+Statewide co-leads, equal weight: Kevin Robinson, Robert Loredo, Grant Kurz, and Ayse Torres.
+
+Local cards, with only confirmed public contacts:
+
+- Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams>
+- Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. Contact and registration: details coming soon. Questions: kevin@quantumglobalgroup.io.
+- Florida Atlantic University: Ayse Torres and Kateryna Tsekhmayster. Venue: details coming soon. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
+- Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Venue and registration: details coming soon.
+- Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
+- Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i>. Venue: details coming soon.
+
+The same directory is on the participant home page.
+
+## Escalation
+
+1. Local university lead.
+2. Workshop instructor or designated co-host.
+3. Kevin Robinson, kevin@quantumglobalgroup.io, for unresolved program questions.
+
+Use Discord for errors that are safe to share: <https://discord.gg/vz6uTbtJzR>. Do not post secrets. Official IBM account support is only for an IBM account problem you cannot resolve locally.
+
+## Submission-support checklist
+
+- The branch is `team-<name>` and the pull request title is `[SUBMISSION] Team <name> — <project title>`.
+- README, USE-CASE, and LIMITATIONS are present.
+- A classical baseline sits next to any quantum number.
+- No API key, CRN, or password is in the diff.
+- The first-place local packet date on this site is October 31, 2026. Rubric weights are still coming soon.
+
+## Post-session follow-up
+
+Send people back to the handbook checklist and the submission page. Remind them of the October 31, 2026 local packet date and the November 13, 2026 statewide announcement. Do not collect API keys after the session. If a key was shown on a shared screen, tell that person to revoke it and create a replacement in the IBM dashboard.
+
+## Co-host notes
+
+Earlier drafts hid these notes behind a Co-Host control on the participant pages. They live here instead.
+
+- Read the welcome once. Point at the twelve-step rail. Do not read from a book, and do not paste a Qolour lesson into the slides.
+- Registration, the rubric, the code of conduct, and unconfirmed rooms stay “Coming soon” or “Details coming soon.”
+- The four statewide names are co-leads. Do not introduce one person as the sole host.
+- The attendance form on this site does not collect passwords, API keys, or CRNs. The static GitHub Pages build does not include the response API.
+- Status labels you may use in the room, out loud: Registered, Simulator first, Open Plan visible, Connection verified, Needs assistance.
+- Recheck IBM’s instance guide the morning of the workshop. Do not ask the room to open a paid plan.

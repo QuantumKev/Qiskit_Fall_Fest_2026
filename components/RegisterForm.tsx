@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { withBase } from "@/lib/base-path";
 
 const EMPTY = {
   fullName: "",
@@ -26,7 +27,7 @@ export function RegisterForm() {
   const [ok, setOk] = useState(false);
 
   useEffect(() => {
-    fetch("/api/register/health")
+    fetch(withBase("/api/register/health"))
       .then((response) => response.json())
       .then((body) => setConfigured(Boolean(body.configured)))
       .catch(() => setConfigured(false));
@@ -40,7 +41,7 @@ export function RegisterForm() {
     event.preventDefault();
     setMessage("");
     setOk(false);
-    const response = await fetch("/api/register", {
+    const response = await fetch(withBase("/api/register"), {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -60,8 +61,8 @@ export function RegisterForm() {
     }
     setOk(true);
     setMessage(
-      body.status === "Waiting for Classroom Invitation"
-        ? "Saved. Your status is Waiting for Classroom Invitation. Use the simulator until the invitation arrives."
+      body.status === "Simulator first"
+        ? "Saved. Your status is Simulator first. The Bell lab uses the local simulator. Open Plan QPU time is 10 minutes per 28-day window."
         : "Saved. The organizers can see this response. They cannot see an API key, because this form never asked for one.",
     );
   }
