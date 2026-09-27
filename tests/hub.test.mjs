@@ -61,6 +61,10 @@ test("visitor pages do not link to private handbook files on GitHub", () => {
 test("the home lockup serves the Qiskit mark through the base path", () => {
   const view = readFileSync(new URL("../components/OnboardingView.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(view, /IBM_Quantum_logotype_rev/);
+  assert.match(view, /withBase\("\/brand\/IBM_Quantum_logotype\.jpg"\)/);
+  assert.match(view, /width=\{3903\}/);
+  assert.match(view, /height=\{1500\}/);
+  assert.match(view, /alt="IBM Quantum"/);
   assert.match(view, /withBase\("\/brand\/qiskit_white\.svg"\)/);
   assert.match(view, /width=\{32\}/);
   assert.match(view, /height=\{32\}/);

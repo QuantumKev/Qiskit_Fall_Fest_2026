@@ -118,6 +118,14 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
           <div className="logo-lockup">
             <div className="logo-lockup-marks">
               <Image
+                className="logo-lockup-mark logo-lockup-ibm"
+                src={withBase("/brand/IBM_Quantum_logotype.jpg")}
+                width={3903}
+                height={1500}
+                alt="IBM Quantum"
+                unoptimized
+              />
+              <Image
                 className="logo-lockup-mark logo-lockup-qiskit"
                 src={withBase("/brand/qiskit_white.svg")}
                 width={32}
