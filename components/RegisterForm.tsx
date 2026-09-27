@@ -70,7 +70,7 @@ export function RegisterForm() {
   return (
     <form className="survey" onSubmit={submit}>
       {configured === false ? (
-        <p className="verdict">The organizer store is not configured on this server. You can read the form, and it will not save a response until the organizer sets a private token.</p>
+        <p className="verdict">This form is ready to read. Saving a response waits until the organizer adds a private token on the server. You can still create your IBM Quantum account in the meantime, and you can tell a facilitator you are coming.</p>
       ) : null}
       <label>
         Full name

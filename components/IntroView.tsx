@@ -82,7 +82,7 @@ function CheckCard({ check }: { check: Check }) {
       ))}
       {picked !== null ? (
         <p className={picked === check.answer ? "verdict ok" : "verdict"}>
-          {picked === check.answer ? "That matches the lesson." : "Try the other reading."} {check.why}
+          {picked === check.answer ? "That matches the lesson." : "Another choice fits this lesson."} {check.why}
         </p>
       ) : null}
     </fieldset>
@@ -178,7 +178,7 @@ function ExecutionBody() {
               {index + 1}. {step.title}
             </strong>
             <p>{step.detail}</p>
-            <p className="meta">If you skip it: {step.skip}</p>
+            <p className="meta">If this step is still ahead: {step.skip}</p>
           </li>
         ))}
       </ol>
@@ -231,7 +231,7 @@ function ComposerBody() {
   if (!unlocked) {
     return (
       <div className="stack">
-        <p>Exercise 1 comes first. Finish the connection checkpoint, or mark the simulator path and keep going.</p>
+        <p>Exercise 1 is the account step. When you are ready, finish the connection checkpoint, or mark the simulator path and keep going. You can learn the circuit while sign-in is still open.</p>
         <Link className="button" href="/intro/prepare">
           Return to Exercise 1
         </Link>
@@ -270,7 +270,7 @@ function PythonBody() {
   if (!unlocked) {
     return (
       <div className="stack">
-        <p>The Python lab opens after Exercise 1. The simulator path is the one this workshop starts with.</p>
+        <p>The Python lab opens after Exercise 1, or as soon as you choose the simulator path. This workshop starts there so you can save QPU time.</p>
         <Link className="button" href="/intro/prepare">
           Return to Exercise 1
         </Link>
@@ -731,7 +731,7 @@ export function IntroView({ slug }: { slug: IntroSlug }) {
       </p>
       <label className="complete">
         <input type="checkbox" checked={done.includes(progressId)} onChange={() => toggleDone(progressId)} />
-        I can do what this section asks.
+        Save my place on this section.
       </label>
       {next ? (
         <p>

@@ -92,7 +92,7 @@ export const MODULES: Module[] = [
         heading: "Welcome",
         paragraphs: [
           "Welcome. Many people will teach this onboarding for the Florida Quantum Readiness Challenge and Qiskit Fall Fest.",
-          "You are not expected to become a quantum physicist today, or to prove that a quantum computer beats every classical computer. You are expected to learn how to enter the ecosystem: the words, the account, a first circuit, and a realistic next step.",
+          "You are not expected to become a quantum physicist today, or to prove that a quantum computer beats every classical computer. Bring your curiosity. We’ll help with the qubits. Together we will enter the ecosystem: the words, the account, a first circuit, and a realistic next step.",
           "Quantum computers do not replace classical computers. The serious projects you will hear about use both.",
           "The welcome was drafted for the workshop, not copied from a recording.",
         ],
@@ -115,7 +115,7 @@ export const MODULES: Module[] = [
       },
       {
         heading: "Readiness survey",
-        paragraphs: ["Answer honestly. Nothing here locks a module. Facilitators use it only to decide where to slow down."],
+        paragraphs: ["Answer in whatever way is true today, including “not yet.” Nothing here locks a module. Facilitators use it only to decide where to slow down. A blank answer is welcome."],
       },
     ],
     checks: [
@@ -163,7 +163,7 @@ export const MODULES: Module[] = [
       },
       {
         heading: "Do these in order",
-        paragraphs: ["If a step fails, use the troubleshooting box with the same problem. Do not make a second account until you know which email you already used."],
+        paragraphs: ["If a step does not finish, open the matching note below. It says what may have happened and how to keep learning. Please wait to create a second account until you know which email you already used. A facilitator can help with that."],
         steps: [
           "Open https://quantum.cloud.ibm.com/",
           "Select Sign in. Official page: https://quantum.cloud.ibm.com/signin",
@@ -177,14 +177,14 @@ export const MODULES: Module[] = [
           "Plan comparison: https://quantum.cloud.ibm.com/docs/en/guides/plans-overview",
         ],
         troubles: [
-          { title: "Confirmation email not received", body: "Check spam. Wait, then resend once. Do not create a second account yet." },
-          { title: "Existing IBMid not recognized", body: "Try the email on the IBM account, not a forwarding alias. Use IBM’s password reset rather than a new signup." },
-          { title: "Signed in on the wrong plan", body: "Use the Open Plan. The Bell lab still runs on the local simulator if the plan is not visible yet." },
-          { title: "Wrong account or region", body: "Sign out and back in with the invited identity. Read the account name in the header before you build." },
-          { title: "Composer does not load", body: "Refresh once. Try current Chrome, Edge, or Firefox. Confirm you are signed in, not on a marketing page." },
-          { title: "Browser or popup blocked", body: "Allow pages for quantum.cloud.ibm.com. A phone hotspot is a fair backup on locked networks." },
-          { title: "Joined with a different email", body: "Tell the facilitator the address you used. They can invite that address. Do not share a password." },
-          { title: "Cannot access hardware", body: "The Bell lab does not need a QPU. A later hardware job uses the Open Plan window of 10 minutes per 28 days." },
+          { title: "Confirmation email not received", body: "What may have happened: it is in spam, or still on its way. Check spam, wait, and resend once. Ask a facilitator before you create a second account. You can follow the demonstration while you wait." },
+          { title: "Existing IBMid not recognized", body: "What may have happened: a forwarding alias was used instead of the email on the IBM account. Try that email, or IBM’s password reset, before a new signup. A facilitator can sit with you. The simulator path stays open." },
+          { title: "Signed in on a different plan", body: "What may have happened: another plan is selected. Choose the Open Plan. The Bell lab still runs on the local simulator if the plan is not visible yet. Ask a facilitator, and keep learning there." },
+          { title: "A different account or region", body: "What may have happened: another identity or region is active. Sign out and back in, then read the account name in the header. A facilitator can confirm it with you. You can keep reading the circuit while you switch." },
+          { title: "Composer does not load", body: "What may have happened: the page stalled, or you are on a marketing page. Refresh once. Try current Chrome, Edge, or Firefox, and confirm you are signed in. Tell a facilitator if it stays blank. The vocabulary page does not need Composer." },
+          { title: "Browser or popup blocked", body: "What may have happened: the network blocked a window. Allow pages for quantum.cloud.ibm.com. A phone hotspot is a fair backup on locked networks. Ask the local lead, and keep following the projected screen." },
+          { title: "Joined with a different email", body: "What may have happened: the invite went to another inbox. Tell the facilitator the address you used. They can invite that address. Leave the password unshared. You can stay with the group while that is updated." },
+          { title: "Cannot access hardware", body: "What may have happened: hardware access is still provisioning, or the plan window is the limit. The Bell lab does not need a QPU. A later hardware job uses the Open Plan window of 10 minutes per 28 days. Start on the simulator so you can keep learning, and ask a facilitator if you want the hardware step later." },
         ],
       },
     ],
@@ -197,10 +197,10 @@ export const MODULES: Module[] = [
       },
     ],
     facilitator: {
-      timing: "25 minutes. Park stuck logins at a side table.",
+      timing: "25 minutes. People who are still signing in can follow the projected demonstration and keep learning.",
       notes: ["Read the account name aloud. Do not show a CRN.", "Click the IBM URLs the morning of the event."],
       questions: ["Can you see circuit wires, even with no gates yet?"],
-      expected: ["Yes. If not, they stay in setup and skip ahead only as observers."],
+      expected: ["Yes. If not, they can follow the projected demonstration and rejoin the build when the screen is ready."],
       misconceptions: ["An IBM login is not extra QPU time. The Open Plan window stays 10 minutes per 28 days."],
     },
     nextSlug: "qubi",
@@ -301,7 +301,7 @@ export const MODULES: Module[] = [
     ],
     facilitator: {
       timing: "35 minutes. Stop the room for the written prediction.",
-      notes: ["Check control versus target. Upside-down CX is the common build error.", "Do not wait out a long hardware queue."],
+      notes: ["Check control versus target. An upside-down CX is a common wiring slip, and it is easy to fix together.", "Use the simulator if the hardware queue is long, so the room can keep learning. A hardware job can wait."],
       questions: ["Why can the two bars differ a little even on a simulator?"],
       expected: ["Finite shots fluctuate. 500 and 524 from 1024 shots can be a correct circuit."],
       misconceptions: ["Matching 00 and 11 bars feel like a finished entanglement experiment. Say out loud that they are not."],

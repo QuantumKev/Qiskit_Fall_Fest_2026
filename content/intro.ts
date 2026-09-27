@@ -4,7 +4,7 @@ import type { Check } from "@/content/modules";
 export const INTRO_TITLE = "Build Your First Quantum Program: A Beginner’s Guide to Python and Qiskit";
 
 export const WELCOME_MESSAGE =
-  "You are not expected to prove that quantum computing is better than classical computing, or to publish a paper in Nature. This guide helps you enter the quantum ecosystem, understand its language, use its tools, and develop the confidence to continue learning.";
+  "Bring your curiosity. We’ll help with the qubits. You are not expected to prove that quantum computing is better than classical computing, or to publish a paper in Nature. This guide helps you enter the quantum ecosystem, understand its language, use its tools, and develop the confidence to continue learning.";
 
 export const PROGRESS_LINE =
   "Prepare → Learn the Language → Build Visually → Read the Code → Run the Code → Understand the Results → Find Your Next Step";
@@ -561,22 +561,22 @@ export const WINNER_PACKET =
   "Local first-place winners (names, emails, deck, and GitHub project link) are due to the hosts no later than October 31.";
 
 export const BEFORE_KICKOFF = [
-  "Register. The link is still Coming soon.",
-  "Join the chat. The only concrete URL in that slot is the Discord invite.",
-  "Create a free IBM Quantum account. Handbook section 4. Sign up on the IBM Quantum registration page.",
-  "The participant repository is https://github.com/QuantumKev/Qiskit_Fall_Fest_2026. A separate event organization is TBA.",
+  "Required before participating: create your own IBM Quantum account. Handbook section 4. Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.",
+  "Recommended before the workshop: register when you can. The official link is still Coming soon. The attendance form does not collect passwords, API keys, or CRNs.",
+  "Recommended before the workshop: join the chat. The Discord invite is the URL for that.",
+  "Recommended before the workshop: the participant repository is https://github.com/QuantumKev/Qiskit_Fall_Fest_2026. A separate event organization is TBA. We will open the pull request together.",
 ];
 
 export const COST_LINE =
   "Nothing to pay. The Open Plan, Qiskit, and GitHub are free. No laptop is fine if you partner with someone who has one. A weak laptop is fine because the work runs in a browser.";
 
 export const TRACKS = [
-  "Builders write Qiskit. They need Python, not a physics degree. Pre-work is about 3–5 hours.",
-  "Domain people bring an industry problem, do not install Python, and read notebooks. Pre-work is about 2–3 hours.",
+  "Builder/Developer Experts write Qiskit. Python helps in that role. A physics degree does not. About 3–5 hours of pre-work is a head start, not a gate.",
+  "Domain/Industry Experts bring a field they know. Coding is optional. About 2–3 hours of pre-work is a head start. This pathway is equal, and we will help with the qubits.",
 ];
 
 export const EVERYONE_LINE =
-  "Everyone, on both tracks: register, join the chat, create an IBM Quantum account, create a GitHub account and join the event repo, read what you are building, and skim the domain track. Thirty minutes means those four account steps only.";
+  "Required before participating: your own IBM Quantum account. Recommended before the workshop: register, join the chat, create a GitHub account, and skim what you are building, including the Domain/Industry Expert guide. Optional next step: a course or a local install. We will complete the Bell labs, team formation, and the submission together. If you have about 30 minutes, the account is the piece that lets you in.";
 
 export const ACCOUNT_FACTS = [
   "quantum-computing.ibm.com and channel=\"ibm_quantum\" are described as dead after July 1, 2025.",
@@ -619,7 +619,7 @@ export const TEAM_SIZE_LINE =
   "No participant-facing team-size cap is written. The sponsorship template says “teams of up to [4],” and that number is still in brackets. Each team should have a builder side and a domain side. One person owns hardware submissions.";
 
 export const JUDGING_LINE =
-  "The shared rubric is Coming soon. The dimensions named for review are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. Pull requests after October 31, 2026 are not judged.";
+  "The shared rubric is Coming soon. The dimensions named for review are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. Please open the pull request by October 31, 2026 so judging can review every eligible submission fairly. A pull request opened after that deadline is not judged.";
 
 export const AWARD_TEMPLATE_LINE =
   "Local events are October 17–18, 2026. Capacity is up to 50 participants per campus. A team-size cap inside that room is TBA. Beginners are welcome.";
@@ -642,10 +642,10 @@ export const SEPTEMBER_LINE =
   "A recorded host overview is not confirmed. The date and the recording URL are TBA.";
 
 export const CANVAS_NOTE =
-  "Fill the nine-field Use-Case Canvas before arrival, read it aloud at team formation, and copy it to submissions/team-<name>/USE-CASE.md. Challenge statements are Coming soon in challenges/. This workshop’s project canvas is a Hetionet sketch for the local lab. It is a different sheet from the nine-field canvas.";
+  "A draft of the nine-field Use-Case Canvas is recommended before you arrive. Empty boxes are welcome. Read what you have at team formation, and copy it to submissions/team-<name>/USE-CASE.md. We will complete it together. Challenge statements are Coming soon in challenges/. This workshop’s project canvas is a Hetionet sketch for the local lab. It is a different sheet from the nine-field canvas.";
 
 export const OPEN_PLAN_MINUTES =
-  "The Open Plan gives up to 10 minutes of QPU time per rolling 28-day window. Usage is on the dashboard and the Workloads page. Iterate on a local StatevectorSampler, and send a circuit to hardware only after it is final. One person per team owns those hardware jobs. An unattended loop burns the quota.";
+  "The Open Plan gives up to 10 minutes of QPU time per rolling 28-day window. Usage is on the dashboard and the Workloads page. Start on a local StatevectorSampler so you can save that limited QPU time, and send a circuit to hardware when it is ready. One person per team can own those hardware jobs. A loop left running on its own can use the window quickly.";
 
 export const PROMO_BLANK =
   "This workshop does not promise minutes beyond the Open Plan window of 10 minutes per 28 days.";

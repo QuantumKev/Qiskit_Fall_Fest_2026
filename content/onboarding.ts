@@ -118,8 +118,21 @@ const start: StepPage = {
   number: "01",
   title: "Start here",
   minutes: 10,
-  purpose: `${EVENT.name} is part of ${EVENT.series}. You will leave with an account, one Bell state, and an honest project frame. You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations.`,
+  purpose: `Bring your curiosity. We’ll help with the qubits. Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together. ${EVENT.name} is part of ${EVENT.series}. You will leave with an account, one Bell state, and an honest project frame. You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations.`,
   sections: [
+    {
+      id: "prepare",
+      heading: "Before you arrive",
+      paragraphs: [
+        "Essential pre-work is only what you need to access the event. A half-formed idea is a wonderful start. Both pathways are full roles, and coding is optional for the Domain/Industry Expert.",
+      ],
+      steps: [
+        "Required before participating: your own IBM Quantum account. Official registration is Coming soon. Until then, the attendance form on this site tells us you are coming. It does not collect passwords, API keys, or CRNs.",
+        "Recommended before the workshop: a GitHub account, a look at what a project can be, and a topic or problem that interests you.",
+        "Optional next step: a few minutes in Composer, a short IBM course, or a local Qiskit install if you already like working that way.",
+        "We will complete this together: the Bell labs, team formation, and the submission walk-through.",
+      ],
+    },
     {
       id: "event",
       heading: "The event",
@@ -263,10 +276,10 @@ const account: StepPage = {
         EVENT.contactOrder,
       ],
       troubles: [
-        { title: "Confirmation email missing", body: "Check spam, wait, and resend once." },
-        { title: "Wrong account or region", body: `Use the header switcher. Open Plan instances live in ${EVENT.region}. Instances from another region stay hidden.` },
-        { title: "Open Plan not visible", body: "Confirm the region and that you are on your own account. The Bell lab can still run on the simulator." },
-        { title: "Composer does not load", body: "Refresh once. Use current Chrome, Edge, or Firefox." },
+        { title: "Confirmation email missing", body: "What may have happened: the message is in spam, or it is still on its way. Check spam, wait, and resend once. Ask a workshop facilitator if it still does not arrive. You can keep following the projected demonstration while you wait." },
+        { title: "A different account or region", body: `What may have happened: the header is on another region, so the Open Plan instance stays hidden. Open Plan instances live in ${EVENT.region}. Switch the header, then read the account name. A facilitator can look with you. The Bell lab can run on the simulator in the meantime.` },
+        { title: "Open Plan not visible", body: "What may have happened: the region or the signed-in account is not the one that holds the plan. Confirm both. Ask your university lead if it is still missing. The Bell lab can still run on the simulator while that is resolved." },
+        { title: "Composer does not load", body: "What may have happened: the page stalled, or the browser is an older one. Refresh once. Current Chrome, Edge, or Firefox usually load it. Tell a facilitator if it still does not. The Python lab on the next pages can wait, and you can keep reading the circuit here." },
       ],
     },
   ],
@@ -302,7 +315,7 @@ const vocabulary: StepPage = {
     {
       heading: "Qubi and Qolour",
       paragraphs: [
-        "The Qubi lesson is not in this repo. Andrew, co-founder of Qolour, will send that lesson later. Use the two links. Do not expect the course text on this page.",
+        "The Qubi lesson is not in this repo yet. Andrew, co-founder of Qolour, will send that lesson later. The two links are the place to visit. This page stays a short vocabulary stop so the Bell lab can start.",
         "Kevin Robinson’s videos, for before or after the workshop, will be listed when the titles are confirmed. They are not on the Qolour educator-course menu.",
       ],
     },
@@ -368,9 +381,9 @@ const bell: StepPage = {
         "Run the ideal simulation and compare it with the histogram on this page.",
       ],
       troubles: [
-        { title: "The histogram is flat", body: "Check that H is on qubit 0 and that CX uses qubit 0 as control and qubit 1 as target." },
-        { title: "01 and 10 appeared on hardware", body: "That can happen on a QPU. The ideal simulator should still pile on 00 and 11." },
-        { title: "Composer does not load", body: "Refresh once. Use current Chrome, Edge, or Firefox. The Python lab on the next page does not need Composer." },
+        { title: "The histogram is flat", body: "What may have happened: H is on a different qubit, or CX has the control and target swapped. Check that H is on qubit 0 and that CX uses qubit 0 as control and qubit 1 as target. A facilitator can look at the wires with you. You can keep adjusting on the simulator." },
+        { title: "01 and 10 appeared on hardware", body: "What may have happened: hardware noise added counts the ideal circuit does not predict. That can happen on a QPU. The ideal simulator should still pile on 00 and 11. Ask a facilitator if you want a second pair of eyes. Keep the simulator result as the picture of the circuit you wrote." },
+        { title: "Composer does not load", body: "What may have happened: the page stalled. Refresh once, and try current Chrome, Edge, or Firefox. Tell a facilitator if it stays blank. The Python lab on the next page does not need Composer, so you can keep learning there." },
       ],
     },
   ],
@@ -408,7 +421,7 @@ const python: StepPage = {
       troubles: [
         { title: "ModuleNotFoundError: qiskit", body: "The notebook kernel is not the environment where you installed Qiskit. Activate the virtual environment, then start Jupyter from that shell." },
         { title: "The counts use a different name than meas", body: "measure_all() names the classical register meas in this version. Read result[0].data[\"meas\"]." },
-        { title: "You are about to paste an API key", body: "Stop. This cell does not need one. A hardware run is a later, optional step." },
+        { title: "An API key is about to go into the notebook", body: "Please pause. This cell does not need an API key, and a key in a notebook can be copied by accident. A hardware run is a later, optional step. If a key was shown, revoke it in the IBM dashboard and create a replacement. You can keep learning on the simulator. Ask a facilitator without pasting the key." },
       ],
     },
   ],
@@ -481,8 +494,8 @@ const workflow: StepPage = {
       input: "Two qubits, both starting in |0⟩, and the gates you intend.",
       output: "A QuantumCircuit object. Nothing has been run.",
       vocabulary: "Circuit, gate, qubit. H and CX are the gates in this map.",
-      why: "Every later step consumes this object. A wrong map makes a perfect execution useless.",
-      mistake: "Putting H on qubit 1, or swapping the CX control and target, prepares a different state.",
+      why: "Every later step uses this object. If the gates land on different qubits, the run still finishes, and it shows a different state.",
+      mistake: "What may have happened: H is on qubit 1, or the CX control and target are swapped. Check those two wires and run the simulator again. A facilitator can look with you, and you can keep learning from the histogram while you adjust.",
     },
     {
       name: "Choose Sampler or Estimator",
@@ -492,7 +505,7 @@ const workflow: StepPage = {
       output: "A primitive object. The Bell lab chooses StatevectorSampler.",
       vocabulary: "Sampler, Estimator, primitive. Counts belong to the sampler.",
       why: "The lab reads a histogram. That is sampler data. Estimator answers a different question.",
-      mistake: "Asking an estimator for a histogram, or a sampler for an expectation value.",
+      mistake: "What may have happened: an estimator was asked for a histogram, or a sampler was asked for an expectation value. This lab uses a sampler because it wants counts. Switch the primitive and run again. The glossary defines both, and a facilitator can point at the line.",
     },
     {
       name: "Transpile",
@@ -502,7 +515,7 @@ const workflow: StepPage = {
       output: "An ISA circuit when a backend is present. On the local sampler, you keep the logical circuit.",
       vocabulary: "Transpile, backend, ISA circuit, basis gates.",
       why: "A QPU rejects gates and connections it does not have. The simulator used here does not need that rewrite.",
-      mistake: "Transpiling before the logical circuit is right, then debugging noise and a bug at the same time.",
+      mistake: "What may have happened: the circuit was transpiled before the logical gates were checked, so a wiring slip and hardware noise showed up together. Confirm the logical circuit on the simulator first. That saves QPU time and makes the next step easier to read.",
     },
     {
       name: "Execute",
@@ -512,7 +525,7 @@ const workflow: StepPage = {
       output: "A job. On the local sampler it finishes on your computer.",
       vocabulary: "Job, shot, backend. A shot is one execution of the measured circuit.",
       why: "Quantum outcomes are samples. One shot is one bitstring, not the distribution.",
-      mistake: "Setting shots to 1 and treating that single bitstring as the state.",
+      mistake: "What may have happened: shots was 1, so one bitstring was read as the whole state. Raise the shot count and run the simulator again. One shot is one sample, and that is a normal thing to discover.",
     },
     {
       name: "Post-process",
@@ -522,7 +535,7 @@ const workflow: StepPage = {
       output: "A dictionary of bitstrings and tallies. Ideal mass sits on 00 and 11.",
       vocabulary: "Result, counts, histogram. Counts are tallies, not amplitudes.",
       why: "The histogram is the observation. It is not, by itself, a complete proof of entanglement. You are not expected to prove that a quantum method is better than a classical one from this picture alone.",
-      mistake: "Reading the left bit as qubit 0, or treating hardware noise as a new Bell state.",
+      mistake: "What may have happened: the left bit was read as qubit 0, or hardware noise was read as a new Bell state. Qubit 0 is the rightmost bit. Noise on 01 and 10 can appear on a QPU. Compare with the simulator, and ask a facilitator if the picture still looks surprising. You can keep learning from the ideal counts.",
     },
   ],
   links: [
@@ -653,7 +666,7 @@ const benchmarking: StepPage = {
     },
     {
       heading: "The sequence",
-      paragraphs: ["Write these in order. The quantum hypothesis may be that a quantum method is the wrong tool."],
+      paragraphs: ["Write these in an order that helps the team. The quantum hypothesis may be that a quantum method is not the right fit. That is a useful result, and the Domain/Industry Expert pathway is often the one that can say so."],
       steps: [
         "Problem. One sentence a newcomer can repeat.",
         "Current method. How the work is done today.",
@@ -814,21 +827,21 @@ const submit: StepPage = {
   number: "12",
   title: "Prepare and submit",
   minutes: 20,
-  purpose: `Work on a branch and open a pull request. The first-place local packet is due ${EVENT.winnerDeadline}. The rubric weights are ${EVENT.rubric}.`,
+  purpose: `Work on a branch and open a pull request. Please open it by ${EVENT.winnerDeadline} so judging can review every eligible submission fairly. That date is the first-place local packet. The rubric weights are ${EVENT.rubric}.`,
   sections: [
     {
       heading: "The pull request",
       paragraphs: [
         "Copy submissions/_TEMPLATE/ to submissions/team-<name>/. Branch name: team-<name>. Pull request title: [SUBMISSION] Team <name> — <project title>.",
-        `Open it early. The repository is ${EVENT.repo}. If organizers later name a different organization, that notice replaces this sentence. It is ${EVENT.unconfirmedDetails} until they do.`,
-        "Late pull requests are not judged. Do not put an API key, a CRN, or a password in the branch.",
+        `Open it when you have a draft to share, and keep improving it. The repository is ${EVENT.repo}. If organizers later name a different organization, that notice replaces this sentence. It is ${EVENT.unconfirmedDetails} until they do.`,
+        `Please open the pull request by ${EVENT.winnerDeadline} so judging can review every eligible submission fairly. A pull request opened after the deadline published with the challenge is not judged. Keep passwords, API keys, and CRNs out of the branch. If one lands there, revoke the key and create a replacement. You can keep writing the story while that is fixed.`,
       ],
     },
     {
       heading: "Checklist",
-      paragraphs: ["Tick these before you ask for review."],
+      paragraphs: ["These are the pieces a reviewer needs. We will walk through them together. Security items stay required because a leaked key can be used by someone else."],
       steps: [
-        "README says what the project is, how to run it, and what it refuses to claim.",
+        "README says what the project is, how to run it, and what it does not claim.",
         "USE-CASE.md has the nine canvas fields, including the classical method and the size gap.",
         "LIMITATIONS.md says what the work cannot support.",
         "requirements.txt is present if there is code.",

@@ -4,24 +4,43 @@
 
 ## 0. The five-minute version
 
-You have **one job before October 1, 2026**: arrive with your own IBM Quantum account and a rough idea of a problem you care about. Nothing else.
+Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.
+
+Bring your curiosity. We’ll help with the qubits.
+
+Essential pre-work is only what you need to access the event. The labels below keep a longer list from feeling like a test. Both pathways are full roles.
 
 | | Builder/Developer Expert | Domain/Industry Expert |
 |---|---|---|
 | **Who** | Writes code during the event | Frames problems, judges impact, tells the story |
-| **Pre-work time** | 3–5 hours | 2–3 hours |
-| **Must do** | §2, §3, §4, §5, §6, §7 | §2, §3, §4 (account only), §6, §7 |
-| **Can skip** | — | Installing anything. Seriously. |
+| **Pre-work time** | About 3–5 hours if you want a head start | About 2–3 hours if you want a head start |
+| **Required before participating** | Your own IBM Quantum account (§4) | Your own IBM Quantum account (§4.1). The API key can wait until you choose to code. |
+| **Recommended before the workshop** | Skim §2 and §3, and create a GitHub account (§6) | Skim §2 and §3, create a GitHub account (§6), and read the Domain/Industry Expert guide |
+| **Optional next step** | A local install (§5.2) and a course from §7 | Composer, the business course, and a draft canvas |
+| **We will complete this together** | Bell labs, the GitHub clinic, and the submission walk-through | Problem framing, the canvas, and the story |
 
-**Everyone, regardless of track:**
+**Required before participating**
 
-- [ ] Official registration is **Coming soon**. Until that link is published, use the attendance form on this site. It does not collect passwords, API keys, or CRNs.
+- [ ] Create your own IBM Quantum Platform account → §4. This is the account you will sign in with. There is no shared login.
+- [ ] Official registration is **Coming soon**. Until that link is published, the attendance form on this site is how you tell us you are coming. It does not collect passwords, API keys, or CRNs.
+
+**Recommended before the workshop**
+
 - [ ] Join the chat → <https://discord.gg/vz6uTbtJzR>
-- [ ] Create your own IBM Quantum Platform account → §4
-- [ ] Create a GitHub account → §6
+- [ ] Create a GitHub account → §6. You will use it for the submission. The day-one clinic walks through the pull request.
 - [ ] Read §2 (what we're actually building) and skim the Domain/Industry Expert guide, [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md)
+- [ ] Start a problem or topic that interests you. A half-formed idea is a great start.
 
-If you only have 30 minutes, do the four checkboxes above and stop. Everything else can happen on day one.
+**Optional next step**
+
+- [ ] The courses and local install in §5 and §7
+- [ ] About 20 minutes in the [Composer](https://quantum.cloud.ibm.com/composer), dragging gates and watching the picture change
+
+**We will complete this together**
+
+- The Bell labs, team formation, and opening the submission pull request
+
+If you have about 30 minutes before October 1, the IBM Quantum account is the piece that lets you in. The recommended items make the first hour easier. We will cover the rest with you.
 
 ---
 
@@ -81,7 +100,7 @@ Every team should have both a Domain/Industry Expert and a Builder/Developer Exp
 
 **Domain/Industry Expert**: you bring a field that is not quantum computing: finance, logistics, energy, health, law, policy, agriculture, manufacturing, operations, or another practice you know. Your job is to make sure the team is solving a problem that exists. You do not have to install Python. The long-form source is [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md), titled Domain/Industry Expert.
 
-**If you are hesitating because you do not write code, read that guide before you decide not to come.**
+**If you do not write code, you still belong here.** The Domain/Industry Expert guide shows how your experience shapes the project. Coding is optional in that role.
 
 ---
 
@@ -119,11 +138,11 @@ An *instance* is your allocation of quantum compute. Your account needs at least
 
 The Open Plan gives you **up to 10 minutes of QPU execution time per rolling 28-day window**, free. Track usage on the dashboard and on the [Workloads page](https://quantum.cloud.ibm.com/workloads). The current limit is on the [max execution time page](https://quantum.cloud.ibm.com/docs/en/guides/max-execution-time). Simulators first.
 
-Ten minutes sounds tiny. It is enormous. QPU time is measured in actual execution, and a typical small circuit run costs a couple of seconds. You can run hundreds of jobs. Teams almost never run out, but teams that leave a badly-parameterized loop running unattended absolutely do, so:
+The window is real, and it is usually enough for a small project. QPU time is measured in actual execution, and a typical small circuit run costs a couple of seconds. A loop left running on its own can use the window quickly. That is why we start on a simulator:
 
-- **Develop against a simulator, submit to hardware only when the circuit is final.** (§5.5)
-- Check the queue before you submit at 3am on deadline day.
-- One person per team should own hardware submissions.
+- **Develop against a simulator, and submit to hardware when the circuit is ready.** (§5.5) This saves the limited QPU time for the run you mean to keep.
+- Check the queue before a late submission so you are not waiting on a busy machine.
+- One person per team can own hardware submissions. That keeps the window easy to track.
 
 Full plan comparison: <https://quantum.cloud.ibm.com/docs/en/guides/plans-overview>
 
@@ -131,7 +150,7 @@ Full plan comparison: <https://quantum.cloud.ibm.com/docs/en/guides/plans-overvi
 
 > **Domain/Industry Expert: skip this entire section.** Go to §6. You will not need Python. If you get curious later, come back. §5.1 needs no installation.
 
-We recommend **starting in the cloud** and only installing locally if you hit a reason to. Every hackathon loses hours to someone's broken conda environment. Don't be that hour.
+We recommend **starting in the cloud**. A local install is an optional next step when you want it. An older environment already on the machine can take longer than the lab itself, so the browser path keeps that time for the circuits.
 
 ### 5.1 Path A (recommended): browser, zero install
 
@@ -139,7 +158,7 @@ Three options, in order of how much we recommend them:
 
 **IBM Quantum Learning (best starting point).** The course lessons at <https://quantum.cloud.ibm.com/learning> contain live code cells you run in the browser with your IBM Quantum account. Nothing to install, nothing to configure, and it's already wired to your account. Start with [Use a quantum computer today](https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today).
 
-**IBM Quantum Composer (zero code at all).** <https://quantum.cloud.ibm.com/composer> — drag gates onto a circuit, watch the state visualizations update live, run it. This is the single fastest way to build intuition for what a quantum circuit *is*. Recommended for both tracks, honestly.
+**IBM Quantum Composer (zero code at all).** <https://quantum.cloud.ibm.com/composer> — drag gates onto a circuit, watch the state visualizations update live, run it. This is a friendly way to see what a quantum circuit *is*. Recommended for both pathways.
 
 **Google Colab (for project work).** Free hosted Jupyter. Start any notebook with:
 
@@ -151,7 +170,7 @@ Colab is the pragmatic choice for hackathon project work if you don't want to ma
 
 ### 5.2 Path B: local install
 
-Do this if you want a persistent environment, you're working offline, or you just prefer local tooling.
+Choose this if you want a persistent environment, you are working offline, or you prefer local tooling. It is an optional next step, not a requirement to attend.
 
 **Requirements:** Python 3.10 or later. (Qiskit 2.5.x supports 3.10 through 3.14.) 64-bit OS. Qiskit 2.x dropped 32-bit support entirely.
 
@@ -184,15 +203,15 @@ Windows users on Git Bash: activate with `source .venv/scripts/activate` instead
 | Package | What it's for |
 |---|---|
 | `qiskit` | The SDK itself: circuits, operators, transpiler, local simulators |
-| `qiskit-ibm-runtime` | Talks to IBM's real quantum computers. Separate package. You need it. |
+| `qiskit-ibm-runtime` | Talks to IBM's real quantum computers. Separate package. Install it when a notebook will use hardware. The Bell lab does not need it. |
 | `jupyter` | Notebooks |
-| `matplotlib` + `pylatexenc` | Circuit diagrams and plots. Without `pylatexenc`, `circuit.draw('mpl')` fails with a confusing error. |
+| `matplotlib` + `pylatexenc` | Circuit diagrams and plots. Without `pylatexenc`, `circuit.draw('mpl')` cannot draw the picture. The counts can still print. |
 
-**Rules that will save you pain:**
+**Habits that keep a local install smooth:**
 
-1. **Always use a virtual environment.** Not optional. A polluted global Python is the #1 cause of hackathon environment failures.
-2. **Install everything in a single `pip install` command.** Running pip repeatedly can produce an environment that resolves but is subtly broken.
-3. **If you have an old Qiskit 0.x installation anywhere, do not try to upgrade it in place.** Make a fresh venv. Qiskit 1.0 changed the packaging structure and in-place upgrades from 0.x fail in ways that are genuinely hard to debug.
+1. **Use a virtual environment.** A shared global Python often mixes package versions, and that mix is a common reason an import fails later. A fresh environment avoids that.
+2. **Install everything in a single `pip install` command.** Separate installs can resolve to a set of versions that looks fine and then breaks a later import.
+3. **If you have an old Qiskit 0.x installation, make a fresh virtual environment instead of upgrading it in place.** Qiskit 1.0 changed the packaging, and in-place upgrades from 0.x often fail in ways that are hard to untangle. You can keep learning in the browser while a local environment is in progress.
 
 Official install guide: <https://quantum.cloud.ibm.com/docs/en/guides/install-qiskit>
 
@@ -250,7 +269,7 @@ QiskitRuntimeService.save_account(
 )
 ```
 
-This writes your credentials to a local config file. After that, every notebook just does:
+This writes your credentials to a local config file. After that, a notebook on that trusted computer can do:
 
 ```python
 from qiskit_ibm_runtime import QiskitRuntimeService
@@ -295,12 +314,12 @@ IBM’s hello-world guide shows the same four-step pattern, and then a much larg
 ### 6.1 Create an account
 
 1. Go to <https://github.com/signup>
-2. Pick a username you'd be comfortable putting on a résumé. This is a public professional identity. `xX_quantum_slayer_Xx` will haunt you.
-3. Verify your email address — GitHub blocks several actions until you do.
-4. **Turn on two-factor authentication now**, at <https://github.com/settings/security>. GitHub requires 2FA for many contributors and it will interrupt you at the worst moment if you leave it. Use an authenticator app; save the recovery codes somewhere real.
+2. Pick a username you would be comfortable putting on a résumé. Teammates and reviewers may see it.
+3. Verify your email address. GitHub waits on that verification before several actions.
+4. **Turn on two-factor authentication**, at <https://github.com/settings/security>. GitHub asks many contributors for it. Setting it up now, and saving the recovery codes somewhere you can find, keeps later steps from pausing. An authenticator app works well.
 5. Add a display name and a one-line bio. Judges and recruiters look at these.
 
-**Students:** the [GitHub Student Developer Pack](https://education.github.com/pack) is free with a `.edu` address and includes Copilot and a pile of other tools. Apply now, not during the event, approval takes time.
+**Students:** the [GitHub Student Developer Pack](https://education.github.com/pack) is free with a `.edu` address and includes Copilot and other tools. Approval can take a few days, so it is a comfortable thing to request before the workshop if you want it. It is optional.
 
 ### 6.2 Join the event repository
 
@@ -325,7 +344,7 @@ Qiskit_Fall_Fest_2026/
 
 ### 6.4 How to submit
 
-Teams work on a branch, then open a pull request. If you've never done this, come to the day-one GitHub clinic — it takes fifteen minutes to learn and we'd rather teach it than have you fight it at 2am.
+Teams work on a branch, then open a pull request. If this is new, the day-one GitHub clinic is for you. It takes about fifteen minutes, and we would rather walk through it together than leave you to discover it late.
 
 ```bash
 # One-time
@@ -346,7 +365,7 @@ Then open a Pull Request on GitHub against `main`, titled `[SUBMISSION] Team <na
 
 **Prefer clicking to typing?** [GitHub Desktop](https://desktop.github.com) does all of the above with buttons. Or edit files directly in the browser on github.com — for written deliverables that's often the fastest path, and it's a completely legitimate way to contribute.
 
-**Deadline: October 31, 2026** for the first-place local winner packet. Pull requests opened after the deadline published with the challenge are not judged. Open the pull request early and keep pushing to it. Do not save the first push for the last hour.
+**Please open the pull request by October 31, 2026** so judging can review every eligible submission fairly. That date is the first-place local winner packet. Pull requests opened after the deadline published with the challenge are not judged. You can keep pushing to a pull request that is already open. Opening it early leaves room to fix small issues together.
 
 ### 6.5 What goes in your submission folder
 
@@ -359,7 +378,7 @@ Then open a Pull Request on GitHub against `main`, titled `[SUBMISSION] Team <na
 | Slides / demo video | ✅ | Domain |
 | `LIMITATIONS.md` — what you didn't solve and why | Strongly encouraged | Whole team |
 
-That `LIMITATIONS.md` is not a formality. In a field this hype-saturated, a team that clearly states what its approach cannot do reads as more credible, not less, and experienced judges reward it.
+That `LIMITATIONS.md` is part of the story. A team that clearly states what its approach cannot do gives reviewers something they can trust.
 
 New to git? <https://docs.github.com/en/get-started>
 
@@ -367,14 +386,14 @@ New to git? <https://docs.github.com/en/get-started>
 
 ## 7. Step four: learn something
 
-Pick a lane, budget the hours, don't try to do all of it.
+Choose one lane and a time budget you can enjoy. The other courses can wait until after the event. They are an optional next step, not a test you have to finish first.
 
 ### If you are the Domain/Industry Expert (2–3 hours)
 
 | Resource | Time | Why |
 |---|---|---|
 | [**Quantum business foundations**](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations) | 3h | Built for exactly this audience. Ends in an exam and a Credly digital badge you can put on LinkedIn. **Start here.** |
-| [**Designing and leading quantum projects**](https://quantum.cloud.ibm.com/learning/en/courses/designing-and-leading-quantum-projects) | 4h | For anyone who might actually have to sponsor or govern one of these. |
+| [**Designing and leading quantum projects**](https://quantum.cloud.ibm.com/learning/en/courses/designing-and-leading-quantum-projects) | 4h | For anyone who may sponsor or govern one of these. |
 | [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer) | 20 min | Play. Drag gates. No coding. Best intuition-per-minute available. |
 | [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md) | 30 min | Our own guide — roles, industry prompts, and the use-case canvas you'll fill in on day one. |
 
@@ -422,31 +441,49 @@ Capacity is up to 50 participants per campus. A setup clinic and a GitHub clinic
 
 ## 9. Troubleshooting
 
-**`ModuleNotFoundError: No module named 'qiskit'`, but you definitely installed it.**
-Your notebook kernel isn't the environment you installed into. Activate the venv *first*, then launch Jupyter from that same shell. If you're in Anaconda Navigator, use the "Applications on" dropdown to select your environment before launching.
+Unexpected results are a normal part of this work. Each note below says what may have happened, one or two things to try, where to get help, and how you can keep learning while it is resolved.
+
+**`ModuleNotFoundError: No module named 'qiskit'`, even after an install.**
+What may have happened: the notebook kernel is a different Python than the one where Qiskit was installed.
+Try this: activate the virtual environment, then start Jupyter from that same shell. In Anaconda Navigator, use the "Applications on" dropdown to select that environment before launching.
+Help: <https://discord.gg/vz6uTbtJzR> or your local university lead. Composer in the browser does not need this kernel, so you can keep building the Bell circuit there.
 
 **`ImportError` mentioning `qiskit-terra` or "invalid environment".**
-You have Qiskit 0.x and 1.0+ colliding. This is not fixable in place. Delete the venv, make a new one, install once.
+What may have happened: Qiskit 0.x and a current Qiskit are installed in the same environment.
+Try this: create a fresh virtual environment and install once. An in-place upgrade from 0.x usually will not sort this out.
+Help: Discord. The browser path in §5.1 lets you keep learning while the new environment is created.
 
-**Circuit drawing fails or renders as gibberish.**
-`pip install pylatexenc matplotlib`, restart the kernel.
+**Circuit drawing fails or looks unexpected.**
+What may have happened: `pylatexenc` or `matplotlib` is missing.
+Try this: `pip install pylatexenc matplotlib`, then restart the kernel.
+Help: Discord if the picture still does not appear. The printed counts are enough to continue the lab.
 
 **`401 Unauthorized` when connecting to the service.**
-Either the API key is wrong, or you're using a bearer token where the API key belongs. Regenerate the key from <https://quantum.cloud.ibm.com/> and re-run `save_account`.
+What may have happened: the API key does not match, or a bearer token was used where the API key belongs.
+Try this: create a new key at <https://quantum.cloud.ibm.com/> and run `save_account` again on a trusted computer. If the old key was visible on a shared screen, revoke it.
+Help: your local university lead. Do not paste the key into chat. The Bell lab on the local simulator does not need this connection, so you can keep going there.
 
-**"No instance found" / can't see any QPUs.**
-Check the region switcher at the top of the dashboard — Open Plan instances exist only in `us-east`. If you're looking at `eu-de`, you'll see nothing.
+**"No instance found" or the QPU list is empty.**
+What may have happened: the region switcher is not `us-east`. Open Plan instances are created in that region.
+Try this: switch the region in the dashboard header, then look again.
+Help: the account page on this site, then a workshop facilitator. Composer and the local simulator still work while the region is sorted out.
 
 **Compilation errors during `pip install`.**
-Your platform has no prebuilt wheel. Check you're on 64-bit Python 3.10+. Ask in <https://discord.gg/vz6uTbtJzR> before you start installing Rust toolchains.
+What may have happened: this Python has no prebuilt wheel. Qiskit expects 64-bit Python 3.10 or later.
+Try this: confirm that version, then ask in <https://discord.gg/vz6uTbtJzR> before installing extra compilers.
+Help: Discord. §5.1 runs in the browser while the install is resolved.
 
-**Jobs sitting in the queue forever.**
-Normal at peak times — it's a shared fair-share queue. Use `service.least_busy(operational=True, simulator=False)` and check <https://quantum.cloud.ibm.com/computers>. Meanwhile, keep working against the local simulator.
+**A job stays in the queue.**
+What may have happened: the shared fair-share queue is busy. That is normal at peak times.
+Try this: `service.least_busy(operational=True, simulator=False)`, and check <https://quantum.cloud.ibm.com/computers>.
+Help: Discord if it stays queued much longer than the computers page suggests. Keep working on the local simulator in the meantime.
 
-**Code from a tutorial you found online just doesn't work.**
-Check its date. Anything using `channel="ibm_quantum"`, `IBMQ.load_account()`, `execute()`, or `qiskit.Aer` predates the current API. See the warning in §4.1.
+**Code from an older tutorial does not run.**
+What may have happened: the tutorial uses `channel="ibm_quantum"`, `IBMQ.load_account()`, `execute()`, or `qiskit.Aer`. Those calls belong to an older API.
+Try this: compare it with the note in §4.1 and use the current calls in §5.
+Help: Discord, with the error text. Do not paste an API key, a CRN, or a password. The examples in this handbook are a fine place to keep learning.
 
-**Still stuck:** <https://discord.gg/vz6uTbtJzR> or any co-lead: your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io. Post the actual error text, not "it doesn't work." Do not paste an API key, a CRN, or a password.
+**Still stuck:** <https://discord.gg/vz6uTbtJzR>, or your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io. Share the error text so we can see what happened. Do not paste an API key, a CRN, or a password. You can keep learning on the simulator or in Composer while someone helps.
 
 ---
 
@@ -502,34 +539,41 @@ You'll hear these on day one. You don't need to be able to derive any of them.
 
 ## Appendix B: Pre-event checklist
 
-Print this. Tick it before October 1, 2026.
+Use the labels. You do not need every box ticked before you walk in.
 
-**Everyone**
+**Required before participating**
+
 - [ ] Checked registration. The official link is Coming soon. The site form does not collect secrets.
-- [ ] Joined <https://discord.gg/vz6uTbtJzR> and introduced myself
-- [ ] Created my own IBM Quantum Platform account (§4.1). Nobody else holds the password.
-- [ ] Open Plan instance created in `us-east` (§4.2)
-- [ ] API key and CRN saved privately. I can revoke the key and create a replacement if it is exposed.
+- [ ] Created my own IBM Quantum Platform account (§4.1). I am the only person who knows the password.
+- [ ] Open Plan instance created in `us-east` (§4.2), when the account flow offers it. The Bell lab can start on the simulator if this is still open.
+
+**Recommended before the workshop**
+
+- [ ] Joined <https://discord.gg/vz6uTbtJzR> and said hello
 - [ ] GitHub account created, email verified, 2FA on (§6.1)
-- [ ] Read §2 and know what a good project looks like
-- [ ] Spent 20 minutes in the [Composer](https://quantum.cloud.ibm.com/composer) just playing
+- [ ] Read §2 and have a sense of what a good project looks like
+- [ ] Started thinking about a problem or topic that interests me
+- [ ] Domain/Industry Expert: skimmed [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md)
+- [ ] Domain/Industry Expert: a draft Use-Case Canvas. Empty boxes are welcome.
 
-**Builder/Developer Expert, additionally**
-- [ ] Python 3.10+ available
-- [ ] Qiskit + `qiskit-ibm-runtime` installed, in a venv (§5.2)
-- [ ] `check_setup.py` runs and shows a Bell state (§5.3)
-- [ ] API key and CRN saved to a password manager (§4.3)
-- [ ] `save_account()` run; `QiskitRuntimeService()` connects (§5.4)
-- [ ] Ran one circuit on real hardware via the [hello world guide](https://quantum.cloud.ibm.com/docs/en/guides/hello-world)
-- [ ] Started [Use a quantum computer today](https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today)
+**Optional next step**
 
-**Domain/Industry Expert, additionally**
-- [ ] Read [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md) end to end
-- [ ] Completed [Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations) (and claimed the badge)
-- [ ] Skimmed two domain notebooks from [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md)
-- [ ] Drafted the Use-Case Canvas with one problem from my own field
-- [ ] Can state that problem out loud in 60 seconds
+- [ ] Spent about 20 minutes in the [Composer](https://quantum.cloud.ibm.com/composer), dragging gates and watching the picture change
+- [ ] API key and CRN saved privately, for a later hardware run. I can revoke the key and create a replacement if it is exposed.
+- [ ] Builder/Developer Expert: Python 3.10+ available, and Qiskit installed in a virtual environment (§5.2)
+- [ ] Builder/Developer Expert: `check_setup.py` runs and shows a Bell state (§5.3)
+- [ ] Builder/Developer Expert: `save_account()` run on a trusted computer, and `QiskitRuntimeService()` connects (§5.4)
+- [ ] Builder/Developer Expert: one circuit on hardware via the [hello world guide](https://quantum.cloud.ibm.com/docs/en/guides/hello-world), after the simulator run looks right
+- [ ] Builder/Developer Expert: started [Use a quantum computer today](https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today)
+- [ ] Domain/Industry Expert: [Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations), including the badge if you want it
+- [ ] Domain/Industry Expert: skimmed two domain notebooks from [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md)
+
+**We will complete this together**
+
+- [ ] Bell labs in Composer and in Python
+- [ ] Team formation and a problem we can say out loud
+- [ ] The submission pull request, including limitations
 
 ---
 
-*Something in this handbook wrong, broken, or out of date? Open an issue on the repo. Genuinely — links rot and IBM ships changes, and the participant who finds the broken step is doing everyone a favour.*
+*If a step in this handbook is broken or out of date, open an issue. Links change when IBM ships updates, and the person who finds a broken step helps the next participant.*

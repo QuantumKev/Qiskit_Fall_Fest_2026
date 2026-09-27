@@ -19,7 +19,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     analogyDomain: "Home Depot",
     analogy: "A light switch that is either off or on when you look at it. Checking the switch does not put it into a new state. It was already one or the other.",
     why: "Almost every comparison in this workshop starts here. Quantum computing adds a different kind of information. It does not throw the bit away.",
-    misconception: "A qubit is just a bit that can be both numbers in a way that tries every answer at once. That picture is misleading, and we will replace it.",
+    misconception: "A qubit is a bit that can be both numbers in a way that tries every answer at once. That picture is easy to pick up, and we will build a clearer one together.",
   },
   {
     term: "Qubit",
@@ -58,7 +58,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     analogyDomain: "Sports",
     analogy: "The scoreboard categories. A final score lands in one category. A play before the whistle can be a mixture of possibilities, written as a combination of those categories.",
     why: "Gates and measurements are defined by what they do to basis states.",
-    misconception: "Only basis states are real. Superpositions are also valid states. A basis state is just a convenient label.",
+    misconception: "Only basis states are real. Superpositions are also valid states. A basis state is a convenient label.",
   },
   {
     term: "Amplitude",
@@ -261,7 +261,7 @@ export const GLOSSARY: GlossaryEntry[] = [
     technical: "Gate error and readout assignment error are quantified in device calibration data. Error mitigation and correction are later topics.",
     analogyDomain: "Sports",
     analogy: "A dropped pass on a play that was called correctly. The playbook was right. The execution slipped.",
-    why: "Beginners should separate a Python bug, a wrong circuit, and a hardware error.",
+    why: "It helps to tell a Python bug, a circuit that does not match the plan, and a hardware error apart from each other.",
     misconception: "Any result that is not exactly 512 and 512 is an error. Finite shots fluctuate even in an ideal simulation.",
   },
   {

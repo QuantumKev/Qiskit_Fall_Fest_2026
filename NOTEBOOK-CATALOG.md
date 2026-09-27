@@ -2,9 +2,9 @@
 
 **Florida Qiskit Fallfest Hackathon**, part of Qiskit Fall Fest 2026.
 
-Every notebook below is free, official (IBM Quantum Learning or Qiskit documentation), and maintained against current Qiskit. We've rated each one by how much code you need to touch, so you can find the ones that suit you rather than bouncing off the first thing you open.
+Every notebook below is free, official (IBM Quantum Learning or Qiskit documentation), and maintained against current Qiskit. Each one is rated by how much code it asks you to touch, so you can start with a page that fits you.
 
-> **Domain/Industry Expert: sections 1, 2, and 4 were written for you.** Section 2 in particular is where you'll find quantum applied to actual industries, which is the material most likely to spark your Use-Case Canvas.
+> **Domain/Industry Expert: sections 1, 2, and 4 were written for you.** Section 2 is quantum work pointed at industries, which is a friendly place to spark a Use-Case Canvas. Bring your curiosity. We’ll help with the qubits.
 
 ---
 
@@ -22,10 +22,10 @@ Every notebook below is free, official (IBM Quantum Learning or Qiskit documenta
 ## 1. Start here — zero code required
 
 **🟢 [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer)**
-Drag-and-drop circuit builder. Place gates on a circuit and watch the state visualizations respond in real time. Run it on real hardware with a button. *This is the single highest intuition-per-minute resource that exists and it requires nothing but a browser and an IBM Quantum account.* Twenty minutes here will make every subsequent conversation easier. Do it even if you are the Builder/Developer Expert.
+Drag-and-drop circuit builder. Place gates on a circuit and watch the state visualizations respond in real time. A hardware run is optional and uses Open Plan time, so the simulator is a good first click. *A browser and an IBM Quantum account are enough.* About twenty minutes here makes later conversations easier. Both pathways are welcome.
 
 **🟢 [Superposition](https://quantum.cloud.ibm.com/learning/en/modules/quantum-mechanics/superposition-with-qiskit)**
-A short teaching module on the property that makes quantum different. Explains *what superposition actually is*, which is not the "both at once" cliché you've heard.
+A short teaching module on the property that makes quantum different. It explains superposition as a weighted combination, which is a clearer picture than "both at once."
 
 **🟢 [Quantum teleportation](https://quantum.cloud.ibm.com/learning/en/modules/computer-science/quantum-teleportation)**
 Despite the name, no matter is transported anywhere. This is about moving quantum *information*, and it's the most memorable demonstration of why entanglement is a resource rather than a curiosity.
@@ -90,7 +90,7 @@ A general-purpose optimization solver. Useful for seeing what shape a problem ha
 Builder/Developer Expert material, but the narrative sections are readable by anyone.
 
 **🟡 [CHSH inequality](https://quantum.cloud.ibm.com/docs/en/tutorials/chsh-inequality)**
-IBM's designated first tutorial, and a good choice: you run an experiment on a real quantum computer that demonstrates the universe is not classical. Nobel-prize physics, executed from your browser in about ten minutes. **If you run one notebook this whole event, run this one.**
+IBM's designated first tutorial, and a friendly choice: you can run an experiment on a real quantum computer that shows a result classical physics does not predict. It takes about ten minutes in the browser. **If you run one notebook during the event, this one is a welcoming place to start.** A simulator run is fine if you want to save QPU time.
 
 **🟡 [Hello world / your first circuit on hardware](https://quantum.cloud.ibm.com/docs/en/guides/hello-world)**
 The complete end-to-end loop: build, transpile, submit, retrieve, interpret. Every project you write will follow this skeleton.
@@ -99,7 +99,7 @@ The complete end-to-end loop: build, transpile, submit, retrieve, interpret. Eve
 Quantum search. The famous quadratic speedup. Read the introduction for a clear statement of what the speedup is and — importantly — what it isn't.
 
 **🟠 [Shor's algorithm](https://quantum.cloud.ibm.com/docs/en/tutorials/shors-algorithm)**
-Integer factoring. The one everybody has heard of because of cryptography. Read this before you say anything in public about quantum and encryption; the resource requirements section is the reality check.
+Integer factoring. Many people have heard of it because of cryptography. The resource requirements section is a careful picture of what the algorithm needs. It is a good read before a conversation about quantum computing and encryption.
 
 **🔴 [Quantum approximate optimization algorithm (QAOA)](https://quantum.cloud.ibm.com/docs/en/tutorials/quantum-approximate-optimization-algorithm)**
 The workhorse for optimization projects. If your team's use case is Shape 1, start here.
@@ -134,13 +134,13 @@ A genuine skill, and one you can pick up in the next ten minutes. Notebooks alte
 - **What was simplified away?** Every notebook simplifies. Which of those simplifications would your industry find unacceptable?
 - **What would it take to be useful?** Sometimes stated. Often it's the thing you can contribute by working it out.
 
-If you can answer those four questions about a notebook, you understand it better than someone who ran every cell without thinking about it.
+If you can answer those four questions, you understand the notebook well, whether or not you ran the cells. That reading is a real Domain/Industry Expert skill.
 
 ---
 
-## 5. How to actually run these
+## 5. How to run these
 
-Ranked by how likely you are to succeed on the first try.
+Ordered from the smallest setup to a local install. Any of them is a fine start.
 
 | Method | Setup | Best for |
 |---|---|---|
@@ -158,7 +158,7 @@ Then Run All. Two caveats: Colab sessions time out and lose state, so save your 
 
 **Circuit drawings failing?** You're missing `pylatexenc`. Install it, restart the kernel.
 
-**Everything failing on a tutorial you found elsewhere?** Check the date. Anything with `channel="ibm_quantum"`, `IBMQ.load_account()`, `execute()`, or `qiskit.Aer` predates the current API and will not run. See Handbook §4.1.
+**A tutorial from somewhere else does not run?** Check the date. Anything with `channel="ibm_quantum"`, `IBMQ.load_account()`, `execute()`, or `qiskit.Aer` predates the current API. See Handbook §4.1. You can keep learning from the notebooks in this catalog while you sort that out. Ask in Discord and include the error text, not an API key.
 
 ---
 

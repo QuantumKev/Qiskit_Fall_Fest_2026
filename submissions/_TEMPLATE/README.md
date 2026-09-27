@@ -9,7 +9,7 @@ Replace this heading with the project title. Open a pull request against `main` 
 - The question, in one sentence.
 - How to run the work, if there is code.
 - The classical baseline and the metric.
-- What the project refuses to claim.
+- What the project does not claim.
 
 Do not commit an API key, a CRN, a password, or a notebook output that contains one.
 

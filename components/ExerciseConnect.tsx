@@ -47,7 +47,7 @@ export function ExerciseConnect() {
 
       <section className="prose">
         <h2>Step 0. Workshop registration</h2>
-        <p>Fill this out before the workshop when you can. The form asks for your IBM Cloud email and your experience. It does not ask for a password, an API key, a CRN, or a payment card.</p>
+        <p>Recommended before the workshop, when you can. The form asks for your IBM Cloud email and your experience. It does not ask for a password, an API key, a CRN, or a payment card. Required before participating is your own IBM Quantum account, or the simulator path below if sign-in is still open.</p>
         <p>
           <Link className="button" href="/register">
             Open the registration form
@@ -65,11 +65,11 @@ export function ExerciseConnect() {
         </ol>
         <details className="trouble">
           <summary>Verification email not received</summary>
-          <p>Wait, check spam, and resend once. Do not create a second account yet.</p>
+          <p>What may have happened: the message is in spam, or it is still on its way. Wait, check spam, and resend once. Ask a facilitator before you create a second account. You can keep following the demonstration while you wait.</p>
         </details>
         <details className="trouble">
-          <summary>Wrong email</summary>
-          <p>Tell the facilitator the address you can open today. Do not share a password.</p>
+          <summary>A different email</summary>
+          <p>What may have happened: the address on the form is not the inbox you can open today. Tell the facilitator that address. Leave the password unshared. You can stay with the group on the simulator while the invite is updated.</p>
         </details>
         <details className="trouble">
           <summary>Existing IBMid on another email</summary>
@@ -81,7 +81,7 @@ export function ExerciseConnect() {
         </details>
         <details className="trouble">
           <summary>Cannot see the Open Plan</summary>
-          <p>Stay on the simulator for the Bell lab. Do not paste a CRN into chat while you sort out the account.</p>
+          <p>What may have happened: the plan is still provisioning, or the region is different. Stay on the simulator for the Bell lab so you can keep learning. Leave the CRN out of chat while you sort out the account, and ask a facilitator if you want company for that step.</p>
         </details>
       </section>
 
@@ -198,7 +198,7 @@ export function ExerciseConnect() {
 
       <section className="prose sheet">
         <h2>Completion checkpoint</h2>
-        <p>Exercise 1 is complete when every line below is true. The Bell lab starts on the simulator either way.</p>
+        <p>These lines are a friendly checkpoint, not a test. Required before a hardware job: you can sign in on the Open Plan. You can continue on the simulator if an account step is still open, and we will help.</p>
         {CHECKS.map((label, index) => (
           <label key={label} className="check-line">
             <input type="checkbox" checked={boxes[index]} onChange={() => toggleBox(index)} />
@@ -207,7 +207,7 @@ export function ExerciseConnect() {
         ))}
         <p>
           <button type="button" className="button" onClick={() => markDone("exercise1-complete")} disabled={!boxes.every(Boolean)}>
-            Unlock Exercise 2
+            Continue to the Bell lab
           </button>
         </p>
         <p>

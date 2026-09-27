@@ -91,7 +91,7 @@ function CheckCard({ check }: { check: Check }) {
         ))}
       </div>
       <p className={picked === null ? "verdict" : correct ? "verdict ok" : "verdict bad"} role="status" aria-live="polite">
-        {picked === null ? "Choose one answer." : correct ? `That matches the page. ${check.why}` : `Try the other reading. ${check.why}`}
+        {picked === null ? "Choose one answer when you are ready. This is practice." : correct ? `That matches the page. ${check.why}` : `Another choice fits this page. ${check.why}`}
       </p>
     </fieldset>
   );
@@ -268,7 +268,7 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
               <dd>{stage.why}</dd>
             </div>
             <div>
-              <dt>A beginner mistake</dt>
+              <dt>If the result looks unexpected</dt>
               <dd>{stage.mistake}</dd>
             </div>
           </dl>
@@ -332,7 +332,7 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
       <div className="page-actions">
         <label className="complete">
           <input type="checkbox" checked={complete} onChange={() => toggleDone(page.slug)} />
-          I can do what this page asks.
+          Save my place on this page.
         </label>
         {page.nextHref && page.nextLabel ? (
           <Link className="button" href={page.nextHref}>

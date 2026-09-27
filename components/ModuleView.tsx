@@ -26,7 +26,7 @@ function CheckCard({ check }: { check: Check }) {
       ))}
       {picked !== null ? (
         <p className={picked === check.answer ? "verdict ok" : "verdict"}>
-          {picked === check.answer ? "That matches the lesson." : "Try the other reading."} {check.why}
+          {picked === check.answer ? "That matches the lesson." : "Another choice fits this lesson."} {check.why}
         </p>
       ) : null}
     </fieldset>
@@ -165,7 +165,7 @@ export function ModuleView({ module }: { module: Module }) {
 
       <label className="complete">
         <input type="checkbox" checked={complete} onChange={() => toggleDone(module.slug)} />
-        I can do what this module asks.
+        Save my place on this module.
       </label>
 
       <section className="next-card">
@@ -179,8 +179,8 @@ export function ModuleView({ module }: { module: Module }) {
           </>
         ) : (
           <>
-            <h2>Write your exit ticket</h2>
-            <p>Role, one IBM link, one practice task, and something you could show in two weeks.</p>
+            <h2>A note you might leave with</h2>
+            <p>A role, one IBM link, one practice task, and something you could show in two weeks. This is a souvenir, not a test.</p>
             <Link className="button" href="/">
               Back to the journey
             </Link>

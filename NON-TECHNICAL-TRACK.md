@@ -10,13 +10,13 @@ This is the long-form guide for the Domain/Industry Expert pathway. Coding is op
 
 ## Read this first
 
-You clicked into this document because someone invited you to a quantum computing hackathon and your honest reaction was some version of *"I might be the least qualified person in that room."*
+Bring your curiosity. We’ll help with the qubits.
 
-You wouldn't be! Instead, you'd be the person who knows what the problem is and how to map it from concept to application.
+You belong in this room if quantum computing is new to you. The Domain/Industry Expert pathway is a full role. You know which problems are real, which constraints bind, and what a useful result would mean in your field. A builder can learn a circuit in a weekend. Your context took longer than that, and the team needs it.
 
-Here is the thing nobody tells you about quantum hackathons: **the hard part is not the quantum.** The algorithms are in textbooks. The code is on GitHub. IBM will hand you a real quantum computer for free from a browser tab. What's genuinely scarce is the thing that separates a project judges remember from one they forget by lunch. The value is having somebody who can say, with authority, *"that's not how procurement actually works,"* or *"our routing constraints aren't the ones in that toy example, here are the real ones,"* or *"even if this worked perfectly, the regulator would never approve it, and here's why."*
+Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.
 
-That knowledge is not acquirable in a weekend.
+The algorithms are in textbooks. The code is on GitHub. IBM Quantum gives you a real quantum computer from a browser tab, on the free Open Plan. What makes a project memorable is someone who can say, with care, *"that's not how procurement actually works,"* or *"our routing constraints look like this,"* or *"even if this worked perfectly, the regulator would ask a different question, and here's why."*
 
 ---
 
@@ -28,9 +28,9 @@ There is a shortage of people who can implement a variational quantum eigensolve
 
 You can watch this play out in the literature. A large fraction of published quantum "applications" work is physicists picking a problem that is mathematically convenient, solving it, and describing it in language that anyone who works in that industry would find slightly off. Portfolio optimization papers that ignore transaction costs and regulatory capital. Logistics papers that optimize a route without modelling the driver-hours rules that actually bind. Drug discovery papers that compute a molecular property that isn't the one medicinal chemists care about.
 
-None of this is stupidity. It's a knowledge gap that runs in exactly one direction: **it's much easier for a domain expert to learn what a quantum computer can do than for a quantum expert to learn what your industry needs.**
+That gap runs in a useful direction: **it is often easier for a domain expert to learn what a quantum computer can do than for a quantum specialist to learn what your industry needs.**
 
-That asymmetry is the whole reason this track exists.
+That is why this pathway exists, and why it is equal to the coding pathway.
 
 ### 1.2 What "understanding quantum well enough" actually requires
 
@@ -40,13 +40,13 @@ You need to hold roughly three ideas. Not the mathematics of them, but the shape
 
 **Two.** Today's machines are noisy and small. Real quantum computers make errors constantly. We manage this with error *mitigation*, statistical correction after the fact. Full error *correction*, the thing that makes arbitrarily long computations reliable, is a future technology that's closer than most originally thought. This means: today's demonstrations are small, and the honest framing of almost any hackathon project is "here is the pattern, at toy scale, and here is what would have to change for it to matter in the not too distant future."
 
-**Three.** Nearly everything practical is hybrid. A classical computer does most of the work and hands one specific sub-problem to the quantum processor. The interesting engineering question is almost always *where's the seam*. In other words, which piece of a workflow is worth handing over. That is a systems and process question. You are probably better at it than the physicists are.
+**Three.** Nearly everything practical is hybrid. A classical computer does most of the work and hands one specific sub-problem to the quantum processor. The interesting engineering question is almost always *where's the seam*. In other words, which piece of a workflow is worth handing over. That is a systems and process question, and it is a place where your experience matters.
 
-That's it. That's the technical foundation. IBM's [Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations) course covers all three properly in about three hours, and hands you a Credly badge at the end. I can't express how much I **HIGHLY RECOMMEND** starting your quantum journey here. You'll not find a more complete course for business foundations.
+Those three ideas are enough to start. We will practice them together. IBM's [Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations) course covers all three in about three hours, and it ends with a Credly badge. It is an optional next step written for this pathway.
 
 ### 1.3 The three problem shapes
 
-If you remember nothing else from this document, remember this taxonomy. On day one, you will be trying to match something from your world to one of these three shapes. Helpful hint: be sure you do it way before your competitor does. 
+The taxonomy below is the part to keep nearby. On day one, we will match something from your world to one of these three shapes. There is no prize for rushing, and "not presently one of these shapes" is a valid, useful answer. 
 
 ---
 
@@ -58,7 +58,7 @@ You have many discrete choices, they interact with each other, and the number of
 
 *The tell:* somebody in your organization runs a solver overnight and it doesn't always finish.
 
-*Watch out for:* this is the most oversold quantum application category by a distance. Classical optimization is extremely good and has decades of engineering behind it. A project here is credible only if it is specific about what the classical baseline is and honest that it's probably still winning.
+*A friendly check:* classical optimization is already very strong, with decades of engineering behind it. A project here is at its best when it names the classical baseline and stays honest if that baseline is still ahead. That honesty is a strength of this pathway.
 
 ---
 
@@ -86,7 +86,7 @@ Quantum circuits can compute similarity measures between data points in ways tha
 
 ---
 
-**If your problem doesn't fit any of these, say so.** "We investigated whether X in our industry is a quantum-shaped problem and concluded it isn't, and here's the analysis" is a genuinely good hackathon submission. It is also a rarer and braver one than yet another QAOA-on-max-cut demo.
+**If your problem doesn't fit any of these, say so.** "We investigated whether X in our industry is a quantum-shaped problem and concluded it isn't, and here's the analysis" is a strong hackathon submission. A careful "not this shape" is as welcome as a small circuit.
 
 ---
 
@@ -102,17 +102,17 @@ Quantum circuits can compute similarity measures between data points in ways tha
 
 **Domain specialists of every kind.** Chemists, logisticians, clinicians, traders, agronomists, actuaries, grid engineers, epidemiologists, lawyers, materials scientists. Any project touching your field is better with you in the room and worse without you.
 
-**Designers, writers, and communicators.** Quantum computing has a severe explanation problem. Every team will have to make an audience understand what they did in five minutes. Almost none of them will be good at it. You will be.
+**Designers, writers, and communicators.** Every team explains the work in about five minutes. That explanation is a real part of the project, and this pathway is where it lives. You are welcome here.
 
 **Students in any discipline.** Including, especially, the ones outside STEM. Some of the sharpest use-case work at these events comes from people whose first question is "wait, why would anyone want that?"
 
-**Absolute beginners with curiosity and no credentials.** This is a real category and you are welcome. Bring the willingness to ask the obvious question. Rooms full of experts are usually one obvious question away from a much better project.
+**Absolute beginners with curiosity and no credentials.** This is a real category and you are welcome. A question that feels basic is often the one that improves the project. Bring your curiosity. We’ll help with the qubits.
 
 ---
 
 ## 3. What you'll actually do
 
-Pick a role on day one. Own it. These are real jobs, not participation trophies.
+Pick a role on day one, or try one on and change it. These are real jobs on the team. We will help you get started.
 
 ### 🎯 Domain Lead
 You are the source of truth about the problem. When the builders make a modelling assumption, you say whether it's acceptable. When they simplify, you say what breaks. You write `USE-CASE.md`.
@@ -120,7 +120,7 @@ You are the source of truth about the problem. When the builders make a modellin
 *Deliverable:* a problem statement precise enough that a stranger in your industry would nod at it.
 
 ### 🔍 Problem Framer
-You do the translation. You sit between "we want to reduce empty-mile freight" and "this is a constrained optimization over binary assignment variables." You don't have to write the QUBO, you have to get the problem into a state where a builder can.
+You do the translation. You sit between "we want to reduce empty-mile freight" and "this is a constrained optimization over binary assignment variables." Writing the QUBO is optional. Getting the problem into a shape a builder can start from is the work, and we will help with the quantum words.
 
 *Deliverable:* a written decomposition of the problem, variables, constraints, objective, and which constraints are hard versus negotiable.
 
@@ -132,15 +132,15 @@ You do the arithmetic that makes the project credible. What's the classical base
 ### 🎤 Storyteller / Pitch Lead
 You own the five minutes that decide everything. You build the narrative, the visuals, and the demo flow. You also protect the team from itself: you're the one who says "we can't claim that."
 
-*Deliverable:* the deck and the demo, rehearsed. Not written at 4am.
+*Deliverable:* the deck and the demo. A rough version is a fine start. We will help you rehearse it during the event.
 
 ### ⚖️ Policy and Risk Analyst
-Regulatory constraints, data governance, procurement realities, security implications, ethical exposure. Especially critical in finance, health, energy, and anything public-sector. A project that ignores these isn't rigorous, it's just early.
+Regulatory constraints, data governance, procurement realities, security implications, ethical exposure. These matter especially in finance, health, energy, and the public sector. Naming them early makes the project more useful to the people who would have to live with it.
 
 *Deliverable:* `LIMITATIONS.md`, plus the regulatory section of the use case.
 
 ### 💰 Investor-Lens Reviewer
-You interrogate the team the way a sceptical partner would. What's the moat? Who buys this and out of whose budget? What has to be true about hardware progress for the timeline to hold? Teams find this uncomfortable and it makes their work substantially better.
+You ask the questions a careful partner would ask. What's the moat? Who buys this, and from whose budget? What has to be true about hardware progress for the timeline to hold? Those questions make the work stronger, and the team can answer them together.
 
 *Deliverable:* a written challenge memo the team has to answer.
 
@@ -182,8 +182,8 @@ Copy this block into `submissions/team-<name>/USE-CASE.md` when you form a team.
 # Use-Case Canvas
 
 ## 1. The problem
-One paragraph. Assume the reader knows nothing about your industry.
-No jargon. If your grandmother wouldn't follow it, rewrite it.
+One paragraph. Assume the reader is new to your industry.
+Plain language helps. If a teammate from another field would get lost, try one more pass. We can edit it together.
 
 ## 2. Who has this problem
 Be specific. Not "banks": "mid-size asset managers rebalancing
@@ -191,12 +191,12 @@ multi-asset portfolios monthly under UCITS constraints."
 
 ## 3. How it's solved today
 What tool, what algorithm, how long does it take, how good is the answer?
-This is your baseline. Without it you have no story.
-If you don't know, that's your first research task.
+This is your baseline. It gives the later comparison something to stand next to.
+If you don't know yet, that is a good first research question. We can work on it at the event.
 
 ## 4. What "better" is worth
 Put a number on it. Currency, hours, lives, tonnes of CO2, error rate,
-any unit, but a number. "It would be nice" is not an answer.
+any unit. An estimate is welcome. "It would help" can become a number once you and the team look it up.
 
 ## 5. The quantum shape
 Which of the three shapes is it? (Optimization / Simulation / Learning)
@@ -225,34 +225,29 @@ Three sentences. This becomes your opening slide.
 
 ## 6. Your pre-work
 
-Three hours, no installation, all in a browser.
+No installation. The browser is enough. The labels match the handbook.
 
-**Hour 1: Get an account and play.**
-Follow §4 of the [Participant Handbook](PARTICIPANT_HANDBOOK.md) to create your free IBM Quantum account. Then open the [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer) and just drag gates around for twenty minutes. Watch the visualizations respond. You will not understand the mathematics and that is completely fine, you're building the physical intuition that makes every conversation afterwards easier.
+**Required before participating.** Follow §4 of the [Participant Handbook](PARTICIPANT_HANDBOOK.md) and create your own free IBM Quantum account. That is the piece that lets you sign in. There is no shared login.
 
-**Hours 2–3: Do the business course.**
-[Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations). Written for exactly your position. There's an exam and a Credly badge at the end, put it on LinkedIn, it's a legitimate IBM credential.
+**Recommended before the workshop.** Open the [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer) and drag gates around for about twenty minutes. Watch the visualizations respond. You will not need the mathematics yet, and that is completely fine. You are building a picture that makes later conversations easier. A draft of the canvas, even with empty boxes, gives team formation something to start from.
 
-*Optional extra 4 hours if you're an executive or a policymaker:* [Designing and leading quantum projects](https://quantum.cloud.ibm.com/learning/en/courses/designing-and-leading-quantum-projects), which is about governing this class of initiative rather than doing it.
+**Optional next step.** [Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations), about three hours, written for this pathway. There is an exam and a Credly badge at the end if you want a credential to share. [Designing and leading quantum projects](https://quantum.cloud.ibm.com/learning/en/courses/designing-and-leading-quantum-projects) is a further optional course about governing this kind of work. Two notebooks from the "Domain and industry" section of [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md) are a good read when you have time. That catalog explains how to read a notebook when the code is new, and it takes about ten minutes to pick up.
 
-**Any spare time: read two notebooks.**
-Not run. *Read.* Pick two from the "Domain and industry" section of [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md), ideally one near your field. That document explains how to read a notebook productively when you can't read the code, which is a skill and takes about ten minutes to acquire.
-
-**Before you arrive: fill in the Canvas.** Even badly. Even with three of the nine boxes empty. Arriving with a half-formed real problem beats arriving with nothing, by a lot.
+**We will complete this together.** Reading a notebook in the room, team formation, and the story of the project. A half-finished canvas is a wonderful thing to bring. Empty boxes are welcome.
 
 ---
 
 ## 7. The honest caveats
 
-You should know these so you don't accidentally pitch nonsense, and so you can spot it when someone else does.
+These notes help you describe the field accurately, including when a claim is larger than the evidence. They are here so the story you tell is one you can stand behind.
 
-**Quantum computers are not faster at most things.** They're not faster at your database, your spreadsheet, your web app, your neural network training, or almost anything you currently do. Anyone who tells you "quantum will make everything faster" either doesn't know or is selling.
+**Quantum computers are not faster at most things.** They are not a faster database, spreadsheet, web app, or neural-network trainer. A claim that quantum will make everything faster does not match how these machines work. You can say that kindly, and we will practice the wording together.
 
-There is no commercially deployed result today in which a quantum method has replaced the best classical method in finance, pharma, or anywhere else. There are promising demonstrations and there is serious research. A project claiming otherwise will be marked down. The glossary and the benchmarking page define the comparison this event does not ask you to prove.
+There is no commercially deployed result today in which a quantum method has replaced the best classical method in finance, pharma, or anywhere else. There are promising demonstrations and there is serious research. A project that claims otherwise, without the comparison written down, sits outside what this event asks. The glossary and the benchmarking page define that comparison. Naming the limit is part of a strong Domain/Industry Expert contribution.
 
 **"Quantum will break encryption" is real but widely misstated.** It requires a fault-tolerant machine that does not yet exist. The genuine, urgent, present-day issue is *harvest-now-decrypt-later*: adversaries storing encrypted traffic today to decrypt in the future, which makes post-quantum cryptography migration a live planning problem right now. That's a legitimately good policy project. "Quantum computers will break Bitcoin next year" is not.
 
-**Timelines from vendors are optimistic.** Including from every vendor. Calibrate accordingly, and notice that the ability to calibrate is itself something you'll acquire this weekend.
+**Timelines from vendors are often optimistic.** That is true across the field. Noticing the gap between a slide and a working demo is a skill you can practice this weekend, and we will practice it with you.
 
 **Small demonstrations are legitimate; overclaimed ones aren't.** Running a 10-qubit version of a problem that would need 10,000 qubits to matter is fine and normal and is what everyone does. Saying so is what separates good work from marketing.
 
@@ -263,7 +258,7 @@ Holding all of that and still finding the field interesting is the correct posit
 ## 8. Frequently asked, honestly answered
 
 **"Will I slow my team down?"**
-Only if you stay silent. The single most useful thing you'll do is ask the question you think is too basic. In a room of specialists, the basic question is usually the one nobody has checked.
+Asking is how you help. A question that feels basic is often the one the room needed.
 
 **"What if I don't understand the presentations?"**
 Nobody understands all of them. Not the physicists either, the field is wide and everyone is deep in a narrow strip of it. Ask.
@@ -271,20 +266,20 @@ Nobody understands all of them. Not the physicists either, the field is wide and
 **"Do I need a team beforehand?"**
 No. There's a team formation session at kickoff, and reading out your Use-Case Canvas is genuinely the best way to attract collaborators. Builders are actively looking for someone with a real problem.
 
-**"Is this just networking?"**
-No, but it is also that. You'll spend two days with people who will be running quantum programs at serious organizations in five years. That's not nothing.
+**"Is this only networking?"**
+You will spend two days building a small project with people who care about the same questions. Conversations are part of that, and the work is too.
 
 **"I'm not a student. Can I come?"**
 Whether a campus day is limited to enrolled students is **TBA**. Ask your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io. Capacity is up to 50 participants per campus.
 
 **"What if my industry has no quantum use case?"**
-Then finding that out rigorously and writing it up is your project, and it is a better project than most. The field needs negative results far more than it needs another optimistic demo.
+Then finding that out with care, and writing it up, is a complete project. A clear "not a fit yet" helps the field as much as a small demo does.
 
 **"I still feel underqualified."**
-Here's IBM's own framing of their introductory course: *you don't need a physics degree or years of programming experience, if you can follow along with a notebook and click "Run," you're ready.* That's the actual bar. You clear it.
+IBM's introductory course says you do not need a physics degree or years of programming. If you can follow a notebook and click Run, you can start. We will be there with you. Bring your curiosity. We’ll help with the qubits.
 
 ---
 
-**Ready?** Go to [`PARTICIPANT_HANDBOOK.md`](PARTICIPANT_HANDBOOK.md) §4, make your own account, and come say hello in <https://discord.gg/vz6uTbtJzR> or by email to your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io.
+When you are ready, [`PARTICIPANT_HANDBOOK.md`](PARTICIPANT_HANDBOOK.md) §4 is the account walk-through. Come say hello in <https://discord.gg/vz6uTbtJzR> or by email to your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io.
 
-We'd rather have your industry knowledge and teach you the quantum than the other way around.
+Your industry knowledge is the part we cannot supply from a textbook. We will help with the qubits.
