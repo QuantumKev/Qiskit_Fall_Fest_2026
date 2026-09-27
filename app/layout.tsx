@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Syne } from "next/font/google";
 import { AppShell } from "@/components/AppShell";
 import { EVENT, absoluteUrl, eventJsonLd } from "@/content/event";
+import { publicAssetUrl } from "@/lib/base-path";
 import "./globals.css";
 
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 const plex = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-plex" });
 
 const socialImage = {
-  url: absoluteUrl("/brand/og-qiskit.png"),
+  url: publicAssetUrl("/brand/og-qiskit.png"),
   width: 816,
   height: 324,
   alt: "Qiskit wordmark from the Qiskit Fall Fest 2026 materials",

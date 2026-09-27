@@ -1,13 +1,14 @@
-import { CO_LEADS, EVENT, LOCAL_HOSTS, formatCoLead } from "@/content/event";
+import { CO_LEAD_SENTENCE, CO_LEADS, EVENT, LEAD, LOCAL_HOSTS, formatCoLead } from "@/content/event";
 
 export function HostDirectory() {
   return (
     <section id="hosts" className="prose card" aria-labelledby="hosts-heading">
-      <h2 id="hosts-heading">Statewide co-leads and local hosts</h2>
+      <h2 id="hosts-heading">Lead, co-leads, and local hosts</h2>
       <p>
-        {EVENT.name} is part of {EVENT.series}. The statewide co-leads share the program. Each university card lists the verified local lead, the confirmed venue, and a registration link when one is public.
+        {EVENT.name} is part of {EVENT.series}. {CO_LEAD_SENTENCE} Each university card lists the verified local lead, the confirmed venue, and a registration link when one is public.
       </p>
       <ul className="co-lead-list">
+        <li>{formatCoLead(LEAD)}</li>
         {CO_LEADS.map((lead) => (
           <li key={lead.name}>{formatCoLead(lead)}</li>
         ))}
@@ -45,8 +46,13 @@ export function HostDirectory() {
             <p>
               <span className="meta">Contact</span>
               <br />
-              {host.contactHref ? <a href={host.contactHref}>{host.contactLabel}</a> : host.contactLabel}
-              {host.contactHref ? null : (
+              {host.contacts.map((contact, index) => (
+                <span key={contact.label}>
+                  {index > 0 ? <br /> : null}
+                  {contact.href ? <a href={contact.href}>{contact.label}</a> : contact.label}
+                </span>
+              ))}
+              {host.contacts.some((contact) => contact.href) ? null : (
                 <>
                   . Questions: <a href={`mailto:${EVENT.programEmail}`}>{EVENT.programEmail}</a>
                 </>

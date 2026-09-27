@@ -10,6 +10,7 @@ import { useProgress } from "@/components/store";
 import { EVENT } from "@/content/event";
 import { GLOSSARY } from "@/content/glossary";
 import { AREA_LINKS, JOURNEY, type Check, type StepPage } from "@/content/onboarding";
+import { withBase } from "@/lib/base-path";
 import { slugify } from "@/lib/slug";
 
 function ExternalAnchor({ href, children }: { href: string; children: ReactNode }) {
@@ -117,13 +118,13 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
           <p className="brand-line">{EVENT.seriesLine}</p>
           <ul className="sticker-row">
             <li>
-              <Image className="sticker sticker-qiskit" src="/brand/stickers/qiskit-white.svg" width={204} height={81} alt="Qiskit" unoptimized />
+              <Image className="sticker sticker-qiskit" src={withBase("/brand/stickers/qiskit-white.svg")} width={204} height={81} alt="Qiskit" unoptimized />
             </li>
             <li>
-              <Image className="sticker sticker-theme" src="/brand/stickers/theme-magenta.svg" width={463} height={81} alt="a decade of quantum on the cloud" unoptimized />
+              <Image className="sticker sticker-theme" src={withBase("/brand/stickers/theme-magenta.svg")} width={463} height={81} alt="a decade of quantum on the cloud" unoptimized />
             </li>
             <li>
-              <Image className="sticker sticker-cloud" src="/brand/stickers/cloud.svg" width={447} height={142} alt="Cloud sticker" unoptimized />
+              <Image className="sticker sticker-cloud" src={withBase("/brand/stickers/cloud.svg")} width={447} height={142} alt="Cloud sticker" unoptimized />
             </li>
           </ul>
         </>

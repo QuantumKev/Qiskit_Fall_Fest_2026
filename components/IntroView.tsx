@@ -6,6 +6,7 @@ import { CopyBlock } from "@/components/CopyBlock";
 import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { useProgress } from "@/components/store";
 import { CO_LEAD_SENTENCE, QISKIT_APPROVED_SITE } from "@/content/event";
+import { withBase } from "@/lib/base-path";
 import { GLOSSARY } from "@/content/glossary";
 import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
 import {
@@ -218,7 +219,7 @@ function VocabularyBody() {
         })}
       </div>
       <p>
-        Printable sheet: <a href="/downloads/intro-vocabulary.md">intro vocabulary</a>
+        Printable sheet: <a href={withBase("/downloads/intro-vocabulary.md")}>intro vocabulary</a>
       </p>
     </div>
   );
@@ -337,7 +338,7 @@ function PythonBody() {
         </table>
       </div>
       <p>
-        Lab sheet: <a href="/downloads/intro-lab.md">Bell lab sheet</a>. Qubit 0 is the rightmost bit.
+        Lab sheet: <a href={withBase("/downloads/intro-lab.md")}>Bell lab sheet</a>. Qubit 0 is the rightmost bit.
       </p>
     </div>
   );

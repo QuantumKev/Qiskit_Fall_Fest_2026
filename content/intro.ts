@@ -1,4 +1,4 @@
-import { CO_LEAD_SENTENCE, CO_LEADS, QISKIT_APPROVED_SITE } from "@/content/event";
+import { CO_LEAD_SENTENCE, CO_LEADS, LEAD, QISKIT_APPROVED_SITE } from "@/content/event";
 import type { Check } from "@/content/modules";
 
 export const INTRO_TITLE = "Build Your First Quantum Program: A Beginner’s Guide to Python and Qiskit";
@@ -627,13 +627,15 @@ export const AWARD_TEMPLATE_LINE =
 export const LIGHTNING_TALK_LINE =
   "The Pitch Lead owns a five-minute deck and demo. The sponsorship template also lists a five-minute sponsor lightning talk. That line is a sponsorship benefit.";
 
-export const HOST_CONTACTS: { name: string; detail: string }[] = CO_LEADS.map((lead) => ({
-  name: lead.name,
-  detail: lead.email
-    ? lead.organization
-      ? `${lead.organization}. ${lead.email}.`
-      : lead.email
-    : "Questions go to kevin@quantumglobalgroup.io.",
+export const HOST_CONTACTS: { name: string; detail: string }[] = [LEAD, ...CO_LEADS].map((person) => ({
+  name: person.name,
+  detail: person.email
+    ? person.organization
+      ? `${person.role === "lead" ? "Lead" : "Co-lead"}. ${person.organization}. ${person.email}.`
+      : `${person.role === "lead" ? "Lead" : "Co-lead"}. ${person.email}.`
+    : person.role === "lead"
+      ? "Lead."
+      : "Co-lead.",
 }));
 
 export const SEPTEMBER_LINE =

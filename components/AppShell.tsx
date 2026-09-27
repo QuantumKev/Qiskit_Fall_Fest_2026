@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { EVENT, QISKIT_APPROVED_SITE } from "@/content/event";
+import { CO_LEAD_SENTENCE, CO_LEADS, EVENT, QISKIT_APPROVED_SITE } from "@/content/event";
 import { JOURNEY } from "@/content/onboarding";
 import { ProgressProvider, useProgress } from "@/components/store";
 
@@ -75,6 +75,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <p>{EVENT.name}</p>
+      <p>{CO_LEAD_SENTENCE}</p>
       <nav aria-label="Footer">
         <Link href="/">For Participants</Link>
         <Link href="/facilitator/">For Facilitators and Local Hosts</Link>
@@ -89,7 +90,13 @@ function Footer() {
           Qiskit-approved website
           <span className="external-mark"> (external)</span>
         </a>
-        <a href={`mailto:${EVENT.programEmail}`}>Kevin Robinson, {EVENT.programEmail}</a>
+        {CO_LEADS.map((lead) =>
+          lead.email ? (
+            <a key={lead.email} href={`mailto:${lead.email}`}>
+              {lead.name}, {lead.email}
+            </a>
+          ) : null,
+        )}
         <Link href="/support/">Support</Link>
       </nav>
     </footer>

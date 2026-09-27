@@ -32,10 +32,11 @@ test("the participant journey is twelve pages fed by one event record", () => {
   assert.match(event, /October 31, 2026/);
   assert.match(event, /November 13, 2026/);
   assert.match(event, /kevin@quantumglobalgroup\.io/);
+  assert.match(event, /grant@deepstation\.ai/);
+  assert.match(event, /atorre58@fau\.edu/);
   assert.doesNotMatch(event, /rloredo2026@fau\.edu/);
-  assert.doesNotMatch(event, /grant@deepstation\.ai/);
-  assert.doesNotMatch(event, /atorre58@fau\.edu/);
-  assert.match(event, /statewide co-leads/);
+  assert.match(event, /Robert Loredo is the lead/);
+  assert.match(event, /Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads/);
   assert.match(event, /https:\/\/entangledsolutionsgroup\.com\/Qiskit-Fall-Fest-2026\//);
   assert.match(onboarding, /CO_LEAD_SENTENCE/);
   assert.match(onboarding, /Qiskit-approved website/);
