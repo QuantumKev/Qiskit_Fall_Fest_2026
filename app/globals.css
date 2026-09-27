@@ -116,11 +116,6 @@ button, input, select {
   max-width: 100%;
 }
 
-.logo-lockup-ibm {
-  width: calc(40px * 3904 / 1500);
-  aspect-ratio: 3904 / 1500;
-}
-
 .logo-lockup-qiskit {
   width: 40px;
   height: 40px;
