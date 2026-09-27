@@ -15,9 +15,10 @@ test("canonical documents use the Florida Fallfest facts and drop organizer left
   assert.match(joined, /October 17–18, 2026/);
   assert.match(joined, /kevin@quantumglobalgroup\.io/);
   assert.doesNotMatch(joined, /rloredo2026@fau\.edu/);
-  assert.doesNotMatch(joined, /grant@deepstation\.ai/);
-  assert.doesNotMatch(joined, /atorre58@fau\.edu/);
-  assert.match(joined, /statewide co-leads/);
+  assert.match(joined, /grant@deepstation\.ai/);
+  assert.match(joined, /atorre58@fau\.edu/);
+  assert.match(joined, /Robert Loredo designed the program and is the lead/);
+  assert.match(joined, /are co-leads/);
   assert.match(joined, /https:\/\/entangledsolutionsgroup\.com\/Qiskit-Fall-Fest-2026\//);
   assert.doesNotMatch(joined, /is the organizer/);
   assert.doesNotMatch(joined, /sponsorship and team lead/);

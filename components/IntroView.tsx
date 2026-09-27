@@ -591,7 +591,7 @@ function HackathonBody() {
         ))}
       </ul>
       <p>
-        The Qiskit-approved website is <a href={QISKIT_APPROVED_SITE}>{QISKIT_APPROVED_SITE}</a>. Write to any co-lead listed above.
+        The Qiskit-approved website is <a href={QISKIT_APPROVED_SITE}>{QISKIT_APPROVED_SITE}</a>. Write to a co-lead listed above, or ask your local university lead.
       </p>
       <p>{SEPTEMBER_LINE}</p>
       <h2>Links that are filled in</h2>

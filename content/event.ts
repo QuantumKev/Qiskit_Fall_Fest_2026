@@ -3,33 +3,38 @@
  * The Markdown guides state the same public facts in long form.
  * If a date changes, change it here and in those files together.
  *
- * Contacts are published only when they already appear on the Qiskit-approved
- * website. Other questions go to kevin@quantumglobalgroup.io.
+ * Grant Kurz and Ayse Torres emails were supplied by Kevin Robinson on 2026-09-27.
+ * Robert Loredo’s email is not published here.
  */
 
 export type CoLead = {
   name: string;
+  role: "Lead" | "Co-lead";
   email?: string;
   organization?: string;
 };
 
-/** Equal co-leads, in the review’s listed order. Not a ranking. */
+/** Robert designed the program and is the lead. The other three are co-leads. */
+export const LEAD: CoLead = { name: "Robert Loredo", role: "Lead" };
+
 export const CO_LEADS: readonly CoLead[] = [
-  { name: "Kevin Robinson", email: "kevin@quantumglobalgroup.io", organization: "Quantum Global Group" },
-  { name: "Robert Loredo" },
-  { name: "Grant Kurz" },
-  { name: "Ayse Torres" },
+  { name: "Kevin Robinson", role: "Co-lead", email: "kevin@quantumglobalgroup.io", organization: "Quantum Global Group" },
+  { name: "Grant Kurz", role: "Co-lead", email: "grant@deepstation.ai" },
+  { name: "Ayse Torres", role: "Co-lead", email: "atorre58@fau.edu", organization: "Florida Atlantic University" },
 ];
 
+export const PROGRAM_HOSTS: readonly CoLead[] = [LEAD, ...CO_LEADS];
+
 export const CO_LEAD_SENTENCE =
-  "Kevin Robinson, Robert Loredo, Grant Kurz, and Ayse Torres are statewide co-leads. None of them is the single host.";
+  "Robert Loredo is the lead. Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads.";
 
 export const PROGRAM_EMAIL = "kevin@quantumglobalgroup.io";
 
 export function formatCoLead(lead: CoLead): string {
-  const org = lead.organization ? `${lead.organization}` : "";
-  if (lead.email) return org ? `${lead.name}, ${org}, ${lead.email}` : `${lead.name}, ${lead.email}`;
-  return org ? `${lead.name}, ${org}` : lead.name;
+  const parts = [lead.name, lead.role];
+  if (lead.organization) parts.push(lead.organization);
+  if (lead.email) parts.push(lead.email);
+  return parts.join(", ");
 }
 
 /** Qiskit-approved website. Not the GitHub Pages participant preview. */
@@ -40,8 +45,7 @@ export type LocalHost = {
   leads: readonly string[];
   venue: string;
   registration: string | null;
-  contactLabel: string;
-  contactHref: string | null;
+  contacts: readonly { label: string; href: string }[];
 };
 
 export const LOCAL_HOSTS: readonly LocalHost[] = [
@@ -50,48 +54,45 @@ export const LOCAL_HOSTS: readonly LocalHost[] = [
     leads: ["Kevin Robinson"],
     venue: "Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132",
     registration: "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams",
-    contactLabel: "kevin@quantumglobalgroup.io",
-    contactHref: "mailto:kevin@quantumglobalgroup.io",
+    contacts: [{ label: "kevin@quantumglobalgroup.io", href: "mailto:kevin@quantumglobalgroup.io" }],
   },
   {
     university: "Nova Southeastern University",
     leads: ["Grant Kurz"],
     venue: "Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314",
     registration: null,
-    contactLabel: "Details coming soon",
-    contactHref: null,
+    contacts: [{ label: "grant@deepstation.ai", href: "mailto:grant@deepstation.ai" }],
   },
   {
     university: "Florida Atlantic University",
     leads: ["Ayse Torres", "Kateryna Tsekhmayster"],
     venue: "Details coming soon",
     registration: "https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn",
-    contactLabel: "Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu",
-    contactHref: "mailto:ktsekhmayste2022@fau.edu",
+    contacts: [
+      { label: "Ayse Torres, atorre58@fau.edu", href: "mailto:atorre58@fau.edu" },
+      { label: "Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu", href: "mailto:ktsekhmayste2022@fau.edu" },
+    ],
   },
   {
     university: "Embry-Riddle Aeronautical University",
     leads: ["Laxima Niure Kandel"],
     venue: "Details coming soon",
     registration: null,
-    contactLabel: "niurekal@erau.edu",
-    contactHref: "mailto:niurekal@erau.edu",
+    contacts: [{ label: "niurekal@erau.edu", href: "mailto:niurekal@erau.edu" }],
   },
   {
     university: "Florida Institute of Technology",
     leads: ["Dr. Robert Usselman"],
     venue: "Details coming soon",
     registration: null,
-    contactLabel: "russelman@fit.edu",
-    contactHref: "mailto:russelman@fit.edu",
+    contacts: [{ label: "russelman@fit.edu", href: "mailto:russelman@fit.edu" }],
   },
   {
     university: "Florida Gulf Coast University",
     leads: ["Dr. Chengyi Qu"],
     venue: "Details coming soon",
     registration: "https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i",
-    contactLabel: "cqu@fgcu.edu",
-    contactHref: "mailto:cqu@fgcu.edu",
+    contacts: [{ label: "cqu@fgcu.edu", href: "mailto:cqu@fgcu.edu" }],
   },
 ];
 
@@ -196,7 +197,7 @@ export function eventJsonLd() {
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     image: absoluteUrl("/brand/og-qiskit.png"),
-    [hostsKey]: CO_LEADS.map((lead) => ({
+    [hostsKey]: PROGRAM_HOSTS.map((lead) => ({
       "@type": "Person",
       name: lead.name,
       ...(lead.email ? { email: lead.email } : {}),
