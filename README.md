@@ -4,7 +4,7 @@ One participant path: the event, an IBM Quantum account, vocabulary, one Bell st
 
 This is an entry ramp. You are not expected to prove that quantum computing is better than classical computing.
 
-Sticker accents in `public/brand/stickers/` come from [Qiskit Fall Fest 2026 materials](https://github.com/Qiskit-Fall-Fest-2026/materials-resources/tree/main/00_Deliverables/Stickers/SVG). The social image `public/brand/og-qiskit.png` is the Qiskit wordmark from that repository’s PNG folder. Files are stored in this repo. They are not hotlinked. IBM Quantum and Qiskit reverse logos were not in the supplied files, so this site does not show them.
+Sticker accents in `public/brand/stickers/` come from [Qiskit Fall Fest 2026 materials](https://github.com/Qiskit-Fall-Fest-2026/materials-resources/tree/main/00_Deliverables/Stickers/SVG). The social image `public/brand/og-qiskit.png` is the Qiskit wordmark from that repository’s PNG folder. The reverse IBM Quantum logotype and the white Qiskit mark are in `public/brand/`. Files are stored in this repo. They are not hotlinked. The white artwork is shown on the dark page background.
 
 ## Run the guide
 

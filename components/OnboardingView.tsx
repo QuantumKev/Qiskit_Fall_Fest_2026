@@ -115,7 +115,30 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
       <h1>{page.slug === "start" ? EVENT.name : page.title}</h1>
       {page.slug === "start" ? (
         <>
-          <p className="brand-line">{EVENT.seriesLine}</p>
+          <div className="logo-lockup">
+            <div className="logo-lockup-marks">
+              <Image
+                className="logo-lockup-mark logo-lockup-ibm"
+                src={withBase("/brand/IBM_Quantum_logotype_rev.jpg")}
+                width={3904}
+                height={1500}
+                alt="IBM Quantum"
+                unoptimized
+              />
+              <Image
+                className="logo-lockup-mark logo-lockup-qiskit"
+                src={withBase("/brand/qiskit_white.svg")}
+                width={32}
+                height={32}
+                alt="Qiskit"
+                unoptimized
+              />
+            </div>
+            <div className="logo-lockup-copy">
+              <p className="brand-line">{EVENT.seriesLine}</p>
+              <p className="brand-line">Supported by IBM Quantum.</p>
+            </div>
+          </div>
           <ul className="sticker-row">
             <li>
               <Image className="sticker sticker-qiskit" src={withBase("/brand/stickers/qiskit-white.svg")} width={204} height={81} alt="Qiskit" unoptimized />

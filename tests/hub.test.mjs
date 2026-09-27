@@ -58,6 +58,20 @@ test("visitor pages do not link to private handbook files on GitHub", () => {
   assert.match(joined, /\/catalog\//);
 });
 
+test("the home lockup serves the supplied logos through the base path", () => {
+  const view = readFileSync(new URL("../components/OnboardingView.tsx", import.meta.url), "utf8");
+  assert.match(view, /withBase\("\/brand\/IBM_Quantum_logotype_rev\.jpg"\)/);
+  assert.match(view, /withBase\("\/brand\/qiskit_white\.svg"\)/);
+  assert.match(view, /width=\{3904\}/);
+  assert.match(view, /height=\{1500\}/);
+  assert.match(view, /width=\{32\}/);
+  assert.match(view, /height=\{32\}/);
+  assert.match(view, /alt="IBM Quantum"/);
+  assert.match(view, /alt="Qiskit"/);
+  assert.match(view, /Supported by IBM Quantum\./);
+  assert.doesNotMatch(view, /IBM sponsors/);
+});
+
 test("the submission template and pages workflow exist", () => {
   const readme = readFileSync(new URL("../submissions/_TEMPLATE/README.md", import.meta.url), "utf8");
   const workflow = readFileSync(new URL("../.github/workflows/pages.yml", import.meta.url), "utf8");

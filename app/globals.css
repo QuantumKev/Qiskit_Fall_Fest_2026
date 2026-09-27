@@ -89,6 +89,43 @@ button, input, select {
   color: var(--mute);
 }
 
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg);
+  padding: 4px 0;
+}
+
+.logo-lockup-marks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
+.logo-lockup-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.logo-lockup-mark {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.logo-lockup-ibm {
+  width: calc(40px * 3904 / 1500);
+  aspect-ratio: 3904 / 1500;
+}
+
+.logo-lockup-qiskit {
+  width: 40px;
+  height: 40px;
+}
+
 .sticker-row {
   display: flex;
   flex-wrap: wrap;
