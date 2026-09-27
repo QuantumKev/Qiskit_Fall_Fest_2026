@@ -1,9 +1,7 @@
 import { CONNECT_SAVE } from "@/content/exercise1";
 import {
   CO_LEAD_SENTENCE,
-  CO_LEADS,
   EVENT,
-  formatCoLead,
   HETIONET_LINKS,
   HETIONET_REPO,
   IBM,
@@ -52,6 +50,7 @@ export type StepPage = {
     heading: string;
     paragraphs: string[];
     steps?: string[];
+    linkedSteps?: { text: string; hrefs?: { href: string; label: string }[] }[];
     troubles?: { title: string; body: string }[];
     table?: { caption: string; headers: string[]; rows: string[][] };
   }[];
@@ -119,71 +118,92 @@ const start: StepPage = {
   number: "01",
   title: "Start here",
   minutes: 10,
-  purpose: `${EVENT.name} is a student series with IBM Quantum. You will leave with an account, one Bell state, and an honest project frame. This path is not a quantum-advantage paper.`,
+  purpose: `${EVENT.name} is part of ${EVENT.series}. You will leave with an account, one Bell state, and an honest project frame. You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations.`,
   sections: [
     {
       id: "event",
       heading: "The event",
       paragraphs: [
-        `${CO_LEAD_SENTENCE} The theme is ${EVENT.theme}.`,
-        `Kickoff and challenge release: ${EVENT.kickoff}. Local events: ${EVENT.localEvents}. First-place local winner deadline: ${EVENT.winnerDeadline}. Statewide announcement: ${EVENT.statewideAnnouncement}.`,
-        `Campuses: ${EVENT.campuses.join(", ")}. Capacity is ${EVENT.capacity}.`,
-        `${EVENT.venues[0].campus}: ${EVENT.venues[0].place}.`,
-        `${EVENT.venues[1].campus}: ${EVENT.venues[1].place}.`,
-        `Other campus addresses, rooms, and registration details are ${EVENT.unconfirmedDetails}. Official registration is ${EVENT.registration}. The code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
-        `Write to any co-lead: ${CO_LEADS.map(formatCoLead).join("; ")}. The chat is ${EVENT.discord}.`,
-        `The Qiskit-approved website is ${QISKIT_APPROVED_SITE}.`,
+        `${CO_LEAD_SENTENCE} The theme is ${EVENT.theme}. ${EVENT.themeSummary}`,
+        `Kickoff and challenge release: ${EVENT.kickoff}. Local events: ${EVENT.localEvents}. First-place local winner deadline: ${EVENT.winnerDeadline}. Statewide announcement: ${EVENT.statewideAnnouncement}. Capacity is ${EVENT.capacity}.`,
+        `The host directory below lists all six universities. A confirmed venue and a local registration link are on the card. Anything still open says ${EVENT.unconfirmedDetails}. The shared code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
+        `Unresolved program questions go to Kevin Robinson at ${EVENT.programEmail}. The chat is ${EVENT.discord}. The announcement is ${IBM.announcement}. The Qiskit-approved website is ${QISKIT_APPROVED_SITE}.`,
       ],
     },
     {
+      id: "produce",
       heading: "What you will produce",
       paragraphs: [
-        "Your own IBM Quantum account, one Bell state built in Composer and again in Python, and a project frame with a classical baseline and a limitation.",
-        "A strong project can also conclude that a problem is not quantum-shaped. That conclusion needs a source and a reason.",
+        "Work through these steps. Each one opens the full lab or handbook section. A strong project can also conclude that a problem is not a good fit for a quantum method. That conclusion needs a source and a reason.",
+      ],
+      linkedSteps: [
+        {
+          text: `Get access. Open Plan is ${EVENT.openPlan}. Simulators first. The limit is explained at ${IBM.maxExecutionTime}.`,
+          hrefs: [{ href: "/account/", label: "Account and tools" }],
+        },
+        {
+          text: "Learn the two circuit-building approaches: IBM Quantum Composer, and Python and Qiskit. The Bell state connects them.",
+          hrefs: [
+            { href: "/bell/", label: "Composer lab" },
+            { href: "/python/", label: "Python and Qiskit lab" },
+          ],
+        },
+        {
+          text: "Understand the Qiskit workflow: build the circuit (map), add measurements or name an observable, transpile for a device when you need one, execute with a primitive, then retrieve and interpret the result. A sampler returns measured bitstrings. An estimator returns one number for an observable. A backend is the simulator or processor you run on. A job is that run. Shots are how many times you run it. An ISA circuit is the version rewritten for that device. The result is what comes back, and your job is to explain it.",
+          hrefs: [{ href: "/workflow/", label: "Qiskit workflow" }],
+        },
+        {
+          text: "Establish the classical baseline before you compare anything.",
+          hrefs: [{ href: "/problem/", label: "Project frame" }],
+        },
+        {
+          text: "Compare responsibly. Do not promise the quantum result will outperform the classical one.",
+          hrefs: [{ href: "/benchmarking/", label: "Benchmarking" }],
+        },
+        {
+          text: "Build and document the project, including what you tried and what the run cannot support.",
+          hrefs: [
+            { href: "/problem/", label: "Project frame" },
+            { href: "/handbook/", label: "Participant handbook" },
+          ],
+        },
+        {
+          text: "Submit and present through the approved GitHub branch and pull-request process.",
+          hrefs: [{ href: "/submit/", label: "Submission guide" }],
+        },
       ],
     },
     {
       id: "workshop-1",
       heading: "Workshop 1: Qiskit Foundations",
       paragraphs: [
-        "Two hours. Kevin Robinson’s videos are for before or after this block. Titles will be listed when they are confirmed.",
+        "Two hours. The cards below introduce the blocks. The full labs are the linked pages. Kevin Robinson’s videos are for before or after this block. Titles will be listed when they are confirmed.",
       ],
-      table: {
-        caption: "Workshop 1",
-        headers: ["Time", "Block"],
-        rows: [
-          ["0:00", "Welcome"],
-          ["0:10", "Your own IBM account, Open Plan, API key, and CRN"],
-          ["0:25", "Qubi and Qolour vocabulary. The course is linked, not copied."],
-          ["0:40", "Bell state in Composer"],
-          ["0:55", "The same Bell state in Python"],
-          ["1:20", "Map, transpile, execute, and interpret"],
-          ["1:45", "Simulator versus hardware, API safety, jobs, shots, and noise"],
-          ["1:55", "Resource map"],
-        ],
-      },
+      linkedSteps: [
+        { text: "Welcome, then your own IBM account.", hrefs: [{ href: "/account/", label: "Account and tools" }] },
+        { text: "The words the Bell lab needs. Qolour is linked, not copied.", hrefs: [{ href: "/vocabulary/", label: "Vocabulary" }] },
+        { text: "One Bell state in Composer, then the same circuit in Python and Qiskit.", hrefs: [{ href: "/bell/", label: "Composer" }, { href: "/python/", label: "Python" }] },
+        { text: "Map, transpile, execute, and interpret.", hrefs: [{ href: "/workflow/", label: "Workflow" }] },
+      ],
     },
     {
       id: "workshop-2",
       heading: "Workshop 2: Project Readiness and Submission",
-      paragraphs: ["About 75 to 90 minutes. Builder and Domain tracks are equal. The Domain track does not require Python."],
-      steps: [
-        "Expectations for a weekend project.",
-        "Choose a technical or non-technical role.",
-        "Form a team. You do not need one before kickoff.",
-        "Select a problem and write the classical baseline.",
-        "State a quantum hypothesis, including the possibility that the problem is not quantum-shaped.",
-        "Walk the benchmarking sequence.",
-        "Read the Hetionet example as a finished packet, not as the minimum bar.",
-        "List the deliverables.",
-        "Open a GitHub pull request from the template.",
-        "Leave with the checklist.",
+      paragraphs: [
+        "About 75 to 90 minutes. The Domain/Industry Expert and the Builder/Developer Expert are equal. Coding is optional for the Domain/Industry Expert.",
+      ],
+      linkedSteps: [
+        { text: "Choose a pathway and see the shared responsibilities.", hrefs: [{ href: "/roles/", label: "Two pathways" }] },
+        { text: "Frame a problem and write the classical baseline.", hrefs: [{ href: "/problem/", label: "Project frame" }] },
+        { text: "Walk the benchmarking sequence.", hrefs: [{ href: "/benchmarking/", label: "Benchmarking" }] },
+        { text: "Read the Hetionet example as a finished packet, not as the minimum bar.", hrefs: [{ href: "/hetionet/", label: "Hetionet example" }] },
+        { text: "Form a team, then open a pull request from the template.", hrefs: [{ href: "/team/", label: "Form a team" }, { href: "/submit/", label: "Submit" }] },
       ],
     },
   ],
   links: [
     { href: "/handbook/", label: "Participant handbook" },
-    { href: "/roles/", label: "Domain track" },
+    { href: "/roles/", label: "Domain/Industry Expert" },
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/support/", label: "Troubleshooting and support" },
     { href: EVENT.discord, label: "Discord" },
@@ -192,13 +212,13 @@ const start: StepPage = {
   check: {
     question: "What does a successful path through this site produce?",
     options: [
-      "A paper claiming quantum advantage",
+      "A paper claiming quantum computing is better than classical computing",
       "An account, one Bell state, and an honest next step",
       "A proof that quantum computers replace classical ones",
       "A finished clinical result",
     ],
     answer: 1,
-    why: "The work is a process. Advantage claims and clinical claims are out of scope.",
+    why: "The work is a process. You define a problem, try an approach, compare it when you can, and write down what you learned, including the limits.",
   },
   nextHref: "/account/",
   nextLabel: "Prepare your account and tools",
@@ -217,7 +237,7 @@ const account: StepPage = {
       paragraphs: [
         `Checked against IBM’s plans and cloud-setup guides on ${LAST_CHECKED}. If a screen disagrees with this list, follow the guide.`,
         "Participants create their own accounts. There is no shared login. Sign in with an IBMid or a Google account. Those login credentials are not the same thing as an API key.",
-        `Create the Open Plan instance in ${EVENT.region}. You can see only the instances in the region you are logged into. The Open Plan is ${EVENT.openPlan}. The Bell lab starts on a local simulator and does not spend that window.`,
+        `Create the Open Plan instance in ${EVENT.region}. You can see only the instances in the region you are logged into. The Open Plan is ${EVENT.openPlan}. Simulators first. Read the current limit at ${IBM.maxExecutionTime}. The Bell lab starts on a local simulator and does not spend that window.`,
       ],
       steps: [
         "Open IBM Quantum Platform and create your own account if you need one.",
@@ -238,7 +258,10 @@ const account: StepPage = {
     },
     {
       heading: "If something fails",
-      paragraphs: ["Park a stuck login with a facilitator. Do not create a second account until you know which email you already used."],
+      paragraphs: [
+        `${EVENT.facilitatorDefined} ${EVENT.stuckLogin} Do not create a second account until you know which email you already used.`,
+        EVENT.contactOrder,
+      ],
       troubles: [
         { title: "Confirmation email missing", body: "Check spam, wait, and resend once." },
         { title: "Wrong account or region", body: `Use the header switcher. Open Plan instances live in ${EVENT.region}. Instances from another region stay hidden.` },
@@ -312,7 +335,7 @@ const vocabulary: StepPage = {
       "The full list of amplitudes",
       "One basis outcome",
       "An API key",
-      "A proof of quantum advantage",
+      "A proof that quantum computing is better than classical computing",
     ],
     answer: 1,
     why: "A shot returns one outcome. Repeating the shot builds the counts.",
@@ -498,7 +521,7 @@ const workflow: StepPage = {
       input: "The finished job.",
       output: "A dictionary of bitstrings and tallies. Ideal mass sits on 00 and 11.",
       vocabulary: "Result, counts, histogram. Counts are tallies, not amplitudes.",
-      why: "The histogram is the observation. It is not, by itself, a complete proof of entanglement, and it is not quantum advantage.",
+      why: "The histogram is the observation. It is not, by itself, a complete proof of entanglement. You are not expected to prove that a quantum method is better than a classical one from this picture alone.",
       mistake: "Reading the left bit as qubit 0, or treating hardware noise as a new Bell state.",
     },
   ],
@@ -523,24 +546,36 @@ const workflow: StepPage = {
     why: "Sampler output is counts. An estimator is the primitive for expectation values. This lab uses a sampler.",
   },
   nextHref: "/roles/",
-  nextLabel: "Choose a technical or non-technical role",
+  nextLabel: "Choose a pathway",
 };
 
 const roles: StepPage = {
   slug: "roles",
   href: "/roles/",
   number: "07",
-  title: "Technical or non-technical role",
+  title: "Two pathways",
   minutes: 20,
-  purpose: "Builder and Domain tracks are equal. The Domain track does not require Python. The full guide is the document on this page.",
+  purpose:
+    "The Domain/Industry Expert and the Builder/Developer Expert are equal. Coding is optional for the Domain/Industry Expert. The long-form source on this page is NON-TECHNICAL-TRACK.md, titled Domain/Industry Expert.",
   sections: [
     {
-      heading: "Two tracks",
+      heading: "Domain/Industry Expert and Builder/Developer Expert",
       paragraphs: [
-        "Builders write Qiskit. They need Python, not a physics degree.",
-        "Domain partners bring a real problem, read the notebooks, and do not have to install Python.",
-        "The guide below is NON-TECHNICAL-TRACK.md, rendered in full. Summary cards on this site point at its headings. They are not a second copy.",
+        "The Domain/Industry Expert brings the problem, the user, and the judgment about whether a quantum approach fits. Coding is optional in that role.",
+        "The Builder/Developer Expert writes Python and Qiskit, runs the circuit, and keeps the result next to the classical baseline.",
+        "Shared responsibilities sit in the last column. The guide below is the long-form source. This card introduces it.",
       ],
+      table: {
+        caption: "Two pathways",
+        headers: ["", "Domain/Industry Expert", "Builder/Developer Expert", "Shared"],
+        rows: [
+          ["Focus", "The problem and whether a quantum approach fits", "Circuits, code, and the run", "One project and one write-up"],
+          ["Coding", "Optional", "Python and Qiskit", "Either person can pair"],
+          ["Account", "Your own IBM Quantum account", "Your own account, and a local install when you code", "No shared passwords or API keys"],
+          ["Comparison", "Name the classical method and what better would mean", "Measure the baseline and the quantum run", "Do not promise the quantum result will win"],
+          ["Submission", "Use-case, limitations, and the story", "Notebooks or source the team can run", "One pull request on the approved branch"],
+        ],
+      },
     },
   ],
   links: [
@@ -548,11 +583,11 @@ const roles: StepPage = {
     { href: "/catalog/", label: "Notebook catalog" },
   ],
   check: {
-    question: "Does the Domain track require Python?",
+    question: "Does the Domain/Industry Expert pathway require Python?",
     options: [
       "Yes. Every participant installs Qiskit.",
       "No. A domain partner can frame the problem without writing Python.",
-      "Only if the team claims quantum advantage.",
+      "Only if the team skips the classical baseline.",
       "Only on hardware.",
     ],
     answer: 1,
@@ -593,7 +628,7 @@ const problem: StepPage = {
   ],
   check: {
     question: "A hardware job with no measured classical baseline is…",
-    options: ["Quantum advantage", "A demonstration", "A clinical result", "Proof the problem is quantum-shaped"],
+    options: ["Proof that quantum computing beat classical computing", "A demonstration", "A clinical result", "Proof the problem is quantum-shaped"],
     answer: 1,
     why: "The baseline is the comparison. Without it, the hardware tally is a demonstration.",
   },
@@ -634,7 +669,8 @@ const benchmarking: StepPage = {
     {
       heading: "Next-Step Quantum Decision Guide",
       paragraphs: [
-        "Open this after both Bell labs and before the Hetionet example. Use it for optimization-shaped problems only. Hetionet is not an optimization result, not quantum advantage, and not a clinical result.",
+        "Quantum advantage would mean a quantum method beats the best practical classical method on a useful task by a margin that matters. This event does not ask you to show that. The glossary states the same definition.",
+        "Open the Next-Step Quantum Decision Guide after both Bell labs and before the Hetionet example. Use it for optimization-shaped problems only. Hetionet is not an optimization result, and it is not a clinical result.",
       ],
     },
     {
@@ -684,7 +720,7 @@ const hetionet: StepPage = {
         "Experiment: ingest the graph, fit the classical baseline, train the quantum model, and test. Those are notebooks 01 through 04.",
         "Metrics: test PR-AUC on the verified primary configuration.",
         "Evidence: the README, PAPER.md, RESULTS_EVIDENCE.md, and ACTUAL_VS_EXPLORATION_RESULTS.md.",
-        "Limitation: this is not quantum advantage and not a clinical result.",
+        "Limitation: this comparison does not show quantum advantage, the term defined on the benchmarking page and in the glossary, and it is not a clinical result.",
         "Recommendation a Fall Fest team can copy as a habit: name the metric, keep the baseline, and publish the comparison at a much smaller size. Do not train this model in the workshop.",
       ],
     },
@@ -762,7 +798,7 @@ const team: StepPage = {
     options: [
       "Before you create an IBM account",
       "You do not. Formation is part of kickoff.",
-      "Only if you are on the Domain track",
+      "Only if you are the Domain/Industry Expert",
       "After the statewide announcement",
     ],
     answer: 1,
@@ -850,7 +886,7 @@ const resources: StepPage = {
     {
       heading: "Event",
       paragraphs: [
-        `Official registration: ${EVENT.registration}. Discord: ${EVENT.discord}. Co-leads: ${CO_LEADS.map(formatCoLead).join("; ")}. Qiskit-approved website: ${QISKIT_APPROVED_SITE}. Qiskit Slack: ${IBM.slack}. Announcement: ${IBM.announcement}.`,
+        `Official registration: ${EVENT.registration}. Discord: ${EVENT.discord}. ${CO_LEAD_SENTENCE} Program questions: ${EVENT.programEmail}. Qiskit-approved website: ${QISKIT_APPROVED_SITE}. Qiskit Slack: ${IBM.slack}. Announcement: ${IBM.announcement}.`,
       ],
     },
     {
@@ -879,7 +915,7 @@ const resources: StepPage = {
       heading: "Case study and readiness",
       paragraphs: [
         `Hetionet repository: ${HETIONET_REPO}. The signed-out demo is ${HETIONET_LINKS.demo}.`,
-        "The Next-Step Quantum Decision Guide is the step after both Bell labs and before Hetionet. Use it for optimization-shaped problems only. Hetionet is not an optimization result, not quantum advantage, and not a clinical result.",
+        "The Next-Step Quantum Decision Guide is the step after both Bell labs and before Hetionet. Use it for optimization-shaped problems only. The benchmarking page defines quantum advantage. Hetionet is not that claim, and it is not a clinical result.",
       ],
     },
     {
@@ -894,7 +930,7 @@ const resources: StepPage = {
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/glossary/", label: "Glossary" },
     { href: "/support/", label: "Troubleshooting and support" },
-    { href: "/roles/", label: "Domain track" },
+    { href: "/roles/", label: "Domain/Industry Expert" },
     { href: DECISION_GUIDE_URL, label: "Next-Step Quantum Decision Guide" },
     { href: QISKIT_APPROVED_SITE, label: "Qiskit-approved website" },
   ],
@@ -936,7 +972,7 @@ export const AREA_LINKS: { href: string; label: string }[] = [
   { href: "/#workshop-1", label: "Workshop 1" },
   { href: "/#workshop-2", label: "Workshop 2" },
   { href: "/handbook/", label: "Participant handbook" },
-  { href: "/roles/", label: "Domain track" },
+  { href: "/roles/", label: "Domain/Industry Expert" },
   { href: "/workflow/", label: "Qiskit workflow" },
   { href: "/hetionet/", label: "Hetionet example" },
   { href: "/benchmarking/", label: "Benchmarking and readiness" },

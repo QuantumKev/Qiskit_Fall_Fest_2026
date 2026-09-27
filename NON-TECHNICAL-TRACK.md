@@ -1,8 +1,10 @@
-# The Domain Track
+## Domain/Industry Expert
 
 ### Or: why you should come to a quantum hackathon even though you are not a quantum physicist
 
-**Qiskit Fall Fest South Florida 2026**
+This is the long-form guide for the Domain/Industry Expert pathway. Coding is optional in this role. The Builder/Developer Expert pathway is the coding role. Both share the problem, the comparison, and the write-up.
+
+**Florida Qiskit Fallfest Hackathon**, part of Qiskit Fall Fest 2026.
 
 ---
 
@@ -246,7 +248,7 @@ You should know these so you don't accidentally pitch nonsense, and so you can s
 
 **Quantum computers are not faster at most things.** They're not faster at your database, your spreadsheet, your web app, your neural network training, or almost anything you currently do. Anyone who tells you "quantum will make everything faster" either doesn't know or is selling.
 
-**There is no commercially deployed quantum advantage today.** Not in finance, not in pharma, not anywhere. There are promising demonstrations and there is serious research. A project claiming otherwise will be marked down, and rightly.
+There is no commercially deployed result today in which a quantum method has replaced the best classical method in finance, pharma, or anywhere else. There are promising demonstrations and there is serious research. A project claiming otherwise will be marked down. The glossary and the benchmarking page define the comparison this event does not ask you to prove.
 
 **"Quantum will break encryption" is real but widely misstated.** It requires a fault-tolerant machine that does not yet exist. The genuine, urgent, present-day issue is *harvest-now-decrypt-later*: adversaries storing encrypted traffic today to decrypt in the future, which makes post-quantum cryptography migration a live planning problem right now. That's a legitimately good policy project. "Quantum computers will break Bitcoin next year" is not.
 
@@ -273,7 +275,7 @@ No. There's a team formation session at kickoff, and reading out your Use-Case C
 No, but it is also that. You'll spend two days with people who will be running quantum programs at serious organizations in five years. That's not nothing.
 
 **"I'm not a student. Can I come?"**
-Whether a campus day is limited to enrolled students is **TBA**. Ask any co-lead before you travel: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io. Capacity is up to 50 participants per campus.
+Whether a campus day is limited to enrolled students is **TBA**. Ask your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io. Capacity is up to 50 participants per campus.
 
 **"What if my industry has no quantum use case?"**
 Then finding that out rigorously and writing it up is your project, and it is a better project than most. The field needs negative results far more than it needs another optimistic demo.
@@ -283,6 +285,6 @@ Here's IBM's own framing of their introductory course: *you don't need a physics
 
 ---
 
-**Ready?** Go to [`PARTICIPANT_HANDBOOK.md`](PARTICIPANT_HANDBOOK.md) §4, make your own account, and come say hello in <https://discord.gg/vz6uTbtJzR> or by email to any co-lead: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io.
+**Ready?** Go to [`PARTICIPANT_HANDBOOK.md`](PARTICIPANT_HANDBOOK.md) §4, make your own account, and come say hello in <https://discord.gg/vz6uTbtJzR> or by email to your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io.
 
 We'd rather have your industry knowledge and teach you the quantum than the other way around.

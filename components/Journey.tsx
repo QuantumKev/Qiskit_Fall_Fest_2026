@@ -15,7 +15,7 @@ export function Journey() {
       <h1>Enter the quantum ecosystem.</h1>
       <p className="lede">
         A guided onboarding for Qiskit Fall Fest. You will learn the words, open IBM Quantum,
-        build one Bell circuit, and leave with a next step. This is not a race to a quantum-advantage claim.
+        build one Bell circuit, and leave with a next step. You are not expected to prove that quantum computing is better than classical computing.
       </p>
       <p className="meta">
         About {minutes} minutes across {MODULES.length} modules. IBM screens last checked {LAST_VERIFIED}.

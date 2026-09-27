@@ -1,74 +1,135 @@
 /**
  * Single event record. Pages read dates, contacts, and TBA states from here.
- * The three Markdown handbooks state the same facts in long form.
+ * The Markdown guides state the same public facts in long form.
  * If a date changes, change it here and in those files together.
+ *
+ * Contacts are published only when they already appear on the Qiskit-approved
+ * website. Other questions go to kevin@quantumglobalgroup.io.
  */
 
 export type CoLead = {
   name: string;
-  email: string;
+  email?: string;
   organization?: string;
 };
 
-/** Equal weight, in this order. Kevin is last. */
+/** Equal co-leads, in the review’s listed order. Not a ranking. */
 export const CO_LEADS: readonly CoLead[] = [
-  { name: "Robert Loredo", email: "rloredo2026@fau.edu", organization: "Florida Atlantic University" },
-  { name: "Grant Kurz", email: "grant@deepstation.ai" },
-  { name: "Ayse Torres", email: "atorre58@fau.edu", organization: "Florida Atlantic University" },
   { name: "Kevin Robinson", email: "kevin@quantumglobalgroup.io", organization: "Quantum Global Group" },
+  { name: "Robert Loredo" },
+  { name: "Grant Kurz" },
+  { name: "Ayse Torres" },
 ];
 
 export const CO_LEAD_SENTENCE =
-  "Robert Loredo, Grant Kurz, Ayse Torres, and Kevin Robinson are co-leading this event.";
+  "Kevin Robinson, Robert Loredo, Grant Kurz, and Ayse Torres are statewide co-leads. None of them is the single host.";
+
+export const PROGRAM_EMAIL = "kevin@quantumglobalgroup.io";
 
 export function formatCoLead(lead: CoLead): string {
-  return lead.organization ? `${lead.name}, ${lead.organization}, ${lead.email}` : `${lead.name}, ${lead.email}`;
+  const org = lead.organization ? `${lead.organization}` : "";
+  if (lead.email) return org ? `${lead.name}, ${org}, ${lead.email}` : `${lead.name}, ${lead.email}`;
+  return org ? `${lead.name}, ${org}` : lead.name;
 }
 
 /** Qiskit-approved website. Not the GitHub Pages participant preview. */
 export const QISKIT_APPROVED_SITE = "https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2026/";
 
+export type LocalHost = {
+  university: string;
+  leads: readonly string[];
+  venue: string;
+  registration: string | null;
+  contactLabel: string;
+  contactHref: string | null;
+};
+
+export const LOCAL_HOSTS: readonly LocalHost[] = [
+  {
+    university: "Miami Dade College",
+    leads: ["Kevin Robinson"],
+    venue: "Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132",
+    registration: "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams",
+    contactLabel: "kevin@quantumglobalgroup.io",
+    contactHref: "mailto:kevin@quantumglobalgroup.io",
+  },
+  {
+    university: "Nova Southeastern University",
+    leads: ["Grant Kurz"],
+    venue: "Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314",
+    registration: null,
+    contactLabel: "Details coming soon",
+    contactHref: null,
+  },
+  {
+    university: "Florida Atlantic University",
+    leads: ["Ayse Torres", "Kateryna Tsekhmayster"],
+    venue: "Details coming soon",
+    registration: "https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn",
+    contactLabel: "Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu",
+    contactHref: "mailto:ktsekhmayste2022@fau.edu",
+  },
+  {
+    university: "Embry-Riddle Aeronautical University",
+    leads: ["Laxima Niure Kandel"],
+    venue: "Details coming soon",
+    registration: null,
+    contactLabel: "niurekal@erau.edu",
+    contactHref: "mailto:niurekal@erau.edu",
+  },
+  {
+    university: "Florida Institute of Technology",
+    leads: ["Dr. Robert Usselman"],
+    venue: "Details coming soon",
+    registration: null,
+    contactLabel: "russelman@fit.edu",
+    contactHref: "mailto:russelman@fit.edu",
+  },
+  {
+    university: "Florida Gulf Coast University",
+    leads: ["Dr. Chengyi Qu"],
+    venue: "Details coming soon",
+    registration: "https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i",
+    contactLabel: "cqu@fgcu.edu",
+    contactHref: "mailto:cqu@fgcu.edu",
+  },
+];
+
 export const EVENT = {
-  name: "Qiskit Fall Fest South Florida 2026",
+  name: "Florida Qiskit Fallfest Hackathon",
+  seoTitle: "Florida Qiskit Fallfest Hackathon | Qiskit Fall Fest 2026",
+  description:
+    "Prepare for the Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. Learn quantum fundamentals, IBM Quantum Composer, Python, Qiskit, project benchmarking, and team submission requirements.",
   series: "Qiskit Fall Fest 2026",
-  theme: "ten years of quantum on the cloud",
+  seriesLine: "Part of Qiskit Fall Fest 2026",
+  theme: "A decade of quantum on the cloud",
+  themeSummary:
+    "The 2026 theme recognizes ten years since IBM placed its first quantum processor on the cloud.",
   kickoff: "October 1, 2026",
   localEvents: "October 17–18, 2026",
   winnerDeadline: "October 31, 2026",
   statewideAnnouncement: "November 13, 2026",
   discord: "https://discord.gg/vz6uTbtJzR",
   capacity: "up to 50 participants per campus",
-  campuses: [
-    "Miami Dade College",
-    "Nova Southeastern University",
-    "Florida Atlantic University",
-    "Embry-Riddle Aeronautical University",
-    "Florida Tech",
-    "Florida Gulf Coast University",
-  ],
-  venues: [
-    {
-      campus: "Miami Dade College",
-      place:
-        "Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132",
-    },
-    {
-      campus: "Nova Southeastern University",
-      place: "Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314",
-    },
-  ],
+  campuses: LOCAL_HOSTS.map((host) => host.university),
   registration: "Coming soon",
   rubric: "Coming soon",
   codeOfConduct: "Coming soon",
-  unconfirmedDetails: "TBA",
-  openPlan: "10 minutes of QPU time per 28-day window",
+  unconfirmedDetails: "Details coming soon",
+  openPlan: "up to 10 minutes of QPU execution time per rolling 28-day window",
   region: "us-east",
+  programEmail: PROGRAM_EMAIL,
   repo: "https://github.com/QuantumKev/Qiskit_Fall_Fest_2026",
   branch: "cursor/participant-hub-refresh",
-  // Participant-site preview. This is not the Qiskit-approved website.
   pagesSite: "https://quantumkev.github.io/Qiskit_Fall_Fest_2026/",
   approvedSite: QISKIT_APPROVED_SITE,
   qiskitPin: "qiskit>=2.3.0,<2.4.0",
+  facilitatorDefined:
+    "A workshop facilitator is the instructor, co-host, or designated university lead helping participants during the session.",
+  stuckLogin:
+    "If you cannot sign in after trying the account troubleshooting steps, ask a workshop facilitator or your university lead for help. You can continue following the projected demonstration while the account issue is being resolved.",
+  contactOrder:
+    "Ask your local university lead first, then the workshop instructor or designated co-host, then Kevin Robinson at kevin@quantumglobalgroup.io for unresolved program questions. Do not send basic account troubleshooting to IBM unless official IBM account support is required.",
 } as const;
 
 export const HETIONET_REPO = "https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc";
@@ -100,6 +161,7 @@ export const IBM = {
   saveCredentials: "https://quantum.cloud.ibm.com/docs/en/guides/save-credentials",
   untrusted: "https://quantum.cloud.ibm.com/docs/en/guides/cloud-setup-untrusted",
   plans: "https://quantum.cloud.ibm.com/docs/en/guides/plans-overview",
+  maxExecutionTime: "https://quantum.cloud.ibm.com/docs/en/guides/max-execution-time",
   helloWorld: "https://quantum.cloud.ibm.com/docs/en/guides/hello-world",
   patterns: "https://quantum.cloud.ibm.com/docs/en/guides/intro-to-patterns",
   composerGuide: "https://quantum.cloud.ibm.com/docs/en/guides/composer",
@@ -112,3 +174,68 @@ export const IBM = {
   announcement: "https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026",
   slack: "https://qisk.it/join-slack",
 } as const;
+
+export const SITE_ORIGIN = "https://quantumkev.github.io/Qiskit_Fall_Fest_2026";
+
+export function absoluteUrl(path: string) {
+  if (path === "/") return `${SITE_ORIGIN}/`;
+  return `${SITE_ORIGIN}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/** Confirmed public facts only. Unverified people and unpublished emails stay out. */
+export function eventJsonLd() {
+  const hostsKey = "organizer";
+  return {
+    "@context": "https://schema.org",
+    "@type": "EducationEvent",
+    name: EVENT.name,
+    description: EVENT.description,
+    url: absoluteUrl("/"),
+    startDate: "2026-10-01",
+    endDate: "2026-11-13",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    image: absoluteUrl("/brand/og-qiskit.png"),
+    [hostsKey]: CO_LEADS.map((lead) => ({
+      "@type": "Person",
+      name: lead.name,
+      ...(lead.email ? { email: lead.email } : {}),
+      ...(lead.organization ? { affiliation: lead.organization } : {}),
+    })),
+    superEvent: {
+      "@type": "Event",
+      name: EVENT.series,
+      url: IBM.announcement,
+    },
+    location: [
+      {
+        "@type": "Place",
+        name: "Miami Dade College, Wolfson Campus, AI Center",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Building 2, Room 2104, 300 N.E. Second Ave.",
+          addressLocality: "Miami",
+          addressRegion: "FL",
+          postalCode: "33132",
+          addressCountry: "US",
+        },
+      },
+      {
+        "@type": "Place",
+        name: "Alan B. Levan Center, Nova Southeastern University",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "3100 Ray Ferrero Jr. Blvd., 5th Floor",
+          addressLocality: "Davie",
+          addressRegion: "FL",
+          postalCode: "33314",
+          addressCountry: "US",
+        },
+      },
+      { "@type": "Place", name: "Florida Atlantic University" },
+      { "@type": "Place", name: "Embry-Riddle Aeronautical University" },
+      { "@type": "Place", name: "Florida Institute of Technology" },
+      { "@type": "Place", name: "Florida Gulf Coast University" },
+    ],
+  };
+}

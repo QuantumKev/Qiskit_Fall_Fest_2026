@@ -26,6 +26,7 @@ const redirects = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  images: { unoptimized: true },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },

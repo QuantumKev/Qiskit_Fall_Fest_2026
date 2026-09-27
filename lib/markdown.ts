@@ -10,6 +10,7 @@ const DOC_ROUTES: Record<string, string> = {
   "PARTICIPANT_HANDBOOK.md": "/handbook/",
   "NON-TECHNICAL-TRACK.md": "/roles/",
   "NOTEBOOK-CATALOG.md": "/catalog/",
+  "FACILITATOR_GUIDE.md": "/facilitator/",
 };
 
 function rewriteHref(href: string) {

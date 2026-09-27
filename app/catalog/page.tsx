@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { MarkdownDocument } from "@/components/MarkdownDocument";
-import { EVENT } from "@/content/event";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: `Notebook catalog · ${EVENT.name}` };
+export const metadata = pageMeta("Notebook catalog", "/catalog/");
 
 export default function CatalogPage() {
   const source = readFileSync(path.join(process.cwd(), "NOTEBOOK-CATALOG.md"), "utf8");

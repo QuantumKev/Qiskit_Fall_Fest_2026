@@ -1,10 +1,10 @@
 # Notebook Catalog
 
-**Qiskit Fall Fest South Florida 2026**
+**Florida Qiskit Fallfest Hackathon**, part of Qiskit Fall Fest 2026.
 
 Every notebook below is free, official (IBM Quantum Learning or Qiskit documentation), and maintained against current Qiskit. We've rated each one by how much code you need to touch, so you can find the ones that suit you rather than bouncing off the first thing you open.
 
-> **Domain track: sections 1, 2, and 4 were written for you.** Section 2 in particular is where you'll find quantum applied to actual industries, which is the material most likely to spark your Use-Case Canvas.
+> **Domain/Industry Expert: sections 1, 2, and 4 were written for you.** Section 2 in particular is where you'll find quantum applied to actual industries, which is the material most likely to spark your Use-Case Canvas.
 
 ---
 
@@ -15,14 +15,14 @@ Every notebook below is free, official (IBM Quantum Learning or Qiskit documenta
 | 🟢 **No code** | Interactive or visual. Nothing to install, nothing to type. |
 | 🟡 **Click Run** | A notebook you execute cell by cell. You read the explanations, press Run, look at the output. No editing required. |
 | 🟠 **Read code** | Worth reading even if you don't write Python. Follow the narrative, skip the implementation. |
-| 🔴 **Write code** | You'll be editing and debugging. Builder track. |
+| 🔴 **Write code** | You'll be editing and debugging. Builder/Developer Expert. |
 
 ---
 
 ## 1. Start here — zero code required
 
 **🟢 [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer)**
-Drag-and-drop circuit builder. Place gates on a circuit and watch the state visualizations respond in real time. Run it on real hardware with a button. *This is the single highest intuition-per-minute resource that exists and it requires nothing but a browser and an IBM Quantum account.* Twenty minutes here will make every subsequent conversation easier. Do it even if you're on the Builder track.
+Drag-and-drop circuit builder. Place gates on a circuit and watch the state visualizations respond in real time. Run it on real hardware with a button. *This is the single highest intuition-per-minute resource that exists and it requires nothing but a browser and an IBM Quantum account.* Twenty minutes here will make every subsequent conversation easier. Do it even if you are the Builder/Developer Expert.
 
 **🟢 [Superposition](https://quantum.cloud.ibm.com/learning/en/modules/quantum-mechanics/superposition-with-qiskit)**
 A short teaching module on the property that makes quantum different. Explains *what superposition actually is*, which is not the "both at once" cliché you've heard.
@@ -62,7 +62,7 @@ A machine learning workflow applied to power grid stability. Good example of the
 ### Chemistry, materials, and pharma
 
 **🟠 [Dissociation PES curves with HiVQE](https://quantum.cloud.ibm.com/docs/en/tutorials/qunova-hivqe)** *(Qunova)*
-Potential energy surfaces — the computation underneath reaction and binding prediction. This is the application category where the theoretical match between the problem and a quantum machine is strongest. That is not a claim that a weekend project has demonstrated quantum advantage.
+Potential energy surfaces — the computation underneath reaction and binding prediction. This is the application category where the theoretical match between the problem and a quantum machine is strongest. That is not a claim that a weekend project showed a quantum method beating the best classical method. The benchmarking page defines that comparison.
 
 **🟠 [Sample-based quantum diagonalization of a chemistry Hamiltonian](https://quantum.cloud.ibm.com/docs/en/tutorials/sample-based-quantum-diagonalization)**
 One of the more current approaches to chemistry on near-term hardware.
@@ -87,7 +87,7 @@ A general-purpose optimization solver. Useful for seeing what shape a problem ha
 
 ## 3. Core algorithms
 
-Builder track material, but the narrative sections are readable by anyone.
+Builder/Developer Expert material, but the narrative sections are readable by anyone.
 
 **🟡 [CHSH inequality](https://quantum.cloud.ibm.com/docs/en/tutorials/chsh-inequality)**
 IBM's designated first tutorial, and a good choice: you run an experiment on a real quantum computer that demonstrates the universe is not classical. Nobel-prize physics, executed from your browser in about ten minutes. **If you run one notebook this whole event, run this one.**

@@ -1,30 +1,18 @@
+import Link from "next/link";
 import { OrganizerDashboard } from "@/components/OrganizerDashboard";
-import { CO_LEAD_SENTENCE, CO_LEADS, QISKIT_APPROVED_SITE } from "@/content/event";
+import { CO_LEAD_SENTENCE } from "@/content/event";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: "Co-leads · Qiskit Fall Fest" };
+export const metadata = pageMeta("Registration responses", "/organizers/");
 
 export default function OrganizersPage() {
   return (
     <div className="stack guide">
-      <p className="kicker">Co-leads</p>
-      <h1>Co-leads and registration responses</h1>
+      <p className="kicker">For Facilitators and Local Hosts</p>
+      <h1>Registration responses</h1>
       <p className="lede">{CO_LEAD_SENTENCE}</p>
-      <ul className="link-list">
-        {CO_LEADS.map((lead) => (
-          <li key={lead.email}>
-            {lead.organization ? `${lead.name}, ${lead.organization}, ` : `${lead.name}, `}
-            <a href={`mailto:${lead.email}`}>{lead.email}</a>
-          </li>
-        ))}
-      </ul>
       <p>
-        <a href={QISKIT_APPROVED_SITE} target="_blank" rel="noopener noreferrer external">
-          Qiskit-approved website
-          <span className="external-mark"> (external)</span>
-        </a>
-      </p>
-      <p className="lede">
-        Statuses come from the form and from updates you type here. The list has no API keys and no CRNs. Set ORGANIZER_TOKEN on the server before responses can be stored.
+        Teaching notes, the run of show, and the host directory are in the <Link href="/facilitator/">facilitator guide</Link>. This page is public. It stores no passwords, API keys, or CRNs.
       </p>
       <OrganizerDashboard />
     </div>

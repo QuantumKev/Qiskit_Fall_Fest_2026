@@ -14,7 +14,7 @@ const titles = [
   "Bell state in Composer",
   "Bell state in Python and Qiskit",
   "How Qiskit Works: One Bell State, End to End",
-  "Technical or non-technical role",
+  "Two pathways",
   "Project frame and classical baseline",
   "Benchmarking and readiness",
   "Hetionet example",
@@ -32,10 +32,10 @@ test("the participant journey is twelve pages fed by one event record", () => {
   assert.match(event, /October 31, 2026/);
   assert.match(event, /November 13, 2026/);
   assert.match(event, /kevin@quantumglobalgroup\.io/);
-  assert.match(event, /rloredo2026@fau\.edu/);
-  assert.match(event, /grant@deepstation\.ai/);
-  assert.match(event, /atorre58@fau\.edu/);
-  assert.match(event, /are co-leading this event/);
+  assert.doesNotMatch(event, /rloredo2026@fau\.edu/);
+  assert.doesNotMatch(event, /grant@deepstation\.ai/);
+  assert.doesNotMatch(event, /atorre58@fau\.edu/);
+  assert.match(event, /statewide co-leads/);
   assert.match(event, /https:\/\/entangledsolutionsgroup\.com\/Qiskit-Fall-Fest-2026\//);
   assert.match(onboarding, /CO_LEAD_SENTENCE/);
   assert.match(onboarding, /Qiskit-approved website/);
@@ -46,7 +46,10 @@ test("the participant journey is twelve pages fed by one event record", () => {
   assert.match(onboarding, /StatevectorSampler/);
   assert.match(event, /qiskit>=2\.3\.0,<2\.4\.0/);
   assert.match(onboarding, /EVENT\.qiskitPin/);
-  assert.match(event, /10 minutes of QPU time per 28-day window/);
+  assert.match(event, /up to 10 minutes of QPU execution time per rolling 28-day window/);
+  assert.doesNotMatch(onboarding, /10 minutes per month/);
+  assert.doesNotMatch(onboarding, /This path is not a quantum-advantage paper/);
+  assert.doesNotMatch(onboarding, /Park a stuck login/);
   assert.match(event, /us-east/);
   assert.match(onboarding, /EVENT\.openPlan/);
   assert.match(onboarding, /EVENT\.region/);

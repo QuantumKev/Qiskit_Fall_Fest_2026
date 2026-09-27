@@ -4,7 +4,7 @@ import type { Check } from "@/content/modules";
 export const INTRO_TITLE = "Build Your First Quantum Program: A Beginner’s Guide to Python and Qiskit";
 
 export const WELCOME_MESSAGE =
-  "This guide is not asking participants to prove quantum advantage or publish a paper in Nature. It is designed to help them enter the quantum ecosystem, understand its language, use its tools, and develop the confidence to continue learning.";
+  "You are not expected to prove that quantum computing is better than classical computing, or to publish a paper in Nature. This guide helps you enter the quantum ecosystem, understand its language, use its tools, and develop the confidence to continue learning.";
 
 export const PROGRESS_LINE =
   "Prepare → Learn the Language → Build Visually → Read the Code → Run the Code → Understand the Results → Find Your Next Step";
@@ -546,11 +546,10 @@ export const HACKATHON_GAPS = [
   "Kevin Robinson video titles. They will be listed when confirmed.",
 ];
 
-export const PROGRAM_NAME =
-  "Qiskit Fall Fest South Florida 2026.";
+export const PROGRAM_NAME = "Florida Qiskit Fallfest Hackathon.";
 
 export const PROGRAM_BANNER =
-  "Qiskit Fall Fest South Florida 2026. The theme is ten years of quantum on the cloud. Fall Fest is a worldwide student-led series with IBM Quantum.";
+  "Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. The theme is A decade of quantum on the cloud. The 2026 theme recognizes ten years since IBM placed its first quantum processor on the cloud.";
 
 export const KICKOFF_LINES =
   "Kickoff and challenge release are October 1, 2026. Local events are October 17–18, 2026. The first-place local winner deadline is October 31, 2026. The statewide announcement is November 13, 2026.";
@@ -630,7 +629,11 @@ export const LIGHTNING_TALK_LINE =
 
 export const HOST_CONTACTS: { name: string; detail: string }[] = CO_LEADS.map((lead) => ({
   name: lead.name,
-  detail: lead.organization ? `${lead.organization}. ${lead.email}.` : `${lead.email}.`,
+  detail: lead.email
+    ? lead.organization
+      ? `${lead.organization}. ${lead.email}.`
+      : lead.email
+    : "Questions go to kevin@quantumglobalgroup.io.",
 }));
 
 export const SEPTEMBER_LINE =
@@ -833,7 +836,10 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   },
   prepare: {
     timing: "30–40 minutes. Registration should already be done for most of the room.",
-    notes: ["Park account problems at a side table.", "Do not ask anyone to paste an API key or a CRN into chat."],
+    notes: [
+      "If someone cannot sign in after the troubleshooting steps, help them follow the projected demonstration while the account issue is resolved.",
+      "Do not ask anyone to paste an API key or a CRN into chat.",
+    ],
   },
   language: {
     timing: "20 minutes. Search three terms. Do not read every card.",

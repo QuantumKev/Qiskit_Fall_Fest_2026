@@ -1,10 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { Fragment, useState, type ReactNode } from "react";
 import { BellFigure, ExpectedHistogram } from "@/components/BellFigure";
 import { CopyBlock } from "@/components/CopyBlock";
+import { HostDirectory } from "@/components/HostDirectory";
 import { useProgress } from "@/components/store";
+import { EVENT } from "@/content/event";
 import { GLOSSARY } from "@/content/glossary";
 import { AREA_LINKS, JOURNEY, type Check, type StepPage } from "@/content/onboarding";
 import { slugify } from "@/lib/slug";
@@ -102,9 +105,29 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
   return (
     <article className="stack guide">
       <p className="kicker">
-        {onJourney ? `Step ${page.number} of ${JOURNEY.length} · ${page.minutes} min` : `Reference · ${page.minutes} min`}
+        {page.slug === "start"
+          ? "For Participants"
+          : onJourney
+            ? `Step ${page.number} of ${JOURNEY.length} · ${page.minutes} min`
+            : `Reference · ${page.minutes} min`}
       </p>
-      <h1>{page.title}</h1>
+      <h1>{page.slug === "start" ? EVENT.name : page.title}</h1>
+      {page.slug === "start" ? (
+        <>
+          <p className="brand-line">{EVENT.seriesLine}</p>
+          <ul className="sticker-row">
+            <li>
+              <Image className="sticker sticker-qiskit" src="/brand/stickers/qiskit-white.svg" width={204} height={81} alt="Qiskit" unoptimized />
+            </li>
+            <li>
+              <Image className="sticker sticker-theme" src="/brand/stickers/theme-magenta.svg" width={463} height={81} alt="a decade of quantum on the cloud" unoptimized />
+            </li>
+            <li>
+              <Image className="sticker sticker-cloud" src="/brand/stickers/cloud.svg" width={447} height={142} alt="Cloud sticker" unoptimized />
+            </li>
+          </ul>
+        </>
+      ) : null}
       <p className="lede">{page.purpose}</p>
       {page.slug === "start" ? (
         <nav className="phase-rail" aria-label="Sections">
@@ -123,7 +146,8 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
       {page.sections.map((section) => {
         const id = section.id || slugify(section.heading);
         return (
-          <section key={id} id={id} className="prose card">
+          <Fragment key={id}>
+          <section id={id} className="prose card">
             <h2>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph}>
@@ -139,6 +163,21 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
                 ))}
               </ol>
             ) : null}
+            {section.linkedSteps ? (
+              <ol>
+                {section.linkedSteps.map((step) => (
+                  <li key={step.text}>
+                    <RichText text={step.text} />
+                    {step.hrefs?.map((link) => (
+                      <span key={link.href}>
+                        {" "}
+                        <ExternalAnchor href={link.href}>{link.label}</ExternalAnchor>
+                      </span>
+                    ))}
+                  </li>
+                ))}
+              </ol>
+            ) : null}
             {section.table ? <DataTable {...section.table} /> : null}
             {section.troubles?.map((trouble) => (
               <details key={trouble.title} className="trouble">
@@ -147,6 +186,8 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
               </details>
             ))}
           </section>
+          {page.slug === "start" && section.id === "event" ? <HostDirectory /> : null}
+        </Fragment>
         );
       })}
 

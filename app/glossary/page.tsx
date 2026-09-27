@@ -1,6 +1,8 @@
 import { GlossaryView } from "@/components/GlossaryView";
 
-export const metadata = { title: "Glossary · Qiskit Fall Fest" };
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta("Glossary", "/glossary/");
 
 export default function GlossaryPage() {
   return <GlossaryView />;

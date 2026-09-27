@@ -29,7 +29,6 @@ import {
   HOST_CONTACTS,
   HOUSE_EXAMPLE,
   INTRO_CHECKS,
-  INTRO_FACILITATOR,
   INTRO_SECTIONS,
   INTRO_TITLE,
   JOIN_FACTS,
@@ -528,7 +527,7 @@ function HackathonBody() {
         ))}
       </ul>
       <p>
-        Domain-track note: <a href="https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/">Entangled Solutions Group</a>.
+        Domain/Industry Expert note: <a href="https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/">Entangled Solutions Group</a>.
       </p>
       <p>{EVERYONE_LINE}</p>
       <h2>Accounts and the workshop pin</h2>
@@ -539,7 +538,7 @@ function HackathonBody() {
       </ul>
       <p>{PLAN_BLANK}</p>
       <h2>What a strong project is</h2>
-      <p>A strong project is one of these four. The materials say it is explicitly not a claim of quantum advantage. Kinds 1 and 4 are mostly non-code.</p>
+      <p>A strong project is one of these four. You are not expected to prove that quantum computing is better than classical computing. Kinds 1 and 4 can be done with little or no code.</p>
       <ol>
         {PROJECT_KINDS.map((kind) => (
           <li key={kind}>{kind}</li>
@@ -701,11 +700,10 @@ export function IntroHome() {
 
 export function IntroView({ slug }: { slug: IntroSlug }) {
   const section = introSection(slug);
-  const { mode, done, toggleDone } = useProgress();
+  const { done, toggleDone } = useProgress();
   if (!section) return null;
   const Body = BODIES[slug];
   const progressId = `intro:${slug}`;
-  const facilitator = INTRO_FACILITATOR[slug];
   const checks = INTRO_CHECKS[slug] ?? [];
   const index = INTRO_SECTIONS.findIndex((item) => item.slug === slug);
   const next = INTRO_SECTIONS[index + 1];
@@ -727,17 +725,9 @@ export function IntroView({ slug }: { slug: IntroSlug }) {
           ))}
         </section>
       ) : null}
-      {mode === "facilitator" && facilitator && slug !== "prepare" ? (
-        <section className="facilitator prose">
-          <h2>Facilitator notes</h2>
-          <p>{facilitator.timing}</p>
-          <ul>
-            {facilitator.notes.map((note) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+      <p className="meta">
+        <Link href="/facilitator/">Teaching notes are in the facilitator guide.</Link>
+      </p>
       <label className="complete">
         <input type="checkbox" checked={done.includes(progressId)} onChange={() => toggleDone(progressId)} />
         I can do what this section asks.

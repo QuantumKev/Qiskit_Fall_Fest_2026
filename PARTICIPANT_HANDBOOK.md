@@ -1,6 +1,4 @@
-# Participant Handbook — Qiskit Fall Fest South Florida 2026
-
-**Qiskit Fall Fest South Florida 2026.** Kickoff and challenge release: October 1, 2026. Local events: October 17–18, 2026. First-place local winner deadline: October 31, 2026. Statewide announcement: November 13, 2026.
+**Florida Qiskit Fallfest Hackathon.** Part of Qiskit Fall Fest 2026. Kickoff and challenge release: October 1, 2026. Local events: October 17–18, 2026. First-place local winner deadline: October 31, 2026. Statewide announcement: November 13, 2026.
 
 ---
 
@@ -8,7 +6,7 @@
 
 You have **one job before October 1, 2026**: arrive with your own IBM Quantum account and a rough idea of a problem you care about. Nothing else.
 
-| | Builder track | Domain track |
+| | Builder/Developer Expert | Domain/Industry Expert |
 |---|---|---|
 | **Who** | Writes code during the event | Frames problems, judges impact, tells the story |
 | **Pre-work time** | 3–5 hours | 2–3 hours |
@@ -21,7 +19,7 @@ You have **one job before October 1, 2026**: arrive with your own IBM Quantum ac
 - [ ] Join the chat → <https://discord.gg/vz6uTbtJzR>
 - [ ] Create your own IBM Quantum Platform account → §4
 - [ ] Create a GitHub account → §6
-- [ ] Read §2 (what we're actually building) and skim [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md)
+- [ ] Read §2 (what we're actually building) and skim the Domain/Industry Expert guide, [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md)
 
 If you only have 30 minutes, do the four checkboxes above and stop. Everything else can happen on day one.
 
@@ -31,18 +29,20 @@ If you only have 30 minutes, do the four checkboxes above and stop. Everything e
 
 Qiskit Fall Fest is a worldwide, student-led series of quantum computing events run in partnership with IBM Quantum. Hosts on campuses and in communities around the world run their own hackathons, workshops, and challenges under one banner during the autumn.
 
-The **2026 theme is "a decade of quantum on the cloud"**: it marks ten years since IBM put the world's first open-access quantum computer on the internet. Ten years ago, running a circuit on real quantum hardware meant knowing someone in a lab. Today you do it from a browser tab, for free, in about four minutes. That shift is the entire reason this event can exist, and it's a useful thing to keep in mind when you're deciding how ambitious to be.
+The **2026 theme is "A decade of quantum on the cloud."** The theme recognizes ten years since IBM placed its first quantum processor on the cloud. That shift is why a student can open a circuit from a browser. Keep it in mind when you decide how ambitious to be.
 
-**Qiskit Fall Fest South Florida 2026** is the local series inside that lineup. Robert Loredo, Grant Kurz, Ayse Torres, and Kevin Robinson are co-leading this event. The event is not a single-campus class.
+**Florida Qiskit Fallfest Hackathon** is the Florida event inside that global program. Kevin Robinson, Robert Loredo, Grant Kurz, and Ayse Torres are statewide co-leads. None of them is the single host.
 
-Campuses: Miami Dade College, Nova Southeastern University, Florida Atlantic University, Embry-Riddle Aeronautical University, Florida Tech, and Florida Gulf Coast University. Capacity is up to 50 participants per campus.
+Campuses: Miami Dade College, Nova Southeastern University, Florida Atlantic University, Embry-Riddle Aeronautical University, Florida Institute of Technology, and Florida Gulf Coast University. Capacity is up to 50 participants per campus.
 
-Confirmed rooms:
+The home page host directory is the card list: university, verified lead, confirmed venue, registration link when one is public, and a contact. Unconfirmed rooms say **Details coming soon**.
 
-- Miami Dade College Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132
-- Alan B. Levan Center at Nova Southeastern University, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314
-
-Addresses, rooms, and campus details that are not in that list are **TBA**. Do not invent them.
+- Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams>
+- Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. Contact and registration: details coming soon.
+- Florida Atlantic University: Ayse Torres and Kateryna Tsekhmayster. Venue: details coming soon. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
+- Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Venue and registration: details coming soon.
+- Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
+- Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i>. Venue: details coming soon.
 
 Official IBM announcement: <https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026>
 
@@ -52,7 +52,7 @@ Qiskit-approved website: <https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2
 
 ## 2. What you are actually going to build
 
-A hackathon project here is **not** "prove quantum advantage." Nobody in the world is doing that in 48 hours, and any team that claims to has misunderstood the assignment.
+You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations. The benchmarking page and the glossary name the stronger claim teams are not asked to make.
 
 A strong Qiskit Fall Fest project is one of these:
 
@@ -63,19 +63,25 @@ A strong Qiskit Fall Fest project is one of these:
 
 Notice that **projects 1 and 4 are mostly non-code work**, and projects 2 and 3 are much better when someone on the team knows what the output is supposed to mean. This is why we run a domain track. See §3.
 
-**Judging criteria:** The shared rubric is **Coming soon**. The dimensions named for local review and the statewide announcement are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. A project that claims quantum advantage is outside this event.
+**Judging criteria:** The shared rubric is **Coming soon**. The dimensions named for local review and the statewide announcement are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. A project that claims a quantum method beat classical computing, without the comparison written down, is outside this event.
 
 ---
 
-## 3. Two tracks, one team
+## 3. Two pathways, one team
 
-Every team should have both. A team of coders will produce a technically clean solution to a problem nobody has. A team of strategists will produce the presentation deck with no substance under it. The interesting projects come from the collision.
+Every team should have both a Domain/Industry Expert and a Builder/Developer Expert. Coding is optional for the Domain/Industry Expert. The interesting projects come from the two roles working on one problem.
 
-**Builder track**: you'll write Qiskit, run circuits, wrangle results. You need Python. You do *not* need a physics background; most of what you'll do at this level is linear algebra and API calls.
+| | Domain/Industry Expert | Builder/Developer Expert | Shared |
+|---|---|---|---|
+| Focus | The problem and whether a quantum approach fits | Circuits, code, and the run | One project and one write-up |
+| Coding | Optional | Python and Qiskit | Either person can pair |
+| Comparison | Name the classical method | Measure the baseline and the quantum run | Do not promise the quantum result will win |
 
-**Domain track**: you'll bring expertise from somewhere that isn't quantum computing: finance, logistics, energy, health, law, policy, agriculture, manufacturing, venture capital, operations, anything. Your job is to make sure the team is solving a problem that exists. You will not install Python. You will read notebooks, not write them. (We created a nice post on LinkedIn for you to share that goes into detail here: https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/
+**Builder/Developer Expert**: you write Qiskit, run circuits, and keep the result next to the baseline. You need Python. You do *not* need a physics background.
 
-**If you are hesitating because you're "not technical enough," read [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md) before you decide not to come.** It exists specifically for you and it makes the case at length.
+**Domain/Industry Expert**: you bring a field that is not quantum computing: finance, logistics, energy, health, law, policy, agriculture, manufacturing, operations, or another practice you know. Your job is to make sure the team is solving a problem that exists. You do not have to install Python. The long-form source is [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md), titled Domain/Industry Expert.
+
+**If you are hesitating because you do not write code, read that guide before you decide not to come.**
 
 ---
 
@@ -101,7 +107,7 @@ An *instance* is your allocation of quantum compute. Your account needs at least
 2. Create an instance on the **Open Plan**.
 3. Note that Open Plan instances can only be created in the **us-east** region. If your account switcher is set to `eu-de`, switch it.
 
-### 4.3 Get your API key (Builder track only, Domain track can skip to §6)
+### 4.3 Get your API key (Builder/Developer Expert only. The Domain/Industry Expert can skip to §6)
 
 1. From the dashboard at <https://quantum.cloud.ibm.com/>, create your API key.
 2. **Copy it immediately to a password manager. It is shown once and never again.** It's a 44-character string.
@@ -111,7 +117,7 @@ An *instance* is your allocation of quantum compute. Your account needs at least
 
 ### 4.4 Understand your quantum time budget
 
-The Open Plan gives you **up to 10 minutes of QPU time per rolling 28-day window**, free. Track usage on the dashboard and on the [Workloads page](https://quantum.cloud.ibm.com/workloads).
+The Open Plan gives you **up to 10 minutes of QPU execution time per rolling 28-day window**, free. Track usage on the dashboard and on the [Workloads page](https://quantum.cloud.ibm.com/workloads). The current limit is on the [max execution time page](https://quantum.cloud.ibm.com/docs/en/guides/max-execution-time). Simulators first.
 
 Ten minutes sounds tiny. It is enormous. QPU time is measured in actual execution, and a typical small circuit run costs a couple of seconds. You can run hundreds of jobs. Teams almost never run out, but teams that leave a badly-parameterized loop running unattended absolutely do, so:
 
@@ -119,13 +125,11 @@ Ten minutes sounds tiny. It is enormous. QPU time is measured in actual executio
 - Check the queue before you submit at 3am on deadline day.
 - One person per team should own hardware submissions.
 
-IBM also ran a limited-time promotion adding 180 extra minutes over 12 months for active Open Plan users ([details here](https://www.ibm.com/quantum/blog/open-plan-updates)). Check whether it's still available when you sign up — promotions change.
-
 Full plan comparison: <https://quantum.cloud.ibm.com/docs/en/guides/plans-overview>
 
 ## 5. Step two: get Qiskit running
 
-> **Domain track: skip this entire section.** Go to §6. You will not need Python at any point during this event. If you get curious later, come back — §5.1 needs no installation.
+> **Domain/Industry Expert: skip this entire section.** Go to §6. You will not need Python. If you get curious later, come back. §5.1 needs no installation.
 
 We recommend **starting in the cloud** and only installing locally if you hit a reason to. Every hackathon loses hours to someone's broken conda environment. Don't be that hour.
 
@@ -231,7 +235,7 @@ print("matches this Bell preparation. A histogram alone is not a complete proof 
 
 If that prints something like `{'00': 496, '11': 504}`, you are done. Go to §6.
 
-### 5.4 Connect to real hardware (Builder track)
+### 5.4 Connect to real hardware (Builder/Developer Expert)
 
 Once, in a trusted environment (your own laptop, **not** a shared lab machine, **not** Colab):
 
@@ -286,7 +290,7 @@ IBM’s hello-world guide shows the same four-step pattern, and then a much larg
 
 ## 6. Step three: GitHub
 
-**Everyone does this. Both tracks.** Domain track participants will use GitHub to read the challenge briefs, file issues, and contribute written work — market analysis, use-case documents, and slides all live in the repo alongside code.
+**Everyone does this. Both pathways.** A Domain/Industry Expert will use GitHub to read the challenge briefs, file issues, and contribute written work. Market analysis, use-case documents, and slides live in the repo alongside code.
 
 ### 6.1 Create an account
 
@@ -365,7 +369,7 @@ New to git? <https://docs.github.com/en/get-started>
 
 Pick a lane, budget the hours, don't try to do all of it.
 
-### If you're on the Domain track (2–3 hours)
+### If you are the Domain/Industry Expert (2–3 hours)
 
 | Resource | Time | Why |
 |---|---|---|
@@ -374,7 +378,7 @@ Pick a lane, budget the hours, don't try to do all of it.
 | [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer) | 20 min | Play. Drag gates. No coding. Best intuition-per-minute available. |
 | [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md) | 30 min | Our own guide — roles, industry prompts, and the use-case canvas you'll fill in on day one. |
 
-### If you're on the Builder track (3–5 hours)
+### If you are the Builder/Developer Expert (3–5 hours)
 
 | Resource | Time | Why |
 |---|---|---|
@@ -397,7 +401,7 @@ Full catalog: <https://quantum.cloud.ibm.com/learning/en/courses>
 
 ### Notebooks
 
-We've annotated the useful ones, including which are readable without running anything — in [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md). **Domain track: that document was written for you.**
+We've annotated the useful ones, including which are readable without running anything — in [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md). **Domain/Industry Expert: that document was written for you.**
 
 ---
 
@@ -442,38 +446,38 @@ Normal at peak times — it's a shared fair-share queue. Use `service.least_busy
 **Code from a tutorial you found online just doesn't work.**
 Check its date. Anything using `channel="ibm_quantum"`, `IBMQ.load_account()`, `execute()`, or `qiskit.Aer` predates the current API. See the warning in §4.1.
 
-**Still stuck:** <https://discord.gg/vz6uTbtJzR> or any co-lead: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io. Post the actual error text, not "it doesn't work." Do not paste an API key, a CRN, or a password.
+**Still stuck:** <https://discord.gg/vz6uTbtJzR> or any co-lead: your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io. Post the actual error text, not "it doesn't work." Do not paste an API key, a CRN, or a password.
 
 ---
 
 ## 10. Support and community
 
 - **Event chat:** <https://discord.gg/vz6uTbtJzR>
-- **Co-leads:** Robert Loredo, Grant Kurz, Ayse Torres, and Kevin Robinson are co-leading this event.
-  - Robert Loredo, Florida Atlantic University, rloredo2026@fau.edu
-  - Grant Kurz, grant@deepstation.ai
-  - Ayse Torres, Florida Atlantic University, atorre58@fau.edu
+- **Statewide co-leads:** Kevin Robinson, Robert Loredo, Grant Kurz, and Ayse Torres. None of them is the single host.
   - Kevin Robinson, Quantum Global Group, kevin@quantumglobalgroup.io
+  - Robert Loredo. Program questions: kevin@quantumglobalgroup.io
+  - Grant Kurz. Local contact: details coming soon. Program questions: kevin@quantumglobalgroup.io
+  - Ayse Torres. Program questions: kevin@quantumglobalgroup.io
 - **Qiskit-approved website:** <https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2026/>
 - **Qiskit Slack:** <https://qisk.it/join-slack>, the global Qiskit community
 - **Qiskit YouTube:** <https://www.youtube.com/qiskit>
 - **Documentation:** <https://quantum.cloud.ibm.com/docs>
 - **Quantum Computing Stack Exchange:** tag `qiskit`
 
-**Code of conduct:** Coming soon. Until it is published, write to any co-lead: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io.
+**Code of conduct:** Coming soon. Until it is published, write to any co-lead: your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io.
 
 ---
 
 ## 11. Accessibility, hardware, and cost
 
-- **No laptop?** Loaner laptops are not confirmed. Email any co-lead before you travel: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io. Do not assume a machine will be waiting.
+- **No laptop?** Loaner laptops are not confirmed. Email any co-lead before you travel: your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io. Do not assume a machine will be waiting.
 - **Weak laptop?** Everything in §5.1 runs in a browser. A Chromebook is sufficient.
 - **Nothing here costs money.** Qiskit is open source (Apache 2.0). The IBM Quantum Open Plan is free. GitHub is free. If someone asks you to pay for something to participate, that's not part of this event.
-- **Accessibility needs:** contact any co-lead in advance: rloredo2026@fau.edu, grant@deepstation.ai, atorre58@fau.edu, or kevin@quantumglobalgroup.io.
+- **Accessibility needs:** contact any co-lead in advance: your local university lead, then Kevin Robinson at kevin@quantumglobalgroup.io.
 
 ---
 
-## Appendix A: Glossary for the domain track
+## Appendix A: Glossary for the Domain/Industry Expert
 
 You'll hear these on day one. You don't need to be able to derive any of them.
 
@@ -510,7 +514,7 @@ Print this. Tick it before October 1, 2026.
 - [ ] Read §2 and know what a good project looks like
 - [ ] Spent 20 minutes in the [Composer](https://quantum.cloud.ibm.com/composer) just playing
 
-**Builder track, additionally**
+**Builder/Developer Expert, additionally**
 - [ ] Python 3.10+ available
 - [ ] Qiskit + `qiskit-ibm-runtime` installed, in a venv (§5.2)
 - [ ] `check_setup.py` runs and shows a Bell state (§5.3)
@@ -519,7 +523,7 @@ Print this. Tick it before October 1, 2026.
 - [ ] Ran one circuit on real hardware via the [hello world guide](https://quantum.cloud.ibm.com/docs/en/guides/hello-world)
 - [ ] Started [Use a quantum computer today](https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today)
 
-**Domain track, additionally**
+**Domain/Industry Expert, additionally**
 - [ ] Read [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md) end to end
 - [ ] Completed [Quantum business foundations](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations) (and claimed the badge)
 - [ ] Skimmed two domain notebooks from [`NOTEBOOK-CATALOG.md`](NOTEBOOK-CATALOG.md)

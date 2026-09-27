@@ -81,7 +81,7 @@ export const MODULES: Module[] = [
     number: "00",
     title: "Welcome and expectations",
     minutes: 15,
-    summary: "An entry ramp into the quantum ecosystem. Not a race to publish a quantum-advantage result.",
+    summary: "An entry ramp into the quantum ecosystem. You are not expected to prove that quantum computing is better than classical computing.",
     outcomes: [
       "Say what this workshop is for and what it is not for.",
       "See the path from accounts to a first circuit to a next step.",
@@ -122,13 +122,13 @@ export const MODULES: Module[] = [
       {
         question: "What is a successful outcome of this workshop?",
         options: [
-          "A Nature paper on quantum advantage",
+          "A paper claiming quantum computing is better than classical computing",
           "A clear entry into the tools, vocabulary, and next step",
           "Replacing your organization’s classical computers",
           "A complete proof of entanglement from one histogram",
         ],
         answer: 1,
-        why: "The workshop is an entry ramp. Advantage claims and full entanglement proofs are later, harder work.",
+        why: "The workshop is an entry ramp. A histogram is not a finished comparison, and a full entanglement proof is later, harder work.",
       },
     ],
     facilitator: {
@@ -580,7 +580,7 @@ export const MODULES: Module[] = [
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
           "Machine learning is the next part of this journey, at /intro/qml. It is not a separate required hackathon challenge. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. That source is still being reread. Iterate on a simulator. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.",
-          "Fall Fest projects use the participant handbook. The public name is Qiskit Fall Fest South Florida 2026. Kickoff and challenge release are October 1, 2026. Official registration is Coming soon.",
+          "Fall Fest projects use the participant handbook. The public name is Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. Kickoff and challenge release are October 1, 2026. Official registration is Coming soon.",
         ],
       },
     ],

@@ -27,7 +27,7 @@ function Placeholder({ caption }: { caption: string }) {
 }
 
 export function ExerciseConnect() {
-  const { mode, done, markDone } = useProgress();
+  const { done, markDone } = useProgress();
   const [ack, setAck] = useState(false);
   const [boxes, setBoxes] = useState<boolean[]>(CHECKS.map(() => false));
   const complete = done.includes("exercise1-complete");
@@ -128,17 +128,6 @@ export function ExerciseConnect() {
         <p>An instance is the workspace for hardware jobs. A CRN is the unique address of that instance. A region is the geographic setting shown in the header. The simulator path does not use either.</p>
       </section>
 
-      {mode === "facilitator" ? (
-        <section className="facilitator prose">
-          <h2>Facilitator appendix: create an instance</h2>
-          <p>This appendix is not the Bell lab. Participants run that lab on the simulator.</p>
-          <p>
-            IBM’s current page: <a href="https://quantum.cloud.ibm.com/docs/en/guides/instances">Create and manage instances</a>. Recheck it the morning of the workshop. The page checked on {DOCS_CHECKED} says each plan and region needs its own instance, and instances outside the Open Plan can incur cost.
-          </p>
-          <p>Open a paid plan only with your eyes on the price. Do not ask the room to create one.</p>
-        </section>
-      ) : null}
-
       <section className="prose">
         <h2>Participant Step 4. Generate an API key</h2>
         <p>
@@ -235,20 +224,9 @@ export function ExerciseConnect() {
         </p>
       </section>
 
-      {mode === "facilitator" ? (
-        <section className="facilitator prose">
-          <h2>Facilitator notes</h2>
-          <p>30–40 minutes. The room uses the Open Plan. The Bell lab starts on the simulator. Do not display a CRN or an API key. Do not promise more than 10 minutes of QPU time per 28 days.</p>
-          <p>
-            Statuses you can set by hand: Registered, Simulator first, Open Plan visible, Connection verified, Needs assistance.
-          </p>
-          <p>
-            <Link href="/organizers">Open the co-lead list</Link>
-          </p>
-        </section>
-      ) : (
-        <p className="meta">Switch to Facilitator in the header for the instance appendix and the co-lead list.</p>
-      )}
+      <p className="meta">
+        <Link href="/facilitator/">Teaching notes are in the facilitator guide.</Link>
+      </p>
     </article>
   );
 }

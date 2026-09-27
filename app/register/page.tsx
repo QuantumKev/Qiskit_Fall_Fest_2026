@@ -1,8 +1,9 @@
 import { RegisterForm } from "@/components/RegisterForm";
 import { RegisterShare } from "@/components/RegisterShare";
 import { EVENT } from "@/content/event";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata = { title: `Register · ${EVENT.name}` };
+export const metadata = pageMeta("Register", "/register/");
 
 export default function RegisterPage() {
   return (
