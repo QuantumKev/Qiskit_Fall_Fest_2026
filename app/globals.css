@@ -537,6 +537,11 @@ select, input[type="search"], .filters input {
   line-height: 1.05;
 }
 
+.guide h1.cover-title {
+  text-align: center;
+  margin-inline: auto;
+}
+
 @media (max-width: 720px) {
   :root {
     --text-body: 16px;

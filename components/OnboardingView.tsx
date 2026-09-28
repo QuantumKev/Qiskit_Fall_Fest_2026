@@ -155,7 +155,7 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
             : `Reference · ${page.minutes} min`}
       </p>
       {page.slug === "start" ? <CoverLockup /> : null}
-      <h1>{page.slug === "start" ? EVENT.name : page.title}</h1>
+      <h1 className={page.slug === "start" ? "cover-title" : undefined}>{page.slug === "start" ? EVENT.name : page.title}</h1>
       {page.slug === "start" ? (
         <div className="cover-support">
           <p className="brand-line">{EVENT.seriesLine}</p>
