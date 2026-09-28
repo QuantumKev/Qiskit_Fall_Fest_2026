@@ -27,22 +27,3 @@ export function DecorImage({
     />
   );
 }
-
-export function FestBanner({
-  file,
-  width,
-  height,
-  pill,
-}: {
-  file: string;
-  width: number;
-  height: number;
-  pill?: { file: string; width: number; height: number };
-}) {
-  return (
-    <figure className="fest-banner-frame" aria-hidden="true">
-      <DecorImage file={file} width={width} height={height} className="fest-banner" />
-      {pill ? <DecorImage file={pill.file} width={pill.width} height={pill.height} className="fest-pill" /> : null}
-    </figure>
-  );
-}

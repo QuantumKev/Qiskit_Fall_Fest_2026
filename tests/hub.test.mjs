@@ -73,6 +73,8 @@ test("the home lockup shows the IBM Quantum wordmark and the Fall Fest badge", (
   assert.match(view, /width=\{318\}/);
   assert.match(view, /height=\{318\}/);
   assert.match(view, /alt="Qiskit Fall Fest 2026"/);
+  assert.doesNotMatch(view, /hero-birds-qiskit-fall-fest-2026/);
+  assert.doesNotMatch(view, /text-quantum-blue-pill/);
   assert.match(view, /seriesLine/);
   assert.match(view, /Supported by IBM Quantum\./);
   assert.doesNotMatch(view, /IBM sponsors/);

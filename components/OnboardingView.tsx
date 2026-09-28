@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Fragment, useState, type ReactNode } from "react";
 import { BellFigure, ExpectedHistogram } from "@/components/BellFigure";
 import { CopyBlock } from "@/components/CopyBlock";
-import { DecorImage, FestBanner } from "@/components/FestArt";
+import { DecorImage } from "@/components/FestArt";
 import { HostDirectory } from "@/components/HostDirectory";
 import { useProgress } from "@/components/store";
 import { EVENT } from "@/content/event";
@@ -98,6 +98,20 @@ function CheckCard({ check }: { check: Check }) {
   );
 }
 
+const SECTION_BACKDROP: Record<string, { file: string; width: number; height: number }> = {
+  account: { file: "globe-purple.png", width: 755, height: 755 },
+  vocabulary: { file: "sticker-flamingo.png", width: 1640, height: 1640 },
+  bell: { file: "sticker-paired-birds.png", width: 1526, height: 1526 },
+  python: { file: "globe-gray.png", width: 755, height: 755 },
+  workflow: { file: "hero-pink-badge-hummingbirds.png", width: 7680, height: 4320 },
+  roles: { file: "sticker-eagle.png", width: 3635, height: 3776 },
+  problem: { file: "globe-white-on-black.png", width: 755, height: 755 },
+  benchmarking: { file: "text-fall-fest-purple-pill.png", width: 273, height: 81 },
+  hetionet: { file: "sticker-kookaburra.png", width: 4254, height: 2701 },
+  team: { file: "text-computing-gray-pill.png", width: 871, height: 268 },
+  submit: { file: "text-2026-pill.png", width: 635, height: 324 },
+};
+
 function CoverLockup() {
   return (
     <div className="cover-lockup">
@@ -163,29 +177,15 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
         </nav>
       ) : null}
 
-      {page.slug === "workflow" ? (
-        <div className="fest-banner-row">
-          <FestBanner file="hero-pink-badge-hummingbirds.png" width={7680} height={4320} />
-          <div className="fest-rail" aria-hidden="true">
-            <DecorImage file="sticker-eagle.png" width={3635} height={3776} className="fest-sticker" />
-            <DecorImage file="globe-gray.png" width={755} height={755} className="fest-globe" />
-          </div>
-        </div>
-      ) : null}
-
-      {page.sections.map((section) => {
+      {page.sections.map((section, index) => {
         const id = section.id || slugify(section.heading);
+        const backdrop = index === 0 ? SECTION_BACKDROP[page.slug] : undefined;
         return (
           <Fragment key={id}>
-          {page.slug === "start" && section.id === "event" ? (
-            <FestBanner
-              file="hero-birds-qiskit-fall-fest-2026.png"
-              width={4221}
-              height={2704}
-              pill={{ file: "text-quantum-blue-pill.png", width: 739, height: 268 }}
-            />
-          ) : null}
-          <section id={id} className="prose card">
+          <section id={id} className={backdrop ? "prose card fest-section" : "prose card"}>
+            {backdrop ? (
+              <DecorImage file={backdrop.file} width={backdrop.width} height={backdrop.height} className="fest-bg" />
+            ) : null}
             <h2>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
               <p key={paragraph}>
@@ -247,20 +247,8 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
         </section>
       ) : null}
 
-      {page.showCircuit || page.showHistogram ? (
-        <div className={page.slug === "bell" ? "bell-layout" : "stack"}>
-          <div className="stack bell-figures">
-            {page.showCircuit ? <BellFigure /> : null}
-            {page.showHistogram ? <ExpectedHistogram /> : null}
-          </div>
-          {page.slug === "bell" ? (
-            <div className="fest-rail" aria-hidden="true">
-              <DecorImage file="sticker-paired-birds.png" width={1526} height={1526} className="fest-sticker" />
-              <DecorImage file="globe-purple.png" width={755} height={755} className="fest-globe" />
-            </div>
-          ) : null}
-        </div>
-      ) : null}
+      {page.showCircuit ? <BellFigure /> : null}
+      {page.showHistogram ? <ExpectedHistogram /> : null}
 
       {page.table ? (
         <section className="prose card">

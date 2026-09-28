@@ -9,10 +9,10 @@
   --card: #10151c;
   --font-display: var(--font-syne), "Segoe UI", sans-serif;
   --font-mono: var(--font-plex), ui-monospace, monospace;
-  --text-body: 18px;
-  --text-nav: 18px;
-  --text-caption: 16px;
-  --text-button: 18px;
+  --text-body: 17px;
+  --text-nav: 17px;
+  --text-caption: 15px;
+  --text-button: 17px;
   --leading: 1.62;
   color-scheme: dark;
 }
@@ -113,6 +113,7 @@ button, input, select {
 .cover-lockup {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 40px;
   max-width: 100%;
 }
@@ -147,72 +148,30 @@ button, input, select {
   gap: 4px;
 }
 
-.fest-banner-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  min-width: 0;
-  max-width: 100%;
+.fest-section {
+  position: relative;
+  overflow: hidden;
 }
 
-.fest-banner-frame {
-  display: grid;
-  justify-items: start;
-  gap: 12px;
-  margin: 0;
-  min-width: 0;
-  max-width: 100%;
-  pointer-events: none;
-}
-
-.fest-banner {
+.fest-bg {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  z-index: 0;
   display: block;
   width: auto;
-  max-width: 100%;
+  max-width: 156px;
   height: auto;
-  max-height: 280px;
+  max-height: 156px;
   object-fit: contain;
+  object-position: right top;
+  opacity: 0.28;
   pointer-events: none;
 }
 
-.fest-pill { width: 148px; }
-
-.fest-rail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex: none;
-  pointer-events: none;
-}
-
-.fest-sticker,
-.fest-globe,
-.fest-pill {
-  display: block;
-  height: auto;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-.fest-sticker { width: 112px; }
-
-.fest-globe {
-  width: 84px;
-  opacity: 0.14;
-}
-
-.bell-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  min-width: 0;
-  max-width: 100%;
-}
-
-.bell-figures {
-  flex: 1;
-  min-width: 0;
+.fest-section > :not(.fest-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 .host-grid {
@@ -580,9 +539,9 @@ select, input[type="search"], .filters input {
 
 @media (max-width: 720px) {
   :root {
-    --text-body: 17px;
-    --text-nav: 17px;
-    --text-button: 17px;
+    --text-body: 16px;
+    --text-nav: 16px;
+    --text-button: 16px;
   }
 
   .compare { grid-template-columns: 1fr; }
@@ -592,15 +551,13 @@ select, input[type="search"], .filters input {
   .module-list .status { grid-column: 2; }
   .cover-lockup {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 22px;
   }
   .cover-ibm { width: 208px; }
   .cover-badge-plate { width: 140px; height: 140px; }
   .cover-badge { width: 124px; height: 124px; }
-  .fest-banner { max-height: 200px; }
-  .fest-banner-row, .bell-layout { flex-direction: column; align-items: flex-start; }
-  .fest-sticker { width: 96px; }
+  .fest-bg { max-width: 84px; max-height: 84px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -665,6 +622,12 @@ select, input[type="search"], .filters input {
 }
 
 .card { background: var(--card); border: 1px solid var(--line); padding: 20px; }
+
+.card.fest-section { padding-right: 188px; }
+
+@media (max-width: 720px) {
+  .card.fest-section { padding-right: 112px; }
+}
 
 .external-mark { font-family: var(--font-mono); font-size: 0.75em; letter-spacing: 0; }
 
