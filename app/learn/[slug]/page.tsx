@@ -4,7 +4,7 @@ import { MODULES } from "@/content/modules";
 const DESTINATIONS: Record<string, string> = {
   welcome: "/",
   setup: "/account/",
-  qubi: "/vocabulary/",
+  qubi: "/qolour/",
   composer: "/bell/",
   python: "/python/",
   "assess-build": "/benchmarking/",

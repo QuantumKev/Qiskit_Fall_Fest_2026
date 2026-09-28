@@ -14,10 +14,21 @@ import { AREA_LINKS, JOURNEY, type Check, type StepPage } from "@/content/onboar
 import { withBase } from "@/lib/base-path";
 import { slugify } from "@/lib/slug";
 
+function isFileLink(href: string) {
+  return /\.(pdf|md|zip|png|jpe?g|svg|webp)$/i.test(href.split("#")[0]);
+}
+
 function ExternalAnchor({ href, children }: { href: string; children: ReactNode }) {
   const external = /^https?:\/\//.test(href);
-  if (!external) {
+  if (!external && !isFileLink(href)) {
     return <Link href={href}>{children}</Link>;
+  }
+  if (!external) {
+    return (
+      <a href={withBase(href)} target="_blank" rel="noopener">
+        {children}
+      </a>
+    );
   }
   return (
     <a href={href} target="_blank" rel="noopener noreferrer external">

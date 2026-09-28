@@ -22,7 +22,7 @@ Times are a guide for a two-hour Workshop 1 and a 75 to 90 minute Workshop 2. Sh
 |---|---|---|
 | 0:00 | Welcome and the theme | Home page |
 | 0:10 | Own IBM account, Open Plan, API key, and CRN | Account page |
-| 0:25 | Words the Bell lab needs. Link Qolour. Do not paste the course. | Vocabulary page |
+| 0:25 | Words the Bell lab needs, then the workshop lesson Quantum from Zero to One. Open the PDF. Do not paste the slides. | [Quantum from Zero to One](/qolour/) and the vocabulary page |
 | 0:40 | Bell state in Composer | Composer lab |
 | 0:55 | The same Bell state in Python | Python lab |
 | 1:20 | Map, transpile, execute, and interpret | Workflow page |
@@ -40,6 +40,16 @@ Times are a guide for a two-hour Workshop 1 and a 75 to 90 minute Workshop 2. Sh
 | Deliverables and the pull request | Submission page |
 
 Kevin Robinson’s video titles will be listed when they are confirmed. Do not invent titles.
+
+## Workshop lesson
+
+Quantum from Zero to One is the lesson for the workshops. Andrew Chen, Qolour (andrew@qolour.com), wrote this 0-to-1 introduction. It uses Qolour's handheld Qubi.
+
+- Lesson page: [Quantum from Zero to One](/qolour/)
+- PDF: [Open or download the lesson](/downloads/qolour-quantum-from-zero-to-one.pdf)
+- Educator course: <https://www.qolour.com/educator-course>
+
+Point the room at the lesson page. Do not paste the slides into this guide.
 
 ## Room and tech checklist
 
@@ -130,7 +140,7 @@ Send people back to the handbook checklist and the submission page. Remind them 
 
 Earlier drafts hid these notes behind a Co-Host control on the participant pages. They live here instead.
 
-- Read the welcome once. Point at the twelve-step rail. Do not read from a book, and do not paste a Qolour lesson into the slides.
+- Read the welcome once. Point at the twelve-step rail and at [Quantum from Zero to One](/qolour/), the Qolour lesson for the room. Do not read from a book, and do not paste the Qolour slides into this guide.
 - Registration, the rubric, the code of conduct, and unconfirmed rooms stay “Coming soon” or “Details coming soon.”
 - Robert Loredo is the lead. Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads. Do not introduce Kevin Robinson as the lead.
 - The attendance form on this site does not collect passwords, API keys, or CRNs. The static GitHub Pages build does not include the response API.

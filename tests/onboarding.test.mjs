@@ -84,6 +84,32 @@ test("the participant journey is twelve pages fed by one event record", () => {
   assert.doesNotMatch(register, /Grant will send/);
 });
 
+test("the Qolour workshop lesson is on the participant path", () => {
+  assert.match(onboarding, /title: "Quantum from Zero to One"/);
+  assert.match(onboarding, /slug: "qolour"/);
+  assert.match(onboarding, /Andrew Chen, Qolour \(andrew@qolour\.com\)/);
+  assert.match(onboarding, /handheld Qubi/);
+  assert.match(onboarding, /\/downloads\/qolour-quantum-from-zero-to-one\.pdf/);
+  assert.match(onboarding, /QOLOR_COURSE/);
+  const workshop = onboarding.slice(onboarding.indexOf('id: "workshop-1"'), onboarding.indexOf('id: "workshop-2"'));
+  assert.match(workshop, /href: "\/qolour\/"/);
+  assert.match(workshop, /Quantum from Zero to One/);
+  assert.doesNotMatch(onboarding, /The lesson is not in this repo/);
+  assert.doesNotMatch(onboarding, /not in this repo yet/);
+  assert.doesNotMatch(onboarding, /you have one job/i);
+  assert.doesNotMatch(onboarding, /before October 1/i);
+  assert.doesNotMatch(onboarding, /\(external\)/);
+  const guide = readFileSync(new URL("../FACILITATOR_GUIDE.md", import.meta.url), "utf8");
+  assert.match(guide, /## Workshop lesson/);
+  assert.match(guide, /Quantum from Zero to One/);
+  assert.match(guide, /\/qolour\//);
+  assert.match(guide, /qolour-quantum-from-zero-to-one\.pdf/);
+  assert.match(guide, /www\.qolour\.com\/educator-course/);
+  assert.match(guide, /Andrew Chen, Qolour/);
+  const pdf = readFileSync(new URL("../public/downloads/qolour-quantum-from-zero-to-one.pdf", import.meta.url));
+  assert.ok(pdf.subarray(0, 5).toString() === "%PDF-");
+});
+
 test("the start page strip is the journey section names", () => {
   assert.match(view, /aria-label="Sections"/);
   assert.match(view, /item\.title/);

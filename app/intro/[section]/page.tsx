@@ -7,7 +7,7 @@ const DESTINATIONS: Record<string, string> = {
   language: "/python/",
   execution: "/workflow/",
   vocabulary: "/vocabulary/",
-  "qubi-demo": "/vocabulary/",
+  "qubi-demo": "/qolour/",
   bell: "/bell/",
   practice: "/python/",
   "next-step": "/resources/",

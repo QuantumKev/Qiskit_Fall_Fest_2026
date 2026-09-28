@@ -16,9 +16,10 @@ const DOC_ROUTES: Record<string, string> = {
 function rewriteHref(href: string) {
   const [path, hash] = href.split("#");
   const route = DOC_ROUTES[path];
-  if (!route) return href;
   const suffix = hash ? `#${hash}` : "";
-  return `${basePath()}${route}${suffix}`;
+  if (route) return `${basePath()}${route}${suffix}`;
+  if (path.startsWith("/") && !path.startsWith("//")) return `${basePath()}${path}${suffix}`;
+  return href;
 }
 
 export function renderMarkdown(source: string) {
@@ -35,6 +36,7 @@ export function renderMarkdown(source: string) {
     const text = this.parser.parseInline(tokens);
     const next = rewriteHref(href);
     const external = /^https?:\/\//.test(next);
+    if (next.split("#")[0].endsWith(".pdf")) return `<a href="${next}" target="_blank" rel="noopener">${text}</a>`;
     if (!external) return `<a href="${next}">${text}</a>`;
     return `<a href="${next}" target="_blank" rel="noopener noreferrer external">${text}</a>`;
   };

@@ -171,7 +171,8 @@ test("participant pages do not show teaching translations", () => {
   assert.doesNotMatch(modules, /analogies:/);
   assert.doesNotMatch(modules, /statevector-exhibit/);
   assert.match(modules, /www\.qolour\.com\/educator-course/);
-  assert.match(modules, /Andrew, co-founder of Qolour/);
+  assert.match(modules, /Andrew Chen, co-founder of Qolour/);
+  assert.match(modules, /qolour-quantum-from-zero-to-one\.pdf/);
 });
 
 test("exercise 1 keeps placeholders and points at the untrusted-computer path", () => {

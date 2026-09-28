@@ -705,13 +705,13 @@ export const INTRO_CHECKS: Record<string, Check[]> = {
     {
       question: "Where is the Qubi demo script?",
       options: [
-        "Written out on this page",
-        "Not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.",
+        "Written out as full slide text on this page",
+        "In the PDF, Quantum from Zero to One, by Andrew Chen of Qolour",
         "Copied from the Qolour course into this repo",
         "A required hackathon submission",
       ],
       answer: 1,
-      why: "This page is a placeholder. It links to the Qolour educator course and does not copy the course.",
+      why: "Open or download the PDF. The educator course stays on Qolour’s site.",
     },
   ],
   bell: [
@@ -856,8 +856,8 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
     notes: ["Say that a qubit is not simply both 0 and 1.", "Print the sheet if the room wants paper."],
   },
   "qubi-demo": {
-    timing: "10 minutes. The script is not in this guide.",
-    notes: ["The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later. Link only the educator course. Do not paste the course."],
+    timing: "10 minutes. Open the PDF with the room.",
+    notes: ["Quantum from Zero to One is the workshop lesson. Andrew Chen of Qolour wrote it. Link the PDF and the educator course. Do not paste the slides."],
   },
   bell: {
     timing: "One sitting. Composer, then the local sampler, then the line trace.",
@@ -869,7 +869,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   },
   "next-step": {
     timing: "10 minutes. Each person leaves with one link.",
-    notes: ["The Qolour lesson is not here yet. Link only the educator course. Do not paste the course."],
+    notes: ["The workshop lesson is Quantum from Zero to One, on the Qolour lesson page. Link the PDF and the educator course. Do not paste the slides."],
   },
   hackathon: {
     timing: "20 minutes. Kickoff is October 1, 2026.",

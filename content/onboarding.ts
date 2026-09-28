@@ -194,7 +194,11 @@ const start: StepPage = {
       ],
       linkedSteps: [
         { text: "Welcome, then your own IBM account.", hrefs: [{ href: "/account/", label: "Account and tools" }] },
-        { text: "The words the Bell lab needs. Qolour is linked, not copied.", hrefs: [{ href: "/vocabulary/", label: "Vocabulary" }] },
+        {
+          text: "Open the workshop lesson, Quantum from Zero to One. Andrew Chen of Qolour introduces the ideas with the handheld Qubi.",
+          hrefs: [{ href: "/qolour/", label: "Quantum from Zero to One" }],
+        },
+        { text: "The words the Bell lab needs.", hrefs: [{ href: "/vocabulary/", label: "Vocabulary" }] },
         { text: "One Bell state in Composer, then the same circuit in Python and Qiskit.", hrefs: [{ href: "/bell/", label: "Composer" }, { href: "/python/", label: "Python" }] },
         { text: "Map, transpile, execute, and interpret.", hrefs: [{ href: "/workflow/", label: "Workflow" }] },
       ],
@@ -310,13 +314,13 @@ const vocabulary: StepPage = {
   number: "03",
   title: "Basic quantum vocabulary",
   minutes: 20,
-  purpose: "The words for one Bell state. The Qolour course is linked, not copied. The full definition list is the glossary.",
+  purpose: "The words for one Bell state. The workshop lesson is Quantum from Zero to One, by Andrew Chen of Qolour. The full definition list is the glossary.",
   sections: [
     {
       heading: "Qubi and Qolour",
       paragraphs: [
-        "The Qubi lesson is not in this repo yet. Andrew, co-founder of Qolour, will send that lesson later. The two links are the place to visit. This page stays a short vocabulary stop so the Bell lab can start.",
-        "Kevin Robinson’s videos, for before or after the workshop, will be listed when the titles are confirmed. They are not on the Qolour educator-course menu.",
+        "The workshop lesson is Quantum from Zero to One. Andrew Chen, Qolour (andrew@qolour.com), wrote this 0-to-1 introduction. It uses Qolour’s handheld Qubi. Open the PDF from the lesson page, then come back for the words the Bell lab needs.",
+        "The educator course stays on Qolour’s site. This page does not copy it.",
       ],
     },
     {
@@ -338,6 +342,8 @@ const vocabulary: StepPage = {
     "Counts",
   ],
   links: [
+    { href: "/qolour/", label: "Quantum from Zero to One" },
+    { href: "/downloads/qolour-quantum-from-zero-to-one.pdf", label: "Open or download Quantum from Zero to One (PDF)" },
     { href: QOLOR_COURSE, label: "Qolour educator course" },
     { href: QOLOR_EXHIBIT, label: "Qolour statevector exhibit" },
     { href: "/glossary/", label: "Full glossary" },
@@ -390,6 +396,7 @@ const bell: StepPage = {
   showCircuit: true,
   showHistogram: true,
   links: [
+    { href: "/qolour/", label: "Quantum from Zero to One" },
     { href: IBM.composer, label: "IBM Quantum Composer" },
     { href: IBM.composerGuide, label: "Composer guide" },
   ],
@@ -888,6 +895,50 @@ const submit: StepPage = {
   nextLabel: "Open the resource list",
 };
 
+const qolour: StepPage = {
+  slug: "qolour",
+  href: "/qolour/",
+  number: "",
+  title: "Quantum from Zero to One",
+  minutes: 15,
+  purpose:
+    "Welcome. This is the lesson for the workshops. Andrew Chen, Qolour (andrew@qolour.com), wrote Quantum from Zero to One, a 0-to-1 introduction that uses Qolour’s handheld Qubi. Open the PDF or download it and keep it beside you. Bring your curiosity. We’ll help with the qubits.",
+  sections: [
+    {
+      heading: "Open the lesson",
+      paragraphs: [
+        "The PDF is the lesson the workshops use. This page does not reprint the slides. Open it in your browser, or download it and follow along.",
+        "Andrew Chen of Qolour prepared it for people who are new to quantum computing. The handheld Qubi is the device the lesson uses. You can start here even if this is your first quantum workshop.",
+      ],
+    },
+    {
+      heading: "Educator course",
+      paragraphs: [
+        "Qolour also offers an educator course on its own site. Use that link when you want the longer course. This page links to it and does not copy it.",
+      ],
+    },
+  ],
+  links: [
+    { href: "/downloads/qolour-quantum-from-zero-to-one.pdf", label: "Open or download Quantum from Zero to One (PDF)" },
+    { href: QOLOR_COURSE, label: "Qolour educator course" },
+    { href: "/vocabulary/", label: "Vocabulary" },
+    { href: "/bell/", label: "Bell state in Composer" },
+  ],
+  check: {
+    question: "Where do you open the workshop lesson Quantum from Zero to One?",
+    options: [
+      "As full slide text copied onto this page",
+      "In the PDF linked on this page",
+      "As a required hackathon submission",
+      "Only after the statewide announcement",
+    ],
+    answer: 1,
+    why: "Open or download the PDF. Andrew Chen of Qolour wrote it. The educator course stays on Qolour’s site.",
+  },
+  nextHref: "/vocabulary/",
+  nextLabel: "Learn the words this circuit uses",
+};
+
 const resources: StepPage = {
   slug: "resources",
   href: "/resources/",
@@ -916,7 +967,10 @@ const resources: StepPage = {
     },
     {
       heading: "Qolour",
-      paragraphs: [`Educator course: ${QOLOR_COURSE}. Statevector exhibit: ${QOLOR_EXHIBIT}. The lesson is not in this repo.`],
+      paragraphs: [
+        "The workshop lesson is Quantum from Zero to One, by Andrew Chen of Qolour. It uses the handheld Qubi. Open the PDF from the lesson page.",
+        `Educator course: ${QOLOR_COURSE}. Statevector exhibit: ${QOLOR_EXHIBIT}. The educator course stays on Qolour’s site.`,
+      ],
     },
     {
       heading: "Videos",
@@ -939,6 +993,8 @@ const resources: StepPage = {
     },
   ],
   links: [
+    { href: "/qolour/", label: "Quantum from Zero to One" },
+    { href: "/downloads/qolour-quantum-from-zero-to-one.pdf", label: "Open or download Quantum from Zero to One (PDF)" },
     { href: "/handbook/", label: "Participant handbook" },
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/glossary/", label: "Glossary" },
@@ -974,7 +1030,7 @@ export const JOURNEY: StepPage[] = [
   submit,
 ];
 
-export const PAGES: StepPage[] = [...JOURNEY.filter((page) => page.slug !== "start"), resources];
+export const PAGES: StepPage[] = [...JOURNEY.filter((page) => page.slug !== "start"), qolour, resources];
 
 export function pageBySlug(slug: string) {
   return PAGES.find((page) => page.slug === slug);
@@ -983,6 +1039,7 @@ export function pageBySlug(slug: string) {
 export const AREA_LINKS: { href: string; label: string }[] = [
   { href: "/#event", label: "Understand the event" },
   { href: "/#workshop-1", label: "Workshop 1" },
+  { href: "/qolour/", label: "Quantum from Zero to One" },
   { href: "/#workshop-2", label: "Workshop 2" },
   { href: "/handbook/", label: "Participant handbook" },
   { href: "/roles/", label: "Domain/Industry Expert" },

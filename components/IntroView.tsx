@@ -402,14 +402,24 @@ function TraceBody() {
 function QubiDemoBody() {
   return (
     <div className="stack">
-      <aside className="placeholder">
-        <h2>Placeholder</h2>
-        <p>The lesson is not here yet. Andrew, co-founder of Qolour, will send a quick lesson later.</p>
-      </aside>
+      <h2>Quantum from Zero to One</h2>
       <p>
-        <a href="https://www.qolour.com/educator-course">Qolour educator course</a>
+        This is the lesson for the workshops. Andrew Chen, Qolour (andrew@qolour.com), wrote this 0-to-1 introduction. It uses Qolour’s handheld Qubi. Open the PDF or download it. This page does not reprint the slides.
       </p>
-      <p>The course stays on Qolour. This page does not copy it.</p>
+      <p>
+        <a href={withBase("/qolour/")}>Quantum from Zero to One</a>
+      </p>
+      <p>
+        <a href={withBase("/downloads/qolour-quantum-from-zero-to-one.pdf")} target="_blank" rel="noopener">
+          Open or download the lesson (PDF)
+        </a>
+      </p>
+      <p>
+        <a href="https://www.qolour.com/educator-course" target="_blank" rel="noopener noreferrer">
+          Qolour educator course
+        </a>
+      </p>
+      <p>The educator course stays on Qolour. This page does not copy it.</p>
     </div>
   );
 }
@@ -488,7 +498,9 @@ function NextBody() {
           </li>
         ))}
       </ul>
-      <p>The Qolour lesson is not here yet. This guide links to the educator course and does not copy it.</p>
+      <p>
+        The workshop lesson is <a href={withBase("/qolour/")}>Quantum from Zero to One</a>, by Andrew Chen of Qolour. This guide links to the educator course and does not copy it.
+      </p>
     </div>
   );
 }
