@@ -117,25 +117,12 @@ button, input, select {
   max-width: 100%;
 }
 
-.cover-ibm-slot {
+.cover-ibm {
+  display: block;
   flex: none;
   width: 272px;
-  min-height: calc(272px * 1500 / 3903);
-  display: grid;
-  place-items: center;
-  padding: 10px 12px;
-  border: 1px dashed rgba(242, 240, 233, 0.5);
-  background: rgba(242, 240, 233, 0.04);
-}
-
-.cover-ibm-label {
-  margin: 0;
-  max-width: 16rem;
-  font-family: var(--font-mono);
-  font-size: var(--text-caption);
-  line-height: 1.4;
-  text-align: center;
-  color: var(--bone);
+  height: auto;
+  background: #fff;
 }
 
 .cover-badge-plate {
@@ -608,7 +595,7 @@ select, input[type="search"], .filters input {
     align-items: flex-start;
     gap: 22px;
   }
-  .cover-ibm-slot { width: 208px; min-height: calc(208px * 1500 / 3903); }
+  .cover-ibm { width: 208px; }
   .cover-badge-plate { width: 140px; height: 140px; }
   .cover-badge { width: 124px; height: 124px; }
   .fest-banner { max-height: 200px; }

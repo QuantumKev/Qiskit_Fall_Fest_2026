@@ -58,12 +58,14 @@ test("visitor pages do not link to private handbook files on GitHub", () => {
   assert.match(joined, /\/catalog\//);
 });
 
-test("the home lockup reserves the IBM Quantum slot and shows the Fall Fest badge", () => {
+test("the home lockup shows the IBM Quantum wordmark and the Fall Fest badge", () => {
   const view = readFileSync(new URL("../components/OnboardingView.tsx", import.meta.url), "utf8");
-  assert.match(view, /IBM_Quantum_logotype_rev_RGB\.png is not in this repo/);
-  assert.match(view, /Space reserved for the IBM Quantum logo/);
-  assert.match(view, /alt text is "IBM Quantum"/);
-  assert.doesNotMatch(view, /IBM_Quantum_logotype\.jpg/);
+  assert.match(view, /withBase\("\/brand\/IBM_Quantum_logotype_cover\.jpg"\)/);
+  assert.match(view, /width=\{3903\}/);
+  assert.match(view, /height=\{1500\}/);
+  assert.match(view, /alt="IBM Quantum"/);
+  assert.doesNotMatch(view, /Space reserved/);
+  assert.doesNotMatch(view, /IBM_Quantum_logotype_rev/);
   assert.doesNotMatch(view, /qiskit_white\.svg/);
   assert.doesNotMatch(view, /stickers\/cloud\.svg/);
   assert.doesNotMatch(view, /stickers\/theme-magenta\.svg/);

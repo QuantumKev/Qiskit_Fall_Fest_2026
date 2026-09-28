@@ -101,10 +101,15 @@ function CheckCard({ check }: { check: Check }) {
 function CoverLockup() {
   return (
     <div className="cover-lockup">
-      {/* IBM_Quantum_logotype_rev_RGB.png is not in this repo. The slot stays empty until that reverse wordmark is added. Its alt text is "IBM Quantum". */}
-      <div className="cover-ibm-slot">
-        <p className="cover-ibm-label">Space reserved for the IBM Quantum logo</p>
-      </div>
+      <Image
+        className="cover-ibm"
+        src={withBase("/brand/IBM_Quantum_logotype_cover.jpg")}
+        width={3903}
+        height={1500}
+        alt="IBM Quantum"
+        priority
+        unoptimized
+      />
       <div className="cover-badge-plate">
         <Image
           className="cover-badge"
