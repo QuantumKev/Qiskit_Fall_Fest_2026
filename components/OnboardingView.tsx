@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Fragment, useState, type ReactNode } from "react";
 import { BellFigure, ExpectedHistogram } from "@/components/BellFigure";
 import { CopyBlock } from "@/components/CopyBlock";
+import { DecorImage, FestBanner } from "@/components/FestArt";
 import { HostDirectory } from "@/components/HostDirectory";
 import { useProgress } from "@/components/store";
 import { EVENT } from "@/content/event";
@@ -97,6 +98,33 @@ function CheckCard({ check }: { check: Check }) {
   );
 }
 
+function CoverLockup() {
+  return (
+    <div className="cover-lockup">
+      <Image
+        className="cover-ibm"
+        src={withBase("/brand/IBM_Quantum_logotype_cover.jpg")}
+        width={3903}
+        height={1500}
+        alt="IBM Quantum"
+        priority
+        unoptimized
+      />
+      <div className="cover-badge-plate">
+        <Image
+          className="cover-badge"
+          src={withBase("/assets/fall-fest-2026/badge-black-circular-qiskit-fall-fest-2026.png")}
+          width={318}
+          height={318}
+          alt="Qiskit Fall Fest 2026"
+          priority
+          unoptimized
+        />
+      </div>
+    </div>
+  );
+}
+
 export function OnboardingView({ page, children }: { page: StepPage; children?: ReactNode }) {
   const { done, toggleDone } = useProgress();
   const complete = done.includes(page.slug);
@@ -112,45 +140,13 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
             ? `Step ${page.number} of ${JOURNEY.length} · ${page.minutes} min`
             : `Reference · ${page.minutes} min`}
       </p>
+      {page.slug === "start" ? <CoverLockup /> : null}
       <h1>{page.slug === "start" ? EVENT.name : page.title}</h1>
       {page.slug === "start" ? (
-        <>
-          <div className="logo-lockup">
-            <div className="logo-lockup-marks">
-              <Image
-                className="logo-lockup-mark logo-lockup-ibm"
-                src={withBase("/brand/IBM_Quantum_logotype.jpg")}
-                width={3903}
-                height={1500}
-                alt="IBM Quantum"
-                unoptimized
-              />
-              <Image
-                className="logo-lockup-mark logo-lockup-qiskit"
-                src={withBase("/brand/qiskit_white.svg")}
-                width={32}
-                height={32}
-                alt="Qiskit"
-                unoptimized
-              />
-            </div>
-            <div className="logo-lockup-copy">
-              <p className="brand-line">{EVENT.seriesLine}</p>
-              <p className="brand-line">Supported by IBM Quantum.</p>
-            </div>
-          </div>
-          <ul className="sticker-row">
-            <li>
-              <Image className="sticker sticker-qiskit" src={withBase("/brand/stickers/qiskit-white.svg")} width={204} height={81} alt="Qiskit" unoptimized />
-            </li>
-            <li>
-              <Image className="sticker sticker-theme" src={withBase("/brand/stickers/theme-magenta.svg")} width={463} height={81} alt="a decade of quantum on the cloud" unoptimized />
-            </li>
-            <li>
-              <Image className="sticker sticker-cloud" src={withBase("/brand/stickers/cloud.svg")} width={447} height={142} alt="Cloud sticker" unoptimized />
-            </li>
-          </ul>
-        </>
+        <div className="cover-support">
+          <p className="brand-line">{EVENT.seriesLine}</p>
+          <p className="brand-line">Supported by IBM Quantum.</p>
+        </div>
       ) : null}
       <p className="lede">{page.purpose}</p>
       {page.slug === "start" ? (
@@ -167,10 +163,28 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
         </nav>
       ) : null}
 
+      {page.slug === "workflow" ? (
+        <div className="fest-banner-row">
+          <FestBanner file="hero-pink-badge-hummingbirds.png" width={7680} height={4320} />
+          <div className="fest-rail" aria-hidden="true">
+            <DecorImage file="sticker-eagle.png" width={3635} height={3776} className="fest-sticker" />
+            <DecorImage file="globe-gray.png" width={755} height={755} className="fest-globe" />
+          </div>
+        </div>
+      ) : null}
+
       {page.sections.map((section) => {
         const id = section.id || slugify(section.heading);
         return (
           <Fragment key={id}>
+          {page.slug === "start" && section.id === "event" ? (
+            <FestBanner
+              file="hero-birds-qiskit-fall-fest-2026.png"
+              width={4221}
+              height={2704}
+              pill={{ file: "text-quantum-blue-pill.png", width: 739, height: 268 }}
+            />
+          ) : null}
           <section id={id} className="prose card">
             <h2>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
@@ -233,8 +247,20 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
         </section>
       ) : null}
 
-      {page.showCircuit ? <BellFigure /> : null}
-      {page.showHistogram ? <ExpectedHistogram /> : null}
+      {page.showCircuit || page.showHistogram ? (
+        <div className={page.slug === "bell" ? "bell-layout" : "stack"}>
+          <div className="stack bell-figures">
+            {page.showCircuit ? <BellFigure /> : null}
+            {page.showHistogram ? <ExpectedHistogram /> : null}
+          </div>
+          {page.slug === "bell" ? (
+            <div className="fest-rail" aria-hidden="true">
+              <DecorImage file="sticker-paired-birds.png" width={1526} height={1526} className="fest-sticker" />
+              <DecorImage file="globe-purple.png" width={755} height={755} className="fest-globe" />
+            </div>
+          ) : null}
+        </div>
+      ) : null}
 
       {page.table ? (
         <section className="prose card">

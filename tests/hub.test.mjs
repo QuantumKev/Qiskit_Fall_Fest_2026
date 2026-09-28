@@ -58,17 +58,21 @@ test("visitor pages do not link to private handbook files on GitHub", () => {
   assert.match(joined, /\/catalog\//);
 });
 
-test("the home lockup serves the Qiskit mark through the base path", () => {
+test("the home lockup shows the IBM Quantum wordmark and the Fall Fest badge", () => {
   const view = readFileSync(new URL("../components/OnboardingView.tsx", import.meta.url), "utf8");
-  assert.doesNotMatch(view, /IBM_Quantum_logotype_rev/);
-  assert.match(view, /withBase\("\/brand\/IBM_Quantum_logotype\.jpg"\)/);
+  assert.match(view, /withBase\("\/brand\/IBM_Quantum_logotype_cover\.jpg"\)/);
   assert.match(view, /width=\{3903\}/);
   assert.match(view, /height=\{1500\}/);
   assert.match(view, /alt="IBM Quantum"/);
-  assert.match(view, /withBase\("\/brand\/qiskit_white\.svg"\)/);
-  assert.match(view, /width=\{32\}/);
-  assert.match(view, /height=\{32\}/);
-  assert.match(view, /alt="Qiskit"/);
+  assert.doesNotMatch(view, /Space reserved/);
+  assert.doesNotMatch(view, /IBM_Quantum_logotype_rev/);
+  assert.doesNotMatch(view, /qiskit_white\.svg/);
+  assert.doesNotMatch(view, /stickers\/cloud\.svg/);
+  assert.doesNotMatch(view, /stickers\/theme-magenta\.svg/);
+  assert.match(view, /badge-black-circular-qiskit-fall-fest-2026\.png/);
+  assert.match(view, /width=\{318\}/);
+  assert.match(view, /height=\{318\}/);
+  assert.match(view, /alt="Qiskit Fall Fest 2026"/);
   assert.match(view, /seriesLine/);
   assert.match(view, /Supported by IBM Quantum\./);
   assert.doesNotMatch(view, /IBM sponsors/);
