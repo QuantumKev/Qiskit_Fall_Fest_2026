@@ -22,7 +22,6 @@ function ExternalAnchor({ href, children }: { href: string; children: ReactNode 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer external">
       {children}
-      <span className="external-mark"> (external)</span>
     </a>
   );
 }

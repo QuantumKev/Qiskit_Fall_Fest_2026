@@ -83,7 +83,7 @@ Restart a kernel on purpose if the room hits a `NameError`, so people see that t
 
 ## Knowledge-check guidance
 
-The checks on the participant pages are practice. Ask people to choose an answer and read the explanation the page shows after they choose. Do not keep a separate answer key, and do not read correct options aloud from a private sheet. An unexpected choice is a chance to restate the idea in plain language. Unexpected results are part of learning. The participant-facing welcome is: Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together. Bring your curiosity. We’ll help with the qubits.
+The checks on the participant pages are practice. Ask people to choose an answer and read the explanation the page shows after they choose. Do not keep a separate answer key, and do not read correct options aloud from a private sheet. An unexpected choice is a chance to restate the idea in plain language. Unexpected results are part of learning. The participant-facing welcome is: Here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together. Bring your curiosity. We’ll help with the qubits.
 
 ## Handoff between Workshop 1 and Workshop 2
 

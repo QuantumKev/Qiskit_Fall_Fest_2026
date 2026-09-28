@@ -14,7 +14,7 @@ Bring your curiosity. We’ll help with the qubits.
 
 You belong in this room if quantum computing is new to you. The Domain/Industry Expert pathway is a full role. You know which problems are real, which constraints bind, and what a useful result would mean in your field. A builder can learn a circuit in a weekend. Your context took longer than that, and the team needs it.
 
-Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.
+Here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.
 
 The algorithms are in textbooks. The code is on GitHub. IBM Quantum gives you a real quantum computer from a browser tab, on the free Open Plan. What makes a project memorable is someone who can say, with care, *"that's not how procurement actually works,"* or *"our routing constraints look like this,"* or *"even if this worked perfectly, the regulator would ask a different question, and here's why."*
 

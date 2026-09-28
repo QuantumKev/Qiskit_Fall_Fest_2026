@@ -58,7 +58,6 @@ export default function SupportPage() {
         <li>
           <a href={EVENT.discord} target="_blank" rel="noopener noreferrer external">
             Discord
-            <span className="external-mark"> (external)</span>
           </a>
         </li>
         <li>
@@ -67,13 +66,11 @@ export default function SupportPage() {
         <li>
           <a href={QISKIT_APPROVED_SITE} target="_blank" rel="noopener noreferrer external">
             Qiskit-approved website
-            <span className="external-mark"> (external)</span>
           </a>
         </li>
         <li>
           <a href="https://qisk.it/join-slack" target="_blank" rel="noopener noreferrer external">
             Qiskit Slack
-            <span className="external-mark"> (external)</span>
           </a>
         </li>
       </ul>

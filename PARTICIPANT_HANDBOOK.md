@@ -4,7 +4,7 @@
 
 ## 0. The five-minute version
 
-Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.
+Here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.
 
 Bring your curiosity. We’ll help with the qubits.
 
@@ -40,7 +40,7 @@ Essential pre-work is only what you need to access the event. The labels below k
 
 - The Bell labs, team formation, and opening the submission pull request
 
-If you have about 30 minutes before October 1, the IBM Quantum account is the piece that lets you in. The recommended items make the first hour easier. We will cover the rest with you.
+If you have about 30 minutes, the IBM Quantum account is the piece that lets you in. The recommended items make the first hour easier. We will cover the rest with you.
 
 ---
 

@@ -561,7 +561,7 @@ export const WINNER_PACKET =
   "Local first-place winners (names, emails, deck, and GitHub project link) are due to the hosts no later than October 31.";
 
 export const BEFORE_KICKOFF = [
-  "Required before participating: create your own IBM Quantum account. Handbook section 4. Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.",
+  "Required before participating: create your own IBM Quantum account. Handbook section 4. Here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.",
   "Recommended before the workshop: register when you can. The official link is still Coming soon. The attendance form does not collect passwords, API keys, or CRNs.",
   "Recommended before the workshop: join the chat. The Discord invite is the URL for that.",
   "Recommended before the workshop: the participant repository is https://github.com/QuantumKev/Qiskit_Fall_Fest_2026. A separate event organization is TBA. We will open the pull request together.",

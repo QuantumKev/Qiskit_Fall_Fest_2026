@@ -36,7 +36,7 @@ export function renderMarkdown(source: string) {
     const next = rewriteHref(href);
     const external = /^https?:\/\//.test(next);
     if (!external) return `<a href="${next}">${text}</a>`;
-    return `<a href="${next}" target="_blank" rel="noopener noreferrer external">${text}<span class="external-mark"> (external)</span></a>`;
+    return `<a href="${next}" target="_blank" rel="noopener noreferrer external">${text}</a>`;
   };
 
   const html = marked.parse(source, { gfm: true, renderer, async: false }) as string;

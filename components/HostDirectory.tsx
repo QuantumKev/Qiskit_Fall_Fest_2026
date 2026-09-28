@@ -37,7 +37,6 @@ export function HostDirectory() {
               {host.registration ? (
                 <a href={host.registration} target="_blank" rel="noopener noreferrer external">
                   Local registration
-                  <span className="external-mark"> (external)</span>
                 </a>
               ) : (
                 EVENT.unconfirmedDetails

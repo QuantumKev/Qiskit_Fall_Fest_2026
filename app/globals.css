@@ -634,8 +634,6 @@ select, input[type="search"], .filters input {
   .card.fest-section { padding-right: 112px; }
 }
 
-.external-mark { font-family: var(--font-mono); font-size: 0.75em; letter-spacing: 0; }
-
 .area-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .area-grid a {

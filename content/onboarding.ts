@@ -118,7 +118,7 @@ const start: StepPage = {
   number: "01",
   title: "Start here",
   minutes: 10,
-  purpose: `Bring your curiosity. We’ll help with the qubits. Before October 1, here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together. ${EVENT.name} is part of ${EVENT.series}. You will leave with an account, one Bell state, and an honest project frame. You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations.`,
+  purpose: `Bring your curiosity. We’ll help with the qubits. Here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together. ${EVENT.name} is part of ${EVENT.series}. You will leave with an account, one Bell state, and an honest project frame. You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations.`,
   sections: [
     {
       id: "prepare",

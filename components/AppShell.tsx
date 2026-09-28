@@ -84,11 +84,9 @@ function Footer() {
         <Link href="/catalog/">Notebook catalog</Link>
         <a href={EVENT.discord} target="_blank" rel="noopener noreferrer external">
           Discord
-          <span className="external-mark"> (external)</span>
         </a>
         <a href={QISKIT_APPROVED_SITE} target="_blank" rel="noopener noreferrer external">
           Qiskit-approved website
-          <span className="external-mark"> (external)</span>
         </a>
         {CO_LEADS.map((lead) =>
           lead.email ? (
