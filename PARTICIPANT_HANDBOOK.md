@@ -27,7 +27,7 @@ Essential pre-work is only what you need to access the event. The labels below k
 **Recommended before the workshop**
 
 - [ ] Join the chat → <https://discord.gg/vz6uTbtJzR>
-- [ ] Create a GitHub account → §6. You will use it for the submission. The day-one clinic walks through the pull request.
+- [ ] Create a GitHub account and ask to join the private project repository at <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026> → §6. You will use it for the submission. The day-one clinic walks through the pull request.
 - [ ] Read §2 (what we're actually building) and skim [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md)
 - [ ] Start a problem or topic that interests you. A half-formed idea is a great start.
 
@@ -329,19 +329,20 @@ IBM’s hello-world guide shows the same four-step pattern, and then a much larg
 
 ### 6.2 Join the event repository
 
+The project repository is private. Ask to join it. An organizer adds your GitHub account.
+
 1. Create a GitHub account if you do not have one.
-2. The separate event organization, if organizers publish one, is **TBA**. Until then, the participant site and the submission template live in <https://github.com/QuantumKev/Qiskit_Fall_Fest_2026>.
-3. Star that repository if you want GitHub notifications.
-4. Do not send a password or an API key to the organizers. A GitHub username is enough when they ask for one.
+2. Ask to join <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026>. Send your GitHub username in the event chat, or tell your local host. Do not send a password or an API key. A GitHub username is enough.
+3. When you can open the repository, star it if you want GitHub notifications.
+4. This website is the guide. Your team’s project goes in the private repository above.
 
 ### 6.3 Repository layout
 
+After you can open the repository, the project folders look like this:
+
 ```
-Qiskit_Fall_Fest_2026/
+FAU-Qiskit-Fallfest-2026/
 ├── README.md
-├── PARTICIPANT_HANDBOOK.md
-├── NON-TECHNICAL-TRACK.md
-├── NOTEBOOK-CATALOG.md
 ├── challenges/                ← Coming soon, with the October 1 challenge release
 └── submissions/
     ├── _TEMPLATE/             ← copy this
@@ -350,12 +351,12 @@ Qiskit_Fall_Fest_2026/
 
 ### 6.4 How to submit
 
-Teams work on a branch, then open a pull request. If this is new, the day-one GitHub clinic is for you. It takes about fifteen minutes, and we would rather walk through it together than leave you to discover it late.
+Teams work on a branch in the private project repository, then open a pull request. Ask to join the repository first. If this is new, the day-one GitHub clinic is for you. It takes about fifteen minutes, and we would rather walk through it together than leave you to discover it late.
 
 ```bash
-# One-time
-git clone https://github.com/QuantumKev/Qiskit_Fall_Fest_2026.git
-cd Qiskit_Fall_Fest_2026
+# After you can open the private repository
+git clone https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026.git
+cd FAU-Qiskit-Fallfest-2026
 
 # Start your team's work
 git checkout -b team-<yourteamname>
@@ -557,6 +558,7 @@ Use the labels. You do not need every box ticked before you walk in.
 
 - [ ] Joined <https://discord.gg/vz6uTbtJzR> and said hello
 - [ ] GitHub account created, email verified, 2FA on (§6.1)
+- [ ] Asked to join the private project repository at <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026>
 - [ ] Read §2 and have a sense of what a good project looks like
 - [ ] Started thinking about a problem or topic that interests me
 - [ ] Skimmed [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md)

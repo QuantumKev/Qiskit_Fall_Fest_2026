@@ -176,7 +176,7 @@ Not a menu to pick from, a demonstration of what "quantum-shaped" looks like in 
 
 Fill this in before you arrive. One page. Bring it to team formation and read it out, this is how teams find each other.
 
-Copy this block into `submissions/team-<name>/USE-CASE.md` when you form a team.
+Copy this block into `submissions/team-<name>/USE-CASE.md` when you form a team. That folder lives in the private project repository: <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026>. Ask to join it.
 
 ```markdown
 # Use-Case Canvas

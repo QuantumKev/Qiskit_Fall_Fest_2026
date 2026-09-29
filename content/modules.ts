@@ -1,3 +1,4 @@
+import { EVENT } from "@/content/event";
 import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
 
 export type Check = {
@@ -581,7 +582,7 @@ export const MODULES: Module[] = [
           "Cybersecurity professional: this workshop is not a cryptography course. Portfolio: a list of quantum claims you will not make, plus your organization’s own crypto-agility guidance.",
           "Community builder: facilitate Module 1 next time. Portfolio: a cleaned troubleshooting note with secrets removed.",
           "Machine learning is the next part of this journey, at /intro/qml. It is not a separate required hackathon challenge. The handbook names the 10-hour quantum machine learning course, plus the quantum-kernel and projected-kernel tutorials. That source is still being reread. Iterate on a simulator. Open Plan QPU time is 10 minutes per 28-day window. This workshop does not promise more minutes.",
-          "Fall Fest projects use the participant handbook. The public name is Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. Kickoff and challenge release are October 1, 2026. Official registration is Coming soon.",
+          `Fall Fest projects use the participant handbook. The public name is Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. Kickoff and challenge release are October 1, 2026. Official registration is Coming soon. Your project goes in the private repository ${EVENT.participantRepo}. Ask to join it.`,
         ],
       },
     ],

@@ -7,6 +7,7 @@ import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { useProgress } from "@/components/store";
 import { QISKIT_APPROVED_SITE } from "@/content/event";
 import { withBase } from "@/lib/base-path";
+import { linkifyPlainText } from "@/lib/link-text.mjs";
 import { GLOSSARY } from "@/content/glossary";
 import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
 import {
@@ -505,12 +506,27 @@ function NextBody() {
   );
 }
 
+function LinkedText({ text }: { text: string }) {
+  const parts = linkifyPlainText(text);
+  return parts.map((part, index) =>
+    part.type === "url" ? (
+      <a key={`${part.value}-${index}`} href={part.value} target="_blank" rel="noopener noreferrer external">
+        {part.value}
+      </a>
+    ) : (
+      <span key={`text-${index}`}>{part.value}</span>
+    ),
+  );
+}
+
 function FallFestLinkList() {
   return (
     <ul>
       {FALL_FEST_LINKS.map((link) => (
         <li key={link.href}>
-          <a href={link.href}>{link.label}</a>
+          <a href={link.href} target="_blank" rel="noopener noreferrer external">
+            {link.label}
+          </a>
         </li>
       ))}
     </ul>
@@ -529,7 +545,9 @@ function HackathonBody() {
       <h2>Before kickoff</h2>
       <ol>
         {BEFORE_KICKOFF.map((step) => (
-          <li key={step}>{step}</li>
+          <li key={step}>
+            <LinkedText text={step} />
+          </li>
         ))}
       </ol>
       <p>{COST_LINE} The code-of-conduct link is still a local-organizer placeholder. Help is the unset chat link, plus Qiskit Slack and IBM Quantum docs.</p>
@@ -574,13 +592,17 @@ function HackathonBody() {
       <h2>Submit</h2>
       <ol>
         {SUBMISSION_STEPS.map((step) => (
-          <li key={step}>{step}</li>
+          <li key={step}>
+            <LinkedText text={step} />
+          </li>
         ))}
       </ol>
       <h2>Join</h2>
       <ul>
         {JOIN_FACTS.map((fact) => (
-          <li key={fact}>{fact}</li>
+          <li key={fact}>
+            <LinkedText text={fact} />
+          </li>
         ))}
       </ul>
       <p>The workshop registration form on this site records that you are attending this room. It is a different list from the unset Fall Fest registration link.</p>

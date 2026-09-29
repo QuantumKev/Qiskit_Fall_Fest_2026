@@ -133,7 +133,10 @@ export const EVENT = {
   openPlan: "up to 10 minutes of QPU execution time per rolling 28-day window",
   region: "us-east",
   programEmail: PROGRAM_EMAIL,
+  /** Source of this website. Participant projects are not submitted here. */
   repo: "https://github.com/QuantumKev/Qiskit_Fall_Fest_2026",
+  /** Private project repository. Participants ask to join. */
+  participantRepo: "https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026",
   branch: "cursor/participant-hub-refresh",
   pagesSite: "https://quantumkev.github.io/Qiskit_Fall_Fest_2026/",
   approvedSite: QISKIT_APPROVED_SITE,

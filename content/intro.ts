@@ -1,4 +1,4 @@
-import { CO_LEADS, LEAD, QISKIT_APPROVED_SITE } from "@/content/event";
+import { CO_LEADS, EVENT, LEAD, QISKIT_APPROVED_SITE } from "@/content/event";
 import type { Check } from "@/content/modules";
 
 export const INTRO_TITLE = "Build Your First Quantum Program: A Beginner’s Guide to Python and Qiskit";
@@ -496,6 +496,7 @@ export const QML_PROJECTED = "https://quantum.cloud.ibm.com/docs/en/tutorials/pr
 export const FALL_FEST_LINKS = [
   { label: "Qiskit-approved website", href: QISKIT_APPROVED_SITE },
   { label: "Discord", href: "https://discord.gg/vz6uTbtJzR" },
+  { label: "Ask to join the project repository", href: EVENT.participantRepo },
   { label: "IBM Quantum registration", href: "https://quantum.cloud.ibm.com/registration" },
   { label: "Qiskit Slack", href: "https://qisk.it/join-slack" },
   { label: "IBM announcement", href: "https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026" },
@@ -539,7 +540,6 @@ export const HACKATHON_GAPS = [
   "Official registration link. Coming soon.",
   "Code of conduct. Coming soon.",
   "Shared rubric weights. Coming soon.",
-  "A separate GitHub organization, if organizers publish one. TBA.",
   "Rooms and addresses that are not the two confirmed venues. TBA.",
   "Statewide announcement venue and time on November 13, 2026. TBA.",
   "Whether every campus day is limited to enrolled students. TBA.",
@@ -564,7 +564,7 @@ export const BEFORE_KICKOFF = [
   "Required before participating: create your own IBM Quantum account. Handbook section 4. Here are two simple ways to prepare: create your IBM Quantum account and start thinking about a problem or topic that interests you. No prior quantum experience is required—we’ll guide you through the rest together.",
   "Recommended before the workshop: register when you can. The official link is still Coming soon. The attendance form does not collect passwords, API keys, or CRNs.",
   "Recommended before the workshop: join the chat. The Discord invite is the URL for that.",
-  "Recommended before the workshop: the participant repository is https://github.com/QuantumKev/Qiskit_Fall_Fest_2026. A separate event organization is TBA. We will open the pull request together.",
+  `Recommended before the workshop: ask to join the private project repository at ${EVENT.participantRepo}. Send your GitHub username. We will open the pull request together.`,
 ];
 
 export const COST_LINE =
@@ -599,7 +599,8 @@ export const VALID_SKEPTICAL =
   "A write-up that a problem is not quantum-shaped is a valid submission, and the materials call that better than average.";
 
 export const SUBMISSION_STEPS = [
-  "Work on a branch named team-<name>.",
+  `Ask to join the private project repository at ${EVENT.participantRepo}. Send your GitHub username. We will open the pull request together.`,
+  "Work on a branch named team-<name> in that repository.",
   "Copy submissions/_TEMPLATE into submissions/team-<name>.",
   "Open a pull request to main titled [SUBMISSION] Team <name> — <project title>. Draft the pull request early.",
   "Include README.md, a notebook or source, USE-CASE.md, requirements.txt if there is code, and slides or a demo video.",
@@ -611,7 +612,7 @@ export const JOIN_FACTS = [
   "Registration URL: still Coming soon.",
   "Chat: https://discord.gg/vz6uTbtJzR.",
   "Create your own IBM Quantum account.",
-  "A separate GitHub organization is TBA. Submissions use the template in this repository until organizers publish a different one.",
+  `The project repository is private. Ask to join ${EVENT.participantRepo}. An organizer adds your GitHub account.`,
   "You do not need a team before kickoff. Team formation is at kickoff.",
 ];
 

@@ -124,6 +124,7 @@ Use Discord for errors that are safe to share: <https://discord.gg/vz6uTbtJzR>. 
 
 ## Submission-support checklist
 
+- The project repository is private. Ask participants to join <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026>. Their submission goes there.
 - The branch is `team-<name>` and the pull request title is `[SUBMISSION] Team <name> — <project title>`.
 - README, USE-CASE, and LIMITATIONS are present.
 - A classical baseline sits next to any quantum number.

@@ -1,6 +1,6 @@
 # Team <name> — <project title>
 
-Replace this heading with the project title. Open a pull request against `main` titled:
+Replace this heading with the project title. This folder is copied inside the private project repository: https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026. Ask to join it before you clone or open a pull request. Open a pull request against `main` titled:
 
 `[SUBMISSION] Team <name> — <project title>`
 

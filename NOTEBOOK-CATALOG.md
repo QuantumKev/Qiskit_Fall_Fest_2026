@@ -188,6 +188,8 @@ Then Run All. Two caveats: Colab sessions time out and lose state, so save your 
 
 Event-specific starter notebooks beyond this catalog are **Coming soon**. They are scheduled with the October 1, 2026 challenge release.
 
+Hackathon projects are submitted in the private repository <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026>. Ask to join it. Copy `submissions/_TEMPLATE` there after you can open the repository.
+
 ---
 
-*Found something excellent that isn't listed, or a link that's broken? Open a PR against this file. Curating this catalog is itself a contribution and we'll credit it.*
+*Found something excellent that isn't listed, or a link that's broken? Tell us in Discord. Curating this catalog is welcome. Team projects go in the private repository above.*

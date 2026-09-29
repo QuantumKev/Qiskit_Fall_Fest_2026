@@ -6,6 +6,20 @@ import type { Check, Module } from "@/content/modules";
 import { LAST_VERIFIED } from "@/content/modules";
 import { CopyBlock } from "@/components/CopyBlock";
 import { useProgress, type Survey } from "@/components/store";
+import { linkifyPlainText } from "@/lib/link-text.mjs";
+
+function LinkedText({ text }: { text: string }) {
+  const parts = linkifyPlainText(text);
+  return parts.map((part, index) =>
+    part.type === "url" ? (
+      <a key={`${part.value}-${index}`} href={part.value} target="_blank" rel="noopener noreferrer external">
+        {part.value}
+      </a>
+    ) : (
+      <span key={`text-${index}`}>{part.value}</span>
+    ),
+  );
+}
 
 function CheckCard({ check }: { check: Check }) {
   const [picked, setPicked] = useState<number | null>(null);
@@ -96,7 +110,9 @@ export function ModuleView({ module }: { module: Module }) {
         <section key={section.heading} className="prose">
           <h2>{section.heading}</h2>
           {section.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph}>
+              <LinkedText text={paragraph} />
+            </p>
           ))}
           {section.steps ? (
             <ol>

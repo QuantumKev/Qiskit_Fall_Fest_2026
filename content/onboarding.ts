@@ -127,7 +127,7 @@ const start: StepPage = {
       ],
       steps: [
         "Required before participating: your own IBM Quantum account. Official registration is Coming soon. Until then, the attendance form on this site tells us you are coming. It does not collect passwords, API keys, or CRNs.",
-        "Recommended before the workshop: a GitHub account, a look at what a project can be, and a topic or problem that interests you.",
+        `Recommended before the workshop: a GitHub account, a look at what a project can be, and a topic or problem that interests you. Ask to join the private project repository at ${EVENT.participantRepo}. Send your GitHub username.`,
         "Optional next step: a few minutes in Composer, a short IBM course, or a local Qiskit install if you already like working that way.",
         "We will complete this together: the Bell labs, team formation, and the submission walk-through.",
       ],
@@ -592,7 +592,7 @@ const roles: StepPage = {
           ["Coding", "Optional", "Python and Qiskit", "Either person can pair"],
           ["Account", "Your own IBM Quantum account", "Your own account, and a local install when you code", "No shared passwords or API keys"],
           ["Comparison", "Name the classical method and what better would mean", "Measure the baseline and the quantum run", "Do not promise the quantum result will win"],
-          ["Submission", "Use-case, limitations, and the story", "Notebooks or source the team can run", "One pull request on the approved branch"],
+          ["Submission", "Use-case, limitations, and the story", "Notebooks or source the team can run", `One pull request in ${EVENT.participantRepo}. Ask to join it.`],
         ],
       },
     },
@@ -838,8 +838,8 @@ const submit: StepPage = {
     {
       heading: "The pull request",
       paragraphs: [
-        "Copy submissions/_TEMPLATE/ to submissions/team-<name>/. Branch name: team-<name>. Pull request title: [SUBMISSION] Team <name> — <project title>.",
-        `Open it when you have a draft to share, and keep improving it. The repository is ${EVENT.repo}. If organizers later name a different organization, that notice replaces this sentence. It is ${EVENT.unconfirmedDetails} until they do.`,
+        `Copy submissions/_TEMPLATE/ to submissions/team-<name>/ in the private project repository. Branch name: team-<name>. Pull request title: [SUBMISSION] Team <name> — <project title>.`,
+        `Open it when you have a draft to share, and keep improving it. The project repository is private: ${EVENT.participantRepo}. Ask to join it, and an organizer will add your GitHub account. This website is the guide. Your team’s project goes in that repository.`,
         `Please open the pull request by ${EVENT.winnerDeadline} so judging can review every eligible submission fairly. A pull request opened after the deadline published with the challenge is not judged. Keep passwords, API keys, and CRNs out of the branch. If one lands there, revoke the key and create a replacement. You can keep writing the story while that is fixed.`,
       ],
     },
@@ -876,7 +876,7 @@ const submit: StepPage = {
   ],
   links: [
     { href: "/handbook/#64-how-to-submit", label: "Handbook: how to submit" },
-    { href: `${EVENT.repo}/tree/${EVENT.branch}/submissions/_TEMPLATE`, label: "Submission template" },
+    { href: EVENT.participantRepo, label: "Ask to join the project repository" },
     { href: HETIONET_REPO, label: "Hetionet repository" },
   ],
   check: {
@@ -955,7 +955,8 @@ const resources: StepPage = {
     {
       heading: "Handbook and catalog",
       paragraphs: [
-        "The participant handbook, the domain track, and the notebook catalog are rendered from the Markdown files in this repository.",
+        "The participant handbook, the domain track, and the notebook catalog are rendered on this website.",
+        `Submit your team project in the private repository ${EVENT.participantRepo}. Ask to join it.`,
       ],
     },
     {

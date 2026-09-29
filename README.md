@@ -2,6 +2,8 @@
 
 One participant path: the event, an IBM Quantum account, vocabulary, one Bell state in Composer and again in Python, the Qiskit workflow, two pathways, a classical baseline, benchmarking, the Hetionet example, a team, and a GitHub submission.
 
+This repository, https://github.com/QuantumKev/Qiskit_Fall_Fest_2026, is the source of the participant website. Team projects are submitted in the private repository https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026. Ask to join that repository.
+
 This is an entry ramp. You are not expected to prove that quantum computing is better than classical computing.
 
 Sticker accents in `public/brand/stickers/` come from [Qiskit Fall Fest 2026 materials](https://github.com/Qiskit-Fall-Fest-2026/materials-resources/tree/main/00_Deliverables/Stickers/SVG). The social image `public/brand/og-qiskit.png` is the Qiskit wordmark from that repository’s PNG folder. The white Qiskit mark and the black IBM Quantum wordmark are in `public/brand/` and are shown on the dark page background. The wordmark keeps its white field. The earlier reverse JPEG is a solid white field and is not shown. Files are stored in this repo. They are not hotlinked.
