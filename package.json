@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test": "node --test tests/content.test.mjs tests/onboarding.test.mjs tests/registration.test.mjs tests/hub.test.mjs",
+    "test": "node --test tests/content.test.mjs tests/onboarding.test.mjs tests/registration.test.mjs tests/hub.test.mjs tests/links.test.mjs",
     "pages": "bash scripts/export-pages.sh"
   },
   "dependencies": {

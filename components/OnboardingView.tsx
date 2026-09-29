@@ -12,6 +12,7 @@ import { EVENT } from "@/content/event";
 import { GLOSSARY } from "@/content/glossary";
 import { AREA_LINKS, JOURNEY, type Check, type StepPage } from "@/content/onboarding";
 import { withBase } from "@/lib/base-path";
+import { linkifyPlainText } from "@/lib/link-text.mjs";
 import { slugify } from "@/lib/slug";
 
 function isFileLink(href: string) {
@@ -38,14 +39,14 @@ function ExternalAnchor({ href, children }: { href: string; children: ReactNode 
 }
 
 function RichText({ text }: { text: string }) {
-  const parts = text.split(/(https?:\/\/[^\s)]+)/g);
+  const parts = linkifyPlainText(text);
   return parts.map((part, index) =>
-    part.startsWith("http") ? (
-      <ExternalAnchor key={`${part}-${index}`} href={part}>
-        {part}
+    part.type === "url" ? (
+      <ExternalAnchor key={`${part.value}-${index}`} href={part.value}>
+        {part.value}
       </ExternalAnchor>
     ) : (
-      <span key={`${part}-${index}`}>{part}</span>
+      <span key={`${part.type}-${index}`}>{part.value}</span>
     ),
   );
 }

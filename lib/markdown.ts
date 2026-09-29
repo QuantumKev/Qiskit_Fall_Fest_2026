@@ -1,4 +1,5 @@
 import { marked, type Tokens } from "marked";
+import { installLinkRenderer } from "@/lib/link-text.mjs";
 import { basePath } from "@/lib/base-path";
 import { slugify } from "@/lib/slug";
 
@@ -32,14 +33,7 @@ export function renderMarkdown(source: string) {
     toc.push({ depth, id, text: plain });
     return `<h${depth} id="${id}">${text}</h${depth}>\n`;
   };
-  renderer.link = function ({ href, tokens }: Tokens.Link) {
-    const text = this.parser.parseInline(tokens);
-    const next = rewriteHref(href);
-    const external = /^https?:\/\//.test(next);
-    if (next.split("#")[0].endsWith(".pdf")) return `<a href="${next}" target="_blank" rel="noopener">${text}</a>`;
-    if (!external) return `<a href="${next}">${text}</a>`;
-    return `<a href="${next}" target="_blank" rel="noopener noreferrer external">${text}</a>`;
-  };
+  installLinkRenderer(renderer, rewriteHref);
 
   const html = marked.parse(source, { gfm: true, renderer, async: false }) as string;
   return { html, toc };
