@@ -13,4 +13,4 @@ Replace this heading with the project title. Open a pull request against `main` 
 
 Do not commit an API key, a CRN, a password, or a notebook output that contains one.
 
-The participant handbook is `PARTICIPANT_HANDBOOK.md`. The domain guide is `NON-TECHNICAL-TRACK.md`.
+The participant handbook is `PARTICIPANT_HANDBOOK.md`. The guide for both pathways is `NON-TECHNICAL-TRACK.md`, titled Domain/Industry Expert and Builder/Developer Expert.

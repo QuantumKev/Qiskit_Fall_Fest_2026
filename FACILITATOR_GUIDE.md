@@ -33,7 +33,7 @@ Times are a guide for a two-hour Workshop 1 and a 75 to 90 minute Workshop 2. Sh
 
 | Block | Point people to |
 |---|---|
-| Two pathways and shared responsibilities | Pathways page and this handbook’s domain guide |
+| Two pathways and shared responsibilities | Pathways page and Domain/Industry Expert and Builder/Developer Expert |
 | Problem and classical baseline | Project frame |
 | Benchmarking sequence and the decision guide | Benchmarking page |
 | Hetionet as a finished example, not the minimum bar | Hetionet page |

@@ -1,8 +1,8 @@
-## Domain/Industry Expert
+## Domain/Industry Expert and Builder/Developer Expert
 
 ### Or: why you should come to a quantum hackathon even though you are not a quantum physicist
 
-This is the long-form guide for the Domain/Industry Expert pathway. Coding is optional in this role. The Builder/Developer Expert pathway is the coding role. Both share the problem, the comparison, and the write-up.
+This guide is for both pathways. The Domain/Industry Expert brings a field they know, and coding is optional in that role. The Builder/Developer Expert pathway is the coding role. Both share the problem, the comparison, and the write-up.
 
 **Florida Qiskit Fallfest Hackathon**, part of Qiskit Fall Fest 2026.
 

@@ -24,7 +24,7 @@ export default async function OnboardingPage({ params }: { params: Promise<{ slu
     slug === "roles" ? (
       <MarkdownDocument
         source={readFileSync(path.join(process.cwd(), "NON-TECHNICAL-TRACK.md"), "utf8")}
-        label="Domain/Industry Expert"
+        label="Domain/Industry Expert and Builder/Developer Expert"
       />
     ) : null;
   return <OnboardingView page={page}>{domain}</OnboardingView>;

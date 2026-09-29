@@ -1,5 +1,5 @@
 import { marked, type Tokens } from "marked";
-import { installLinkRenderer } from "@/lib/link-text.mjs";
+import { decodeHtml, installLinkRenderer } from "@/lib/link-text.mjs";
 import { basePath } from "@/lib/base-path";
 import { slugify } from "@/lib/slug";
 
@@ -28,13 +28,15 @@ export function renderMarkdown(source: string) {
   const renderer = new marked.Renderer();
   renderer.heading = function ({ tokens, depth }: Tokens.Heading) {
     const text = this.parser.parseInline(tokens);
-    const plain = text.replace(/<[^>]+>/g, "");
+    const plain = decodeHtml(text.replace(/<[^>]+>/g, ""));
     const id = slugify(plain);
     toc.push({ depth, id, text: plain });
     return `<h${depth} id="${id}">${text}</h${depth}>\n`;
   };
   installLinkRenderer(renderer, rewriteHref);
 
-  const html = marked.parse(source, { gfm: true, renderer, async: false }) as string;
+  const html = (marked.parse(source, { gfm: true, renderer, async: false }) as string)
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/gi, "'");
   return { html, toc };
 }

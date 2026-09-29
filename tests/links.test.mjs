@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { marked } from "marked";
-import { installLinkRenderer, linkifyPlainText } from "../lib/link-text.mjs";
+import { decodeHtml, installLinkRenderer, linkifyPlainText } from "../lib/link-text.mjs";
 
 const SENTENCE_END = /[.,;:)]$/;
 
@@ -82,6 +82,18 @@ test("query strings, fragments, hyphens, and underscores stay in the href", () =
     assert.equal(parts.find((part) => part.type === "url").value, url);
     assert.equal(parts.at(-1).value, ".");
   }
+});
+
+test("a heading apostrophe stays an apostrophe in visible text", () => {
+  const raw = render("### If you're going deep on a specific application");
+  const visible = decodeHtml(raw.replace(/<[^>]+>/g, "").trim());
+  assert.equal(visible, "If you're going deep on a specific application");
+  assert.doesNotMatch(visible, /&#39;|&#x27;/i);
+  const markdownSource = readFileSync(new URL("../lib/markdown.ts", import.meta.url), "utf8");
+  assert.match(markdownSource, /decodeHtml/);
+  assert.match(markdownSource, /\.replace\(\/&#39;\/g, "'"\)/);
+  const shown = raw.replace(/&#39;/g, "'").replace(/&#x27;/gi, "'");
+  assert.doesNotMatch(shown, /&#39;|&#x27;/i);
 });
 
 test("rendered handbook, facilitator guide, domain track, and catalog keep punctuation out of hrefs", () => {

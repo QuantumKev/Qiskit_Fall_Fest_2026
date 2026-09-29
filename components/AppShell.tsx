@@ -79,7 +79,7 @@ function Footer() {
         <Link href="/">For Participants</Link>
         <Link href="/facilitator/">For Facilitators and Local Hosts</Link>
         <Link href="/handbook/">Participant handbook</Link>
-        <Link href="/roles/">Domain/Industry Expert</Link>
+        <Link href="/roles/">Domain/Industry Expert and Builder/Developer Expert</Link>
         <Link href="/catalog/">Notebook catalog</Link>
         <a href={EVENT.discord} target="_blank" rel="noopener noreferrer external">
           Discord

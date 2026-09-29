@@ -219,7 +219,7 @@ const start: StepPage = {
   ],
   links: [
     { href: "/handbook/", label: "Participant handbook" },
-    { href: "/roles/", label: "Domain/Industry Expert" },
+    { href: "/roles/", label: "Domain/Industry Expert and Builder/Developer Expert" },
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/support/", label: "Troubleshooting and support" },
     { href: EVENT.discord, label: "Discord" },
@@ -575,7 +575,7 @@ const roles: StepPage = {
   title: "Two pathways",
   minutes: 20,
   purpose:
-    "The Domain/Industry Expert and the Builder/Developer Expert are equal. Coding is optional for the Domain/Industry Expert. The long-form source on this page is NON-TECHNICAL-TRACK.md, titled Domain/Industry Expert.",
+    "The Domain/Industry Expert and the Builder/Developer Expert are equal. Coding is optional for the Domain/Industry Expert. The long-form source on this page is Domain/Industry Expert and Builder/Developer Expert.",
   sections: [
     {
       heading: "Domain/Industry Expert and Builder/Developer Expert",
@@ -643,7 +643,7 @@ const problem: StepPage = {
   ],
   links: [
     { href: "/benchmarking/", label: "Benchmarking and readiness" },
-    { href: "/roles/#5-the-use-case-canvas", label: "Use-case canvas in the domain guide" },
+    { href: "/roles/#5-the-use-case-canvas", label: "Use-case canvas for both pathways" },
   ],
   check: {
     question: "A hardware job with no measured classical baseline is…",
@@ -998,7 +998,7 @@ const resources: StepPage = {
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/glossary/", label: "Glossary" },
     { href: "/support/", label: "Troubleshooting and support" },
-    { href: "/roles/", label: "Domain/Industry Expert" },
+    { href: "/roles/", label: "Domain/Industry Expert and Builder/Developer Expert" },
     { href: DECISION_GUIDE_URL, label: "Next-Step Quantum Decision Guide" },
     { href: QISKIT_APPROVED_SITE, label: "Qiskit-approved website" },
   ],
@@ -1041,7 +1041,7 @@ export const AREA_LINKS: { href: string; label: string }[] = [
   { href: "/qolour/", label: "Quantum from Zero to One" },
   { href: "/#workshop-2", label: "Workshop 2" },
   { href: "/handbook/", label: "Participant handbook" },
-  { href: "/roles/", label: "Domain/Industry Expert" },
+  { href: "/roles/", label: "Domain/Industry Expert and Builder/Developer Expert" },
   { href: "/workflow/", label: "Qiskit workflow" },
   { href: "/hetionet/", label: "Hetionet example" },
   { href: "/benchmarking/", label: "Benchmarking and readiness" },

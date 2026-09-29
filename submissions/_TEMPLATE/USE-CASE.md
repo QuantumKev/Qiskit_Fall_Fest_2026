@@ -1,6 +1,6 @@
 # Use-Case Canvas
 
-Copy the explanations from NON-TECHNICAL-TRACK.md, section 5. Fill the fields here.
+Copy the explanations from NON-TECHNICAL-TRACK.md (Domain/Industry Expert and Builder/Developer Expert), section 5. Fill the fields here.
 
 ## 1. The problem
 

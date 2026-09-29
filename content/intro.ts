@@ -576,7 +576,7 @@ export const TRACKS = [
 ];
 
 export const EVERYONE_LINE =
-  "Required before participating: your own IBM Quantum account. Recommended before the workshop: register, join the chat, create a GitHub account, and skim what you are building, including the Domain/Industry Expert guide. Optional next step: a course or a local install. We will complete the Bell labs, team formation, and the submission together. If you have about 30 minutes, the account is the piece that lets you in.";
+  "Required before participating: your own IBM Quantum account. Recommended before the workshop: register, join the chat, create a GitHub account, and skim what you are building, including Domain/Industry Expert and Builder/Developer Expert. Optional next step: a course or a local install. We will complete the Bell labs, team formation, and the submission together. If you have about 30 minutes, the account is the piece that lets you in.";
 
 export const ACCOUNT_FACTS = [
   "quantum-computing.ibm.com and channel=\"ibm_quantum\" are described as dead after July 1, 2025.",

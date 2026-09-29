@@ -26,7 +26,7 @@ The Bell notebook is `notebooks/bell_state_lab.ipynb`. Install `requirements.txt
 ## What is here
 
 - Twelve-step journey with a progress count stored in this browser (`qff-progress`).
-- `PARTICIPANT_HANDBOOK.md`, `NON-TECHNICAL-TRACK.md` (visible title: Domain/Industry Expert), `FACILITATOR_GUIDE.md`, and `NOTEBOOK-CATALOG.md` rendered in full.
+- `PARTICIPANT_HANDBOOK.md`, `NON-TECHNICAL-TRACK.md` (visible title: Domain/Industry Expert and Builder/Developer Expert), `FACILITATOR_GUIDE.md`, and `NOTEBOOK-CATALOG.md` rendered in full.
 - Submission template in `submissions/_TEMPLATE/`.
 - Searchable glossary. Knowledge checks. Copyable Bell code.
 

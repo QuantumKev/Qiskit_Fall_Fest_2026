@@ -15,20 +15,20 @@ Essential pre-work is only what you need to access the event. The labels below k
 | **Who** | Writes code during the event | Frames problems, judges impact, tells the story |
 | **Pre-work time** | About 3–5 hours if you want a head start | About 2–3 hours if you want a head start |
 | **Required before participating** | Your own IBM Quantum account (§4) | Your own IBM Quantum account (§4.1). The API key can wait until you choose to code. |
-| **Recommended before the workshop** | Skim §2 and §3, and create a GitHub account (§6) | Skim §2 and §3, create a GitHub account (§6), and read the Domain/Industry Expert guide |
+| **Recommended before the workshop** | Skim §2 and §3, and create a GitHub account (§6) | Skim §2 and §3, create a GitHub account (§6), and read Domain/Industry Expert and Builder/Developer Expert |
 | **Optional next step** | A local install (§5.2) and a course from §7 | Composer, the business course, and a draft canvas |
 | **We will complete this together** | Bell labs, the GitHub clinic, and the submission walk-through | Problem framing, the canvas, and the story |
 
 **Required before participating**
 
 - [ ] Create your own IBM Quantum Platform account → §4. This is the account you will sign in with. There is no shared login.
-- [ ] Official registration is **Coming soon**. Until that link is published, the attendance form on this site is how you tell us you are coming. It does not collect passwords, API keys, or CRNs.
+- [ ] Register and join a team on the [registration page](https://quantumkev.github.io/Qiskit_Fall_Fest_2026/register/). Registration and teams are handled through DeepStation, campus by campus.
 
 **Recommended before the workshop**
 
 - [ ] Join the chat → <https://discord.gg/vz6uTbtJzR>
 - [ ] Create a GitHub account → §6. You will use it for the submission. The day-one clinic walks through the pull request.
-- [ ] Read §2 (what we're actually building) and skim the Domain/Industry Expert guide, [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md)
+- [ ] Read §2 (what we're actually building) and skim [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md)
 - [ ] Start a problem or topic that interests you. A half-formed idea is a great start.
 
 **Optional next step**
@@ -41,6 +41,12 @@ Essential pre-work is only what you need to access the event. The labels below k
 - The Bell labs, team formation, and opening the submission pull request
 
 If you have about 30 minutes, the IBM Quantum account is the piece that lets you in. The recommended items make the first hour easier. We will cover the rest with you.
+
+---
+
+## Registration
+
+Registration and teams for the Florida Qiskit Fallfest Hackathon are handled through DeepStation, campus by campus. Open the [registration page](https://quantumkev.github.io/Qiskit_Fall_Fest_2026/register/) to choose your campus, register, create a team, or join a team.
 
 ---
 
@@ -98,9 +104,9 @@ Every team should have both a Domain/Industry Expert and a Builder/Developer Exp
 
 **Builder/Developer Expert**: you write Qiskit, run circuits, and keep the result next to the baseline. You need Python. You do *not* need a physics background.
 
-**Domain/Industry Expert**: you bring a field that is not quantum computing: finance, logistics, energy, health, law, policy, agriculture, manufacturing, operations, or another practice you know. Your job is to make sure the team is solving a problem that exists. You do not have to install Python. The long-form source is [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md), titled Domain/Industry Expert.
+**Domain/Industry Expert**: you bring a field that is not quantum computing: finance, logistics, energy, health, law, policy, agriculture, manufacturing, operations, or another practice you know. Your job is to make sure the team is solving a problem that exists. You do not have to install Python. The long-form source is [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md).
 
-**If you do not write code, you still belong here.** The Domain/Industry Expert guide shows how your experience shapes the project. Coding is optional in that role.
+**If you do not write code, you still belong here.** [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md) shows how your experience shapes the project. Coding is optional in that role.
 
 ---
 
@@ -395,7 +401,7 @@ Choose one lane and a time budget you can enjoy. The other courses can wait unti
 | [**Quantum business foundations**](https://quantum.cloud.ibm.com/learning/en/courses/quantum-business-foundations) | 3h | Built for exactly this audience. Ends in an exam and a Credly digital badge you can put on LinkedIn. **Start here.** |
 | [**Designing and leading quantum projects**](https://quantum.cloud.ibm.com/learning/en/courses/designing-and-leading-quantum-projects) | 4h | For anyone who may sponsor or govern one of these. |
 | [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer) | 20 min | Play. Drag gates. No coding. Best intuition-per-minute available. |
-| [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md) | 30 min | Our own guide — roles, industry prompts, and the use-case canvas you'll fill in on day one. |
+| [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md) | 30 min | Our own guide — roles, industry prompts, and the use-case canvas you'll fill in on day one. |
 
 ### If you are the Builder/Developer Expert (3–5 hours)
 
@@ -543,7 +549,7 @@ Use the labels. You do not need every box ticked before you walk in.
 
 **Required before participating**
 
-- [ ] Checked registration. The official link is Coming soon. The site form does not collect secrets.
+- [ ] Registered and joined a team from the [registration page](https://quantumkev.github.io/Qiskit_Fall_Fest_2026/register/). Registration and teams are handled through DeepStation, campus by campus.
 - [ ] Created my own IBM Quantum Platform account (§4.1). I am the only person who knows the password.
 - [ ] Open Plan instance created in `us-east` (§4.2), when the account flow offers it. The Bell lab can start on the simulator if this is still open.
 
@@ -553,7 +559,7 @@ Use the labels. You do not need every box ticked before you walk in.
 - [ ] GitHub account created, email verified, 2FA on (§6.1)
 - [ ] Read §2 and have a sense of what a good project looks like
 - [ ] Started thinking about a problem or topic that interests me
-- [ ] Domain/Industry Expert: skimmed [`NON-TECHNICAL-TRACK.md`](NON-TECHNICAL-TRACK.md)
+- [ ] Skimmed [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md)
 - [ ] Domain/Industry Expert: a draft Use-Case Canvas. Empty boxes are welcome.
 
 **Optional next step**
