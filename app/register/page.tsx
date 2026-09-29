@@ -17,6 +17,11 @@ function ExternalIcon() {
   );
 }
 
+const CAMPUSES: readonly { university: string; registration: string | null }[] = [
+  ...LOCAL_HOSTS.map((host) => ({ university: host.university, registration: host.registration })),
+  { university: "Florida International University", registration: null },
+];
+
 export default function RegisterPage() {
   const guideHref = withBase(ORGANIZER_GUIDE_PDF);
 
@@ -39,7 +44,7 @@ export default function RegisterPage() {
       <section aria-labelledby="campus-links">
         <h2 id="campus-links">Your campus</h2>
         <ul className="campus-list">
-          {LOCAL_HOSTS.map((host) => (
+          {CAMPUSES.map((host) => (
             <li key={host.university}>
               {host.registration ? (
                 <a href={host.registration} target="_blank" rel="noopener noreferrer">
