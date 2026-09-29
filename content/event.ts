@@ -56,12 +56,19 @@ export type LocalHost = {
   contacts: readonly HostContact[];
 };
 
+/** DeepStation registration and team page. Referenced by the registration route and Miami Dade College. */
+export const DEEPSTATION_REGISTRATION_URL =
+  "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams";
+
+/** Root-relative public path. Prefix with withBase() so GitHub Pages keeps the project base path. */
+export const ORGANIZER_GUIDE_PDF = "/resources/deepstation-hackathons-organizer-guide.pdf";
+
 export const LOCAL_HOSTS: readonly LocalHost[] = [
   {
     university: "Miami Dade College",
     leads: ["Kevin Robinson"],
     venue: "Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132",
-    registration: "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams",
+    registration: DEEPSTATION_REGISTRATION_URL,
     contacts: [{ label: "kevin@quantumglobalgroup.io", href: "mailto:kevin@quantumglobalgroup.io" }],
   },
   {
