@@ -8,6 +8,11 @@ export const metadata = pageMeta("Registration and Team Access", "/register/");
 
 const REGISTRATION_HELP = CO_LEADS.find((person) => person.email === "grant@deepstation.ai");
 
+const MIAMI_AND_NOVA_COLEADS = [
+  { name: "Kevin Robinson", email: "kevin@quantumglobalgroup.io" },
+  { name: "Grant Kurz", email: "grant@deepstation.ai" },
+] as const;
+
 function ExternalIcon() {
   return (
     <svg className="external-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
@@ -20,6 +25,9 @@ function ExternalIcon() {
 }
 
 function campusPeople(host: LocalHost): { name: string; email: string }[] {
+  if (host.university === "Miami Dade College" || host.university === "Nova Southeastern University") {
+    return [...MIAMI_AND_NOVA_COLEADS];
+  }
   return host.contacts.flatMap((contact) => {
     if (!contact.href?.startsWith("mailto:")) return [];
     const email = contact.href.slice("mailto:".length);
@@ -36,7 +44,7 @@ const CAMPUSES: readonly { university: string; registration: string | null; peop
     registration: host.registration,
     people: campusPeople(host),
   })),
-  { university: "Florida International University", registration: null, people: [] },
+  { university: "Florida International University", registration: null, people: [{ name: "Anqi Wu", email: "anwu@fiu.edu" }] },
 ];
 
 export default function RegisterPage() {
