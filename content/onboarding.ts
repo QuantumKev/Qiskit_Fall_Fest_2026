@@ -1,6 +1,5 @@
 import { CONNECT_SAVE } from "@/content/exercise1";
 import {
-  CO_LEAD_SENTENCE,
   EVENT,
   HETIONET_LINKS,
   HETIONET_REPO,
@@ -137,7 +136,7 @@ const start: StepPage = {
       id: "event",
       heading: "The event",
       paragraphs: [
-        `${CO_LEAD_SENTENCE} The theme is ${EVENT.theme}. ${EVENT.themeSummary}`,
+        `The theme is ${EVENT.theme}. ${EVENT.themeSummary}`,
         `Kickoff and challenge release: ${EVENT.kickoff}. Local events: ${EVENT.localEvents}. First-place local winner deadline: ${EVENT.winnerDeadline}. Statewide announcement: ${EVENT.statewideAnnouncement}. Capacity is ${EVENT.capacity}.`,
         `The host directory below lists all six universities. A confirmed venue and a local registration link are on the card. Anything still open says ${EVENT.unconfirmedDetails}. The shared code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
         `Unresolved program questions go to Kevin Robinson at ${EVENT.programEmail}. The chat is ${EVENT.discord}. The announcement is ${IBM.announcement}. The Qiskit-approved website is ${QISKIT_APPROVED_SITE}.`,
@@ -950,7 +949,7 @@ const resources: StepPage = {
     {
       heading: "Event",
       paragraphs: [
-        `Official registration: ${EVENT.registration}. Discord: ${EVENT.discord}. ${CO_LEAD_SENTENCE} Program questions: ${EVENT.programEmail}. Qiskit-approved website: ${QISKIT_APPROVED_SITE}. Qiskit Slack: ${IBM.slack}. Announcement: ${IBM.announcement}.`,
+        `Official registration: ${EVENT.registration}. Discord: ${EVENT.discord}. Program questions: ${EVENT.programEmail}. Qiskit-approved website: ${QISKIT_APPROVED_SITE}. Qiskit Slack: ${IBM.slack}. Announcement: ${IBM.announcement}.`,
       ],
     },
     {

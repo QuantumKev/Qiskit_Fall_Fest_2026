@@ -98,9 +98,9 @@ test("the intro guide keeps the welcome, the progress line, and the Bell sampler
   assert.match(intro, /measured_circuit = bell_circuit\.copy\(\)/);
   assert.match(intro, /not, by itself, a complete proof of entanglement/);
   assert.doesNotMatch(intro, /Home Depot/);
-  assert.match(event, /Robert Loredo is the lead/);
-  assert.match(event, /Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads/);
-  assert.match(introView, /CO_LEAD_SENTENCE/);
+  assert.match(event, /Robert Loredo/);
+  assert.match(event, /rloredo2026@fau\.edu/);
+  assert.doesNotMatch(introView, /CO_LEAD_SENTENCE/);
   assert.doesNotMatch(intro, /is the organizer/);
   assert.doesNotMatch(intro, /sponsorship and team lead/);
   assert.doesNotMatch(intro, /leads this initiative/);
@@ -138,7 +138,7 @@ test("hackathon and machine learning stay inside known rules", () => {
   assert.match(event, /kevin@quantumglobalgroup\.io/);
   assert.match(event, /grant@deepstation\.ai/);
   assert.match(event, /atorre58@fau\.edu/);
-  assert.doesNotMatch(event, /rloredo2026@fau\.edu/);
+  assert.match(event, /rloredo2026@fau\.edu/);
   assert.doesNotMatch(event, /Dr\. Ayse/);
   assert.match(intro, /Qiskit-approved website/);
   assert.doesNotMatch(intro, /is the organizer/);

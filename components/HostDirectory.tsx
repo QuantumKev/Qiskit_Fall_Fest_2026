@@ -1,11 +1,11 @@
-import { CO_LEAD_SENTENCE, CO_LEADS, EVENT, LEAD, LOCAL_HOSTS, formatCoLead } from "@/content/event";
+import { CO_LEADS, EVENT, LEAD, LOCAL_HOSTS, formatCoLead } from "@/content/event";
 
 export function HostDirectory() {
   return (
     <section id="hosts" className="prose card" aria-labelledby="hosts-heading">
       <h2 id="hosts-heading">Lead, co-leads, and local hosts</h2>
       <p>
-        {EVENT.name} is part of {EVENT.series}. {CO_LEAD_SENTENCE} Each university card lists the verified local lead, the confirmed venue, and a registration link when one is public.
+        {EVENT.name} is part of {EVENT.series}. Each university card lists the verified local lead, the confirmed venue, and a registration link when one is public.
       </p>
       <ul className="co-lead-list">
         <li>{formatCoLead(LEAD)}</li>

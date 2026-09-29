@@ -3,9 +3,9 @@
  * The Markdown guides state the same public facts in long form.
  * If a date changes, change it here and in those files together.
  *
- * Robert Loredo is the lead. His email is not published here.
+ * Robert Loredo leads the event. His published address is rloredo2026@fau.edu.
  * Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads. Kevin approved
- * publishing Grant’s and Ayse’s addresses. Program questions still go to
+ * publishing Grant’s, Ayse’s, and Robert’s addresses. Program questions still go to
  * kevin@quantumglobalgroup.io.
  */
 
@@ -18,7 +18,7 @@ export type ProgramPerson = {
   organization?: string;
 };
 
-export const LEAD: ProgramPerson = { name: "Robert Loredo", role: "lead" };
+export const LEAD: ProgramPerson = { name: "Robert Loredo", role: "lead", email: "rloredo2026@fau.edu" };
 
 /** Co-leads, in the published order. Kevin builds the site; he is not the lead. */
 export const CO_LEADS: readonly ProgramPerson[] = [
@@ -26,9 +26,6 @@ export const CO_LEADS: readonly ProgramPerson[] = [
   { name: "Grant Kurz", role: "co-lead", email: "grant@deepstation.ai" },
   { name: "Ayse Torres", role: "co-lead", email: "atorre58@fau.edu" },
 ];
-
-export const CO_LEAD_SENTENCE =
-  "Robert Loredo is the lead. Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads.";
 
 export const PROGRAM_EMAIL = "kevin@quantumglobalgroup.io";
 
@@ -80,10 +77,11 @@ export const LOCAL_HOSTS: readonly LocalHost[] = [
   },
   {
     university: "Florida Atlantic University",
-    leads: ["Ayse Torres", "Kateryna Tsekhmayster"],
+    leads: ["Robert Loredo", "Ayse Torres", "Kateryna Tsekhmayster"],
     venue: "Details coming soon",
     registration: "https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn",
     contacts: [
+      { label: "Robert Loredo, rloredo2026@fau.edu", href: "mailto:rloredo2026@fau.edu" },
       { label: "Ayse Torres, atorre58@fau.edu", href: "mailto:atorre58@fau.edu" },
       { label: "Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu", href: "mailto:ktsekhmayste2022@fau.edu" },
     ],

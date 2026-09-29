@@ -5,7 +5,7 @@ import { useEffect, useState, type ReactElement } from "react";
 import { CopyBlock } from "@/components/CopyBlock";
 import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { useProgress } from "@/components/store";
-import { CO_LEAD_SENTENCE, QISKIT_APPROVED_SITE } from "@/content/event";
+import { QISKIT_APPROVED_SITE } from "@/content/event";
 import { withBase } from "@/lib/base-path";
 import { GLOSSARY } from "@/content/glossary";
 import { HETIONET_WALKTHROUGH } from "@/content/hetionetWalk";
@@ -520,7 +520,7 @@ function FallFestLinkList() {
 function HackathonBody() {
   return (
     <div className="stack">
-      <p>{PROGRAM_NAME} {CO_LEAD_SENTENCE}</p>
+      <p>{PROGRAM_NAME}</p>
       <p>{PROGRAM_BANNER}</p>
       <h2>Dates</h2>
       <p>{KICKOFF_LINES}</p>

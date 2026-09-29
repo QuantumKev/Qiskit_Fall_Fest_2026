@@ -1,4 +1,4 @@
-import { CO_LEAD_SENTENCE, CO_LEADS, LEAD, QISKIT_APPROVED_SITE } from "@/content/event";
+import { CO_LEADS, LEAD, QISKIT_APPROVED_SITE } from "@/content/event";
 import type { Check } from "@/content/modules";
 
 export const INTRO_TITLE = "Build Your First Quantum Program: A Beginner’s Guide to Python and Qiskit";
@@ -874,7 +874,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
   hackathon: {
     timing: "20 minutes. Kickoff is October 1, 2026.",
     notes: [
-      `${CO_LEAD_SENTENCE} Do not read from the book.`,
+      "Do not read from the book.",
       "Registration, the rubric, and unconfirmed rooms stay Coming soon or TBA.",
     ],
   },

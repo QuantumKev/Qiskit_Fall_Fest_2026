@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { OrganizerGuideViewer } from "@/components/OrganizerGuideViewer";
-import { CO_LEAD_SENTENCE, DEEPSTATION_REGISTRATION_URL, EVENT, LOCAL_HOSTS, ORGANIZER_GUIDE_PDF } from "@/content/event";
+import { CO_LEADS, LOCAL_HOSTS, ORGANIZER_GUIDE_PDF, type LocalHost } from "@/content/event";
 import { withBase } from "@/lib/base-path";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta("Registration and Team Access", "/register/");
+
+const REGISTRATION_HELP = CO_LEADS.find((person) => person.email === "grant@deepstation.ai");
 
 function ExternalIcon() {
   return (
@@ -17,9 +19,24 @@ function ExternalIcon() {
   );
 }
 
-const CAMPUSES: readonly { university: string; registration: string | null }[] = [
-  ...LOCAL_HOSTS.map((host) => ({ university: host.university, registration: host.registration })),
-  { university: "Florida International University", registration: null },
+function campusPeople(host: LocalHost): { name: string; email: string }[] {
+  return host.contacts.flatMap((contact) => {
+    if (!contact.href?.startsWith("mailto:")) return [];
+    const email = contact.href.slice("mailto:".length);
+    if (email === REGISTRATION_HELP?.email) return [];
+    const named = contact.label.split(",")[0]?.trim();
+    const name = named && !named.includes("@") ? named : host.leads[0];
+    return name ? [{ name, email }] : [];
+  });
+}
+
+const CAMPUSES: readonly { university: string; registration: string | null; people: readonly { name: string; email: string }[] }[] = [
+  ...LOCAL_HOSTS.map((host) => ({
+    university: host.university,
+    registration: host.registration,
+    people: campusPeople(host),
+  })),
+  { university: "Florida International University", registration: null, people: [] },
 ];
 
 export default function RegisterPage() {
@@ -29,18 +46,8 @@ export default function RegisterPage() {
     <div className="stack guide register-page">
       <h1>Registration and Team Access</h1>
       <p className="lede">
-        Registration, team creation, and team management for the Florida Qiskit Fallfest Hackathon are handled through DeepStation. Use the link below to register, create a team, or join an existing team.
+        Registration, team creation, and team management for the Florida Qiskit Fallfest Hackathon are handled through DeepStation. Choose your campus below to register, create a team, or join an existing team.
       </p>
-      <p className="register-actions">
-        <a className="button register-cta" href={DEEPSTATION_REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
-          <span className="cta-label">Register or Join a Team on DeepStation</span>
-          <span className="external-cue">
-            <ExternalIcon />
-            opens in a new tab
-          </span>
-        </a>
-      </p>
-      <p>Opens DeepStation in a new tab. DeepStation handles registration and teams. Use the button above, or your campus link when one is listed. Open the organizer guide only if you were asked to review it.</p>
       <section aria-labelledby="campus-links">
         <h2 id="campus-links">Your campus</h2>
         <ul className="campus-list">
@@ -53,14 +60,23 @@ export default function RegisterPage() {
                   <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               ) : (
-                <span className="campus-pending">
-                  <span>{host.university}</span>
-                  <span className="meta">Link not yet confirmed</span>
-                </span>
+                <span>{host.university}</span>
               )}
+              {host.people.map((person) => (
+                <span key={person.email}>
+                  {person.name}, <a href={`mailto:${person.email}`}>{person.email}</a>
+                </span>
+              ))}
+              {host.registration ? null : <span className="meta">Link not yet confirmed</span>}
             </li>
           ))}
         </ul>
+        {REGISTRATION_HELP?.email ? (
+          <p>
+            If you have trouble with registration, contact {REGISTRATION_HELP.name} at{" "}
+            <a href={`mailto:${REGISTRATION_HELP.email}`}>{REGISTRATION_HELP.email}</a>.
+          </p>
+        ) : null}
       </section>
       <h2>DeepStation Hackathons Organizer Guide</h2>
       <p>
@@ -76,15 +92,9 @@ export default function RegisterPage() {
         </a>
       </div>
       <OrganizerGuideViewer src={guideHref} />
-      <section className="prose" aria-labelledby="registration-help">
-        <h2 id="registration-help">Questions</h2>
-        <p>
-          {CO_LEAD_SENTENCE} {EVENT.contactOrder}
-        </p>
-        <p>
-          <Link href="/support/">Support</Link>
-        </p>
-      </section>
+      <p>
+        <Link href="/support/">Support</Link>
+      </p>
     </div>
   );
 }

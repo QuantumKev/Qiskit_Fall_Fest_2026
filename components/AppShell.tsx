@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CO_LEAD_SENTENCE, CO_LEADS, EVENT, QISKIT_APPROVED_SITE } from "@/content/event";
+import { CO_LEADS, EVENT, LEAD, QISKIT_APPROVED_SITE } from "@/content/event";
 import { JOURNEY } from "@/content/onboarding";
 import { ProgressProvider, useProgress } from "@/components/store";
 
@@ -14,9 +14,9 @@ const AUDIENCE = [
 const NAV = [
   { href: "/handbook/", label: "Handbook" },
   { href: "/roles/", label: "Pathways" },
+  { href: "/register/", label: "Register" },
   { href: "/resources/", label: "Resources" },
   { href: "/support/", label: "Support" },
-  { href: "/register/", label: "Register" },
 ];
 
 function Header() {
@@ -75,7 +75,6 @@ function Footer() {
   return (
     <footer className="site-footer">
       <p>{EVENT.name}</p>
-      <p>{CO_LEAD_SENTENCE}</p>
       <nav aria-label="Footer">
         <Link href="/">For Participants</Link>
         <Link href="/facilitator/">For Facilitators and Local Hosts</Link>
@@ -88,7 +87,7 @@ function Footer() {
         <a href={QISKIT_APPROVED_SITE} target="_blank" rel="noopener noreferrer external">
           Qiskit-approved website
         </a>
-        {CO_LEADS.map((lead) =>
+        {[LEAD, ...CO_LEADS].map((lead) =>
           lead.email ? (
             <a key={lead.email} href={`mailto:${lead.email}`}>
               {lead.name}, {lead.email}

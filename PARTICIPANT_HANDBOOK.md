@@ -50,7 +50,7 @@ Qiskit Fall Fest is a worldwide, student-led series of quantum computing events 
 
 The **2026 theme is "A decade of quantum on the cloud."** The theme recognizes ten years since IBM placed its first quantum processor on the cloud. That shift is why a student can open a circuit from a browser. Keep it in mind when you decide how ambitious to be.
 
-**Florida Qiskit Fallfest Hackathon** is the Florida event inside that global program. Robert Loredo is the lead. Kevin Robinson, Grant Kurz, and Ayse Torres are co-leads.
+**Florida Qiskit Fallfest Hackathon** is the Florida event inside that global program.
 
 Campuses: Miami Dade College, Nova Southeastern University, Florida Atlantic University, Embry-Riddle Aeronautical University, Florida Institute of Technology, and Florida Gulf Coast University. Capacity is up to 50 participants per campus.
 
@@ -58,7 +58,7 @@ The home page host directory is the card list: university, verified lead, confir
 
 - Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams>
 - Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. grant@deepstation.ai. Registration: details coming soon.
-- Florida Atlantic University: Ayse Torres and Kateryna Tsekhmayster. Venue: details coming soon. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
+- Florida Atlantic University: Robert Loredo, Ayse Torres, and Kateryna Tsekhmayster. Venue: details coming soon. Robert Loredo, rloredo2026@fau.edu. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
 - Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Venue and registration: details coming soon.
 - Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
 - Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i>. Venue: details coming soon.
@@ -384,7 +384,7 @@ New to git? <https://docs.github.com/en/get-started>
 
 ---
 
-## 7. Step four: learn something
+## 7. Quantum learning resources
 
 Choose one lane and a time budget you can enjoy. The other courses can wait until after the event. They are an optional next step, not a test you have to finish first.
 
@@ -490,7 +490,7 @@ Help: Discord, with the error text. Do not paste an API key, a CRN, or a passwor
 ## 10. Support and community
 
 - **Event chat:** <https://discord.gg/vz6uTbtJzR>
-- **Lead:** Robert Loredo.
+- **Lead:** Robert Loredo, rloredo2026@fau.edu.
 - **Co-leads:** Kevin Robinson, Grant Kurz, and Ayse Torres.
   - Kevin Robinson, Quantum Global Group, kevin@quantumglobalgroup.io
   - Grant Kurz, grant@deepstation.ai
