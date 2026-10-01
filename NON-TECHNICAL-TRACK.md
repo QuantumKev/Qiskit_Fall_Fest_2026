@@ -20,6 +20,37 @@ The algorithms are in textbooks. The code is on GitHub. IBM Quantum gives you a 
 
 ---
 
+## Two pathways
+
+Every team should include both perspectives. A builder-only team may create a clean implementation before confirming that the problem matters. A domain-only team may frame a strong opportunity without a testable experiment. The strongest projects come from combining the two.
+
+### Builder/Developer Expert
+
+You may use Python and Qiskit. You may build, transpile, and run circuits on simulators and approved hardware. You may implement the quantum experiment, create or measure the classical baseline, and collect configurations, metrics, plots, and results. You may maintain reproducible notebooks and code, and document technical limitations. Python is expected. A physics degree is not required. At this level much of the work is linear algebra, structured problem mapping, and using APIs correctly.
+
+### Domain/Industry Expert
+
+You may bring expertise from finance, logistics, energy, health, law, policy, agriculture, manufacturing, venture capital, operations, or another field. You may confirm that the problem exists, name the stakeholders and the business or community value, and describe how it is solved today. You may set the classical baseline and the meaningful metrics, and weigh feasibility, risk, policy, ethics, and deployment. You may judge whether the output matters, and lead `USE-CASE.md`, `LIMITATIONS.md`, the presentation, or the narrative. Coding is optional. You do not need to install Python. You may read notebooks without writing them. This pathway is a full role.
+
+### Shared responsibility
+
+| Activity | Domain/Industry Expert | Builder/Developer Expert | Shared |
+|---|---|---|---|
+| Select the problem | Leads realism and relevance | Checks technical tractability | Yes |
+| Define the baseline | Explains the current method and meaningful metric | Implements or measures it | Yes |
+| Form the quantum hypothesis | Confirms why it would matter | Defines how it can be tested | Yes |
+| Run the experiment | Interprets the output | Builds and executes it | Review together |
+| Document limitations | Industry, policy, and deployment limits | Technical and hardware limits | Yes |
+| Present and submit | Leads or supports the story | Demonstrates the implementation | Yes |
+
+The same guide is rendered on this page: [Two pathways](/roles/). The participant handbook keeps the project types and this matrix in [§3](PARTICIPANT_HANDBOOK.md#3-two-pathways-one-team). A public note is [Domain track, Entangled Solutions Group](https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/).
+
+> If you are wondering whether you are “technical enough,” read the complete Domain/Industry guide before deciding not to participate. Your industry knowledge may be the part the team cannot replace with code.
+
+Day-one jobs inside a team, industry prompts, and the use-case canvas follow. Project types, including a mapped problem, a benchmark, a tool, and an analysis, are in the handbook: [What you are actually going to build](PARTICIPANT_HANDBOOK.md#2-what-you-are-actually-going-to-build).
+
+---
+
 ## 1. The actual argument
 
 ### 1.1 Quantum computing's bottleneck is not physicists

@@ -26,7 +26,9 @@ test("a URL followed by a period does not include the period in href", () => {
   const html = render("See https://example.com/path.");
   assert.match(html, /href="https:\/\/example\.com\/path"/);
   assert.doesNotMatch(html, /href="https:\/\/example\.com\/path\./);
-  assert.match(html, /<a href="https:\/\/example\.com\/path"[^>]*>https:\/\/example\.com\/path<\/a>\./);
+  assert.match(html, /<a href="https:\/\/example\.com\/path"[^>]*>https:\/\/example\.com\/path<svg class="external-icon"/);
+  assert.match(html, /opens in a new tab/);
+  assert.match(html, /<\/a>\./);
   assert.match(html, /rel="noopener noreferrer external"/);
   assert.doesNotMatch(html, /\(external\)/);
   assertCleanHrefs(html, "period");
@@ -48,7 +50,7 @@ test("the renderer still drops a period if the tokenizer includes it", () => {
   );
   assert.equal(
     html,
-    '<a href="https://example.com/path" target="_blank" rel="noopener noreferrer external">https://example.com/path</a>.',
+    '<a href="https://example.com/path" target="_blank" rel="noopener noreferrer external">https://example.com/path<svg class="external-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/></svg><span class="sr-only"> (opens in a new tab)</span></a>.',
   );
 });
 

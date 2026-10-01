@@ -48,10 +48,18 @@ export type StepPage = {
     id?: string;
     heading: string;
     paragraphs: string[];
+    tone?: "callout";
     steps?: string[];
     linkedSteps?: { text: string; hrefs?: { href: string; label: string }[] }[];
     troubles?: { title: string; body: string }[];
     table?: { caption: string; headers: string[]; rows: string[][] };
+    cards?: {
+      id: string;
+      title: string;
+      paragraphs: string[];
+      links?: { href: string; label: string }[];
+    }[];
+    embed?: { src: string; title: string };
   }[];
   table?: { caption: string; headers: string[]; rows: string[][] };
   code?: { filename: string; source: string };
@@ -173,10 +181,10 @@ const start: StepPage = {
           hrefs: [{ href: "/benchmarking/", label: "Benchmarking" }],
         },
         {
-          text: "Build and document the project, including what you tried and what the run cannot support.",
+          text: "Build one of the four project types: a mapped problem, a benchmark, a tool, or an analysis. Document what you tried and what the run cannot support.",
           hrefs: [
             { href: "/problem/", label: "Project frame" },
-            { href: "/handbook/", label: "Participant handbook" },
+            { href: "/handbook/#2-what-you-are-actually-going-to-build", label: "What you are actually going to build" },
           ],
         },
         {
@@ -578,27 +586,17 @@ const roles: StepPage = {
     "The Domain/Industry Expert and the Builder/Developer Expert are equal. Coding is optional for the Domain/Industry Expert. The long-form source on this page is Domain/Industry Expert and Builder/Developer Expert.",
   sections: [
     {
-      heading: "Domain/Industry Expert and Builder/Developer Expert",
+      heading: "Start with the guide on this page",
       paragraphs: [
-        "The Domain/Industry Expert brings the problem, the user, and the judgment about whether a quantum approach fits. Coding is optional in that role.",
-        "The Builder/Developer Expert writes Python and Qiskit, runs the circuit, and keeps the result next to the classical baseline.",
-        "Shared responsibilities sit in the last column. The guide below is the long-form source. This card introduces it.",
+        "The complete pathway guide is rendered below. It names what each expert may take on, and it keeps the shared responsibility matrix. Python is expected for the Builder/Developer Expert. A physics degree is not required. The Domain/Industry Expert does not need to install Python, and may read notebooks without writing them.",
       ],
-      table: {
-        caption: "Two pathways",
-        headers: ["", "Domain/Industry Expert", "Builder/Developer Expert", "Shared"],
-        rows: [
-          ["Focus", "The problem and whether a quantum approach fits", "Circuits, code, and the run", "One project and one write-up"],
-          ["Coding", "Optional", "Python and Qiskit", "Either person can pair"],
-          ["Account", "Your own IBM Quantum account", "Your own account, and a local install when you code", "No shared passwords or API keys"],
-          ["Comparison", "Name the classical method and what better would mean", "Measure the baseline and the quantum run", "Do not promise the quantum result will win"],
-          ["Submission", "Use-case, limitations, and the story", "Notebooks or source the team can run", `One pull request in ${EVENT.participantRepo}. Ask to join it.`],
-        ],
-      },
     },
   ],
   links: [
-    { href: "/handbook/", label: "Participant handbook" },
+    { href: "/roles/#two-pathways", label: "Two pathways" },
+    { href: "/roles/#shared-responsibility", label: "Shared responsibility" },
+    { href: "/handbook/#3-two-pathways-one-team", label: "Handbook: two pathways" },
+    { href: "https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/", label: "Domain track, Entangled Solutions Group" },
     { href: "/catalog/", label: "Notebook catalog" },
   ],
   check: {
@@ -622,27 +620,82 @@ const problem: StepPage = {
   number: "08",
   title: "Project frame and classical baseline",
   minutes: 20,
-  purpose: "Pick a problem type. Write the classical baseline before any quantum run. A hardware run without that measurement is a demonstration.",
+  purpose:
+    "Choose one of the four project types and write the classical baseline before any quantum run. A hardware run without that measurement is a demonstration. The handbook section is the long form.",
   sections: [
     {
-      heading: "Four branches",
+      id: "what-you-are-actually-going-to-build",
+      heading: "What you are actually going to build",
       paragraphs: [
-        "Optimization. Scheduling, routing, portfolios, and other choices with an objective and rules. Classical solvers are already strong. Use a QUBO or QAOA only when the problem is actually an optimization problem.",
-        "Simulation or chemistry. Molecules and materials. The theoretical fit can be strong. Hardware-reachable molecules are chemically small.",
-        "Classification, learning, or data. Kernels and similarity on scarce or expensive data. This is the most contested shape.",
-        "Not presently quantum-shaped. A sourced write-up of that conclusion is a valid project.",
+        "Quantum advantage means demonstrating, through a fair comparison, that a quantum method outperforms the best relevant classical approach on a useful problem. You are not expected to prove that during a 48-hour hackathon. Your goal is to build a well-scoped project, create credible evidence, and explain honestly what the evidence does and does not show.",
+      ],
+      cards: [
+        {
+          id: "a-mapped-problem",
+          title: "A mapped problem",
+          paragraphs: [
+            "Start from a real industry problem. Name who has it and how it is handled today, then write the variables, constraints, objectives, data, and success metrics. Map that statement to a QUBO, a Hamiltonian, a kernel, a circuit, or another quantum representation. A small simulator or approved-hardware example is useful when it stays honest about size. State the gap between the demo and a meaningful instance, and name what must change in the hardware, the algorithms, the data, or the industry conditions. A Domain/Industry Expert or other subject-matter expert is especially valuable here.",
+          ],
+          links: [
+            { href: "/handbook/#a-mapped-problem", label: "Mapped problem in the handbook" },
+            { href: DECISION_GUIDE_URL, label: "Assess an optimization problem with the Next-Step Quantum Decision Guide" },
+            { href: "/benchmarking/", label: "Review the complete benchmarking sequence" },
+          ],
+        },
+        {
+          id: "a-benchmark-or-comparison",
+          title: "A benchmark or comparison",
+          paragraphs: [
+            "Hold one bounded problem fixed and run it classically and with the quantum method. Use the same definition and comparable inputs. Choose the metric before the run, then record configurations, instance sizes, timing, quality, and resource use. You can discuss where a future crossover might occur and what blocks it. A project does not have to find or predict a crossover. Report the result when the classical method stays ahead.",
+          ],
+          links: [
+            { href: "/handbook/#a-benchmark-or-comparison", label: "Benchmark or comparison in the handbook" },
+            { href: "/benchmarking/", label: "Build your benchmark plan" },
+            { href: "/benchmarking/", label: "Open the benchmarking and readiness guide" },
+            { href: DECISION_GUIDE_URL, label: "Next-Step Quantum Decision Guide for an optimization comparison" },
+          ],
+        },
+        {
+          id: "a-tool",
+          title: "A tool",
+          paragraphs: [
+            "A tool might visualize a circuit or a state, translate a domain format into a QUBO, a Hamiltonian, a kernel, or a circuit, teach a step, assist a workflow or a benchmark, or track resources and evidence. Say who it is for, what they provide, what they receive, why that matters, and where it stops. A polished interface without a meaningful user problem is not enough.",
+          ],
+          links: [{ href: "/handbook/#a-tool", label: "Tool projects in the handbook" }],
+        },
+        {
+          id: "an-analysis",
+          title: "An analysis",
+          paragraphs: [
+            "Assess whether quantum computing fits a sector or a problem. Compare the classical methods used now with quantum approaches that might apply, including the hardware and resource gap. Policy, risk, deployment, and readiness are in scope. A well-supported “not a fit yet” or “not quantum-shaped” conclusion is a complete project when the technical claims match current hardware and algorithms, and the sources are credible.",
+          ],
+          links: [{ href: "/handbook/#an-analysis", label: "Analysis projects in the handbook" }],
+        },
       ],
     },
     {
-      heading: "Baseline first",
+      id: "project-type-roles",
+      heading: "Who leads which type",
+      tone: "callout",
       paragraphs: [
-        "Name the ordinary method you already have. Decide the metric, the instance size, and what “better” means before you book a QPU.",
-        "An optimization-shaped problem is the only shape the Next-Step Quantum Decision Guide is meant to assess. Hetionet is a classification example. Do not send it through an optimization engine.",
+        "Mapped-problem and analysis projects can be led primarily by Domain/Industry participants. Benchmark and tool projects generally require more Builder/Developer work. All four become stronger when someone understands what the output means in the real world.",
+      ],
+    },
+    {
+      id: "choose-your-next-step",
+      heading: "Choose your next step",
+      tone: "callout",
+      paragraphs: [
+        "The decision guide is for optimization-shaped problems. Do not force simulation, chemistry, classification, link prediction, or other non-optimization problems through an optimization-only assessment. Those projects still use: Problem → Current method → Classical baseline → Quantum hypothesis → Experiment → Metrics → Evidence → Limitations → Recommendation.",
+      ],
+      linkedSteps: [
+        { text: "", hrefs: [{ href: "/benchmarking/", label: "Use the Benchmarking Sequence" }] },
+        { text: "", hrefs: [{ href: DECISION_GUIDE_URL, label: "Open the Next-Step Quantum Decision Guide" }] },
       ],
     },
   ],
   links: [
-    { href: "/benchmarking/", label: "Benchmarking and readiness" },
+    { href: "/handbook/#2-what-you-are-actually-going-to-build", label: "Handbook: what you are actually going to build" },
     { href: "/roles/#5-the-use-case-canvas", label: "Use-case canvas for both pathways" },
   ],
   check: {
@@ -686,11 +739,13 @@ const benchmarking: StepPage = {
       ],
     },
     {
+      id: "decision-guide",
       heading: "Next-Step Quantum Decision Guide",
       paragraphs: [
-        "Quantum advantage would mean a quantum method beats the best practical classical method on a useful task by a margin that matters. This event does not ask you to show that. The glossary states the same definition.",
-        "Open the Next-Step Quantum Decision Guide after both Bell labs and before the Hetionet example. Use it for optimization-shaped problems only. Hetionet is not an optimization result, and it is not a clinical result.",
+        "The project-framing page and the glossary define quantum advantage. This event does not ask you to show it.",
+        "The guide below is the live Next-Step Quantum Decision Guide. It loads without an account. Use it for optimization-shaped problems only. Simulation, chemistry, classification, link prediction, and other non-optimization projects stay on the sequence above. Hetionet is classification and link prediction. It is not an optimization result, and it is not a clinical result.",
       ],
+      embed: { src: DECISION_GUIDE_URL, title: "Next-Step Quantum Decision Guide" },
     },
     {
       heading: "Charter fields",
@@ -740,6 +795,7 @@ const hetionet: StepPage = {
         "Metrics: test PR-AUC on the verified primary configuration.",
         "Evidence: the README, PAPER.md, RESULTS_EVIDENCE.md, and ACTUAL_VS_EXPLORATION_RESULTS.md.",
         "Limitation: this comparison does not show quantum advantage, the term defined on the benchmarking page and in the glossary, and it is not a clinical result.",
+        "The handbook’s final step turns this example into a checklist for your own project. Keep the structure, replace the problem, and do not copy Hetionet.",
         "Recommendation a Fall Fest team can copy as a habit: name the metric, keep the baseline, and publish the comparison at a much smaller size. Do not train this model in the workshop.",
       ],
     },
@@ -752,6 +808,7 @@ const hetionet: StepPage = {
     },
   ],
   links: [
+    { href: "/handbook/#12-final-step-study-hetionet-and-build-your-project-framework", label: "Handbook: study Hetionet and build your framework" },
     { href: HETIONET_LINKS.readme, label: "Public README" },
     { href: HETIONET_LINKS.paper, label: "PAPER.md" },
     { href: HETIONET_LINKS.results, label: "RESULTS_EVIDENCE.md" },

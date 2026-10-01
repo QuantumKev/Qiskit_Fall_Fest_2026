@@ -19,21 +19,41 @@ function isFileLink(href: string) {
   return /\.(pdf|md|zip|png|jpe?g|svg|webp)$/i.test(href.split("#")[0]);
 }
 
+function ExternalIcon() {
+  return (
+    <svg className="external-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"
+      />
+    </svg>
+  );
+}
+
 function ExternalAnchor({ href, children }: { href: string; children: ReactNode }) {
   const external = /^https?:\/\//.test(href);
-  if (!external && !isFileLink(href)) {
+  const newTab = external || isFileLink(href);
+  const indicator = newTab ? (
+    <>
+      <ExternalIcon />
+      <span className="sr-only"> (opens in a new tab)</span>
+    </>
+  ) : null;
+  if (!newTab) {
     return <Link href={href}>{children}</Link>;
   }
   if (!external) {
     return (
       <a href={withBase(href)} target="_blank" rel="noopener">
         {children}
+        {indicator}
       </a>
     );
   }
   return (
     <a href={href} target="_blank" rel="noopener noreferrer external">
       {children}
+      {indicator}
     </a>
   );
 }
@@ -53,7 +73,7 @@ function RichText({ text }: { text: string }) {
 
 function DataTable({ caption, headers, rows }: { caption: string; headers: string[]; rows: string[][] }) {
   return (
-    <div className="table-wrap">
+    <div className="table-wrap" tabIndex={0}>
       <table>
         <caption>{caption}</caption>
         <thead>
@@ -190,10 +210,19 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
 
       {page.sections.map((section, index) => {
         const id = section.id || slugify(section.heading);
-        const backdrop = index === 0 ? SECTION_BACKDROP[page.slug] : undefined;
+        const longForm = Boolean(section.cards || section.table || section.embed || section.tone === "callout");
+        const backdrop = index === 0 && !longForm ? SECTION_BACKDROP[page.slug] : undefined;
+        const className = [
+          "prose",
+          "card",
+          backdrop ? "fest-section" : "",
+          section.tone === "callout" ? "callout" : "",
+        ]
+          .filter(Boolean)
+          .join(" ");
         return (
           <Fragment key={id}>
-          <section id={id} className={backdrop ? "prose card fest-section" : "prose card"}>
+          <section id={id} className={className}>
             {backdrop ? (
               <DecorImage file={backdrop.file} width={backdrop.width} height={backdrop.height} className="fest-bg" />
             ) : null}
@@ -203,6 +232,25 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
                 <RichText text={paragraph} />
               </p>
             ))}
+            {section.cards ? (
+              <div className="project-type-grid">
+                {section.cards.map((card) => (
+                  <article key={card.id} id={card.id} className="project-type-card">
+                    <h3>{card.title}</h3>
+                    {card.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>
+                        <RichText text={paragraph} />
+                      </p>
+                    ))}
+                    {card.links?.map((link) => (
+                      <p key={link.href + link.label}>
+                        <ExternalAnchor href={link.href}>{link.label}</ExternalAnchor>
+                      </p>
+                    ))}
+                  </article>
+                ))}
+              </div>
+            ) : null}
             {section.steps ? (
               <ol>
                 {section.steps.map((step) => (
@@ -218,7 +266,7 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
                   <li key={step.text}>
                     <RichText text={step.text} />
                     {step.hrefs?.map((link) => (
-                      <span key={link.href}>
+                      <span key={link.href + link.label}>
                         {" "}
                         <ExternalAnchor href={link.href}>{link.label}</ExternalAnchor>
                       </span>
@@ -226,6 +274,20 @@ export function OnboardingView({ page, children }: { page: StepPage; children?: 
                   </li>
                 ))}
               </ol>
+            ) : null}
+            {section.embed ? (
+              <>
+                <p>
+                  <a className="button" href={section.embed.src} target="_blank" rel="noopener noreferrer">
+                    Open the Next-Step Quantum Decision Guide
+                    <ExternalIcon />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </p>
+                <div className="decision-frame">
+                  <iframe title={section.embed.title} src={section.embed.src} loading="lazy" />
+                </div>
+              </>
             ) : null}
             {section.table ? <DataTable {...section.table} /> : null}
             {section.troubles?.map((trouble) => (

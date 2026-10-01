@@ -518,10 +518,10 @@ export const USE_CASE_FIELDS = [
 ];
 
 export const PROJECT_KINDS = [
-  "A real industry problem mapped to a QUBO, a Hamiltonian, or a kernel, and run small.",
-  "A small classical-versus-quantum comparison.",
-  "A tool.",
-  "A sourced analysis of where quantum does not fit.",
+  "A mapped problem: a real industry problem, its stakeholders and current method, mapped to a quantum representation and run small, with the size gap stated.",
+  "A benchmark or comparison: the same bounded problem, classical and quantum, with the metric chosen before the run.",
+  "A tool with an intended user, an input, an output, a reason it helps, and a limitation.",
+  "An analysis of fit, including a sourced “not a fit yet” or “not quantum-shaped” conclusion.",
 ];
 
 export const DAY_ONE_ROLES = [
@@ -620,7 +620,7 @@ export const TEAM_SIZE_LINE =
   "No participant-facing team-size cap is written. The sponsorship template says “teams of up to [4],” and that number is still in brackets. Each team should have a builder side and a domain side. One person owns hardware submissions.";
 
 export const JUDGING_LINE =
-  "The shared rubric is Coming soon. The dimensions named for review are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. Please open the pull request by October 31, 2026 so judging can review every eligible submission fairly. A pull request opened after that deadline is not judged.";
+  "Official statewide judging rubric: Coming soon. The dimensions are technical execution, problem framing and relevance, classical baseline and quality of comparison, evidence and reproducibility, honesty about limitations, and presentation and communication. Weights are not published. Please open the pull request by October 31, 2026 so judging can review every eligible submission fairly. A pull request opened after that deadline is not judged.";
 
 export const AWARD_TEMPLATE_LINE =
   "Local events are October 17–18, 2026. Capacity is up to 50 participants per campus. A team-size cap inside that room is TBA. Beginners are welcome.";

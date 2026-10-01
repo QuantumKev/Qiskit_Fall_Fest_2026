@@ -569,7 +569,7 @@ function HackathonBody() {
       </ul>
       <p>{PLAN_BLANK}</p>
       <h2>What a strong project is</h2>
-      <p>A strong project is one of these four. You are not expected to prove that quantum computing is better than classical computing. Kinds 1 and 4 can be done with little or no code.</p>
+      <p>A strong project is one of these four. The handbook states what quantum advantage would require, and this hackathon does not ask you to prove it. Mapped-problem and analysis work can be led by a Domain/Industry Expert.</p>
       <ol>
         {PROJECT_KINDS.map((kind) => (
           <li key={kind}>{kind}</li>

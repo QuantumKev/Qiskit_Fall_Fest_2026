@@ -77,36 +77,76 @@ Qiskit-approved website: <https://entangledsolutionsgroup.com/Qiskit-Fall-Fest-2
 
 ## 2. What you are actually going to build
 
-You are not expected to prove that quantum computing is better than classical computing. Your goal is to define a meaningful problem, explore an appropriate quantum approach, compare it with a classical method when possible, document what happened, and explain what you learned—including the limitations. The benchmarking page and the glossary name the stronger claim teams are not asked to make.
+Quantum advantage means demonstrating, through a fair comparison, that a quantum method outperforms the best relevant classical approach on a useful problem. You are not expected to prove that during a 48-hour hackathon. Your goal is to build a well-scoped project, create credible evidence, and explain honestly what the evidence does and does not show.
 
-A strong Qiskit Fall Fest project is one of these:
+### A mapped problem
 
-1. **A mapped problem.** Take a real problem from a real industry, show precisely how it becomes something a quantum computer could work on (a QUBO, a Hamiltonian, a kernel), run it small on hardware or simulator, and be honest about what would need to change to make it matter. This is where having someone from industry or a subject matter expert in the domain is helpful. 
-2. **A benchmark or comparison.** Run the same problem classically and quantumly at small scale. Show where the crossover *might* be and what's blocking it.
-3. **A tool.** Something that makes quantum work easier: a visualizer, a translator from a domain format into a circuit, a teaching aid.
-4. **An analysis.** A rigorous, sourced assessment of where quantum does or doesn't fit in a specific sector, with the technical claims actually checked against what current hardware can do.
+The team begins with a real industry problem. Name the stakeholders and how the work is handled today. Write the variables, constraints, objectives, data, and success metrics. Map that problem to a QUBO, a Hamiltonian, a kernel, a circuit, or another quantum representation. When a small example is appropriate, run it on a simulator or on approved hardware. State the gap between that demo size and a meaningful real-world instance, and explain what would have to change in the hardware, the algorithms, the data, or the industry conditions. A Domain/Industry Expert or another subject-matter expert is especially valuable here.
 
-Notice that **projects 1 and 4 are mostly non-code work**, and projects 2 and 3 are much better when someone on the team knows what the output is supposed to mean. This is why we run a domain track. See §3.
+[Assess an optimization problem with the Next-Step Quantum Decision Guide](https://www.quantumglobalgroup.io/qiskit-fall-fest/decision-guide/#/assess)
 
-**Judging criteria:** The shared rubric is **Coming soon**. The dimensions named for local review and the statewide announcement are technical execution, problem framing and relevance, honesty about limitations, and presentation. Weights are not published. A project that claims a quantum method beat classical computing, without the comparison written down, is outside this event.
+[Review the complete benchmarking sequence](/benchmarking/)
+
+### A benchmark or comparison
+
+Run the same bounded problem classically and with the quantum method. Use the same definition and comparable inputs. Define the metric before the run. Record the configurations, instance sizes, timing, quality, and resource use. You may explain where a future crossover might occur and what blocks it. Do not treat a crossover as something every project must find or predict. Report the result even when the classical approach stays ahead.
+
+[Build your benchmark plan](/benchmarking/)
+
+[Open the benchmarking and readiness guide](/benchmarking/)
+
+An optimization comparison can continue in the [Next-Step Quantum Decision Guide](https://www.quantumglobalgroup.io/qiskit-fall-fest/decision-guide/#/assess). Simulation, chemistry, classification, link prediction, and other non-optimization projects stay with the benchmarking sequence on this site.
+
+### A tool
+
+A tool may be a circuit or state visualizer. It may translate a domain format into a QUBO, a Hamiltonian, a kernel, or a circuit. It may be a teaching aid, a workflow or benchmarking assistant, or a resource-estimation or evidence-tracking tool. Name the intended user, the input, the output, the value, and the limitations. A polished interface without a meaningful user problem is not enough.
+
+### An analysis
+
+An analysis is a rigorous assessment of whether quantum computing fits a sector or a problem. Compare present classical methods with possible quantum approaches. Include a hardware and resource-gap assessment. Policy, risk, deployment, and readiness analysis belong here. A well-supported “not a fit yet” or “not quantum-shaped” conclusion is a complete project. Use credible sources, and verify technical claims against current hardware and algorithm capabilities.
+
+> Mapped-problem and analysis projects can be led primarily by Domain/Industry participants. Benchmark and tool projects generally require more Builder/Developer work. All four become stronger when someone understands what the output means in the real world.
+
+### Choose your next step
+
+1. [Use the Benchmarking Sequence](/benchmarking/)
+2. [Open the Next-Step Quantum Decision Guide](https://www.quantumglobalgroup.io/qiskit-fall-fest/decision-guide/#/assess)
+
+The decision guide is for optimization-shaped problems. Do not force simulation, chemistry, classification, link prediction, or other non-optimization problems through an optimization-only assessment. Those projects still use: Problem → Current method → Classical baseline → Quantum hypothesis → Experiment → Metrics → Evidence → Limitations → Recommendation.
+
+### Official statewide judging rubric: Coming soon
+
+Dimensions for review, with no weights:
+
+- Technical execution
+- Problem framing and relevance
+- Classical baseline and quality of comparison
+- Evidence and reproducibility
+- Honesty about limitations
+- Presentation and communication
 
 ---
 
 ## 3. Two pathways, one team
 
-Every team should have both a Domain/Industry Expert and a Builder/Developer Expert. Coding is optional for the Domain/Industry Expert. The interesting projects come from the two roles working on one problem.
+Every team should include both perspectives. A builder-only team may create a clean implementation before confirming that the problem matters. A domain-only team may frame a strong opportunity without a testable experiment. The strongest projects come from combining the two.
 
-| | Domain/Industry Expert | Builder/Developer Expert | Shared |
+**Builder/Developer Expert.** You may use Python and Qiskit. You may build, transpile, and run circuits on simulators and approved hardware. You may implement the quantum experiment, create or measure the classical baseline, and collect configurations, metrics, plots, and results. You may maintain reproducible notebooks and code, and document technical limitations. Python is expected. A physics degree is not required. At this level much of the work is linear algebra, structured problem mapping, and using APIs correctly.
+
+**Domain/Industry Expert.** You may bring expertise from finance, logistics, energy, health, law, policy, agriculture, manufacturing, venture capital, operations, or another field. You may confirm that the problem exists, name the stakeholders and the business or community value, and describe how it is solved today. You may set the classical baseline and the meaningful metrics, and weigh feasibility, risk, policy, ethics, and deployment. You may judge whether the output matters, and lead `USE-CASE.md`, `LIMITATIONS.md`, the presentation, or the narrative. Coding is optional. You do not need to install Python. You may read notebooks without writing them.
+
+| Activity | Domain/Industry Expert | Builder/Developer Expert | Shared |
 |---|---|---|---|
-| Focus | The problem and whether a quantum approach fits | Circuits, code, and the run | One project and one write-up |
-| Coding | Optional | Python and Qiskit | Either person can pair |
-| Comparison | Name the classical method | Measure the baseline and the quantum run | Do not promise the quantum result will win |
+| Select the problem | Leads realism and relevance | Checks technical tractability | Yes |
+| Define the baseline | Explains the current method and meaningful metric | Implements or measures it | Yes |
+| Form the quantum hypothesis | Confirms why it would matter | Defines how it can be tested | Yes |
+| Run the experiment | Interprets the output | Builds and executes it | Review together |
+| Document limitations | Industry, policy, and deployment limits | Technical and hardware limits | Yes |
+| Present and submit | Leads or supports the story | Demonstrates the implementation | Yes |
 
-**Builder/Developer Expert**: you write Qiskit, run circuits, and keep the result next to the baseline. You need Python. You do *not* need a physics background.
+Read the pathways on this site: [Two pathways](/roles/). The long-form guide rendered there is [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md). A public note on the same idea is [Domain track, Entangled Solutions Group](https://www.linkedin.com/pulse/domain-track-entangled-solutions-group-tgrwe/).
 
-**Domain/Industry Expert**: you bring a field that is not quantum computing: finance, logistics, energy, health, law, policy, agriculture, manufacturing, operations, or another practice you know. Your job is to make sure the team is solving a problem that exists. You do not have to install Python. The long-form source is [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md).
-
-**If you do not write code, you still belong here.** [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md) shows how your experience shapes the project. Coding is optional in that role.
+> If you are wondering whether you are “technical enough,” read the complete Domain/Industry guide before deciding not to participate. Your industry knowledge may be the part the team cannot replace with code.
 
 ---
 
@@ -521,6 +561,35 @@ Help: Discord, with the error text. Do not paste an API key, a CRN, or a passwor
 
 ---
 
+## 12. Final Step: Study Hetionet and Build Your Project Framework
+
+Hetionet is an advanced completed example, not the minimum level for this hackathon. Study it on the [Hetionet example](/hetionet/) page, then build your own framework. Do not copy the project.
+
+The sequence is Problem → Team roles → Data → Classical baseline → Quantum component → Benchmark → Evidence → Limitations → Demo → Submission. Each stage connects to a question for your own project.
+
+Hetionet is classification and link prediction, not an optimization problem. Do not send it through the optimization-only decision guide. The comparison does not show quantum advantage, and it is not a clinical result.
+
+On the verified primary configuration, hybrid stacking PR-AUC is 0.7987, Random Forest is 0.7838, and Extra Trees is 0.7807. If 0.8581 appears, the quantum kernel was cached while the classical components were tuned with Optuna.
+
+Public files, through the project’s own links: [README](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc), [paper](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/docs/PAPER.md), [evidence](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/docs/RESULTS_EVIDENCE.md), [notebooks](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/notebooks/01-kg-ingestion.ipynb), [glossary](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/docs/DASHBOARD_PRESENTATION_AND_GLOSSARY.md), and [demo](https://hetqml-web.fly.dev/initialize). The other notebooks are [the classical baseline](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/notebooks/02-classical-baseline.ipynb), [quantum training](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/notebooks/03-qml-training.ipynb), and [testing](https://github.com/Quantum-Global-Group/hybrid-qml-kg-poc/blob/main/notebooks/04-testing.ipynb).
+
+| Stage | Hetionet example | Question for your team |
+|---|---|---|
+| Problem | Compound-treats-Disease link prediction | What precise problem are we solving? |
+| Current method | Classical link-prediction models | How is it solved today? |
+| Baseline | Random Forest and Extra Trees | What must our experiment be compared against? |
+| Quantum hypothesis | A quantum kernel may add a useful signal in a hybrid stack | What bounded quantum contribution are we testing? |
+| Experiment | Four-notebook pipeline | What small experiment can we finish? |
+| Metric | PR-AUC | What number will determine the result? |
+| Evidence | README, results files, configurations, and notebooks | What files will allow someone to verify our claim? |
+| Limitations | No standalone quantum advantage and no clinical result | What does our result not prove? |
+| Recommendation | Continue researching the hybrid approach honestly | Continue, narrow, pause, or stop? |
+| Submission | Documentation, notebooks, evidence, presentation, and demo | Is our project reproducible and understandable? |
+
+Use the Hetionet framework as a checklist for your own project. Keep the structure, replace the problem, establish your own baseline, choose an appropriate quantum hypothesis, and document the evidence and limitations.
+
+---
+
 ## Appendix A: Glossary for the Domain/Industry Expert
 
 You'll hear these on day one. You don't need to be able to derive any of them.
@@ -560,6 +629,7 @@ Use the labels. You do not need every box ticked before you walk in.
 - [ ] GitHub account created, email verified, 2FA on (§6.1)
 - [ ] Asked to join the private project repository at <https://github.com/robertloredo/FAU-Qiskit-Fallfest-2026>
 - [ ] Read §2 and have a sense of what a good project looks like
+- [ ] When you are ready to shape the project, study §12 and use the Hetionet framework as a checklist for your own problem
 - [ ] Started thinking about a problem or topic that interests me
 - [ ] Skimmed [Domain/Industry Expert and Builder/Developer Expert](NON-TECHNICAL-TRACK.md)
 - [ ] Domain/Industry Expert: a draft Use-Case Canvas. Empty boxes are welcome.

@@ -80,6 +80,39 @@ test("the home lockup shows the IBM Quantum wordmark and the Fall Fest badge", (
   assert.doesNotMatch(view, /IBM sponsors/);
 });
 
+test("project types, pathways, and the Hetionet framework stay in the canonical guides", () => {
+  const handbook = readFileSync(new URL("../PARTICIPANT_HANDBOOK.md", import.meta.url), "utf8");
+  const track = readFileSync(new URL("../NON-TECHNICAL-TRACK.md", import.meta.url), "utf8");
+  const opening =
+    "Quantum advantage means demonstrating, through a fair comparison, that a quantum method outperforms the best relevant classical approach on a useful problem. You are not expected to prove that during a 48-hour hackathon. Your goal is to build a well-scoped project, create credible evidence, and explain honestly what the evidence does and does not show.";
+  const welcome =
+    "Every team should include both perspectives. A builder-only team may create a clean implementation before confirming that the problem matters. A domain-only team may frame a strong opportunity without a testable experiment. The strongest projects come from combining the two.";
+  const roleCallout =
+    "Mapped-problem and analysis projects can be led primarily by Domain/Industry participants. Benchmark and tool projects generally require more Builder/Developer work. All four become stronger when someone understands what the output means in the real world.";
+  const enough =
+    "If you are wondering whether you are “technical enough,” read the complete Domain/Industry guide before deciding not to participate. Your industry knowledge may be the part the team cannot replace with code.";
+  const close =
+    "Use the Hetionet framework as a checklist for your own project. Keep the structure, replace the problem, establish your own baseline, choose an appropriate quantum hypothesis, and document the evidence and limitations.";
+  assert.match(handbook, /## 2\. What you are actually going to build/);
+  assert.ok(handbook.includes(opening));
+  assert.ok(handbook.includes(roleCallout));
+  assert.ok(handbook.includes(welcome));
+  assert.ok(handbook.includes(enough));
+  assert.ok(handbook.includes(close));
+  assert.match(handbook, /## 12\. Final Step: Study Hetionet and Build Your Project Framework/);
+  assert.match(handbook, /Official statewide judging rubric: Coming soon/);
+  assert.match(handbook, /Classical baseline and quality of comparison/);
+  assert.match(handbook, /Evidence and reproducibility/);
+  assert.match(handbook, /Presentation and communication/);
+  assert.match(handbook, /https:\/\/www\.quantumglobalgroup\.io\/qiskit-fall-fest\/decision-guide\/#\/assess/);
+  assert.match(handbook, /https:\/\/www\.linkedin\.com\/pulse\/domain-track-entangled-solutions-group-tgrwe\//);
+  assert.ok(track.includes(welcome));
+  assert.ok(track.includes(enough));
+  assert.match(track, /Select the problem/);
+  assert.match(track, /Review together/);
+  assert.doesNotMatch(`${handbook}\n${track}`, /misunderstood the assignment|nobody has|no substance|you have one job|before October 1|\(external\)|\{\{/i);
+});
+
 test("the submission template and pages workflow exist", () => {
   const readme = readFileSync(new URL("../submissions/_TEMPLATE/README.md", import.meta.url), "utf8");
   const workflow = readFileSync(new URL("../.github/workflows/pages.yml", import.meta.url), "utf8");
