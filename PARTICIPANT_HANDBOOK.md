@@ -1,4 +1,4 @@
-**Florida Qiskit Fallfest Hackathon.** Part of Qiskit Fall Fest 2026. Kickoff and challenge release: October 1, 2026. Local events: October 17–18, 2026. First-place local winner deadline: October 31, 2026. Statewide announcement: November 13, 2026.
+**Florida Qiskit Fallfest Hackathon.** Part of Qiskit Fall Fest 2026. Kickoff and challenge release: October 1, 2026. Local events: October 17–18, 2026. Local ceremony: October 18, 2026. First-place local winner deadline: October 31, 2026. State championship ceremony: November 14, 2026.
 
 ---
 
@@ -479,8 +479,9 @@ Times, speaker names, and any room that is not listed here are **TBA**.
 |---|---|---|
 | October 1, 2026 | Kickoff and challenge release | TBA |
 | October 17–18, 2026 | Local events | Miami Dade College Wolfson Campus, AI Center, Building 2, Room 2104; and Alan B. Levan Center at Nova Southeastern University, 5th Floor. Other campus rooms are TBA. |
+| October 18, 2026 | Local ceremony | Campus venues are listed with the local events. |
 | October 31, 2026 | First-place local winner deadline | Packet to the hosts |
-| November 13, 2026 | Statewide announcement | Venue TBA |
+| November 14, 2026 | State championship ceremony | Venue TBA |
 
 Capacity is up to 50 participants per campus. A setup clinic and a GitHub clinic may run inside the local events. Whether they do is TBA.
 

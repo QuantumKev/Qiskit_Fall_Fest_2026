@@ -133,7 +133,7 @@ Use Discord for errors that are safe to share: <https://discord.gg/vz6uTbtJzR>. 
 
 ## Post-session follow-up
 
-Send people back to the handbook checklist and the submission page. Remind them of the October 31, 2026 local packet date and the November 13, 2026 statewide announcement. Do not collect API keys after the session. If a key was shown on a shared screen, tell that person to revoke it and create a replacement in the IBM dashboard.
+Send people back to the handbook checklist and the submission page. Remind them of the October 18, 2026 local ceremony, the October 31, 2026 local packet date, and the November 14, 2026 state championship ceremony. Do not collect API keys after the session. If a key was shown on a shared screen, tell that person to revoke it and create a replacement in the IBM dashboard.
 
 ## Co-host notes
 

@@ -29,8 +29,13 @@ test("the participant journey is twelve pages fed by one event record", () => {
   assert.match(onboarding, /from "@\/content\/event"/);
   assert.match(event, /October 1, 2026/);
   assert.match(event, /October 17–18, 2026/);
+  assert.match(event, /localCeremony: "October 18, 2026"/);
   assert.match(event, /October 31, 2026/);
-  assert.match(event, /November 13, 2026/);
+  assert.match(event, /stateChampionship: "November 14, 2026"/);
+  assert.match(event, /endDate: "2026-11-14"/);
+  assert.doesNotMatch(event, /November 13, 2026/);
+  assert.doesNotMatch(event, /November 18/);
+  assert.doesNotMatch(event, /2026-11-13/);
   assert.match(event, /kevin@quantumglobalgroup\.io/);
   assert.match(event, /grant@deepstation\.ai/);
   assert.match(event, /atorre58@fau\.edu/);

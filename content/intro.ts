@@ -541,7 +541,7 @@ export const HACKATHON_GAPS = [
   "Code of conduct. Coming soon.",
   "Shared rubric weights. Coming soon.",
   "Rooms and addresses that are not the two confirmed venues. TBA.",
-  "Statewide announcement venue and time on November 13, 2026. TBA.",
+  "State championship ceremony venue and time on November 14, 2026. TBA.",
   "Whether every campus day is limited to enrolled students. TBA.",
   "Kevin Robinson video titles. They will be listed when confirmed.",
 ];
@@ -552,10 +552,10 @@ export const PROGRAM_BANNER =
   "Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. The theme is A decade of quantum on the cloud. The 2026 theme recognizes ten years since IBM placed its first quantum processor on the cloud.";
 
 export const KICKOFF_LINES =
-  "Kickoff and challenge release are October 1, 2026. Local events are October 17–18, 2026. The first-place local winner deadline is October 31, 2026. The statewide announcement is November 13, 2026.";
+  "Kickoff and challenge release are October 1, 2026. Local events are October 17–18, 2026. The local ceremony is October 18, 2026. The first-place local winner deadline is October 31, 2026. The state championship ceremony is November 14, 2026.";
 
 export const CHAMPIONSHIP_LINE =
-  "The statewide announcement is November 13, 2026. The venue and time are TBA.";
+  "The state championship ceremony is November 14, 2026. The venue and time are TBA.";
 
 export const WINNER_PACKET =
   "Local first-place winners (names, emails, deck, and GitHub project link) are due to the hosts no later than October 31.";
