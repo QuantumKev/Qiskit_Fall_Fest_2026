@@ -16,7 +16,7 @@ import { linkifyPlainText } from "@/lib/link-text.mjs";
 import { slugify } from "@/lib/slug";
 
 function isFileLink(href: string) {
-  return /\.(pdf|md|zip|png|jpe?g|svg|webp)$/i.test(href.split("#")[0]);
+  return /\.(pdf|xlsx|md|zip|png|jpe?g|svg|webp)$/i.test(href.split("#")[0]);
 }
 
 function ExternalIcon() {

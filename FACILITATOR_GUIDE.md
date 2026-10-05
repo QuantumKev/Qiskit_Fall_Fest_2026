@@ -126,7 +126,7 @@ Use Discord for errors that are safe to share: <https://discord.gg/vz6uTbtJzR>. 
 - README, USE-CASE, and LIMITATIONS are present.
 - A classical baseline sits next to any quantum number.
 - No API key, CRN, or password is in the diff.
-- The first-place local packet date on this site is October 31, 2026. Rubric weights are still coming soon.
+- The first-place local packet date on this site is October 31, 2026. The statewide judging rubric, with weights, is in the [participant handbook](/handbook/#official-statewide-judging-rubric).
 
 ## Post-session follow-up
 
@@ -137,7 +137,7 @@ Send people back to the handbook checklist and the submission page. Remind them 
 Earlier drafts hid these notes behind a Co-Host control on the participant pages. They live here instead.
 
 - Read the welcome once. Point at the twelve-step rail and at [Quantum from Zero to One](/qolour/), the Qolour lesson for the room. Do not read from a book, and do not paste the Qolour slides into this guide.
-- Registration, the rubric, the code of conduct, and unconfirmed rooms stay “Coming soon” or “Details coming soon.”
+- Registration, the code of conduct, and unconfirmed rooms stay “Coming soon” or “Details coming soon.” The statewide judging rubric is published in the [participant handbook](/handbook/#official-statewide-judging-rubric).
 - Do not introduce Kevin Robinson as the lead. Robert Loredo, rloredo2026@fau.edu, is the lead contact.
 - The attendance form on this site does not collect passwords, API keys, or CRNs. The static GitHub Pages build does not include the response API.
 - Status labels you may use in the room, out loud: Registered, Simulator first, Open Plan visible, Connection verified, Needs assistance.

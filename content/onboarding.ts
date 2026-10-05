@@ -146,7 +146,7 @@ const start: StepPage = {
       paragraphs: [
         `The theme is ${EVENT.theme}. ${EVENT.themeSummary}`,
         `Kickoff and challenge release: ${EVENT.kickoff}. Local events: ${EVENT.localEvents}. Local ceremony: ${EVENT.localCeremony}. First-place local winner deadline: ${EVENT.winnerDeadline}. Final: ${EVENT.final}. State championship ceremony: ${EVENT.stateChampionship}. Capacity is ${EVENT.capacity}.`,
-        `The host directory below lists all five universities. A confirmed venue and a local registration link are on the card. Anything still open says ${EVENT.unconfirmedDetails}. The shared code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
+        `The host directory below lists all five universities. A confirmed venue and a local registration link are on the card. Anything still open says ${EVENT.unconfirmedDetails}. The shared code of conduct is ${EVENT.codeOfConduct}. The statewide judging rubric for ${EVENT.name} is on this page and in the participant handbook.`,
         `Unresolved program questions go to Kevin Robinson at ${EVENT.programEmail}. The chat is ${EVENT.discord}. The announcement is ${IBM.announcement}. The Qiskit-approved website is ${QISKIT_APPROVED_SITE}.`,
       ],
     },
@@ -226,6 +226,8 @@ const start: StepPage = {
     },
   ],
   links: [
+    { href: "/handbook/#official-statewide-judging-rubric", label: "Official statewide judging rubric" },
+    { href: EVENT.rubric, label: "Download the judging rubric workbook" },
     { href: "/handbook/", label: "Participant handbook" },
     { href: "/roles/", label: "Domain/Industry Expert and Builder/Developer Expert" },
     { href: "/catalog/", label: "Notebook catalog" },
@@ -890,7 +892,7 @@ const submit: StepPage = {
   number: "12",
   title: "Prepare and submit",
   minutes: 20,
-  purpose: `Work on a branch and open a pull request. Please open it by ${EVENT.winnerDeadline} so judging can review every eligible submission fairly. That date is the first-place local packet. The rubric weights are ${EVENT.rubric}.`,
+  purpose: `Work on a branch and open a pull request. Please open it by ${EVENT.winnerDeadline} so judging can review every eligible submission fairly. That date is the first-place local packet. The statewide judging rubric for ${EVENT.name} is on this page and in the participant handbook.`,
   sections: [
     {
       heading: "The pull request",
@@ -1046,6 +1048,8 @@ const resources: StepPage = {
   links: [
     { href: "/qolour/", label: "Quantum from Zero to One" },
     { href: "/downloads/qolour-quantum-from-zero-to-one.pdf", label: "Open or download Quantum from Zero to One (PDF)" },
+    { href: "/handbook/#official-statewide-judging-rubric", label: "Official statewide judging rubric" },
+    { href: EVENT.rubric, label: "Download the judging rubric workbook" },
     { href: "/handbook/", label: "Participant handbook" },
     { href: "/catalog/", label: "Notebook catalog" },
     { href: "/glossary/", label: "Glossary" },

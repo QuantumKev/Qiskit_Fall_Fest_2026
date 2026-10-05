@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { notFound } from "next/navigation";
+import { JudgingRubric } from "@/components/JudgingRubric";
 import { MarkdownDocument } from "@/components/MarkdownDocument";
 import { OnboardingView } from "@/components/OnboardingView";
 import { PAGES, pageBySlug } from "@/content/onboarding";
@@ -27,5 +28,11 @@ export default async function OnboardingPage({ params }: { params: Promise<{ slu
         label="Domain/Industry Expert and Builder/Developer Expert"
       />
     ) : null;
-  return <OnboardingView page={page}>{domain}</OnboardingView>;
+  const rubric = slug === "submit" ? <JudgingRubric /> : null;
+  return (
+    <OnboardingView page={page}>
+      {domain}
+      {rubric}
+    </OnboardingView>
+  );
 }

@@ -113,16 +113,108 @@ An analysis is a rigorous assessment of whether quantum computing fits a sector 
 
 The decision guide is for optimization-shaped problems. Do not force simulation, chemistry, classification, link prediction, or other non-optimization problems through an optimization-only assessment. Those projects still use: Problem → Current method → Classical baseline → Quantum hypothesis → Experiment → Metrics → Evidence → Limitations → Recommendation.
 
-### Official statewide judging rubric: Coming soon
+### Official statewide judging rubric
 
-Dimensions for review, with no weights:
+This is the official statewide judging rubric for the Florida Qiskit Fallfest Hackathon. Score each criterion 1–5. Weights convert scores to a total out of 100; hardware bonus adds up to +5.
 
-- Technical execution
-- Problem framing and relevance
-- Classical baseline and quality of comparison
-- Evidence and reproducibility
-- Honesty about limitations
-- Presentation and communication
+Weighted Score = Σ (criterion score × weight) ÷ 5 × 100 → out of 100. Total = Weighted Score + Hardware Bonus (max 105).
+
+[Download the judging rubric workbook](/resources/qiskit-fall-fest-judging-rubric.xlsx)
+
+| Criterion | Weight | What it measures |
+|---|---|---|
+| Problem Definition & Relevance | 15% | Is there a clear, meaningful problem? Does the team explain who it affects and why it matters? |
+| Quantum Rationale & Understanding of Potential | 20% | Does the team understand WHY quantum might help here, and are they honest about today's limits (noise, qubit counts, no guaranteed speedup)? |
+| Technical Implementation (Qiskit) | 20% | Does the code run? Is Qiskit used appropriately (circuits, primitives, transpilation, algorithms)? Judged relative to team experience. |
+| Results & Validation | 10% | Are results shown and interpreted? Is there a comparison to a classical baseline, expected values, or simulator vs. hardware? |
+| Innovation & Creativity | 10% | Is the idea or approach original, or a fresh take on a known problem? |
+| Presentation & Communication | 15% | Can the team clearly articulate the problem, the solution and the results to both technical and non-technical audiences? |
+| Q&A, Teamwork & Learning Journey | 10% | Can the team answer questions? Do all members contribute? Can they describe what they learned and next steps? |
+| Total weight (must equal 100%) | 100% | |
+
+### Problem Definition & Relevance (15%)
+
+Is there a clear, meaningful problem? Does the team explain who it affects and why it matters?
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| No clear problem; project is a demo without purpose. | Problem named but vague; little sense of why it matters. | Clear problem with some real-world context. | Well-defined problem with clear stakeholders and motivation. | Compelling, specific problem; scope is realistic and impact is clearly argued. |
+
+**Questions judges can ask.** What problem are you solving, and for whom? Why does it matter?
+
+### Quantum Rationale & Understanding of Potential (20%)
+
+Does the team understand WHY quantum might help here, and are they honest about today's limits (noise, qubit counts, no guaranteed speedup)?
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| No explanation of why quantum is used; or claims are inaccurate / overhyped. | Generic claims ("quantum is faster") with little connection to the problem. | Names a relevant quantum idea (superposition, entanglement, sampling, optimization, simulation) and links it to the problem. | Clear reasoning for quantum fit; acknowledges current hardware limits and classical alternatives. | Nuanced view of near-term vs. future potential; realistic about advantage; outlines what scale or hardware would be needed. |
+
+**Questions judges can ask.** Why quantum instead of a classical approach? What would need to improve for this to beat classical methods?
+
+### Technical Implementation (Qiskit) (20%)
+
+Does the code run? Is Qiskit used appropriately (circuits, primitives, transpilation, algorithms)? Judged relative to team experience.
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| Code missing or does not run. | Runs partially; mostly copied tutorial code with little adaptation. | Working implementation adapted to the problem; reasonable circuit design. | Solid, well-structured code; thoughtful use of Qiskit features (e.g., primitives, transpiler, parameterized circuits). | Polished, documented, reproducible; creative or advanced techniques used correctly (e.g., error mitigation, hybrid workflows). |
+
+**Questions judges can ask.** Walk me through your circuit. What did you build vs. reuse? What was hardest to get working?
+
+### Results & Validation (10%)
+
+Are results shown and interpreted? Is there a comparison to a classical baseline, expected values, or simulator vs. hardware?
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| No results shown. | Results shown but not explained. | Results explained with some interpretation. | Results compared against a baseline or expectation; limitations discussed. | Rigorous analysis: baselines, error bars or repeated runs, simulator vs. hardware comparison, clear conclusions. |
+
+**Questions judges can ask.** How do you know it worked? What did you compare against? What surprised you?
+
+### Innovation & Creativity (10%)
+
+Is the idea or approach original, or a fresh take on a known problem?
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| Direct copy of an existing tutorial or example. | Minor variation on a common example. | Some original thinking in problem choice or approach. | Original idea or a creative application to a new domain. | Highly original; would make other teams and judges say "I hadn't thought of that." |
+
+**Questions judges can ask.** What makes your approach different from existing examples?
+
+### Presentation & Communication (15%)
+
+Can the team clearly articulate the problem, the solution and the results to both technical and non-technical audiences?
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| Hard to follow; problem and solution unclear. | Some structure, but heavy jargon or key pieces missing. | Clear problem-solution story; mostly understandable to non-experts. | Engaging and well-structured; good visuals; explains quantum concepts in plain language. | Excellent storytelling; accessible to any audience while still technically accurate; within time. |
+
+**Questions judges can ask.** Can you explain your project in one sentence to someone with no physics background?
+
+### Q&A, Teamwork & Learning Journey (10%)
+
+Can the team answer questions? Do all members contribute? Can they describe what they learned and next steps?
+
+| 1 – Beginning | 2 – Developing | 3 – Proficient | 4 – Strong | 5 – Exceptional |
+|---|---|---|---|---|
+| Cannot answer basic questions about their own project. | Answers are partial; one member carries the team. | Answers most questions; describes some lessons learned. | Confident, accurate answers; shared ownership; clear next steps. | Insightful answers, strong collaboration, clear growth story and realistic roadmap. |
+
+**Questions judges can ask.** What did each of you contribute? What would you do with another month?
+
+### Hardware Bonus (judge selects one tier per team)
+
+| Hardware tier | Bonus pts | Description |
+|---|---|---|
+| Simulator only | 0 | Ran on a local or cloud simulator (e.g., Aer, statevector). No penalty; strong simulator projects can win. |
+| Real quantum device | 3 | Circuit executed on real IBM Quantum hardware; job results shown. |
+| Real device + noise analysis | 5 | Ran on real hardware AND compared to simulator, analysed noise, or applied error suppression/mitigation. |
+
+### Scoring notes
+
+- Score relative to a student hackathon, not a research lab. A '3' is a solid, good project.
+- Simulator-only projects are fully eligible; the bonus rewards the extra effort of running on real hardware, it is not a requirement.
+- Reward honesty: a team that clearly explains why quantum may NOT yet beat classical methods shows more understanding than one that overclaims.
 
 ---
 

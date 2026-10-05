@@ -534,12 +534,11 @@ export const DAY_ONE_ROLES = [
 ];
 
 export const HACKATHON_GAP_NOTE =
-  "Unconfirmed registration, rubric, code of conduct, and campus details stay Coming soon or TBA.";
+  "Unconfirmed registration, code of conduct, and campus details stay Coming soon or TBA.";
 
 export const HACKATHON_GAPS = [
   "Official registration link. Coming soon.",
   "Code of conduct. Coming soon.",
-  "Shared rubric weights. Coming soon.",
   "Rooms and addresses that are not the two confirmed venues. TBA.",
   "State championship ceremony venue and time on November 14, 2026. TBA.",
   "Whether every campus day is limited to enrolled students. TBA.",
@@ -619,7 +618,7 @@ export const TEAM_SIZE_LINE =
   "No participant-facing team-size cap is written. The sponsorship template says “teams of up to [4],” and that number is still in brackets. Each team should have a builder side and a domain side. One person owns hardware submissions.";
 
 export const JUDGING_LINE =
-  "Official statewide judging rubric: Coming soon. The dimensions are technical execution, problem framing and relevance, classical baseline and quality of comparison, evidence and reproducibility, honesty about limitations, and presentation and communication. Weights are not published. Please open the pull request by October 31, 2026 so judging can review every eligible submission fairly. A pull request opened after that deadline is not judged.";
+  "The official statewide judging rubric for the Florida Qiskit Fallfest Hackathon is published in the participant handbook. Score each criterion 1–5. Weights convert scores to a total out of 100; hardware bonus adds up to +5. Please open the pull request by October 31, 2026 so judging can review every eligible submission fairly. A pull request opened after that deadline is not judged.";
 
 export const AWARD_TEMPLATE_LINE =
   "Local events are October 17–18, 2026. Capacity is up to 50 participants per campus. A team-size cap inside that room is TBA. Beginners are welcome.";
@@ -875,7 +874,7 @@ export const INTRO_FACILITATOR: Record<string, { timing: string; notes: string[]
     timing: "20 minutes. Kickoff is October 1, 2026.",
     notes: [
       "Do not read from the book.",
-      "Registration, the rubric, and unconfirmed rooms stay Coming soon or TBA.",
+      "Registration and unconfirmed rooms stay Coming soon or TBA. The statewide judging rubric is published in the participant handbook.",
     ],
   },
   qml: {

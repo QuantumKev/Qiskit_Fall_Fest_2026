@@ -5,6 +5,7 @@ import { useEffect, useState, type ReactElement } from "react";
 import { CopyBlock } from "@/components/CopyBlock";
 import { ExerciseConnect } from "@/components/ExerciseConnect";
 import { useProgress } from "@/components/store";
+import { JudgingRubric } from "@/components/JudgingRubric";
 import { QISKIT_APPROVED_SITE } from "@/content/event";
 import { withBase } from "@/lib/base-path";
 import { linkifyPlainText } from "@/lib/link-text.mjs";
@@ -616,6 +617,7 @@ function HackathonBody() {
       <h2>Team size and judging</h2>
       <p>{TEAM_SIZE_LINE}</p>
       <p>{JUDGING_LINE}</p>
+      <JudgingRubric />
       <p>{AWARD_TEMPLATE_LINE}</p>
       <h2>Host contacts</h2>
       <ul>

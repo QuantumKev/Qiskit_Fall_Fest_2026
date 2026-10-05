@@ -125,7 +125,7 @@ export const EVENT = {
   capacity: "up to 50 participants per campus",
   campuses: LOCAL_HOSTS.map((host) => host.university),
   registration: "Coming soon",
-  rubric: "Coming soon",
+  rubric: "/resources/qiskit-fall-fest-judging-rubric.xlsx",
   codeOfConduct: "Coming soon",
   unconfirmedDetails: "Details coming soon",
   openPlan: "up to 10 minutes of QPU execution time per rolling 28-day window",
