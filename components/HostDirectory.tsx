@@ -21,6 +21,13 @@ export function HostDirectory() {
         {LOCAL_HOSTS.map((host) => (
           <article key={host.university} className="host-card">
             <h3>{host.university}</h3>
+            {host.dates ? (
+              <p>
+                <span className="meta">Dates</span>
+                <br />
+                {host.dates}
+              </p>
+            ) : null}
             <p>
               <span className="meta">Local lead</span>
               <br />

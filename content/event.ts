@@ -51,6 +51,8 @@ export type LocalHost = {
   venue: string;
   registration: string | null;
   contacts: readonly HostContact[];
+  /** Set when this campus’s hackathon is not the shared local-events weekend. */
+  dates?: string;
 };
 
 /** Miami Dade College DeepStation page. Stored once; the registration route reads it from LOCAL_HOSTS. */
@@ -85,6 +87,7 @@ export const LOCAL_HOSTS: readonly LocalHost[] = [
   {
     university: "Embry-Riddle Aeronautical University",
     leads: ["Laxima Niure Kandel"],
+    dates: "November 7–8, 2026",
     venue: "Details coming soon",
     registration: "https://deepstation.ai/hackathons/d8cgiq1fhghq7eaw63wghaht",
     contacts: [{ label: "niurekal@erau.edu", href: "mailto:niurekal@erau.edu" }],

@@ -38,10 +38,16 @@ function campusPeople(host: LocalHost): { name: string; email: string }[] {
   });
 }
 
-const CAMPUSES: readonly { university: string; registration: string | null; people: readonly { name: string; email: string }[] }[] = [
+const CAMPUSES: readonly {
+  university: string;
+  registration: string | null;
+  dates: string | null;
+  people: readonly { name: string; email: string }[];
+}[] = [
   ...LOCAL_HOSTS.map((host) => ({
     university: host.university,
     registration: host.registration,
+    dates: host.dates ?? null,
     people: campusPeople(host),
   })),
 ];
@@ -69,6 +75,7 @@ export default function RegisterPage() {
               ) : (
                 <span>{host.university}</span>
               )}
+              {host.dates ? <span>{host.dates}</span> : null}
               {host.people.map((person) => (
                 <span key={person.email}>
                   {person.name}, <a href={`mailto:${person.email}`}>{person.email}</a>
