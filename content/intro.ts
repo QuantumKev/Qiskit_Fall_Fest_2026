@@ -543,7 +543,6 @@ export const HACKATHON_GAPS = [
   "Rooms and addresses that are not the two confirmed venues. TBA.",
   "State championship ceremony venue and time on November 14, 2026. TBA.",
   "Whether every campus day is limited to enrolled students. TBA.",
-  "Kevin Robinson video titles. They will be listed when confirmed.",
 ];
 
 export const PROGRAM_NAME = "Florida Qiskit Fallfest Hackathon.";

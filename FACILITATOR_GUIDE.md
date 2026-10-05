@@ -39,8 +39,6 @@ Times are a guide for a two-hour Workshop 1 and a 75 to 90 minute Workshop 2. Sh
 | Hetionet as a finished example, not the minimum bar | Hetionet page |
 | Deliverables and the pull request | Submission page |
 
-Kevin Robinson’s video titles will be listed when they are confirmed. Do not invent titles.
-
 ## Workshop lesson
 
 Quantum from Zero to One is the lesson for the workshops. Andrew Chen, Qolour (andrew@qolour.com), wrote this 0-to-1 introduction. It uses Qolour's handheld Qubi.

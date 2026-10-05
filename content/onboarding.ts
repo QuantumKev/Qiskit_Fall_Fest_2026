@@ -197,7 +197,7 @@ const start: StepPage = {
       id: "workshop-1",
       heading: "Workshop 1: Qiskit Foundations",
       paragraphs: [
-        "Two hours. The cards below introduce the blocks. The full labs are the linked pages. Kevin Robinson’s videos are for before or after this block. Titles will be listed when they are confirmed.",
+        "Two hours. The cards below introduce the blocks. The full labs are the linked pages.",
       ],
       linkedSteps: [
         { text: "Welcome, then your own IBM account.", hrefs: [{ href: "/account/", label: "Account and tools" }] },
@@ -1027,12 +1027,6 @@ const resources: StepPage = {
       paragraphs: [
         "The workshop lesson is Quantum from Zero to One, by Andrew Chen of Qolour. It uses the handheld Qubi. Open the PDF from the lesson page.",
         `Educator course: ${QOLOR_COURSE}. Statevector exhibit: ${QOLOR_EXHIBIT}. The educator course stays on Qolour’s site.`,
-      ],
-    },
-    {
-      heading: "Videos",
-      paragraphs: [
-        "Kevin Robinson’s videos for before or after the workshop will be listed when the titles are confirmed. They are not named on the live Qolour menu, so this page does not invent titles.",
       ],
     },
     {
