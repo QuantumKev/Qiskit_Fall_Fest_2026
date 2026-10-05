@@ -53,9 +53,9 @@ export type LocalHost = {
   contacts: readonly HostContact[];
 };
 
-/** DeepStation registration and team page. Referenced by the registration route and Miami Dade College. */
+/** Miami Dade College DeepStation page. Stored once; the registration route reads it from LOCAL_HOSTS. */
 export const DEEPSTATION_REGISTRATION_URL =
-  "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams";
+  "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c";
 
 /** Root-relative public path. Prefix with withBase() so GitHub Pages keeps the project base path. */
 export const ORGANIZER_GUIDE_PDF = "/resources/deepstation-hackathons-organizer-guide.pdf";
@@ -90,7 +90,7 @@ export const LOCAL_HOSTS: readonly LocalHost[] = [
     university: "Embry-Riddle Aeronautical University",
     leads: ["Laxima Niure Kandel"],
     venue: "Details coming soon",
-    registration: null,
+    registration: "https://deepstation.ai/hackathons/d8cgiq1fhghq7eaw63wghaht",
     contacts: [{ label: "niurekal@erau.edu", href: "mailto:niurekal@erau.edu" }],
   },
   {
@@ -104,7 +104,7 @@ export const LOCAL_HOSTS: readonly LocalHost[] = [
     university: "Florida Gulf Coast University",
     leads: ["Dr. Chengyi Qu"],
     venue: "Details coming soon",
-    registration: "https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i",
+    registration: "https://deepstation.ai/hackathons/rg6zdiyur46esnnd8qa26s0h",
     contacts: [{ label: "cqu@fgcu.edu", href: "mailto:cqu@fgcu.edu" }],
   },
 ];

@@ -62,12 +62,12 @@ Campuses: Miami Dade College, Nova Southeastern University, Florida Atlantic Uni
 
 The home page host directory is the card list: university, verified lead, confirmed venue, registration link when one is public, and a contact. Unconfirmed rooms say **Details coming soon**.
 
-- Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams>
+- Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c>
 - Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. grant@deepstation.ai. Registration: details coming soon.
 - Florida Atlantic University: Robert Loredo, Ayse Torres, and Kateryna Tsekhmayster. Venue: details coming soon. Robert Loredo, rloredo2026@fau.edu. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
-- Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Venue and registration: details coming soon.
+- Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Registration: <https://deepstation.ai/hackathons/d8cgiq1fhghq7eaw63wghaht>. Venue: details coming soon.
 - Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
-- Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/e7d3qam34w4084rragu1fv3i>. Venue: details coming soon.
+- Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/rg6zdiyur46esnnd8qa26s0h>. Venue: details coming soon.
 
 Official IBM announcement: <https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026>
 

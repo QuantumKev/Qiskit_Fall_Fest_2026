@@ -67,7 +67,7 @@ test("commas, colons, semicolons, and closing parentheses stay outside the link"
 
 test("query strings, fragments, hyphens, and underscores stay in the href", () => {
   const samples = [
-    "https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c?tab=teams",
+    "https://example.com/search?q=bell_state",
     "https://www.quantumglobalgroup.io/qiskit-fall-fest/decision-guide/#/assess",
     "https://www.ibm.com/quantum/qiskit#tutorials",
     "https://github.com/Qiskit/qiskit#readme",
