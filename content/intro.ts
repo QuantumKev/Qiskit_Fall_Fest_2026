@@ -552,7 +552,7 @@ export const PROGRAM_BANNER =
   "Florida Qiskit Fallfest Hackathon, part of Qiskit Fall Fest 2026. The theme is A decade of quantum on the cloud. The 2026 theme recognizes ten years since IBM placed its first quantum processor on the cloud.";
 
 export const KICKOFF_LINES =
-  "Kickoff and challenge release are October 1, 2026. Local events are October 17–18, 2026. The local ceremony is October 18, 2026. The first-place local winner deadline is October 31, 2026. The state championship ceremony is November 14, 2026.";
+  "Kickoff and challenge release are October 1, 2026. Local events are October 17–18, 2026. The local ceremony is October 18, 2026. The first-place local winner deadline is October 31, 2026. The final is November 8, 2026. The state championship ceremony is November 14, 2026.";
 
 export const CHAMPIONSHIP_LINE =
   "The state championship ceremony is November 14, 2026. The venue and time are TBA.";

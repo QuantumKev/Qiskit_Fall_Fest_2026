@@ -108,7 +108,7 @@ Local cards, with only confirmed public contacts:
 - Miami Dade College: Kevin Robinson and Grant Kurz. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. Kevin Robinson, kevin@quantumglobalgroup.io. Grant Kurz, grant@deepstation.ai. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c>
 - Florida Atlantic University: Robert Loredo, Ayse Torres, and Kateryna Tsekhmayster. Venue: details coming soon. Robert Loredo, rloredo2026@fau.edu. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
 - Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Registration: <https://deepstation.ai/hackathons/d8cgiq1fhghq7eaw63wghaht>. Venue: details coming soon.
-- Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
+- Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Registration: <https://deepstation.ai/hackathons/ttbgxh2i2x685vbdp7euzusn>. Venue: details coming soon.
 - Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/rg6zdiyur46esnnd8qa26s0h>. Venue: details coming soon.
 
 The same directory is on the participant home page.
@@ -132,7 +132,7 @@ Use Discord for errors that are safe to share: <https://discord.gg/vz6uTbtJzR>. 
 
 ## Post-session follow-up
 
-Send people back to the handbook checklist and the submission page. Remind them of the October 18, 2026 local ceremony, the October 31, 2026 local packet date, and the November 14, 2026 state championship ceremony. Do not collect API keys after the session. If a key was shown on a shared screen, tell that person to revoke it and create a replacement in the IBM dashboard.
+Send people back to the handbook checklist and the submission page. Remind them of the October 18, 2026 local ceremony, the October 31, 2026 local packet date, the November 8, 2026 final, and the November 14, 2026 state championship ceremony. Do not collect API keys after the session. If a key was shown on a shared screen, tell that person to revoke it and create a replacement in the IBM dashboard.
 
 ## Co-host notes
 

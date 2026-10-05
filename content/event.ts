@@ -93,7 +93,7 @@ export const LOCAL_HOSTS: readonly LocalHost[] = [
     university: "Florida Institute of Technology",
     leads: ["Dr. Robert Usselman"],
     venue: "Details coming soon",
-    registration: null,
+    registration: "https://deepstation.ai/hackathons/ttbgxh2i2x685vbdp7euzusn",
     contacts: [{ label: "russelman@fit.edu", href: "mailto:russelman@fit.edu" }],
   },
   {
@@ -119,6 +119,7 @@ export const EVENT = {
   localEvents: "October 17–18, 2026",
   localCeremony: "October 18, 2026",
   winnerDeadline: "October 31, 2026",
+  final: "November 8, 2026",
   stateChampionship: "November 14, 2026",
   discord: "https://discord.gg/vz6uTbtJzR",
   capacity: "up to 50 participants per campus",

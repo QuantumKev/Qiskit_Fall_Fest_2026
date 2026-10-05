@@ -1,4 +1,4 @@
-**Florida Qiskit Fallfest Hackathon.** Part of Qiskit Fall Fest 2026. Kickoff and challenge release: October 1, 2026. Local events: October 17–18, 2026. Local ceremony: October 18, 2026. First-place local winner deadline: October 31, 2026. State championship ceremony: November 14, 2026.
+**Florida Qiskit Fallfest Hackathon.** Part of Qiskit Fall Fest 2026. Kickoff and challenge release: October 1, 2026. Local events: October 17–18, 2026. Local ceremony: October 18, 2026. First-place local winner deadline: October 31, 2026. Final: November 8, 2026. State championship ceremony: November 14, 2026.
 
 ---
 
@@ -65,7 +65,7 @@ The home page host directory is the card list: university, verified lead, confir
 - Miami Dade College: Kevin Robinson and Grant Kurz. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. Kevin Robinson, kevin@quantumglobalgroup.io. Grant Kurz, grant@deepstation.ai. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c>
 - Florida Atlantic University: Robert Loredo, Ayse Torres, and Kateryna Tsekhmayster. Venue: details coming soon. Robert Loredo, rloredo2026@fau.edu. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
 - Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Registration: <https://deepstation.ai/hackathons/d8cgiq1fhghq7eaw63wghaht>. Venue: details coming soon.
-- Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
+- Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Registration: <https://deepstation.ai/hackathons/ttbgxh2i2x685vbdp7euzusn>. Venue: details coming soon.
 - Florida Gulf Coast University: Dr. Chengyi Qu. cqu@fgcu.edu. Registration: <https://deepstation.ai/hackathons/rg6zdiyur46esnnd8qa26s0h>. Venue: details coming soon.
 
 Official IBM announcement: <https://www.ibm.com/quantum/blog/qiskit-fall-fest-2026>
@@ -480,6 +480,7 @@ Times, speaker names, and any room that is not listed here are **TBA**.
 | October 17–18, 2026 | Local events | Miami Dade College Wolfson Campus, AI Center, Building 2, Room 2104. Other campus rooms are TBA. |
 | October 18, 2026 | Local ceremony | Campus venues are listed with the local events. |
 | October 31, 2026 | First-place local winner deadline | Packet to the hosts |
+| November 8, 2026 | Final | Venue TBA |
 | November 14, 2026 | State championship ceremony | Venue TBA |
 
 Capacity is up to 50 participants per campus. A setup clinic and a GitHub clinic may run inside the local events. Whether they do is TBA.
