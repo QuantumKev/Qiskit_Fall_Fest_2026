@@ -63,17 +63,13 @@ export const ORGANIZER_GUIDE_PDF = "/resources/deepstation-hackathons-organizer-
 export const LOCAL_HOSTS: readonly LocalHost[] = [
   {
     university: "Miami Dade College",
-    leads: ["Kevin Robinson"],
+    leads: ["Kevin Robinson", "Grant Kurz"],
     venue: "Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132",
     registration: DEEPSTATION_REGISTRATION_URL,
-    contacts: [{ label: "kevin@quantumglobalgroup.io", href: "mailto:kevin@quantumglobalgroup.io" }],
-  },
-  {
-    university: "Nova Southeastern University",
-    leads: ["Grant Kurz"],
-    venue: "Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314",
-    registration: null,
-    contacts: [{ label: "grant@deepstation.ai", href: "mailto:grant@deepstation.ai" }],
+    contacts: [
+      { label: "kevin@quantumglobalgroup.io", href: "mailto:kevin@quantumglobalgroup.io" },
+      { label: "grant@deepstation.ai", href: "mailto:grant@deepstation.ai" },
+    ],
   },
   {
     university: "Florida Atlantic University",
@@ -236,18 +232,6 @@ export function eventJsonLd() {
           addressLocality: "Miami",
           addressRegion: "FL",
           postalCode: "33132",
-          addressCountry: "US",
-        },
-      },
-      {
-        "@type": "Place",
-        name: "Alan B. Levan Center, Nova Southeastern University",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "3100 Ray Ferrero Jr. Blvd., 5th Floor",
-          addressLocality: "Davie",
-          addressRegion: "FL",
-          postalCode: "33314",
           addressCountry: "US",
         },
       },

@@ -146,7 +146,7 @@ const start: StepPage = {
       paragraphs: [
         `The theme is ${EVENT.theme}. ${EVENT.themeSummary}`,
         `Kickoff and challenge release: ${EVENT.kickoff}. Local events: ${EVENT.localEvents}. Local ceremony: ${EVENT.localCeremony}. First-place local winner deadline: ${EVENT.winnerDeadline}. State championship ceremony: ${EVENT.stateChampionship}. Capacity is ${EVENT.capacity}.`,
-        `The host directory below lists all six universities. A confirmed venue and a local registration link are on the card. Anything still open says ${EVENT.unconfirmedDetails}. The shared code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
+        `The host directory below lists all five universities. A confirmed venue and a local registration link are on the card. Anything still open says ${EVENT.unconfirmedDetails}. The shared code of conduct is ${EVENT.codeOfConduct}. The shared rubric is ${EVENT.rubric}.`,
         `Unresolved program questions go to Kevin Robinson at ${EVENT.programEmail}. The chat is ${EVENT.discord}. The announcement is ${IBM.announcement}. The Qiskit-approved website is ${QISKIT_APPROVED_SITE}.`,
       ],
     },

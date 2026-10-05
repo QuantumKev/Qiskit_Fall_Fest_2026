@@ -58,12 +58,11 @@ The **2026 theme is "A decade of quantum on the cloud."** The theme recognizes t
 
 **Florida Qiskit Fallfest Hackathon** is the Florida event inside that global program.
 
-Campuses: Miami Dade College, Nova Southeastern University, Florida Atlantic University, Embry-Riddle Aeronautical University, Florida Institute of Technology, and Florida Gulf Coast University. Capacity is up to 50 participants per campus.
+Campuses: Miami Dade College, Florida Atlantic University, Embry-Riddle Aeronautical University, Florida Institute of Technology, and Florida Gulf Coast University. Capacity is up to 50 participants per campus.
 
 The home page host directory is the card list: university, verified lead, confirmed venue, registration link when one is public, and a contact. Unconfirmed rooms say **Details coming soon**.
 
-- Miami Dade College: Kevin Robinson. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. kevin@quantumglobalgroup.io. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c>
-- Nova Southeastern University: Grant Kurz. Alan B. Levan Center, 3100 Ray Ferrero Jr. Blvd., 5th Floor, Davie, FL 33314. grant@deepstation.ai. Registration: details coming soon.
+- Miami Dade College: Kevin Robinson and Grant Kurz. Wolfson Campus, AI Center, Building 2, Room 2104, 300 N.E. Second Ave., Miami, FL 33132. Kevin Robinson, kevin@quantumglobalgroup.io. Grant Kurz, grant@deepstation.ai. Registration: <https://deepstation.ai/hackathons/dj31ld8d96fuj1yi97ph4c4c>
 - Florida Atlantic University: Robert Loredo, Ayse Torres, and Kateryna Tsekhmayster. Venue: details coming soon. Robert Loredo, rloredo2026@fau.edu. Ayse Torres, atorre58@fau.edu. Kateryna Tsekhmayster, ktsekhmayste2022@fau.edu. Registration: <https://deepstation.ai/hackathons/mtrxfkxet400k68imrz4y5wn>
 - Embry-Riddle Aeronautical University: Laxima Niure Kandel. niurekal@erau.edu. Registration: <https://deepstation.ai/hackathons/d8cgiq1fhghq7eaw63wghaht>. Venue: details coming soon.
 - Florida Institute of Technology: Dr. Robert Usselman. russelman@fit.edu. Venue and registration: details coming soon.
@@ -478,7 +477,7 @@ Times, speaker names, and any room that is not listed here are **TBA**.
 | Date | What | Where |
 |---|---|---|
 | October 1, 2026 | Kickoff and challenge release | TBA |
-| October 17–18, 2026 | Local events | Miami Dade College Wolfson Campus, AI Center, Building 2, Room 2104; and Alan B. Levan Center at Nova Southeastern University, 5th Floor. Other campus rooms are TBA. |
+| October 17–18, 2026 | Local events | Miami Dade College Wolfson Campus, AI Center, Building 2, Room 2104. Other campus rooms are TBA. |
 | October 18, 2026 | Local ceremony | Campus venues are listed with the local events. |
 | October 31, 2026 | First-place local winner deadline | Packet to the hosts |
 | November 14, 2026 | State championship ceremony | Venue TBA |

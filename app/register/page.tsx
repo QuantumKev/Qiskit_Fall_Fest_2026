@@ -8,7 +8,7 @@ export const metadata = pageMeta("Registration and Team Access", "/register/");
 
 const REGISTRATION_HELP = CO_LEADS.find((person) => person.email === "grant@deepstation.ai");
 
-const MIAMI_AND_NOVA_COLEADS = [
+const MIAMI_COLEADS = [
   { name: "Kevin Robinson", email: "kevin@quantumglobalgroup.io" },
   { name: "Grant Kurz", email: "grant@deepstation.ai" },
 ] as const;
@@ -25,8 +25,8 @@ function ExternalIcon() {
 }
 
 function campusPeople(host: LocalHost): { name: string; email: string }[] {
-  if (host.university === "Miami Dade College" || host.university === "Nova Southeastern University") {
-    return [...MIAMI_AND_NOVA_COLEADS];
+  if (host.university === "Miami Dade College") {
+    return [...MIAMI_COLEADS];
   }
   return host.contacts.flatMap((contact) => {
     if (!contact.href?.startsWith("mailto:")) return [];
