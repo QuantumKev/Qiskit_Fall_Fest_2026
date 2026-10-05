@@ -44,7 +44,6 @@ const CAMPUSES: readonly { university: string; registration: string | null; peop
     registration: host.registration,
     people: campusPeople(host),
   })),
-  { university: "Florida International University", registration: null, people: [{ name: "Anqi Wu", email: "anwu@fiu.edu" }] },
 ];
 
 export default function RegisterPage() {
